@@ -37,17 +37,17 @@
           <div class="item-box" v-if="item[10] && item[10].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[10].gameId"><img v-lazy="item[10] && item[10].iconUrl" alt=""></a></div></div>
         </div>
       </div>
-      <div class="adv" v-if="index === 0">
-        <h6 class="adv-title">Advertisement</h6>
-        <div>
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-9846530703102193"
-               data-ad-slot="3863460797"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-      </div>
+<!--      <div class="adv" v-if="index === 0">-->
+<!--        <h6 class="adv-title">Advertisement</h6>-->
+<!--        <div>-->
+<!--          <ins class="adsbygoogle"-->
+<!--               style="display:block"-->
+<!--               data-ad-client="ca-pub-9846530703102193"-->
+<!--               data-ad-slot="3863460797"-->
+<!--               data-ad-format="auto"-->
+<!--               data-full-width-responsive="true"></ins>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -62,9 +62,9 @@ export default {
     }
   },
   mounted() {
-    setTimeout(()=>{
-      window.addAds()
-    },1300)
+    // setTimeout(()=>{
+    //   window.addAds()
+    // },1300)
   },
   methods: {
     // detailsClick(item) {

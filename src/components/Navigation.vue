@@ -1,24 +1,24 @@
 <template>
     <div>
-      <div class="bj">
+      <div class="bj" @click="vigooGamesClick">
         <div class="bj_left">
-          <div class="title" @click="vigooGamesClick"><i class="el-icon-menu" @click.stop="positionMenuClick"></i> AH5 GAMES</div>
-          <div class="nav-list">
-            <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>
-          </div>
+          <div class="title">HIGOOPLAY</div>
+<!--          <div class="nav-list">-->
+<!--            <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>-->
+<!--          </div>-->
         </div>
-        <div class="search">
-          <el-input
-            placeholder="Search Games"
-            prefix-icon="el-icon-search"
-            v-model="searchInput"
-            @keyup.enter.native="searchClick"
-          >
-          </el-input>
-        </div>
-        <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">
-          <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>
-        </div>
+<!--        <div class="search">-->
+<!--          <el-input-->
+<!--            placeholder="Search Games"-->
+<!--            prefix-icon="el-icon-search"-->
+<!--            v-model="searchInput"-->
+<!--            @keyup.enter.native="searchClick"-->
+<!--          >-->
+<!--          </el-input>-->
+<!--        </div>-->
+<!--        <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">-->
+<!--          <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>-->
+<!--        </div>-->
       </div>
     </div>
 </template>
@@ -102,6 +102,7 @@ export default {
   }
 }
   .bj{
+    cursor: pointer;
     height: 56px;
     background: #f83123;
     color: #ffffff;
@@ -127,6 +128,7 @@ export default {
       }
     }
     .bj_left{
+      margin: 0 auto;
       display: flex;
       .title{
         min-width: 166px;

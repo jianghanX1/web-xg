@@ -1,10 +1,11 @@
 <template>
-  <div class="details" v-title :data-title="gameInfo.gameName + ' - ' + 'Play' + ' ' + gameInfo.gameName + ' Online at ah5game.com'">
+  <div class="details" v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at higooplay.com'">
     <div class="main-center">
       <div class="main-game">
         <div class="game-part">
           <div class="game-container" :style="full">
-            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>
+            <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
+<!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
             <div class="close" :style="closeStyle" @click="closeClick"><i class="el-icon-close" /></div>
             <div class="flex-games" v-show="isBlock" :style="leftHideStyle">
               <div class="btns">
@@ -20,11 +21,12 @@
             </div>
           </div>
           <div class="game-bar">
-            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.gameName }}</span></div>
+            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.Name }}</span></div>
+<!--            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.gameName }}</span></div>-->
             <div class="bar-btns">
-              <div class="download" v-if="$store.state.deferredPromptType" @click="addToDesktop"><span>Add to Desktop</span></div>
-              <div class="play-tag" @click="getGameType1(gameInfo.gameType)"><span>Play {{ gameInfo.gameType }} Games</span></div>
-              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>
+<!--              <div class="download" v-if="$store.state.deferredPromptType" @click="addToDesktop"><span>Add to Desktop</span></div>-->
+<!--              <div class="play-tag" @click="getGameType1(gameInfo.gameType)"><span>Play {{ gameInfo.gameType }} Games</span></div>-->
+<!--              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>-->
             </div>
           </div>
         </div>
@@ -58,7 +60,7 @@
       </div>
       <div class="float-games">
         <div class="games-container">
-          <div class="title">{{ gameTypeList[0] }}</div>
+<!--          <div class="title">{{ gameTypeList[0] }}</div>-->
           <div class="game-warp">
             <div class="game-list">
               <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
@@ -66,7 +68,7 @@
           </div>
         </div>
         <div class="games-container">
-          <div class="title">{{ gameTypeList[1] }}</div>
+<!--          <div class="title">{{ gameTypeList[1] }}</div>-->
           <div class="game-warp">
             <div class="game-list">
               <div class="app-item" v-for="(item,index) in two" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
@@ -74,7 +76,7 @@
           </div>
         </div>
         <div class="games-container" id="girlsGames">
-          <div class="title">{{ gameTypeList[2] }}</div>
+<!--          <div class="title">{{ gameTypeList[2] }}</div>-->
           <div class="game-warp">
             <div class="game-list">
               <div class="app-item" v-for="(item,index) in three" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
@@ -88,7 +90,7 @@
 
 <script>
 import Bottom from '@/components/HomeIndex/Bottom';
-import { getGameList, determinePcOrMove, shuffle, getGameType, setMeta } from '@/utils/utils.js'
+import {getGameList, determinePcOrMove, shuffle, getGameType, setMeta, getJson} from '@/utils/utils.js'
 export default {
   name: "detailsIndex",
   components: {
@@ -166,7 +168,8 @@ export default {
         adsBottom.style.top = '0px'
       }
     }
-    this.getGameType1()
+    this.getJson()
+    // this.getGameType1()
 
   },
   methods: {
@@ -176,7 +179,52 @@ export default {
       this.$store.state.deferredPrompt && this.$store.state.deferredPrompt.prompt();
       this.$store.commit("changePWA",{deferredPrompt: null,deferredPromptType: this.$store.state.deferredPromptType})
     },
+    getJson() {
+      console.log(1111111111);
+      const { query } = this.$route
+      const { gameId } = query || {}
+      let jsonArr = getJson()
+      // 随机打乱数组
+      let shuffleArr = shuffle(jsonArr)
+      let one = []
+      let two = []
+      let three = []
+      let copyArr = []
+      shuffleArr && shuffleArr.map((item)=>{
+        copyArr.push(item)
+      })
+      one = copyArr.splice(0,12)
+      two = copyArr.splice(0,12)
+      three = copyArr.splice(0,12)
+      // 截取五个放右边
+      let newArr = []
+      let gameInfo = {}
+      let theSame = [] // 同类型游戏
+      shuffleArr && shuffleArr.map((item)=>{
+        if (item.gameId == gameId) {
+          gameInfo = item
+        }
+        newArr.push(item)
+      })
+      shuffleArr && shuffleArr.map((item)=>{
+        if (item.gameType == gameInfo.gameType) {
+          theSame.push(item)
+        }
+      })
+      this.theSame = theSame
+      this.gameInfo = gameInfo
+      this.one = one
+      this.two = two
+      this.three = three
+      this.four = newArr.splice(0,5)
+      this.five = newArr.splice(0,8)
+      this.six = newArr.splice(0,30)
+      this.intercept = newArr
+      this.gameList = shuffleArr
 
+      setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.gameType} Games`)
+      this.manifestIcon(gameInfo)
+    },
     // 获取游戏类型
     getGameType1(gameType) {
       getGameType().then((res)=>{
@@ -380,7 +428,8 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
-      this.getGameType1()
+      this.getJson()
+      // this.getGameType1()
     }
   }
 }

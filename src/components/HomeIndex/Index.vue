@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="AH5 GAMES">
+  <div class="big" v-title data-title="HIGOOPLAY">
     <div>
       <Content></Content>
       <Bottom />
@@ -16,7 +16,7 @@
 <script>
 import Content from '@/components/HomeIndex/Content';
 import Bottom from '@/components/HomeIndex/Bottom';
-import { getGameList, determinePcOrMove } from '@/utils/utils.js'
+import { getGameList, determinePcOrMove, getJson } from '@/utils/utils.js'
 export default {
   name: "HomeIndex",
   components: {
@@ -36,9 +36,14 @@ export default {
     }
   },
   mounted() {
-    this.getList()
+    this.getJson()
+    // this.getList()
   },
   methods: {
+    getJson() {
+      let arr = getJson().splice(0,4)
+      this.recentGameList = arr
+    },
     getList() {
       getGameList(1).then((res)=>{
         console.log(res);

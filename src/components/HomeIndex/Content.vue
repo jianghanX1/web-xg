@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { getGameList } from '@/utils/utils.js'
+import { getGameList, getJson } from '@/utils/utils.js'
 export default {
   name: "contentIndex",
   data() {
@@ -18,9 +18,14 @@ export default {
     }
   },
   mounted() {
-    this.getList()
+    this.getJson()
+    // this.getList()
   },
   methods: {
+    getJson() {
+      let arr = getJson()
+      this.gameList = arr
+    },
     getList() {
       const { query } = this.$route
       const { gameType, searchValue } = query || {}
@@ -66,7 +71,8 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
-      this.getList()
+      this.getJson()
+      // this.getList()
     }
   }
 }

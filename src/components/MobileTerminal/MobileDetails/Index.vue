@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at ah5game.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at higooplay.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
       <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
@@ -23,18 +23,18 @@
           <div class="desc-title">{{ gameName }}</div>
           <div class="desc-text">{{ description }}</div>
         </div>
-        <div class="seo-tags">
-          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.code)">{{ item.name }}</a>
-        </div>
+<!--        <div class="seo-tags">-->
+<!--          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.code)">{{ item.name }}</a>-->
+<!--        </div>-->
       </div>
-      <div class="adv">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9846530703102193"
-             data-ad-slot="4218684011"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-      </div>
+<!--      <div class="adv">-->
+<!--        <ins class="adsbygoogle"-->
+<!--             style="display:block"-->
+<!--             data-ad-client="ca-pub-9846530703102193"-->
+<!--             data-ad-slot="4218684011"-->
+<!--             data-ad-format="auto"-->
+<!--             data-full-width-responsive="true"></ins>-->
+<!--      </div>-->
       <div class="details-recommend-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
         <p class="recommend-title">Recommendations for similar games</p>
         <div class="recommend-list">
@@ -64,8 +64,8 @@
 <script>
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
-import {getGameInfo, getGameList, shuffle, determinePcOrMove, getGameType, setMeta} from "@/utils/utils";
-import { show_newAfg_preroll } from '../../../../ah5sdk';
+import {getGameInfo, getGameList, shuffle, determinePcOrMove, getGameType, setMeta, getJson} from "@/utils/utils";
+// import { show_newAfg_preroll } from '../../../../ah5sdk';
 export default {
   name: "mobileDetailsIndex",
   components: {
@@ -99,13 +99,32 @@ export default {
     }
   },
   mounted() {
-    setTimeout(()=>{
-      window.addAds()
-    },800)
+    // setTimeout(()=>{
+    //   window.addAds()
+    // },800)
     document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
-    this.getInfo()
+    // this.getInfo()
+    this.getJson()
   },
   methods: {
+    getJson() {
+      const { query } = this.$route
+      const { gameId } = query || {}
+      let arr = getJson() || []
+      let gameInfo = {}
+      arr.map((item)=>{
+        if (item.gameId == gameId) {
+          gameInfo = item
+        }
+      })
+      this.gameName = gameInfo.Name
+      this.iconUrl = gameInfo.iconUrl
+      this.description = gameInfo.dis
+      this.playUrl = gameInfo.Url
+      this.gameTypeList = arr
+      setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a Games`)
+    },
+
     // 跳转分类
     classClick(gameType) {
       this.$router.push({
@@ -199,7 +218,7 @@ export default {
     // 开始游戏
     playClick() {
       // 广告
-      show_newAfg_preroll().show_newAfg_preroll()
+      // show_newAfg_preroll().show_newAfg_preroll()
 
       this.playValue = true
       let arr = []
@@ -236,7 +255,8 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
-      this.getInfo()
+      this.getJson()
+      // this.getInfo()
     }
   }
 }
@@ -396,6 +416,7 @@ export default {
     padding: 0 0.625rem;
     .desc-item{
       padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
       .desc-title{
         color: #fff;
         font-size: .9375rem;
