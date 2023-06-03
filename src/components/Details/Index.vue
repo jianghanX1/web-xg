@@ -1,5 +1,5 @@
 <template>
-  <div class="details" v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at higooplay.com'">
+  <div class="details" v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at yiygames.com'">
     <div class="main-center">
       <div class="main-game">
         <div class="game-part">
