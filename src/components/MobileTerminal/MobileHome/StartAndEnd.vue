@@ -59,7 +59,7 @@ export default {
   top: 0;
   left: 0;
   box-shadow: 0 0.125rem 0.1875rem 0 rgba(0,16,63,.4);
-  background-color: #f83123;
+  background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
   z-index: 5;
   div{
     font-size: 1.125rem;
@@ -76,7 +76,7 @@ export default {
 .end{
   margin-top: 1rem;
   height: 1.75rem;
-  background-color: #042697;
+  background-color: #103455;
   text-align: center;
   color: #fff;
   font-size: .5625rem;

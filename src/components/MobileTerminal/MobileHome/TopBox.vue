@@ -35,7 +35,7 @@ export default {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  margin-top: 3.375rem;
+  //margin-top: 3.375rem;
   .item{
     box-sizing: border-box;
     width: 3.4375rem;

@@ -1,27 +1,36 @@
 <template>
   <div class="big" v-title data-title="HIGOOPLAY">
     <div>
-      <Content></Content>
-      <Bottom />
-    </div>
-    <div class="recent-game">
-      <div class="title">Recent game</div>
-      <div class="content">
-        <div class="item" v-for="(item,index) in recentGameList" :key="index" @click="iconClick(item)"><img v-lazy="item.iconUrl" alt=""></div>
+      <div class="top-text">
+        <h1>Play Free Online Games On Mobile & Tablet</h1>
       </div>
+      <Content></Content>
+      <div class="bottom-text">
+        Hi! Welcome to yad.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+        <br>
+        So, what are you waiting for? If you feel happy when playing our games, remember to bookmark yad.com and share it to your friends. Have fun!
+      </div>
+<!--      <Bottom />-->
     </div>
+    <BottomNav></BottomNav>
+<!--    <div class="recent-game">-->
+<!--      <div class="title">Recent game</div>-->
+<!--      <div class="content">-->
+<!--        <div class="item" v-for="(item,index) in recentGameList" :key="index" @click="iconClick(item)"><img v-lazy="item.iconUrl" alt=""></div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script>
 import Content from '@/components/HomeIndex/Content';
-import Bottom from '@/components/HomeIndex/Bottom';
+import BottomNav from '@/components/BottomNav';
 import { getGameList, determinePcOrMove, getJson } from '@/utils/utils.js'
 export default {
   name: "HomeIndex",
   components: {
     Content,
-    Bottom
+    BottomNav
   },
   data() {
     return {
@@ -74,10 +83,35 @@ export default {
 
 <style lang="less" scoped>
 .big{
-  display: flex;
-  min-width: 730px;
-  height: calc(100vh - 85px);
+  //display: flex;
+  //min-width: 730px;
+  //height: calc(100vh - 85px);
+  height: calc(100vh - 56px);
   overflow-y: auto;
+  .top-text{
+    text-align: center;
+    padding: 10px 5px 5px;
+    h1{
+      width: 100%;
+      font-size: 14px;
+      color: #fff;
+      height: 20px;
+      line-height: 20px;
+      overflow: hidden;
+    }
+  }
+  .bottom-text{
+    clear: both;
+    padding: 5px 10px 10px 10px;
+    color: #fff;
+    width: 100%;
+    min-width: 240px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 @media screen and (max-width: 840px){
   .recent-game {

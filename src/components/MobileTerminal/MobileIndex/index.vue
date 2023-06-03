@@ -1,11 +1,19 @@
 <template>
   <div v-title data-title="HIGOOPLAY">
     <StartAndEnd>
+      <div class="top-text">
+        <h1>Play Free Online Games On Mobile & Tablet</h1>
+      </div>
       <div>
         <TopBox :topGameList="topGameList"></TopBox>
         <AppList :appGameList="appGameList"></AppList>
 <!--        <BottomList :typeList="gameTypeList"></BottomList>-->
-        <BottomText></BottomText>
+<!--        <BottomText></BottomText>-->
+        <div class="bottom-text">
+          Hi! Welcome to yad.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          <br>
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark yad.com and share it to your friends. Have fun!
+        </div>
       </div>
     </StartAndEnd>
   </div>
@@ -16,7 +24,7 @@ import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import TopBox from "@/components/MobileTerminal/MobileHome/TopBox";
 import AppList from "@/components/MobileTerminal/MobileHome/AppList";
 // import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
-import BottomText from "@/components/MobileTerminal/MobileHome/BottomText";
+// import BottomText from "@/components/MobileTerminal/MobileHome/BottomText";
 
 import shooting from '@/assets/01shooting.jpg';
 import car from '@/assets/02car.jpg';
@@ -55,7 +63,7 @@ export default {
     TopBox,
     AppList,
     // BottomList,
-    BottomText
+    // BottomText
   },
   created() {
     if (determinePcOrMove() == 2) {
@@ -120,6 +128,30 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+.top-text{
+  text-align: center;
+  padding: 10px 5px 5px;
+  margin-top: 2.5555rem;
+  h1{
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+  }
+}
+.bottom-text{
+  clear: both;
+  padding: 5px 10px 10px 10px;
+  color: #fff;
+  width: 100%;
+  min-width: 240px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+}
 </style>

@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <Bottom />
+<!--      <Bottom />-->
     </div>
     <div class="main-float">
       <div class="float-ads">
@@ -89,12 +89,12 @@
 </template>
 
 <script>
-import Bottom from '@/components/HomeIndex/Bottom';
+// import Bottom from '@/components/HomeIndex/Bottom';
 import {getGameList, determinePcOrMove, shuffle, getGameType, setMeta, getJson} from '@/utils/utils.js'
 export default {
   name: "detailsIndex",
   components: {
-    Bottom
+    // Bottom
   },
   data() {
     return {
@@ -792,7 +792,7 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background-color: #f83123;
+          background: linear-gradient(to bottom, #48a0c9 0%, #29638b 100%);
           border-radius: 8px;
           height: 56px;
           width: 500px;

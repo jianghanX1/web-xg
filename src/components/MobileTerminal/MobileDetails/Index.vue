@@ -271,7 +271,7 @@ export default {
   top: 0;
   overflow: auto;
   z-index: 3;
-  background-color: #0054ff;
+  //background-color: #0054ff;
   .nav-bar{
     height: 2.8125rem;
     position: fixed;
@@ -361,14 +361,14 @@ export default {
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #f09;
+        background-color: #267AB0;
         max-width: 100%;
         transition: width .5s linear;
         z-index: 1;
       }
     }
     .app-play:before {
-      content: "Play Now";
+      content: "TAP TO PLAY";
       font-size: .9375rem;
       position: absolute;
       top: 50%;
@@ -473,7 +473,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-color: #0b2167;
+  background-color: #127DAB;
   overflow: hidden;
   .app-iframe{
     width: 100%;
@@ -533,7 +533,7 @@ export default {
   .app-promote {
     height: 4.375rem;
     overflow: hidden;
-    background-color: #0073dd;
+    background-color: #127DAB;
     padding: 0.5rem 0;
   }
   .app-promote .promote-list {
@@ -590,7 +590,7 @@ export default {
     height: 100%;
     width: 2.353521rem;
     overflow: hidden;
-    background-color: #0073dd;
+    background-color: #127DAB;
   }
   .app-promote .promote-list {
     height: 100%;

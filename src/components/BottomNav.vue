@@ -33,13 +33,13 @@ export default {
 
 <style lang="less" scoped>
 .end{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  //position: fixed;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
   margin-top: 1rem;
   height: 1.75rem;
-  background-color: #042697;
+  background-color: #103455;
   text-align: center;
   color: #fff;
   font-size: .5625rem;

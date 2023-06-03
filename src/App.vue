@@ -3,7 +3,7 @@
     <div v-if="determinePcOrMove == 2">
       <Navigation v-if="navHide"></Navigation>
       <router-view></router-view>
-      <BottomNav v-if="navHide"></BottomNav>
+<!--      <BottomNav v-if="navHide"></BottomNav>-->
     </div>
     <div v-else>
       <router-view></router-view>
@@ -13,12 +13,11 @@
 
 <script>
 import Navigation from './components/Navigation';
-import BottomNav from './components/BottomNav';
 import { determinePcOrMove } from '@/utils/utils.js'
 export default {
   name: 'App',
   components: {
-    Navigation,BottomNav
+    Navigation
   },
   data() {
     return {

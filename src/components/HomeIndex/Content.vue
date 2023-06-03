@@ -81,7 +81,7 @@ export default {
 <style lang="less" scoped>
   .big-box{
     width: 100%;
-    padding: 10px 30px;
+    padding: 0 30px 10px 30px;
     box-sizing: border-box;
     @keyframes example {
       0%  {transform: scale(1);}

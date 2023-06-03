@@ -104,7 +104,7 @@ export default {
   .bj{
     cursor: pointer;
     height: 56px;
-    background: #f83123;
+    background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
     color: #ffffff;
     display: flex;
     justify-content: space-between;
