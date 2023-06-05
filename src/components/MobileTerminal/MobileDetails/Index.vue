@@ -27,14 +27,14 @@
 <!--          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.code)">{{ item.name }}</a>-->
 <!--        </div>-->
       </div>
-<!--      <div class="adv">-->
-<!--        <ins class="adsbygoogle"-->
-<!--             style="display:block"-->
-<!--             data-ad-client="ca-pub-9846530703102193"-->
-<!--             data-ad-slot="4218684011"-->
-<!--             data-ad-format="auto"-->
-<!--             data-full-width-responsive="true"></ins>-->
-<!--      </div>-->
+      <div class="adv">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9846530703102193"
+             data-ad-slot="4218684011"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
       <div class="details-recommend-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
         <p class="recommend-title">Recommendations for similar games</p>
         <div class="recommend-list">
@@ -48,7 +48,8 @@
         <div class="iframe-box">
           <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
         </div>
-        <div class="iframe-back" @click="backClick"><i class="el-icon-arrow-left"></i></div>
+        <div class="iframe-back" @click="backClick"><img :src="goBack" alt=""></div>
+        <a class="tap-game" @click="detailsClick(item)" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
       </div>
       <div class="app-promote">
         <div class="promote-list">
@@ -62,10 +63,12 @@
   </div>
 </template>
 <script>
+import goBack from '@/assets/goBack.png';
+import topping from '@/assets/topping.png';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
-import {getGameInfo, getGameList, shuffle, determinePcOrMove, getGameType, setMeta, getJson} from "@/utils/utils";
-// import { show_newAfg_preroll } from '../../../../ah5sdk';
+import {shuffle, determinePcOrMove, setMeta, getJson, recentGame} from "@/utils/utils";
+import { show_newAfg_preroll } from '../../../../ah5sdk';
 export default {
   name: "mobileDetailsIndex",
   components: {
@@ -73,6 +76,7 @@ export default {
   },
   data() {
     return {
+      tapGameList: [], // 闪标列表
       gameName: '', // 游戏名称
       iconUrl: '', // 游戏icon
       description: '', // 游戏简介
@@ -84,6 +88,8 @@ export default {
       playValue1: false,
       isTop: false,
       timer: null, // 定时器
+      goBack,
+      topping
     }
   },
   created() {
@@ -99,11 +105,10 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(()=>{
-    //   window.addAds()
-    // },800)
+    setTimeout(()=>{
+      window.addAds()
+    },800)
     document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
-    // this.getInfo()
     this.getJson()
   },
   methods: {
@@ -134,73 +139,6 @@ export default {
         }
       },()=>{})
     },
-
-    // 获取游戏详情
-    getInfo() {
-      this.playValue1= true
-      const { query } = this.$route
-      const { gameId } = query || {}
-      // 获取游戏详情
-      getGameInfo(gameId).then((res)=>{
-        console.log(res);
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        const { gameName, iconUrl, description, playUrl, gameType } = dataObj || {}
-        if (code == 1) {
-          this.gameName = gameName
-          this.iconUrl = iconUrl
-          this.description = description
-          this.playUrl = playUrl
-
-          setMeta(`${gameName},${gameName} Online,${gameName} for free`,`${gameName} is a ${gameType} Games`)
-          this.getGameType1(gameType)
-        }
-      }).catch((err)=>{
-        this.playValue1= false
-        console.log(err);
-      })
-    },
-    // 获取游戏类型
-    getGameType1(gameType) {
-      getGameType().then((res)=>{
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        const { game_type } = dataObj || {}
-        if (code == 1) {
-          this.typeList = game_type
-          game_type.map((item)=>{
-            if (item.name == gameType) {
-              this.getGameTypeList(item.code)
-            }
-          })
-        } else {
-          this.playValue1= false
-          this.$message.error('获取游戏类别失败')
-        }
-      }).catch((err)=>{
-        this.playValue1= false
-        console.log(err);
-      })
-    },
-
-    // 获取游戏列表
-    getGameTypeList(gameType) {
-      // 获取游戏列表
-      getGameList(gameType).then((res)=>{
-        console.log(res);
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        if (code == 1) {
-          this.playValue1= false
-          this.gameTypeList = dataObj || []
-        } else {
-          this.$message.error('数据加载失败')
-        }
-      }).catch((err)=>{
-        this.playValue1= false
-        console.log(err);
-      })
-    },
     handleScroll() {
       //变量scrollTop是滚动条滚动时，距离顶部的距离
       let scrollTop = document.getElementById('mobile-details').scrollTop
@@ -218,7 +156,7 @@ export default {
     // 开始游戏
     playClick() {
       // 广告
-      // show_newAfg_preroll().show_newAfg_preroll()
+      show_newAfg_preroll().show_newAfg_preroll()
 
       this.playValue = true
       let arr = []
@@ -226,6 +164,7 @@ export default {
         arr.push(item)
       })
       this.gameShuffleList = arr.splice(0,5)
+      this.tapGameList = arr.splice(0,1)
       clearInterval(this.timer)
       this.timer = setInterval(()=>{
         let newArr = []
@@ -235,14 +174,27 @@ export default {
         let shuffleArr = shuffle(newArr) || []
         this.gameShuffleList = shuffleArr.splice(0,5)
       },10000)
+      clearInterval(this.timer2)
+      this.timer2 = setInterval(()=>{
+        let newArr = []
+        this.gameTypeList.map((item)=>{
+          newArr.push(item)
+        })
+        let shuffleArr = shuffle(newArr) || []
+        this.tapGameList = shuffleArr.splice(0,1)
+      },6000)
     },
     // 返回
     backClick() {
       this.playValue = false
       clearInterval(this.timer)
+      clearInterval(this.timer2)
     },
     // 跳转详情
-    detailsClick() {
+    detailsClick(item) {
+      recentGame(item)
+      clearInterval(this.timer)
+      clearInterval(this.timer2)
       // this.$router.push({
       //   path: '/M/details',
       //   query: {
@@ -256,7 +208,6 @@ export default {
     '$route'(val) {
       console.log(val,'数据更新了');
       this.getJson()
-      // this.getInfo()
     }
   }
 }
@@ -516,18 +467,49 @@ export default {
       position: absolute;
       left: 0;
       top: 1.125rem;
-      box-shadow: 0 0.125rem 0 0.0625rem rgb(52 126 223);
+      //box-shadow: 0 0.125rem 0 0.0625rem rgb(52 126 223);
       border-radius: 0 1.125rem 1.125rem 0;
       overflow: hidden;
       width: 3.375rem;
       height: 2.1875rem;
-      background-color: #589df7;
+      //background-color: #589df7;
       text-align: center;
       /deep/ .el-icon-arrow-left{
         font-size: 2rem;
         color: #ffffff;
         line-height: 2.1875rem;
       }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .tap-game{
+      .img-tap-game{
+        left: 0;
+        z-index: 110;
+        top: 20%;
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        opacity: .1;
+        overflow: hidden;
+        animation-name: breath;
+        animation-duration: 1200ms;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: breath;
+        -webkit-animation-duration: 1200ms;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+      }
+    }
+    @keyframes breath {
+      0%  {opacity: .1;}
+      50% {opacity: 1;}
+      100% {opacity: .1;}
     }
   }
   .app-promote {
@@ -573,17 +555,48 @@ export default {
       position: absolute;
       left: 0;
       top: 0.633803rem;
-      box-shadow: 0 0.0714rem 0 0.0357rem rgb(52 126 223);
+      //box-shadow: 0 0.0714rem 0 0.0357rem rgb(52 126 223);
       border-radius: 0 0.6429rem 0.6429rem 0;
       overflow: hidden;
       width: 1.9286rem;
       height: 1.25rem;
-      background-color: #589df7;
+      //background-color: #589df7;
       /deep/ .el-icon-arrow-left{
         font-size: 1rem;
         color: #ffffff;
         line-height: 1rem;
       }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .tap-game{
+      .img-tap-game{
+        left: 2.171831rem;
+        z-index: 110;
+        top: 2.333803rem;
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        opacity: .1;
+        overflow: hidden;
+        animation-name: breath;
+        animation-duration: 1200ms;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: breath;
+        -webkit-animation-duration: 1200ms;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+      }
+    }
+    @keyframes breath {
+      0%  {opacity: .1;}
+      50% {opacity: 1;}
+      100% {opacity: .1;}
     }
   }
   .app-promote {

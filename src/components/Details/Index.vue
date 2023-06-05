@@ -1,100 +1,105 @@
 <template>
-  <div class="details" v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at yiygames.com'">
-    <div class="main-center">
-      <div class="main-game">
-        <div class="game-part">
-          <div class="game-container" :style="full">
-            <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
-<!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
-            <div class="close" :style="closeStyle" @click="closeClick"><i class="el-icon-close" /></div>
-            <div class="flex-games" v-show="isBlock" :style="leftHideStyle">
-              <div class="btns">
-                <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>
-                <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>
-                <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>
-              </div>
-              <div class="game-warp">
-                <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">
-                  <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at yiygames.com'">
+    <Navigation></Navigation>
+    <div class="details">
+      <div class="main-center">
+        <div class="main-game">
+          <div class="game-part">
+            <div class="game-container" :style="full">
+              <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
+              <!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
+              <div class="close" :style="closeStyle" @click="closeClick"><i class="el-icon-close" /></div>
+              <div class="flex-games" v-show="isBlock" :style="leftHideStyle">
+                <div class="btns">
+                  <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>
+                  <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>
+                  <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>
+                </div>
+                <div class="game-warp">
+                  <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">
+                    <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="game-bar">
+              <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.Name }}</span></div>
+              <!--            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.gameName }}</span></div>-->
+              <div class="bar-btns">
+                <!--              <div class="download" v-if="$store.state.deferredPromptType" @click="addToDesktop"><span>Add to Desktop</span></div>-->
+                <!--              <div class="play-tag" @click="getGameType1(gameInfo.gameType)"><span>Play {{ gameInfo.gameType }} Games</span></div>-->
+                <!--              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>-->
+              </div>
+            </div>
           </div>
-          <div class="game-bar">
-            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.Name }}</span></div>
-<!--            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.gameName }}</span></div>-->
-            <div class="bar-btns">
-<!--              <div class="download" v-if="$store.state.deferredPromptType" @click="addToDesktop"><span>Add to Desktop</span></div>-->
-<!--              <div class="play-tag" @click="getGameType1(gameInfo.gameType)"><span>Play {{ gameInfo.gameType }} Games</span></div>-->
-<!--              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>-->
+          <div class="game-rec">
+            <div class="app-item" v-for="(item,index) in four" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+          </div>
+        </div>
+        <div class="main-waterfall">
+          <div class="recommend-banner">
+            <div class="app-item" v-for="(item,index) in five" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+          </div>
+          <div class="game-list" v-if="six.length">
+            <div class="app-item" v-for="(item,index) in six" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+            <div class="more-btn">
+              <div v-if="intercept.length" @click="loadMoreGames">Load More Games</div>
             </div>
           </div>
         </div>
-        <div class="game-rec">
-          <div class="app-item" v-for="(item,index) in four" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
-        </div>
+        <!--      <Bottom />-->
       </div>
-      <div class="main-waterfall">
-        <div class="recommend-banner">
-          <div class="app-item" v-for="(item,index) in five" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
+      <div class="main-float">
+        <div class="float-ads">
+          <div class="ads-top">
+            <div class="ads-title"></div>
+            <div class="ads-container"></div>
+          </div>
+          <div class="ads-bottom" id="adsBottom">
+            <div class="ads-title"></div>
+            <div class="ads-container"></div>
+          </div>
         </div>
-        <div class="game-list" v-if="six.length">
-          <div class="app-item" v-for="(item,index) in six" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
-          <div class="more-btn">
-            <div v-if="intercept.length" @click="loadMoreGames">Load More Games</div>
+        <div class="float-games">
+          <div class="games-container">
+            <!--          <div class="title">{{ gameTypeList[0] }}</div>-->
+            <div class="game-warp">
+              <div class="game-list">
+                <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="games-container">
+            <!--          <div class="title">{{ gameTypeList[1] }}</div>-->
+            <div class="game-warp">
+              <div class="game-list">
+                <div class="app-item" v-for="(item,index) in two" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="games-container" id="girlsGames">
+            <!--          <div class="title">{{ gameTypeList[2] }}</div>-->
+            <div class="game-warp">
+              <div class="game-list">
+                <div class="app-item" v-for="(item,index) in three" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-<!--      <Bottom />-->
     </div>
-    <div class="main-float">
-      <div class="float-ads">
-        <div class="ads-top">
-          <div class="ads-title"></div>
-          <div class="ads-container"></div>
-        </div>
-        <div class="ads-bottom" id="adsBottom">
-          <div class="ads-title"></div>
-          <div class="ads-container"></div>
-        </div>
-      </div>
-      <div class="float-games">
-        <div class="games-container">
-<!--          <div class="title">{{ gameTypeList[0] }}</div>-->
-          <div class="game-warp">
-            <div class="game-list">
-              <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="games-container">
-<!--          <div class="title">{{ gameTypeList[1] }}</div>-->
-          <div class="game-warp">
-            <div class="game-list">
-              <div class="app-item" v-for="(item,index) in two" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="games-container" id="girlsGames">
-<!--          <div class="title">{{ gameTypeList[2] }}</div>-->
-          <div class="game-warp">
-            <div class="game-list">
-              <div class="app-item" v-for="(item,index) in three" :key="index" @click="switchGame(item.gameId)"><img v-lazy="item.iconUrl" alt=""></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <BottomNav></BottomNav>
   </div>
 </template>
 
 <script>
-// import Bottom from '@/components/HomeIndex/Bottom';
-import {getGameList, determinePcOrMove, shuffle, getGameType, setMeta, getJson} from '@/utils/utils.js'
+import Navigation from '../Navigation';
+import BottomNav from '../BottomNav';
+import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js'
 export default {
   name: "detailsIndex",
   components: {
-    // Bottom
+    Navigation, BottomNav
   },
   data() {
     return {
@@ -169,7 +174,6 @@ export default {
       }
     }
     this.getJson()
-    // this.getGameType1()
 
   },
   methods: {
@@ -225,100 +229,6 @@ export default {
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.gameType} Games`)
       this.manifestIcon(gameInfo)
     },
-    // 获取游戏类型
-    getGameType1(gameType) {
-      getGameType().then((res)=>{
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        const { game_type } = dataObj || {}
-        if (code == 1) {
-          let oldArr = []
-          game_type && game_type.map((item)=>{
-            oldArr.push(item)
-          })
-          let arr = oldArr && oldArr.splice(0,3) || []
-          if (gameType) {
-            game_type && game_type.map((item)=>{
-              if (item.name == gameType) {
-                this.$router.push({
-                  path: '/P/gameType',
-                  query: {
-                    gameType: item.code
-                  }
-                },()=>{})
-              }
-            })
-            return
-          }
-          arr.map((item)=>{
-            this.gameTypeList.push(item.name)
-          })
-          this.getList(arr)
-        } else {
-          this.$message.error('获取游戏类别失败')
-        }
-      }).catch((err)=>{
-        console.log(err);
-      })
-    },
-    getList(arr) {
-      const { query } = this.$route
-      const { gameId } = query || {}
-      getGameList().then((res)=>{
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        if (code == 1) {
-          // 随机打乱数组
-          let shuffleArr = shuffle(dataObj)
-          let one = []
-          let two = []
-          let three = []
-          shuffleArr && shuffleArr.map((item)=>{
-            if (item.gameType == arr[0].name) {
-              one.push(item)
-            }
-            if (item.gameType == arr[1].name) {
-              two.push(item)
-            }
-            if (item.gameType == arr[2].name) {
-              three.push(item)
-            }
-          })
-          // 截取五个放右边
-          let newArr = []
-          let gameInfo = {}
-          let theSame = [] // 同类型游戏
-          shuffleArr && shuffleArr.map((item)=>{
-            if (item.gameId == gameId) {
-              gameInfo = item
-            }
-            newArr.push(item)
-          })
-          shuffleArr && shuffleArr.map((item)=>{
-            if (item.gameType == gameInfo.gameType) {
-              theSame.push(item)
-            }
-          })
-          this.theSame = theSame
-          this.gameInfo = gameInfo
-          this.one = one
-          this.two = two
-          this.three = three
-          this.four = newArr.splice(0,5)
-          this.five = newArr.splice(0,8)
-          this.six = newArr.splice(0,30)
-          this.intercept = newArr
-          this.gameList = shuffleArr
-
-          setMeta(`${gameInfo.gameName},${gameInfo.gameName} Online,${gameInfo.gameName} for free`,`${gameInfo.gameName} is a ${gameInfo.gameType} Games`)
-          this.manifestIcon(gameInfo)
-        } else {
-          this.$message.error('数据加载失败')
-        }
-      }).catch((err)=>{
-        console.log(err);
-      })
-    },
     // 动态加载PWA图标
     manifestIcon(gameInfo) {
       let myDynamicManifest = {
@@ -360,11 +270,12 @@ export default {
       this.intercept = intercept
     },
     // 切换游戏
-    switchGame (gameId) {
+    switchGame (item) {
+      recentGame(item)
       this.$router.push({
         path: '/P/details',
         query: {
-          gameId
+          gameId: item.gameId
         }
       },()=>{})
     },
@@ -429,7 +340,6 @@ export default {
     '$route'(val) {
       console.log(val,'数据更新了');
       this.getJson()
-      // this.getGameType1()
     }
   }
 }

@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <div v-if="determinePcOrMove == 2">
-      <Navigation v-if="navHide"></Navigation>
-      <router-view></router-view>
-<!--      <BottomNav v-if="navHide"></BottomNav>-->
-    </div>
-    <div v-else>
-      <router-view></router-view>
-    </div>
+<!--    <div v-if="determinePcOrMove == 2">-->
+<!--      <Navigation v-if="navHide"></Navigation>-->
+<!--      <router-view></router-view>-->
+<!--&lt;!&ndash;      <BottomNav v-if="navHide"></BottomNav>&ndash;&gt;-->
+<!--    </div>-->
+<!--    <div v-else>-->
+<!--      <router-view></router-view>-->
+<!--    </div>-->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import { determinePcOrMove } from '@/utils/utils.js'
 export default {
   name: 'App',
   components: {
-    Navigation
+    // Navigation
   },
   data() {
     return {
