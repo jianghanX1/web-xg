@@ -10,7 +10,8 @@
 <script>
 import Content from '@/components/HomeIndex/Content';
 import Bottom from '@/components/HomeIndex/Bottom';
-import { determinePcOrMove } from '@/utils/utils.js'
+import
+{ determinePcOrMove } from '@/utils/utils.js'
 export default {
   name: "gameIndex",
   components: {

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { getGameList, getJson } from '@/utils/utils.js'
+import { getGameList, getJson, recentGame } from '@/utils/utils.js'
 export default {
   name: "contentIndex",
   data() {
@@ -19,47 +19,15 @@ export default {
   },
   mounted() {
     this.getJson()
-    // this.getList()
   },
   methods: {
     getJson() {
       let arr = getJson()
       this.gameList = arr
     },
-    getList() {
-      const { query } = this.$route
-      const { gameType, searchValue } = query || {}
-      getGameList(gameType).then((res)=>{
-        console.log(res);
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        if (code == 1) {
-          if (searchValue) {
-            let arr = []
-            let newArr = []
-            dataObj && dataObj.map((item)=>{
-              if (item.gameName.includes(`${searchValue}`)) {
-                arr.push(item)
-              }
-              newArr.push(item)
-            })
-            if (arr.length) {
-              this.gameList = arr || []
-            } else {
-              this.gameList = newArr.splice(0,30)
-            }
-          } else {
-            this.gameList = dataObj
-          }
-        } else {
-          this.$message.error('数据加载失败')
-        }
-      }).catch((err)=>{
-        console.log(err);
-      })
-    },
     // 点击跳转详情
     iconClick(item) {
+      recentGame(item)
       this.$router.push({
         path: '/P/details',
         query: {
@@ -72,7 +40,6 @@ export default {
     '$route'(val) {
       console.log(val,'数据更新了');
       this.getJson()
-      // this.getList()
     }
   }
 }
