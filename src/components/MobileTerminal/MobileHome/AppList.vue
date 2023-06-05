@@ -38,7 +38,7 @@
                  data-full-width-responsive="true"></ins>
           </div>
         </div>
-        <div class="content-top">
+        <div class="content-top" style="margin-top: 0.5625rem">
           <div class="item" @click="detailsClick(item[6])" v-if="item[6] && item[6].iconUrl"><a :href="'/#/M/details?gameId='+item[6].gameId"><img v-lazy="item[6] && item[6].iconUrl" alt=""></a></div>
           <div class="item" @click="detailsClick(item[7])" v-if="item[7] && item[7].iconUrl"><a :href="'/#/M/details?gameId='+item[7].gameId"><img v-lazy="item[7] && item[7].iconUrl" alt=""></a></div>
           <div class="item" @click="detailsClick(item[8])" v-if="item[8] && item[8].iconUrl"><a :href="'/#/M/details?gameId='+item[8].gameId"><img v-lazy="item[8] && item[8].iconUrl" alt=""></a></div>

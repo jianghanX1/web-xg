@@ -122,6 +122,7 @@ export default {
     },
     // 点击跳转详情
     iconClick(item) {
+      recentGame(item)
       this.$router.push({
         path: '/P/details',
         query: {
