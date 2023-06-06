@@ -28,7 +28,7 @@
               <div class="bar-btns">
                 <!--              <div class="download" v-if="$store.state.deferredPromptType" @click="addToDesktop"><span>Add to Desktop</span></div>-->
                 <!--              <div class="play-tag" @click="getGameType1(gameInfo.gameType)"><span>Play {{ gameInfo.gameType }} Games</span></div>-->
-                <!--              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>-->
+                              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>
               </div>
             </div>
           </div>
@@ -211,11 +211,9 @@ export default {
         newArr.push(item)
       })
       shuffleArr && shuffleArr.map((item)=>{
-        if (item.gameType == gameInfo.gameType) {
-          theSame.push(item)
-        }
+        theSame.push(item)
       })
-      this.theSame = theSame
+      this.theSame = shuffle(theSame).splice(0,30)
       this.gameInfo = gameInfo
       this.one = one
       this.two = two

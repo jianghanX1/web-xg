@@ -163,15 +163,16 @@ export default {
       this.gameTypeList.map((item)=>{
         arr.push(item)
       })
-      this.gameShuffleList = arr.splice(0,5)
-      this.tapGameList = arr.splice(0,1)
+      let shuffle30 = shuffle(arr).splice(0,30) || []
+      this.gameShuffleList = shuffle30.splice(0,5)
+      this.tapGameList = shuffle30.splice(0,1)
       clearInterval(this.timer)
       this.timer = setInterval(()=>{
         let newArr = []
         this.gameTypeList.map((item)=>{
           newArr.push(item)
         })
-        let shuffleArr = shuffle(newArr) || []
+        let shuffleArr = shuffle(newArr).splice(0,30) || []
         this.gameShuffleList = shuffleArr.splice(0,5)
       },10000)
       clearInterval(this.timer2)
@@ -180,7 +181,7 @@ export default {
         this.gameTypeList.map((item)=>{
           newArr.push(item)
         })
-        let shuffleArr = shuffle(newArr) || []
+        let shuffleArr = shuffle(newArr).splice(0,30) || []
         this.tapGameList = shuffleArr.splice(0,1)
       },6000)
     },
