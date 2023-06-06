@@ -229,6 +229,7 @@ export default {
       font-size: .8125rem;
       color: #333;
       text-align: center;
+      margin: 0 -0.625rem;
     }
   }
 }

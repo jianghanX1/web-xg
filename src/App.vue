@@ -8,6 +8,7 @@
 <!--    <div v-else>-->
 <!--      <router-view></router-view>-->
 <!--    </div>-->
+    <div :style="svgBg"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -15,6 +16,7 @@
 <script>
 // import Navigation from './components/Navigation';
 import { determinePcOrMove } from '@/utils/utils.js'
+import svgBg from '@/assets/bg-diamante.svg'
 export default {
   name: 'App',
   components: {
@@ -23,7 +25,16 @@ export default {
   data() {
     return {
       determinePcOrMove: determinePcOrMove(),
-      navHide: true
+      navHide: true,
+      svgBg: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        left: 0,
+        height: '100%',
+        backgroundImage: `url(${svgBg})`,
+        zIndex: -1
+      }
     }
   },
   mounted() {
