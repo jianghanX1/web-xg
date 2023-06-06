@@ -28,12 +28,7 @@
 <!--        </div>-->
       </div>
       <div class="adv">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9846530703102193"
-             data-ad-slot="4218684011"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+
       </div>
       <div class="details-recommend-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
         <p class="recommend-title">Recommendations for similar games</p>
@@ -68,7 +63,7 @@ import topping from '@/assets/topping.png';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import {shuffle, determinePcOrMove, setMeta, getJson, recentGame} from "@/utils/utils";
-import { show_newAfg_preroll } from '../../../../ah5sdk';
+import { show_newAfg_preroll } from '../../../../webh5sdk';
 export default {
   name: "mobileDetailsIndex",
   components: {
@@ -105,9 +100,9 @@ export default {
     }
   },
   mounted() {
-    setTimeout(()=>{
-      window.addAds()
-    },800)
+    // setTimeout(()=>{
+    //   window.addAds()
+    // },800)
     document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
     this.getJson()
   },

@@ -20,12 +20,7 @@
       </div>
       <div :style="advBg">
         <div class="adv">
-          <ins class="adsbygoogle"
-               style="display:block;min-height: 300px"
-               data-ad-client="ca-pub-9846530703102193"
-               data-ad-slot="4612687250"
-               data-ad-format="true"
-               data-full-width-responsive="true"></ins>
+
         </div>
       </div>
       <div class="desc"><img :src="wz" alt=""></div>
