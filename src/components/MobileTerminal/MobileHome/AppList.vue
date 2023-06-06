@@ -32,8 +32,8 @@
           <div>
             <ins class="adsbygoogle"
                  style="display:block"
-                 data-ad-client="ca-pub-9846530703102193"
-                 data-ad-slot="3863460797"
+                 data-ad-client="ca-pub-7094404527545661"
+                 data-ad-slot="2507416014"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
           </div>

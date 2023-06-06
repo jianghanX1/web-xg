@@ -16,9 +16,9 @@
         <div class="adv">
           <ins class="adsbygoogle"
                style="display:block;min-height: 300px"
-               data-ad-client="ca-pub-9846530703102193"
-               data-ad-slot="4612687250"
-               data-ad-format="true"
+               data-ad-client="ca-pub-7094404527545661"
+               data-ad-slot="2124272639"
+               data-ad-format="auto"
                data-full-width-responsive="true"></ins>
         </div>
       </div>

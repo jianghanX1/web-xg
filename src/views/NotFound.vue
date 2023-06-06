@@ -31,10 +31,10 @@
         </div>
         <div class="adv">
           <ins class="adsbygoogle"
-               style="display:block;min-height: 300px"
-               data-ad-client="ca-pub-9846530703102193"
-               data-ad-slot="9481870551"
-               data-ad-format="true"
+               style="display:block"
+               data-ad-client="ca-pub-7094404527545661"
+               data-ad-slot="2798241813"
+               data-ad-format="auto"
                data-full-width-responsive="true"></ins>
         </div>
         <div class="popular-games">
