@@ -203,6 +203,7 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
+      document.getElementById('mobile-details').scrollTop = 0
       this.getJson()
     }
   }

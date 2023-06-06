@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import { getGameType } from "@/utils/utils";
 export default {
   name: 'navigationIndex',
   data () {
@@ -35,7 +34,7 @@ export default {
     }
   },
   mounted() {
-    this.getGameType1()
+
   },
   methods: {
     // 搜索
@@ -54,21 +53,6 @@ export default {
     },
     mouseleave() {
       this.positionMenu = false
-    },
-    // 获取游戏类型
-    getGameType1() {
-      getGameType().then((res)=>{
-        const { data } = res || {}
-        const { code, data:dataObj } = data || {}
-        const { game_type } = dataObj || {}
-        if (code == 1) {
-          this.gameTypeList = game_type
-        } else {
-          this.$message.error('获取游戏类别失败')
-        }
-      }).catch((err)=>{
-        console.log(err);
-      })
     },
     vigooGamesClick() {
       this.searchInput = null
