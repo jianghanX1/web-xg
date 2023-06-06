@@ -18,7 +18,7 @@
                style="display:block;min-height: 300px"
                data-ad-client="ca-pub-7094404527545661"
                data-ad-slot="2124272639"
-               data-ad-format="auto"
+               data-ad-format="true"
                data-full-width-responsive="true"></ins>
         </div>
       </div>
