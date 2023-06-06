@@ -227,7 +227,7 @@ export default {
       this.gameList = shuffleArr
 
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.gameType} Games`)
-      this.manifestIcon(gameInfo)
+      // this.manifestIcon(gameInfo)
     },
     // 动态加载PWA图标
     manifestIcon(gameInfo) {
