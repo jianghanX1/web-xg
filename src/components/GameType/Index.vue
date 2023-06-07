@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'YIYGAMES'
+    document.title = 'WEBH5GAME'
   }
 }
 </script>

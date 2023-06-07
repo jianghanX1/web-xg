@@ -1,12 +1,14 @@
 <template>
   <div>
     <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null">
-      <div><a :href="'/#/M/homeIndex'">YIYGAMES</a></div>
+      <div><a :href="'/#/M/homeIndex'">WEBH5GAME</a></div>
     </div>
     <slot></slot>
     <div class="end" v-if="bottomHide == false ? false : true">
-      <a @click="privacyClick">Privacy</a>
-      <a @click="contactClick">Contact us</a>
+      <div class="content">
+        <a @click="privacyClick">Privacy</a>
+        <a @click="contactClick">Contact us</a>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +61,7 @@ export default {
   top: 0;
   left: 0;
   box-shadow: 0 0.125rem 0.1875rem 0 rgba(0,16,63,.4);
-  background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
+  background: linear-gradient(to bottom, #3cf7dc 0%, #15c8d1 100%);
   z-index: 5;
   div{
     font-size: 1.125rem;
@@ -74,33 +76,39 @@ export default {
   }
 }
 .end{
-  margin-top: 1rem;
-  height: 1.75rem;
-  background-color: #103455;
-  text-align: center;
-  color: #fff;
-  font-size: .5625rem;
-  line-height: 1.75rem;
-  overflow: hidden;
+  position: relative;
+  margin: 64px 0px 0px;
+  background: rgb(255, 255, 255);
   a {
     text-decoration: none;
+    cursor: pointer;
+  }
+  .content{
+    flex-flow: row nowrap;
+    padding: 16px 32px;
+    margin: 16px auto 0px;
+    text-align: center;
+    color: #5d6b84;
+    a:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 }
-.end>a:not(:last-child) {
-  margin-right: 1rem;
+@media (min-width: 771px) {
+  .end::before{
+    height: 26px;
+    clip-path: polygon(0% 100%, 30% 0%, 36% 100%, 100% 0%, 100% 100%);
+  }
 }
-.end>a {
-  color: #fff;
-  position: relative;
-}
-.end>a:not(:last-child):before {
+.end::before{
   content: "";
-  height: 0.8125rem;
-  width: 0.0625rem;
-  background-color: #fff;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -0.65rem;
+  right: 0px;
+  bottom: 100%;
+  margin-bottom: -1px;
+  left: 0px;
+  height: 16px;
+  background: rgb(255, 255, 255);
+  clip-path: polygon(0% 100%, 50% 0%, 60% 100%, 100% 0%, 100% 100%);
 }
 </style>

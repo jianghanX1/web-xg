@@ -1,7 +1,9 @@
 <template>
   <div class="end">
-    <a @click="privacyClick">Privacy</a>
-    <a @click="contactClick">Contact us</a>
+    <div class="content">
+      <a @click="privacyClick">Privacy</a>
+      <a @click="contactClick">Contact us</a>
+    </div>
   </div>
 </template>
 
@@ -33,38 +35,39 @@ export default {
 
 <style lang="less" scoped>
 .end{
-  //position: fixed;
-  //bottom: 0;
-  //left: 0;
-  //right: 0;
-  margin-top: 1rem;
-  height: 1.75rem;
-  background-color: #103455;
-  text-align: center;
-  color: #fff;
-  font-size: .5625rem;
-  line-height: 1.75rem;
-  overflow: hidden;
+  position: relative;
+  margin: 64px 0px 0px;
+  background: rgb(255, 255, 255);
   a {
     text-decoration: none;
+    cursor: pointer;
+  }
+  .content{
+    flex-flow: row nowrap;
+    padding: 16px 32px;
+    margin: 16px auto 0px;
+    text-align: center;
+    color: #5d6b84;
+    a:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 }
-.end>a:not(:last-child) {
-  margin-right: 1rem;
+@media (min-width: 771px) {
+  .end::before{
+    height: 26px;
+    clip-path: polygon(0% 100%, 30% 0%, 36% 100%, 100% 0%, 100% 100%);
+  }
 }
-.end>a {
-  color: #fff;
-  position: relative;
-  cursor: pointer;
-}
-.end>a:not(:last-child):before {
+.end::before{
   content: "";
-  height: 0.8125rem;
-  width: 0.0625rem;
-  background-color: #fff;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -0.65rem;
+  right: 0px;
+  bottom: 100%;
+  margin-bottom: -1px;
+  left: 0px;
+  height: 16px;
+  background: rgb(255, 255, 255);
+  clip-path: polygon(0% 100%, 50% 0%, 60% 100%, 100% 0%, 100% 100%);
 }
 </style>

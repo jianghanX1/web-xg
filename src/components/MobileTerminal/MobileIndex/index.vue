@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="YIYGAMES" id="homeId">
+  <div v-title data-title="WEBH5GAME" id="homeId">
     <StartAndEnd>
       <div class="top-text">
         <h1>Play Free Online Games On Mobile & Tablet</h1>
@@ -8,9 +8,17 @@
         <TopBox :topGameList="topGameList"></TopBox>
         <AppList :appGameList="appGameList"></AppList>
         <div class="bottom-text">
-          Hi! Welcome to yiygames.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
-          <br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark yiygames.com and share it to your friends. Have fun!
+          <p>关于webh5game</p>
+          <h1>免费在线游戏</h1>
+          <div class="jXgCKW">
+            webh5game是个性化的免费在线游戏探索平台。我们每天都会为您精心挑选最新颖的游戏，保证您玩得尽兴！在这里，您不会感到无聊，因为我们将根据您喜好的游戏为您推荐适合您的兴趣的游戏。如果您是运动爱好者，智能化的运算法则将确保您永远不会错过最新的运动系列游戏；如果您热爱赛车，您将第一时间看到最精彩的赛车游戏。我们的游戏在支持各种设备，这样您随时随地都可以玩！打造最好的网页游戏是我们的使命！
+            <br>
+            <br>
+            在webh5game游戏网站，您可以免费玩高达2万个游戏！我们为您提供在所有设备上都可以玩的最好的免费游戏。每一天您都可以在Poki找到在您的电脑，智能手机和平板电脑上可以玩的最新游戏。使用您的键盘，鼠标或者触屏来控制游戏中的角色，甚至惊险刺激的赛车！感受游戏过程中肾上腺素上升的快感。用您的大脑来解决谜题，用您的时尚直觉来打扮人偶和女孩！我们将精彩的游戏呈现给所有人。这其中有些游戏是由Poki自主开发。
+            <br>
+            <br>
+            webh5game游戏只为您提供所有的好玩免费游戏，最有人气的游戏系列，比如烹饪游戏，足球游戏和打扮游戏，以及根据您最喜爱的电影，电视节目改编的游戏，比如Adventure Time游戏，Inside Out游戏和Descendants游戏。在我们的广泛的游戏集锦中，你还可以找到一些经典的游戏，比如Mahjong, Bubble Shooter和Bejeweled，还有一些新游戏比如Agario,，Uphill Rush 7和 Grindcraft。您可以玩3D游戏，超级好玩的街机游戏以及所有的人气解谜游戏！不管您有什么样的游戏品味，我们都能满足您的胃口。webh5game是适合全家人一起玩的游戏网站。
+          </div>
         </div>
       </div>
     </StartAndEnd>
@@ -240,16 +248,26 @@ export default {
   }
 }
 .bottom-text{
-  clear: both;
-  padding: 5px 10px 10px 10px;
-  color: #fff;
-  width: 100%;
-  min-width: 240px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  font-size: 14px;
-  line-height: 20px;
+  position: relative;
+  margin: 30px;
+  padding: 18px 24px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+  p{
+    font-weight: bold;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 3px 0px 0px;
+  }
+  h1{
+    font-size: 20px;
+    margin: 0px 0px 8px;
+    color: #002b50;
+  }
+  .jXgCKW{
+    color: #002b50;
+  }
 }
 #homeId{
   height: 100vh;

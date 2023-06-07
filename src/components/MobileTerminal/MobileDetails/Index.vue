@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at yiygames.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at webh5game.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
       <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">
-      <i class="el-icon-top"></i>
+      <img :src="topping" alt="">
     </div>
   </div>
 </template>
@@ -203,6 +203,7 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
+      document.getElementById('mobile-details').scrollTop = 0
       this.getJson()
     }
   }
@@ -308,7 +309,7 @@ export default {
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #267AB0;
+        background: linear-gradient(to bottom, #3cf7dc 0%, #15c8d1 100%);
         max-width: 100%;
         transition: width .5s linear;
         z-index: 1;
@@ -445,12 +446,16 @@ export default {
   right: 0.625rem;
   box-shadow: 0.125rem 0 0.3125rem rgb(0 0 0/30%);
   border-radius: 50%;
-  background: #ffffff;
+  //background: #ffffff;
   z-index: 3;
   text-align: center;
   /deep/.el-icon-top{
     font-size: 1.5rem;
     line-height: 2.5rem;
+  }
+  img{
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (orientation: portrait){

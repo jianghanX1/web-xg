@@ -2,7 +2,7 @@
     <div>
       <div class="bj" @click="vigooGamesClick">
         <div class="bj_left">
-          <div class="title">YIYGAMES</div>
+          <div class="title">WEBH5GAME</div>
 <!--          <div class="nav-list">-->
 <!--            <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>-->
 <!--          </div>-->
@@ -88,7 +88,7 @@ export default {
   .bj{
     cursor: pointer;
     height: 56px;
-    background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
+    background: linear-gradient(to bottom, #3cf7dc 0%, #15c8d1 100%);
     color: #ffffff;
     display: flex;
     justify-content: space-between;

@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at yiygames.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at webh5game.com'">
     <Navigation></Navigation>
     <div class="details">
       <div class="main-center">
@@ -225,7 +225,7 @@ export default {
       this.gameList = shuffleArr
 
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.gameType} Games`)
-      this.manifestIcon(gameInfo)
+      // this.manifestIcon(gameInfo)
     },
     // 动态加载PWA图标
     manifestIcon(gameInfo) {
@@ -700,7 +700,7 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background: linear-gradient(to bottom, #48a0c9 0%, #29638b 100%);
+          background: linear-gradient(to bottom, #3cf7dc 0%, #15c8d1 100%);
           border-radius: 8px;
           height: 56px;
           width: 500px;
@@ -770,10 +770,10 @@ export default {
           background-color: #f83123;
         }
         .game-warp {
-          padding: 2px 0 6px;
-          background-color: rgba(0,0,0,.3);
+          //padding: 2px 0 6px;
+          //background-color: rgba(0,0,0,.3);
           .game-list {
-            padding: 6px 7px 0;
+            //padding: 6px 7px 0;
             height: 390px;
             overflow: hidden;
             .app-item {
