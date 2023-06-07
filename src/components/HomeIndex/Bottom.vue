@@ -4,7 +4,7 @@
       <div class="title">YIYGAME</div>
       <div class="small-title">Play online games on yiygames</div>
       <div class="text">
-        yiygames.COM is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all higooplay GAMES are free ! Everyone can play the lasted games and the best games for free!
+        yiygames.COM is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all yiygames GAMES are free ! Everyone can play the lasted games and the best games for free!
       </div>
       <div class="small-title">Game selection</div>
       <div class="text">

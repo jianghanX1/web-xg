@@ -57,10 +57,6 @@ Vue.directive('title', {
       setTimeout(()=>{
         document.title = el.dataset.title
       })
-    } else {
-      setTimeout(()=>{
-        document.title = 'AH5 GAMES'
-      })
     }
   }
 })
