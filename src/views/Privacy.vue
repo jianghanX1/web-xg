@@ -16,12 +16,12 @@
       <b>1. THE PERSONAL INFORMATION THAT HIGOOPLAY COLLECTS AND RECEIVES</b>
       <br/>
       <br/>
-      We may collect Personal Information (including but not limited to your name, email number and other contact information) for providing services and contact you. AS described in this Privacy Policy, through HIGOOPLAY Services, we may collects Personal Information for providing the Services and for other specific purposes. higooplay GAMES may change or update tools to collect information from time to time and may amend this privacy policy if the policy will be impacted by a new tool. When interacting with the Property, ah5game GAMES may collect/receive the following information, which includes Personal Information.<br/>
+      We may collect Personal Information (including but not limited to your name, email number and other contact information) for providing services and contact you. AS described in this Privacy Policy, through HIGOOPLAY Services, we may collects Personal Information for providing the Services and for other specific purposes. higooplay GAMES may change or update tools to collect information from time to time and may amend this privacy policy if the policy will be impacted by a new tool. When interacting with the Property, higooplay GAMES may collect/receive the following information, which includes Personal Information.<br/>
       <br/>
       <b>2. WHAT DOES HIGOOPLAY DO WITH PERSONAL INFORMATION?</b>
       <br/>
       <br/>
-      We may provide, improve ourself and for other lawful purposes. HIGOOPLAY uses the Personal Information that it collects and receives to provide the Services; to provide support. higooplay GAMES uses Personal Information to enforce its terms, policies and legal agreements, to abide by court orders and warrants, to collect debts, and assist law enforcement agencies, prevent fraud, misappropriation, infringements, identity thefts and any other misuse of the Services, and to take any action in any legal dispute and proceeding. ah5game GAMES dedicates to process Personal Information only for the purposes specified in this policy.<br/>
+      We may provide, improve ourself and for other lawful purposes. HIGOOPLAY uses the Personal Information that it collects and receives to provide the Services; to provide support. higooplay GAMES uses Personal Information to enforce its terms, policies and legal agreements, to abide by court orders and warrants, to collect debts, and assist law enforcement agencies, prevent fraud, misappropriation, infringements, identity thefts and any other misuse of the Services, and to take any action in any legal dispute and proceeding. higooplay GAMES dedicates to process Personal Information only for the purposes specified in this policy.<br/>
       <br/>
       <b>3. INFORMATION SHARING</b>
       <br/>
