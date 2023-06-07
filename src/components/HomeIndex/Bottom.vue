@@ -1,10 +1,10 @@
 <template>
   <div class="bottom-box">
     <div class="bj">
-      <div class="title">YIYGAME</div>
+      <div class="title">WEBH5GAME</div>
       <div class="small-title">Play online games on webh5game</div>
       <div class="text">
-        webh5game.COM is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all higooplay GAMES are free ! Everyone can play the lasted games and the best games for free!
+        webh5game.COM is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all webh5game GAMES are free ! Everyone can play the lasted games and the best games for free!
       </div>
       <div class="small-title">Game selection</div>
       <div class="text">
