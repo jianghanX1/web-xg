@@ -7,16 +7,70 @@
       <div class="sc-13nflho-1 jMBaZr">
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
-            <li>
-              <a href="" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 zmrOQ global-cq"></a>
+            <li v-for="(item,index) in bigImg" :key="index">
+              <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + index}">
+                <img :src="item.iconUrl" alt="" width="314px" height="314px">
+<!--                <picture v-if="index == 1">-->
+<!--                  <source :srcset="item.iconUrl" media="(min-width: 991px)" width="314px" height="314px">-->
+<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
+<!--                </picture>-->
+<!--                <picture v-if="index == 2">-->
+<!--                  <source :srcset="item.iconUrl" media="(min-width: 1541px)" width="314px" height="314px">-->
+<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
+<!--                </picture>-->
+<!--                <picture v-if="index == 3">-->
+<!--                  <source :srcset="item.iconUrl" media="(min-width: 1871px)" width="314px" height="314px">-->
+<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
+<!--                </picture>-->
+<!--                <img v-if="index == 4 || index == 6 || index == 7 || index == 9" :src="item.iconUrl" alt="" width="204px" height="204px">-->
+<!--                <picture v-if="index == 5 || index == 8">-->
+<!--                  <source :srcset="item.iconUrl" media="(min-width: 991px)" width="204px" height="204px">-->
+<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="314px" height="314px" class="sc-18mcksl-1 eoBBYj">-->
+<!--                </picture>-->
+              </a>
             </li>
           </ul>
         </div>
-      </div>
-    </div>
-    <div class="item" @click="iconClick(item)" v-for="(item,index) in gameList" :key="index">
-      <div class="item_position">
-        <img v-lazy="item.iconUrl" alt="">
+        <div style="display: contents">
+          <a v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
+            <img :src="item.iconUrl" alt="" width="204px" height="204px">
+<!--            <picture v-if="index == 0">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 991px) and (max-width: 1320.9px)" width="314px" height="314px">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1321px)" width="204px" height="204px">-->
+<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
+<!--            </picture>-->
+<!--            <picture v-if="index == 1">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1211px) and (max-width: 1540.9px), (min-width: 1871px)" width="204px" height="204px">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1541px) and (max-width: 1870.9px)" width="314px" height="314px">-->
+<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="314px" height="314px" class="sc-18mcksl-1 eoBBYj">-->
+<!--            </picture>-->
+<!--            <picture v-if="index == 2">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1211px)" width="204px" height="204px">-->
+<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="314px" height="314px" class="sc-18mcksl-1 eoBBYj">-->
+<!--            </picture>-->
+<!--            <picture v-if="index == 3">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1211px) and (max-width: 1320.9px)" width="314px" height="314px">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1321px)" width="204px" height="204px">-->
+<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
+<!--            </picture>-->
+<!--            <img v-if="index == 4" :src="item.iconUrl" alt="" width="204px" height="204px">-->
+<!--            <picture v-if="index == 5">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1541px) and (max-width: 1870.9px)" width="314px" height="314px">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1871px)" width="204px" height="204px">-->
+<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
+<!--            </picture>-->
+<!--            <picture v-if="index == 6">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 111px) and (max-width: 1320.9px), (min-width: 1541px)" width="204px" height="204px">-->
+<!--              <source :srcset="item.iconUrl" media="(min-width: 1321px) and (max-width: 1540.9px)" width="94px" height="94px">-->
+<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="94px" height="94px" class="sc-18mcksl-1 eoBBYj">-->
+<!--            </picture>-->
+          </a>
+        </div>
+        <div style="display: contents">
+          <a v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
+            <img v-lazy="item.iconUrl" alt="" width="94px" height="94px">
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -28,7 +82,9 @@ export default {
   name: "contentIndex",
   data() {
     return {
-      gameList: [], // 游戏列表
+      bigImg: [], // 大图片
+      centreImg: [], // 中图片
+      smallImg: [], // 小图片
     }
   },
   mounted() {
@@ -37,7 +93,9 @@ export default {
   methods: {
     getJson() {
       let arr = getJson()
-      this.gameList = arr
+      this.bigImg = arr.splice(0,3)
+      this.centreImg = arr.splice(0,12)
+      this.smallImg = arr
     },
     // 点击跳转详情
     iconClick(item) {
@@ -67,20 +125,21 @@ export default {
     .jMBaZr {
       --gridTemplateColumns: 17;
       grid-template-areas:
-        ". . ip0 ip0 ip0 . . . . . . . . ip7 ip7 ip8 ip8"
-        ". . ip0 ip0 ip0 ip4 ip4 ip5 ip5 ip2 ip2 ip2 . ip7 ip7 ip8 ip8"
-        ". . ip0 ip0 ip0 ip4 ip4 ip5 ip5 ip2 ip2 ip2 ip6 ip6 ip3 ip3 ip3"
-        "ip9 ip9 ip10 ip10 ip11 ip11 ip1 ip1 ip1 ip2 ip2 ip2 ip6 ip6 ip3 ip3 ip3"
-        "ip9 ip9 ip10 ip10 ip11 ip11 ip1 ip1 ip1 ip12 ip12 ip13 ip13 . ip3 ip3 ip3"
-        ". ip14 ip14 ip15 ip15 . ip1 ip1 ip1 ip12 ip12 ip13 ip13 ip16 ip16 ip17 ip17"
-        ". ip14 ip14 ip15 ip15 . ip18 ip18 ip19 ip19 ip20 ip20 . ip16 ip16 ip17 ip17"
-        ". . . . . . ip18 ip18 ip19 ip19 ip20 ip20 . . . . ."
-        ". . . . . . . . . . . . . . . . ."
-        "ip22 ip22 . . . . . . . . ip21 ip21 ip21 . . . ."
-        "ip22 ip22 . . . . ip24 ip24 . . ip21 ip21 ip21 . . . ."
-        ". . ip23 ip23 . . ip24 ip24 . . ip21 ip21 ip21 . . . ."
-        ". . ip23 ip23 . . . . . . . . . . . ip25 ip25"
-        ". . . . . . . . . . . . . . . ip25 ip25";
+        ". . ip0 ip0 ip0 . . . . . . . . ip5 ip5 ip6 ip6"
+        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip1 ip1 ip1 . ip5 ip5 ip6 ip6"
+        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip1 ip1 ip1 ip7 ip7 . ip8 ip8"
+        "ip9 ip9 ip2 ip2 ip2 ip12 ip12 . . ip1 ip1 ip1 ip7 ip7 . ip8 ip8"
+        "ip9 ip9 ip2 ip2 ip2 ip12 ip12 . ip14 ip14 ip10 ip10 . . . . ."
+        "ip11 ip11 ip2 ip2 ip2 ip13 ip13 . ip14 ip14 ip10 ip10 . . . . ."
+        "ip11 ip11 . . . ip13 ip13 . . . . . . . . . ."
+
+        //". . ip0 ip0 ip0 . . . . . . . . ip7 ip7 ip8 ip8"
+        //". . ip0 ip0 ip0 ip4 ip4 ip5 ip5 ip2 ip2 ip2 . ip7 ip7 ip8 ip8"
+        //". . ip0 ip0 ip0 ip4 ip4 ip5 ip5 ip2 ip2 ip2 ip6 ip6 ip3 ip3 ip3"
+        //"ip9 ip9 ip10 ip10 ip11 ip11 ip1 ip1 ip1 ip2 ip2 ip2 ip6 ip6 ip3 ip3 ip3"
+        //"ip9 ip9 ip10 ip10 ip11 ip11 ip1 ip1 ip1 ip12 ip12 ip13 ip13 . ip3 ip3 ip3"
+        //". ip14 ip14 ip15 ip15 . ip1 ip1 ip1 ip12 ip12 ip13 ip13 ip16 ip16 ip17 ip17"
+        //". ip14 ip14 ip15 ip15 . ip18 ip18 ip19 ip19 ip20 ip20 . ip16 ip16 ip17 ip17"
     }
   }
 }
@@ -235,6 +294,8 @@ export default {
   }
 }
   .big-box {
+    display: flex;
+    flex-direction: column;
     .dDVcIC {
       display: flex;
       align-items: center;
@@ -261,7 +322,7 @@ export default {
         margin: 16px auto 0px;
         padding: 0px;
         list-style-type: none;
-        --gridTemplateColumns: 3;
+        //--gridTemplateColumns: 3;
         grid-template-columns: repeat(var(--gridTemplateColumns),94px);
         .brZJOk {
           display: contents;
@@ -278,6 +339,14 @@ export default {
         content: "";
         display: block;
       }
+    }
+    .eoBBYj {
+      display: block;
+      --minSize: 94px;
+      min-width: var(--minSize);
+      min-height: var(--minSize);
+      border-radius: inherit;
+      aspect-ratio: 1 / 1;
     }
     .global-cq {
       container-type: inline-size;
