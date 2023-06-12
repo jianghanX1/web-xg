@@ -1,11 +1,11 @@
 <template>
   <div v-title data-title="WEBH5GAME" id="homeId">
     <StartAndEnd>
-      <div class="top-text">
-        <h1>Play Free Online Games On Mobile & Tablet</h1>
-      </div>
+<!--      <div class="top-text">-->
+<!--        <h1>Play Free Online Games On Mobile & Tablet</h1>-->
+<!--      </div>-->
       <div>
-        <TopBox :topGameList="topGameList"></TopBox>
+<!--        <TopBox :topGameList="topGameList"></TopBox>-->
         <AppList :appGameList="appGameList"></AppList>
         <div class="bottom-text">
           <p>关于webh5game</p>
@@ -153,7 +153,11 @@ export default {
       let newArr = [] // 新数组
       let num = Math.ceil(arr.length / 11)
       for ( let i = 1; i <= num; i++ ) {
-        newArr[i - 1] = arr.splice(0,11)
+        if (i == 1) {
+          newArr[i - 1] = arr.splice(0,10)
+        } else {
+          newArr[i - 1] = arr.splice(0,11)
+        }
       }
       console.log(newArr);
       this.appGameList = newArr
@@ -196,7 +200,7 @@ export default {
           console.log(this.logoutCount);
           if (this.logoutCount >= 10) {
             recentGame(newArr[0])
-            window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
+            // window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
           }
         },1000)
       }

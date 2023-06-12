@@ -1,6 +1,5 @@
 <template>
   <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at webh5game.com'">
-    <Navigation></Navigation>
     <div class="details">
       <div class="main-center">
         <div class="main-game">
@@ -65,6 +64,9 @@
             <!--          <div class="title">{{ gameTypeList[0] }}</div>-->
             <div class="game-warp">
               <div class="game-list">
+                <div class="logo" @click="goHome"></div>
+                <div class="app-item"></div>
+                <div class="app-item logo2"></div>
                 <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
               </div>
             </div>
@@ -93,13 +95,12 @@
 </template>
 
 <script>
-import Navigation from '../Navigation';
 import BottomNav from '../BottomNav';
 import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js'
 export default {
   name: "detailsIndex",
   components: {
-    Navigation, BottomNav
+    BottomNav
   },
   data() {
     return {
@@ -183,6 +184,12 @@ export default {
       this.$store.state.deferredPrompt && this.$store.state.deferredPrompt.prompt();
       this.$store.commit("changePWA",{deferredPrompt: null,deferredPromptType: this.$store.state.deferredPromptType})
     },
+    // 去首页
+    goHome() {
+      this.$router.push({
+        path: '/'
+      },()=>{})
+    },
     getJson() {
       console.log(1111111111);
       const { query } = this.$route
@@ -197,7 +204,7 @@ export default {
       shuffleArr && shuffleArr.map((item)=>{
         copyArr.push(item)
       })
-      one = copyArr.splice(0,12)
+      one = copyArr.splice(0,10)
       two = copyArr.splice(0,12)
       three = copyArr.splice(0,12)
       // 截取五个放右边
@@ -345,6 +352,13 @@ export default {
 
 <style lang="less" scoped>
 @media screen and (min-width: 1883px){
+  .logo{
+    --offset: -936px!important;
+    width: 246px!important;
+  }
+  .logo2{
+    display: block!important;
+  }
   .details {
     width: 1875px;
     position: relative;
@@ -360,10 +374,13 @@ export default {
     margin-right: 6px;
   }
   .float-games .games-container .game-list .app-item:nth-child(4n) {
-    margin-right: 0;
+    //margin-right: 0;
   }
 }
 @media screen and (min-width: 1755px) and (max-width: 1882px){
+  .logo{
+    --offset: -872px!important;
+  }
   .details{
     width: 1747px;
     position: relative;
@@ -375,8 +392,14 @@ export default {
   .float-games .games-container {
     width: 392px;
   }
+  .float-games .games-container .game-list .app-item{
+    margin-right: 6px;
+  }
 }
 @media screen and (min-width: 1627px) and (max-width: 1754px){
+  .logo{
+    --offset: -808px!important;
+  }
   .details{
     width: 1619px;
     position: relative;
@@ -388,8 +411,14 @@ export default {
   .float-games .games-container {
     width: 264px;
   }
+  .float-games .games-container .game-list .app-item{
+    margin-right: 6px;
+  }
 }
 @media screen and (min-width: 1499px) and (max-width: 1626px){
+  .logo{
+    --offset: -743px!important;
+  }
   .details{
     width: 1491px;
     position: relative;
@@ -404,18 +433,27 @@ export default {
 }
 @media screen and (max-width: 1498px){
   .float-games {
-    display: none;
+    width: 136px;
+  }
+  .main-center{
+    margin-left: 136px;
   }
 }
 @media screen and (min-width: 1363px) and (max-width: 1498px){
+  .logo{
+    --offset: -586px!important;
+  }
   .details{
-    width: 1355px;
+    width: 1175px;
     position: relative;
   }
 }
 @media screen and (min-width: 1263px) and (max-width: 1362px){
+  .logo{
+    --offset: -535px!important;
+  }
   .details{
-    width: 1255px;
+    width: 1075px;
     position: relative;
     .main-center {
       width: 955px;
@@ -466,16 +504,23 @@ export default {
     margin-right: 8px;
   }
 }
-@media screen and (min-width: 1263px){
+@media screen and (min-width: 1500px){
   .float-ads {
     display: block!important;
   }
 }
 @media screen and (max-width: 1262px){
+  .logo{
+    --offset: -535px!important;
+  }
+  .details {
+    width: 1075px;
+    position: relative;
+  }
   .main-center {
+    margin-left: 136px;
     width: 955px;
     padding: 0 18px 0 5px;
-    margin: 0 auto;
     box-sizing: border-box;
   }
   .recommend-banner .app-item:nth-of-type(1){
@@ -487,6 +532,12 @@ export default {
   }
   .main-waterfall .game-list .app-item:nth-child(7n) {
     margin-right: 0;
+  }
+}
+@media screen and (max-width: 1100px){
+  .logo{
+    --offset: 3px!important;
+    left: 0!important;
   }
 }
 .details{
@@ -774,6 +825,21 @@ export default {
           //background-color: rgba(0,0,0,.3);
           .game-list {
             //padding: 6px 7px 0;
+            .logo{
+              cursor: pointer;
+              width: 120px;
+              height: 120px;
+              background: white;
+              border-radius: 12px;
+              position: fixed;
+              top: 12px;
+              left: 50%;
+              transform: translate(var(--offset),0);
+              z-index: 3;
+            }
+            .logo2{
+              display: none;
+            }
             height: 390px;
             overflow: hidden;
             .app-item {
@@ -809,12 +875,12 @@ export default {
       background: white;
     }
   }
-  @keyframes example {
-    0%  {transform: scale(1);}
-    35%  {transform: scale(1.05);}
-    65% {transform: scale(1.03);}
-    100% {transform: scale(1.08);}
-  }
+  //@keyframes example {
+  //  0%  {transform: scale(1);}
+  //  35%  {transform: scale(1.05);}
+  //  65% {transform: scale(1.03);}
+  //  100% {transform: scale(1.08);}
+  //}
   .app-item:hover{
     cursor: pointer;
     animation-name: example;

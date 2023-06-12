@@ -2,34 +2,48 @@
   <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at webh5game.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
-      <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
-        <div class="app-base">
-          <div class="app-pic"><img :src="iconUrl" alt=""></div>
-          <div class="app-info">
-            <div class="app-name">{{ gameName }}</div>
-<!--            <div class="app-btns">-->
-<!--              <div class="app-collection">-->
+<!--      <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">-->
+<!--        <div class="app-base">-->
+<!--          <div class="app-pic"><img :src="iconUrl" alt=""></div>-->
+<!--          <div class="app-info">-->
+<!--            <div class="app-name">{{ gameName }}</div>-->
+<!--&lt;!&ndash;            <div class="app-btns">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="app-collection">&ndash;&gt;-->
 
-<!--              </div>-->
-<!--            </div>-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <button class="app-play" @click="playClick">-->
+<!--          <div class="play-fill"></div>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div class="details-seo-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">-->
+<!--        <div class="desc-item">-->
+<!--          <div class="desc-title">{{ gameName }}</div>-->
+<!--          <div class="desc-text">{{ description }}</div>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <div class="seo-tags">&ndash;&gt;-->
+<!--&lt;!&ndash;          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.code)">{{ item.name }}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="adv">-->
+
+<!--      </div>-->
+        <div class="info-top">
+          <a :href="'/#/M/homeIndex'"><div class="logo"></div></a>
+          <div class="occupy"></div>
+          <div class="game-name">
+            <h1>{{ gameName }}</h1>
           </div>
         </div>
-        <button class="app-play" @click="playClick">
-          <div class="play-fill"></div>
-        </button>
-      </div>
-      <div class="details-seo-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
-        <div class="desc-item">
-          <div class="desc-title">{{ gameName }}</div>
-          <div class="desc-text">{{ description }}</div>
+        <div class="game-play">
+          <div class="game-img-box" @click="playClick">
+            <div class="svg"><img :src="play" alt=""></div>
+            <h2>开始游戏</h2>
+            <img class="img" :src="iconUrl" alt="">
+          </div>
         </div>
-<!--        <div class="seo-tags">-->
-<!--          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.code)">{{ item.name }}</a>-->
-<!--        </div>-->
-      </div>
-      <div class="adv">
-
-      </div>
       <div class="details-recommend-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
         <p class="recommend-title">Recommendations for similar games</p>
         <div class="recommend-list">
@@ -60,6 +74,7 @@
 <script>
 import goBack from '@/assets/goBack.png';
 import topping from '@/assets/topping.png';
+import play from '@/assets/play.png';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import {shuffle, determinePcOrMove, setMeta, getJson, recentGame} from "@/utils/utils";
@@ -84,7 +99,8 @@ export default {
       isTop: false,
       timer: null, // 定时器
       goBack,
-      topping
+      topping,
+      play
     }
   },
   created() {
@@ -220,6 +236,97 @@ export default {
   overflow: auto;
   z-index: 3;
   //background-color: #0054ff;
+  .info-top{
+    display: flex;
+    padding: 0 0.625rem;
+    margin-top: 0.5625rem;
+    .logo{
+      position: fixed;
+      z-index: 10;
+      top: 0.5625rem;
+      background: rgb(255, 255, 255);
+      box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
+      border-radius: 16px;
+      width: 5.875rem;
+      height: 5.875rem;
+      flex-direction: column;
+      --left: 50%;
+      left: var(--left);
+      transform: translate(var(--offset),0);
+      --offset: -9.3333rem;
+    }
+    .occupy{
+      width: 5.875rem;
+      height: 5.875rem;
+      margin-right: 0.561rem;
+    }
+    .game-name{
+      width: 12.311rem;
+      height: 5.875rem;
+      background: white;
+      border-radius: 16px;
+      padding: 10px 16px;
+      box-sizing: border-box;
+      h1{
+        font: 700 1em/1em Torus, sans-serif;
+        color: #002b50;
+      }
+    }
+  }
+  .game-play{
+    height: 314px;
+    margin-top: 0.5625rem;
+    padding: 0 0.625rem;
+    .game-img-box{
+      height: 100%;
+      width: 314px;
+      margin: 0 auto;
+      border-radius: 16px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+      position: relative;
+      .svg{
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        border-radius: 100px;
+        background-color: rgb(255, 255, 255);
+        height: 64px;
+        width: 64px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+        transform: translate(-50%, -50%);
+        animation: 4s ease-in-out 0s infinite normal both running scaleDelay;
+        box-sizing: border-box;
+        text-align: center;
+        img{
+          width: 17px;
+          height: 24px;
+        }
+      }
+      h2{
+        color: rgb(255, 255, 255);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: 40px;
+        z-index: 2;
+        text-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
+        transform: translateX(-50%);
+      }
+      .img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.5);
+        object-fit: contain;
+      }
+    }
+  }
   .nav-bar{
     height: 2.8125rem;
     position: fixed;

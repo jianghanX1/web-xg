@@ -1,7 +1,50 @@
 <template>
   <div>
     <div class="app-list" v-for="(item,index) in appGameList" :key="index">
-      <div class="app-list-content">
+      <div v-if="index == 0" class="app-list-content">
+        <div class="content-top">
+          <a :href="'/#/M/homeIndex'"><div class="logo"></div></a>
+          <div class="item" style="border: 0"></div>
+          <div class="item" @click="detailsClick(item[0])" v-if="item[0] && item[0].iconUrl"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div>
+          <div class="item" @click="detailsClick(item[1])" v-if="item[1] && item[1].iconUrl"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div>
+        </div>
+        <div class="content-middle" v-if="(index + 1) % 2 !== 0">
+          <div class="middle-left" v-if="item[2] && item[2].iconUrl">
+            <div class="item" @click="detailsClick(item[2])"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div>
+          </div>
+          <div class="middle-right">
+            <div class="item-box" v-if="item[3] && item[3].iconUrl"><div class="item" @click="detailsClick(item[3])"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div></div>
+            <div class="item-box" v-if="item[4] && item[4].iconUrl"><div class="item" @click="detailsClick(item[4])"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div></div>
+          </div>
+          <div></div>
+        </div>
+        <div class="content-middle" v-if="(index + 1) % 2 === 0">
+          <div class="middle-right">
+            <div class="item-box" v-if="item[2] && item[2].iconUrl"><div class="item" @click="detailsClick(item[2])"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div></div>
+            <div class="item-box" v-if="item[3] && item[3].iconUrl"><div class="item" @click="detailsClick(item[3])"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div></div>
+          </div>
+          <div class="middle-left2" v-if="item[4] && item[4].iconUrl">
+            <div class="item" @click="detailsClick(item[4])"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div>
+          </div>
+          <div></div>
+        </div>
+        <!--        <div class="adv" v-if="index === 0">-->
+        <!--          <h6 class="adv-title">Advertisement</h6>-->
+        <!--          <div>-->
+
+        <!--          </div>-->
+        <!--        </div>-->
+        <div class="content-top" style="margin-top: 0.5625rem">
+          <div class="item" @click="detailsClick(item[5])" v-if="item[5] && item[5].iconUrl"><a :href="'/#/M/details?gameId='+item[5].gameId"><img v-lazy="item[5] && item[5].iconUrl" alt=""></a></div>
+          <div class="item" @click="detailsClick(item[6])" v-if="item[6] && item[6].iconUrl"><a :href="'/#/M/details?gameId='+item[6].gameId"><img v-lazy="item[6] && item[6].iconUrl" alt=""></a></div>
+          <div class="item" @click="detailsClick(item[7])" v-if="item[7] && item[7].iconUrl"><a :href="'/#/M/details?gameId='+item[7].gameId"><img v-lazy="item[7] && item[7].iconUrl" alt=""></a></div>
+        </div>
+        <div class="content-bottom">
+          <div class="item-box" v-if="item[8] && item[8].iconUrl"><div class="item" @click="detailsClick(item[8])"><a :href="'/#/M/details?gameId='+item[8].gameId"><img v-lazy="item[8] && item[8].iconUrl" alt=""></a></div></div>
+          <div class="item-box" v-if="item[9] && item[9].iconUrl"><div class="item" @click="detailsClick(item[9])"><a :href="'/#/M/details?gameId='+item[9].gameId"><img v-lazy="item[9] && item[9].iconUrl" alt=""></a></div></div>
+        </div>
+      </div>
+      <div v-else class="app-list-content">
         <div class="content-top">
           <div class="item" @click="detailsClick(item[0])" v-if="item[0] && item[0].iconUrl"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div>
           <div class="item" @click="detailsClick(item[1])" v-if="item[1] && item[1].iconUrl"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div>
@@ -27,12 +70,12 @@
           </div>
           <div></div>
         </div>
-        <div class="adv" v-if="index === 0">
-          <h6 class="adv-title">Advertisement</h6>
-          <div>
+<!--        <div class="adv" v-if="index === 0">-->
+<!--          <h6 class="adv-title">Advertisement</h6>-->
+<!--          <div>-->
 
-          </div>
-        </div>
+<!--          </div>-->
+<!--        </div>-->
         <div class="content-top" style="margin-top: 0.5625rem">
           <div class="item" @click="detailsClick(item[6])" v-if="item[6] && item[6].iconUrl"><a :href="'/#/M/details?gameId='+item[6].gameId"><img v-lazy="item[6] && item[6].iconUrl" alt=""></a></div>
           <div class="item" @click="detailsClick(item[7])" v-if="item[7] && item[7].iconUrl"><a :href="'/#/M/details?gameId='+item[7].gameId"><img v-lazy="item[7] && item[7].iconUrl" alt=""></a></div>
@@ -85,6 +128,21 @@ export default {
   .app-list-content{
     padding: 0 0.625rem;
     .content-top{
+      .logo{
+        position: fixed;
+        z-index: 10;
+        top: 0.5625rem;
+        background: rgb(255, 255, 255);
+        box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
+        border-radius: 16px;
+        width: 5.875rem;
+        height: 5.875rem;
+        flex-direction: column;
+        --left: 50%;
+        left: var(--left);
+        transform: translate(var(--offset),0);
+        --offset: -9.3333rem;
+      }
       width: 100%;
       box-sizing: border-box;
       .item{

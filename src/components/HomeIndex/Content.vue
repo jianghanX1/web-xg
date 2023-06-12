@@ -1,6 +1,6 @@
 <template>
   <div class="big-box">
-    <div style="display: contents">
+    <div style="display: contents" @click="goHome">
       <nav class="sc-15orno7-0 dDVcIC">WEBH5GAME</nav>
     </div>
     <div class="sc-10l37ae-0 irIQZt">
@@ -8,67 +8,20 @@
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
             <li v-for="(item,index) in bigImg" :key="index">
-              <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + index}">
-                <img :src="item.iconUrl" alt="" width="314px" height="314px">
-<!--                <picture v-if="index == 1">-->
-<!--                  <source :srcset="item.iconUrl" media="(min-width: 991px)" width="314px" height="314px">-->
-<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
-<!--                </picture>-->
-<!--                <picture v-if="index == 2">-->
-<!--                  <source :srcset="item.iconUrl" media="(min-width: 1541px)" width="314px" height="314px">-->
-<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
-<!--                </picture>-->
-<!--                <picture v-if="index == 3">-->
-<!--                  <source :srcset="item.iconUrl" media="(min-width: 1871px)" width="314px" height="314px">-->
-<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
-<!--                </picture>-->
-<!--                <img v-if="index == 4 || index == 6 || index == 7 || index == 9" :src="item.iconUrl" alt="" width="204px" height="204px">-->
-<!--                <picture v-if="index == 5 || index == 8">-->
-<!--                  <source :srcset="item.iconUrl" media="(min-width: 991px)" width="204px" height="204px">-->
-<!--                  <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="314px" height="314px" class="sc-18mcksl-1 eoBBYj">-->
-<!--                </picture>-->
+              <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
+                <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
               </a>
             </li>
           </ul>
         </div>
         <div style="display: contents">
           <a v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
-            <img :src="item.iconUrl" alt="" width="204px" height="204px">
-<!--            <picture v-if="index == 0">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 991px) and (max-width: 1320.9px)" width="314px" height="314px">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1321px)" width="204px" height="204px">-->
-<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
-<!--            </picture>-->
-<!--            <picture v-if="index == 1">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1211px) and (max-width: 1540.9px), (min-width: 1871px)" width="204px" height="204px">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1541px) and (max-width: 1870.9px)" width="314px" height="314px">-->
-<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="314px" height="314px" class="sc-18mcksl-1 eoBBYj">-->
-<!--            </picture>-->
-<!--            <picture v-if="index == 2">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1211px)" width="204px" height="204px">-->
-<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="314px" height="314px" class="sc-18mcksl-1 eoBBYj">-->
-<!--            </picture>-->
-<!--            <picture v-if="index == 3">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1211px) and (max-width: 1320.9px)" width="314px" height="314px">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1321px)" width="204px" height="204px">-->
-<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
-<!--            </picture>-->
-<!--            <img v-if="index == 4" :src="item.iconUrl" alt="" width="204px" height="204px">-->
-<!--            <picture v-if="index == 5">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1541px) and (max-width: 1870.9px)" width="314px" height="314px">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1871px)" width="204px" height="204px">-->
-<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="204px" height="204px" class="sc-18mcksl-1 eoBBYj">-->
-<!--            </picture>-->
-<!--            <picture v-if="index == 6">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 111px) and (max-width: 1320.9px), (min-width: 1541px)" width="204px" height="204px">-->
-<!--              <source :srcset="item.iconUrl" media="(min-width: 1321px) and (max-width: 1540.9px)" width="94px" height="94px">-->
-<!--              <img :src="item.iconUrl" alt="" :srcset="item.iconUrl" loading="eager" decoding="async" width="94px" height="94px" class="sc-18mcksl-1 eoBBYj">-->
-<!--            </picture>-->
+            <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
           </a>
         </div>
         <div style="display: contents">
           <a v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
-            <img v-lazy="item.iconUrl" alt="" width="94px" height="94px">
+            <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
           </a>
         </div>
       </div>
@@ -91,6 +44,11 @@ export default {
     this.getJson()
   },
   methods: {
+    goHome() {
+      this.$router.push({
+        path: '/'
+      },()=>{})
+    },
     getJson() {
       let arr = getJson()
       this.bigImg = arr.splice(0,3)
@@ -120,183 +78,164 @@ export default {
 
 <style lang="less" scoped>
 @media (min-width: 1871px) {
+  .dDVcIC {
+    --offset: -927px!important;
+    width: 204px!important;
+    flex-direction: row!important;
+  }
   .irIQZt {
     width: 1854px;
     .jMBaZr {
       --gridTemplateColumns: 17;
       grid-template-areas:
-        ". . ip0 ip0 ip0 . . . . . . . . ip5 ip5 ip6 ip6"
-        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip1 ip1 ip1 . ip5 ip5 ip6 ip6"
-        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip1 ip1 ip1 ip7 ip7 . ip8 ip8"
-        "ip9 ip9 ip2 ip2 ip2 ip12 ip12 . . ip1 ip1 ip1 ip7 ip7 . ip8 ip8"
-        "ip9 ip9 ip2 ip2 ip2 ip12 ip12 . ip14 ip14 ip10 ip10 . . . . ."
-        "ip11 ip11 ip2 ip2 ip2 ip13 ip13 . ip14 ip14 ip10 ip10 . . . . ."
-        "ip11 ip11 . . . ip13 ip13 . . . . . . . . . ."
-
-        //". . ip0 ip0 ip0 . . . . . . . . ip7 ip7 ip8 ip8"
-        //". . ip0 ip0 ip0 ip4 ip4 ip5 ip5 ip2 ip2 ip2 . ip7 ip7 ip8 ip8"
-        //". . ip0 ip0 ip0 ip4 ip4 ip5 ip5 ip2 ip2 ip2 ip6 ip6 ip3 ip3 ip3"
-        //"ip9 ip9 ip10 ip10 ip11 ip11 ip1 ip1 ip1 ip2 ip2 ip2 ip6 ip6 ip3 ip3 ip3"
-        //"ip9 ip9 ip10 ip10 ip11 ip11 ip1 ip1 ip1 ip12 ip12 ip13 ip13 . ip3 ip3 ip3"
-        //". ip14 ip14 ip15 ip15 . ip1 ip1 ip1 ip12 ip12 ip13 ip13 ip16 ip16 ip17 ip17"
-        //". ip14 ip14 ip15 ip15 . ip18 ip18 ip19 ip19 ip20 ip20 . ip16 ip16 ip17 ip17"
+        ". . bigIp0 bigIp0 bigIp0 . . . . . . . . ip5 ip5 ip6 ip6"
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4 bigIp1 bigIp1 bigIp1 . ip5 ip5 ip6 ip6"
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4 bigIp1 bigIp1 bigIp1 ip7 ip7 . ip8 ip8"
+        "ip9 ip9 bigIp2 bigIp2 bigIp2 ip12 ip12 . . bigIp1 bigIp1 bigIp1 ip7 ip7 . ip8 ip8"
+        "ip9 ip9 bigIp2 bigIp2 bigIp2 ip12 ip12 . ip14 ip14 ip10 ip10 . . . . ."
+        "ip11 ip11 bigIp2 bigIp2 bigIp2 ip13 ip13 . ip14 ip14 ip10 ip10 . . . . ."
+        "ip11 ip11 . . . ip13 ip13 . . . . . . . . . .";
+    }
+    .jMBaZr::before {
+      grid-column-start: span 2;
     }
   }
 }
 @media (min-width: 1541px) and (max-width: 1870.9px) {
+  .dDVcIC {
+    --offset: -771px!important;
+  }
   .irIQZt {
     width: 1524px;
     .jMBaZr {
       --gridTemplateColumns: 14;
       grid-template-areas:
-        ". . ip0 ip0 ip0 ip4 ip4 . . . . . ip5 ip5"
-        ". . ip0 ip0 ip0 ip4 ip4 . ip2 ip2 ip2 . ip5 ip5"
-        "ip3 ip3 ip0 ip0 ip0 . . . ip2 ip2 ip2 . ip6 ip6"
-        "ip3 ip3 . . . ip1 ip1 ip1 ip2 ip2 ip2 . ip6 ip6"
-        "ip7 ip7 . ip8 ip8 ip1 ip1 ip1 ip9 ip9 ip10 ip10 . ."
-        "ip7 ip7 . ip8 ip8 ip1 ip1 ip1 ip9 ip9 ip10 ip10 . ."
-        ". . . . . . . . . . . . . ."
-        ". . . . . . . . ip11 ip11 ip11 . . ."
-        "ip12 ip12 . . . . . . ip11 ip11 ip11 . . ."
-        "ip12 ip12 . . . . . . ip11 ip11 ip11 . . ."
-        ". . ip13 ip13 . . . . . . . . . ."
-        ". . ip13 ip13 . . . . . . . . . ."
-        ". . . . . . ip14 ip14 . . . ip15 ip15 ip15"
-        "ip16 ip16 . . . . ip14 ip14 . . . ip15 ip15 ip15"
-        "ip16 ip16 . . . . . . . . . ip15 ip15 ip15";
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 . . . . . ip4 ip4"
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 . bigIp1 bigIp1 bigIp1 . ip4 ip4"
+        "ip5 ip5 bigIp0 bigIp0 bigIp0 . . . bigIp1 bigIp1 bigIp1 . ip6 ip6"
+        "ip5 ip5 . . . bigIp2 bigIp2 bigIp2 bigIp1 bigIp1 bigIp1 . ip6 ip6"
+        "ip7 ip7 . ip8 ip8 bigIp2 bigIp2 bigIp2 ip9 ip9 ip10 ip10 . ."
+        "ip7 ip7 . ip8 ip8 bigIp2 bigIp2 bigIp2 ip9 ip9 ip10 ip10 . ."
+        ". . . . ip11 ip11 . . . . . . ip13 ip13"
+        "ip14 ip14 . . ip11 ip11 . . ip12 ip12 . . ip13 ip13"
+        "ip14 ip14 . . . . . . ip12 ip12 . . . ."
     }
   }
 }
 @media (min-width: 1321px) and (max-width: 1540.9px) {
+  .dDVcIC {
+    --offset: -661px!important;
+  }
   .irIQZt {
     width: 1304px;
     .jMBaZr {
       --gridTemplateColumns: 12;
       grid-template-areas:
-        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip5 ip5 ."
-        "ip2 ip2 ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip5 ip5 ."
-        "ip2 ip2 ip0 ip0 ip0 ip1 ip1 ip1 . ip6 ip6 ."
-        ". . . . . ip1 ip1 ip1 . ip6 ip6 ."
-        ". ip7 ip7 ip8 ip8 ip1 ip1 ip1 . ip9 ip9 ."
-        ". ip7 ip7 ip8 ip8 . . . . ip9 ip9 ."
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4 ip5 ip5 ."
+        "ip6 ip6 bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4 ip5 ip5 ."
+        "ip6 ip6 bigIp0 bigIp0 bigIp0 bigIp1 bigIp1 bigIp1 . ip7 ip7 ."
+        ". . . . . bigIp1 bigIp1 bigIp1 . ip7 ip7 ."
+        ". ip8 ip8 ip9 ip9 bigIp1 bigIp1 bigIp1 . ip10 ip10 ."
+        ". ip8 ip8 ip9 ip9 bigIp2 bigIp2 bigIp2 . ip10 ip10 ."
+        ". . ip13 ip13 . bigIp2 bigIp2 bigIp2 . . . ."
+        ". . ip13 ip13 . bigIp2 bigIp2 bigIp2 ip11 ip11 . ."
+        "ip12 ip12 . . ip14 ip14 . . ip11 ip11 . ."
+        "ip12 ip12 . . ip14 ip14 . . . . . ."
         ". . . . . . . . . . . ."
-        ". . . . . . . ip10 ip10 . . ."
-        "ip11 ip11 . . . . . ip10 ip10 . . ."
-        "ip11 ip11 ip12 ip12 . . . . . . . ."
-        ". . ip12 ip12 . . . . . . . ."
-        ". . . . . . ip13 ip13 . . . ."
-        ". . . . . . ip13 ip13 . . . ."
-        ". ip14 ip14 . . . . . . . . ."
-        ". ip14 ip14 . . . . . . ip15 ip15 ."
-        ". . . . . . . . . ip15 ip15 .";
     }
   }
 }
 @media (min-width: 1211px) and (max-width: 1320.9px) {
+  .dDVcIC {
+    --offset: -605px!important;
+  }
   .irIQZt {
     width: 1194px;
     .jMBaZr {
       --gridTemplateColumns: 11;
       grid-template-areas:
-        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip5 ip5"
-        "ip2 ip2 ip0 ip0 ip0 ip3 ip3 ip4 ip4 ip5 ip5"
-        "ip2 ip2 ip0 ip0 ip0 ip1 ip1 ip1 . ip6 ip6"
-        ". . . . . ip1 ip1 ip1 . ip6 ip6"
-        ". ip7 ip7 ip8 ip8 ip1 ip1 ip1 . ip9 ip9"
-        ". ip7 ip7 ip8 ip8 . . . . ip9 ip9"
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4 ip5 ip5"
+        "ip6 ip6 bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4 ip5 ip5"
+        "ip6 ip6 bigIp0 bigIp0 bigIp0 bigIp1 bigIp1 bigIp1 . ip7 ip7"
+        ". . . . . bigIp1 bigIp1 bigIp1 . ip7 ip7"
+        ". ip8 ip8 ip9 ip9 bigIp1 bigIp1 bigIp1 . ip10 ip10"
+        ". ip8 ip8 ip9 ip9 bigIp2 bigIp2 bigIp2 . ip10 ip10"
+        ". . ip13 ip13 . bigIp2 bigIp2 bigIp2 . . ."
+        ". . ip13 ip13 . bigIp2 bigIp2 bigIp2 ip11 ip11 ."
+        "ip12 ip12 . . ip14 ip14 . . ip11 ip11 ."
+        "ip12 ip12 . . ip14 ip14 . . . . ."
         ". . . . . . . . . . ."
-        ". . . . . . ip10 ip10 ip10 . ."
-        "ip11 ip11 . . . . ip10 ip10 ip10 . ."
-        "ip11 ip11 ip12 ip12 . . ip10 ip10 ip10 . ."
-        ". . ip12 ip12 . . . . . . ."
         ". . . . . . . . . . ."
-        ". . . ip13 ip13 ip13 . . . . ."
-        ". . . ip13 ip13 ip13 . ip14 ip14 . ."
-        ". . . ip13 ip13 ip13 . ip14 ip14 . ."
-        ". . . . . . . . . . ."
-        ". ip15 ip15 . . . . . . ip16 ip16"
-        ". ip15 ip15 ip17 ip17 . . . . ip16 ip16"
-        ". . . ip17 ip17 . . . . . .";
     }
   }
 }
 @media (min-width: 991px) and (max-width: 1210.9px) {
+  .dDVcIC {
+    --offset: -496px!important;
+  }
   .irIQZt {
     width: 980px;
     .jMBaZr {
       --gridTemplateColumns: 9;
       grid-template-areas:
-        ". . ip0 ip0 ip0 ip3 ip3 ip4 ip4"
-        "ip2 ip2 ip0 ip0 ip0 ip3 ip3 ip4 ip4"
-        "ip2 ip2 ip0 ip0 ip0 ip1 ip1 ip1 ."
-        ". . . ip6 ip6 ip1 ip1 ip1 ."
-        ". ip5 ip5 ip6 ip6 ip1 ip1 ip1 ."
-        ". ip5 ip5 ip8 ip8 . ip9 ip9 ."
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4"
+        "ip5 ip5 bigIp0 bigIp0 bigIp0 ip3 ip3 ip4 ip4"
+        "ip5 ip5 bigIp0 bigIp0 bigIp0 bigIp1 bigIp1 bigIp1 ."
+        ". . . ip6 ip6 bigIp1 bigIp1 bigIp1 ."
+        ". ip7 ip7 ip6 ip6 bigIp1 bigIp1 bigIp1 ."
         ". ip7 ip7 ip8 ip8 . ip9 ip9 ."
-        ". ip7 ip7 . . . . . ."
-        ". . ip10 ip10 ip10 . ip13 ip13 ."
-        ". . ip10 ip10 ip10 . ip13 ip13 ."
-        ". . ip10 ip10 ip10 . . . ."
-        "ip14 ip14 . . . . . . ."
-        "ip14 ip14 . . . . ip11 ip11 ip11"
-        ". . . . . . ip11 ip11 ip11"
-        ". ip15 ip15 . . . ip11 ip11 ip11"
-        ". ip15 ip15 . . . . . ."
-        ". . . . . . . . ."
-        ". . . . ip12 ip12 ip12 . ."
-        ". . . . ip12 ip12 ip12 . ."
-        ". ip16 ip16 . ip12 ip12 ip12 . ."
-        ". ip16 ip16 ip17 ip17 . . . ."
-        ". . . ip17 ip17 . . . ."
-        ". . . . . . . ip18 ip18"
-        ". . . . . . . ip18 ip18";
+        ". ip10 ip10 ip8 ip8 . ip9 ip9 ."
+        ". ip10 ip10 . . . . . ."
+        ". . bigIp2 bigIp2 bigIp2 . ip11 ip11 ."
+        ". . bigIp2 bigIp2 bigIp2 . ip11 ip11 ."
+        ". . bigIp2 bigIp2 bigIp2 . . . ."
+        "ip12 ip12 . . . . . ip13 ip13"
+        "ip12 ip12 ip14 ip14 . . . ip13 ip13"
+        ". . ip14 ip14 . . . . ."
     }
   }
 }
 @media (min-width: 111px) and (max-width: 990.9px) {
+  .dDVcIC {
+    --offset: -386px!important;
+  }
   .irIQZt {
     width: 760px;
     .jMBaZr {
       --gridTemplateColumns: 7;
       grid-template-areas:
-        ". . ip0 ip0 ip0 ip1 ip1"
-        ". . ip0 ip0 ip0 ip1 ip1"
-        "ip2 ip2 ip0 ip0 ip0 . ."
-        "ip2 ip2 . ip3 ip3 . ."
-        ". . . ip3 ip3 ip4 ip4"
-        ". . . . . ip4 ip4"
-        "ip5 ip5 ip5 . . . ."
-        "ip5 ip5 ip5 . ip6 ip6 ."
-        "ip5 ip5 ip5 . ip6 ip6 ."
-        ". . ip7 ip7 . . ."
-        ". . ip7 ip7 . . ."
-        ". . . ip8 ip8 ip8 ."
-        ". . . ip8 ip8 ip8 ."
-        "ip9 ip9 . ip8 ip8 ip8 ."
-        "ip9 ip9 . . . ip10 ip10"
-        ". . . . . ip10 ip10"
-        "ip11 ip11 ip11 . ip13 ip13 ."
-        "ip11 ip11 ip11 . ip13 ip13 ."
-        "ip11 ip11 ip11 . . . ."
-        ". . ip14 ip14 . . ."
-        ". . ip14 ip14 ip12 ip12 ip12"
-        ". . . . ip12 ip12 ip12"
-        ". . . . ip12 ip12 ip12"
-        "ip15 ip15 . . . . ."
-        "ip15 ip15 . . . . ."
-        ". . ip16 ip16 . . ."
-        ". . ip16 ip16 . . ."
-        ". . . ip17 ip17 . ."
-        ". ip18 ip18 ip17 ip17 . ."
-        ". ip18 ip18 . . ip19 ip19"
-        ". . . . . ip19 ip19";
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3"
+        ". . bigIp0 bigIp0 bigIp0 ip3 ip3"
+        "ip4 ip4 bigIp0 bigIp0 bigIp0 . ."
+        "ip4 ip4 . ip5 ip5 . ."
+        ". . . ip5 ip5 ip6 ip6"
+        ". . . . . ip6 ip6"
+        "bigIp1 bigIp1 bigIp1 . . . ."
+        "bigIp1 bigIp1 bigIp1 . ip7 ip7 ."
+        "bigIp1 bigIp1 bigIp1 . ip7 ip7 ."
+        ". . ip8 ip8 . ip9 ip9"
+        ". . ip8 ip8 . ip9 ip9"
+        ". ip10 ip10 bigIp2 bigIp2 bigIp2 ."
+        ". ip10 ip10 bigIp2 bigIp2 bigIp2 ."
+        "ip11 ip11 . bigIp2 bigIp2 bigIp2 ."
+        "ip11 ip11 . . . ip12 ip12"
+        ". ip13 ip13 . . ip12 ip12"
+        ". ip13 ip13 . ip14 ip14 ."
+        ". . . . ip14 ip14 ."
     }
+  }
+}
+@media (max-width: 775px) {
+  .dDVcIC {
+    --offset: 3px !important;
+    left: 0!important;
   }
 }
   .big-box {
     display: flex;
     flex-direction: column;
     .dDVcIC {
+      cursor: pointer;
       display: flex;
       align-items: center;
       position: fixed;
@@ -308,6 +247,10 @@ export default {
       width: 94px;
       height: 94px;
       flex-direction: column;
+      --left: 50%;
+      left: var(--left);
+      --offset: -487px;
+      transform: translate(var(--offset),0);
     }
 
     .irIQZt {

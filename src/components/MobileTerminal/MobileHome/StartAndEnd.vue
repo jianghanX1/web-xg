@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null">
-      <div><a :href="'/#/M/homeIndex'">WEBH5GAME</a></div>
-    </div>
+<!--    <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null">-->
+<!--      <div><a :href="'/#/M/homeIndex'">WEBH5GAME</a></div>-->
+<!--    </div>-->
     <slot></slot>
     <div class="end" v-if="bottomHide == false ? false : true">
       <div class="content">
