@@ -3,7 +3,16 @@
     <div class="app-list" v-for="(item,index) in appGameList" :key="index">
       <div v-if="index == 0" class="app-list-content">
         <div class="content-top">
-          <a :href="'/#/M/homeIndex'"><div class="logo"></div></a>
+          <a :href="'/#/M/homeIndex'">
+            <div class="logo">
+              <div class="sc-11jy73d-3 bfQcDW">
+                <img :src="logo" alt="">
+              </div>
+              <div class="sc-jaa1t8-0 bwKNQa">
+                <img :src="home" alt="">
+              </div>
+            </div>
+          </a>
           <div class="item" style="border: 0"></div>
           <div class="item" @click="detailsClick(item[0])" v-if="item[0] && item[0].iconUrl"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div>
           <div class="item" @click="detailsClick(item[1])" v-if="item[1] && item[1].iconUrl"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div>
@@ -92,12 +101,14 @@
 
 <script>
 import { recentGame } from '@/utils/utils.js';
+import logo from '@/assets/logo.png'
+import home from '@/assets/home.png'
 export default {
   name: "AppList",
   props: ['appGameList'],
   data() {
     return {
-
+      logo,home
     }
   },
   mounted() {
@@ -142,6 +153,33 @@ export default {
         left: var(--left);
         transform: translate(var(--offset),0);
         --offset: -9.3333rem;
+        .bfQcDW{
+          width: 92px;
+          height: 35px;
+          margin: 15px auto 11px;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .bwKNQa {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top: 2px solid #f0f5fc;
+          overflow: hidden;
+          border-top: 0px;
+          border-left: 2px solid #f0f5fc;
+          flex-direction: column;
+          border-top: 2px solid #f0f5fc;
+          width: 100%;
+          height: 40px;
+          border-radius: 0px 0px 16px 16px;
+          img{
+            width: 25px;
+            height: 22px;
+          }
+        }
       }
       width: 100%;
       box-sizing: border-box;

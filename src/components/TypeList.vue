@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-list">
-    <div class="item" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)"><img v-lazy="item.iconUrl" alt=""></div>
+    <div class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cMEgnO" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)"><img v-lazy="item.iconUrl" alt=""></div>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import racing from '@/assets/08racing.jpg';
 import parkour from '@/assets/09parkour.jpg';
 import sand from '@/assets/093d.jpg';
 export default {
-  name: "BottomList",
+  name: "TypeList",
   data() {
     return {
       typeList: [],
@@ -59,11 +59,11 @@ export default {
     this.typeList = game_type || []
   },
   methods: {
-    classClick(gameType) {
+    classClick(type) {
       this.$router.push({
-        path: '/M/gameType',
+        path: '/P/gameType',
         query: {
-          gameType
+          gameType: type
         }
       },()=>{})
     }
@@ -73,32 +73,43 @@ export default {
 
 <style lang="less" scoped>
 .bottom-list{
-  margin-top: 0.875rem;
-  padding: 0 0.625rem;
-  .item{
-    width: 9.0625rem;
-    height: 4.6875rem;
-    border-radius: 0.1875rem;
-    margin-bottom: 0.375rem;
+  overflow: hidden;
+  @media (hover: hover){
+    .cMEgnO:hover {
+      transform: scale(1.01869) translate(0px, -4px)!important;
+    }
+  }
+  @media (min-width: 1321px) and (max-width: 1540.9px) {
+    .cMEgnO:nth-of-type(6){
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 1541px) and (max-width: 1870.9px) {
+    .cMEgnO:nth-of-type(7){
+      margin-right: 0;
+    }
+  }
+  .cMEgnO{
+    width: 204px;
+    height: 95px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
     float: left;
-    overflow: hidden;
-    position: relative;
-    box-sizing: border-box;
-    border: 2px solid #fff;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
     img{
       width: 100%;
       height: 100%;
+      border-radius: 16px;
     }
   }
-  .item:nth-of-type(2n-1){
-    margin-right: 0.624rem;
+  .cASSfo{
+    transition: transform .6s cubic-bezier(.25, .1, .25, 1);
+    border-radius: 16px;
   }
-}
-.bottom-list:after{
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+  .cASSfo:hover {
+    transform: scale(1.04255) translate(0px, -4px);
+    transition-duration: 0.3s;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at webh5game.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at gugoplay.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
 <!--      <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">-->
@@ -31,7 +31,16 @@
 
 <!--      </div>-->
         <div class="info-top">
-          <a :href="'/#/M/homeIndex'"><div class="logo"></div></a>
+          <a :href="'/#/M/homeIndex'">
+            <div class="logo">
+              <div class="sc-11jy73d-3 bfQcDW">
+                <img :src="logo" alt="">
+              </div>
+              <div class="sc-jaa1t8-0 bwKNQa">
+                <img :src="home" alt="">
+              </div>
+            </div>
+          </a>
           <div class="occupy"></div>
           <div class="game-name">
             <h1>{{ gameName }}</h1>
@@ -48,6 +57,25 @@
         <p class="recommend-title">Recommendations for similar games</p>
         <div class="recommend-list">
           <ClassList styleType="1" :gameTypeList="gameTypeList"></ClassList>
+        </div>
+      </div>
+      <div style="padding: 0 0.625rem">
+        <div class="bottom-text">
+          <nav class="sc-1oa7ili-0 gmEuRM">
+            <ul>
+              <li><a href="/">游戏</a></li>
+              <li>{{ gameType }}</li>
+            </ul>
+          </nav>
+          <header class="sc-1v3c8lr-2 kGpygg">
+            <h2 class="sc-1v3c8lr-3 iBLcO">{{ gameName }}</h2>
+          </header>
+          <div class="sc-1v3c8lr-9 jXgCKW">
+            {{ description }}
+          </div>
+          <ul class="sc-g8xdfn-0 jOvOhG sc-1v3c8lr-4 durvAn">
+            <li v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</li>
+          </ul>
         </div>
       </div>
       </StartAndEnd>
@@ -75,6 +103,8 @@
 import goBack from '@/assets/goBack.png';
 import topping from '@/assets/topping.png';
 import play from '@/assets/play.png';
+import logo from '@/assets/logo.png'
+import home from '@/assets/home.png'
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import {shuffle, determinePcOrMove, setMeta, getJson, recentGame} from "@/utils/utils";
@@ -88,6 +118,7 @@ export default {
     return {
       tapGameList: [], // 闪标列表
       gameName: '', // 游戏名称
+      gameType: '', // 游戏类型
       iconUrl: '', // 游戏icon
       description: '', // 游戏简介
       playUrl: '', // 游戏url
@@ -100,7 +131,9 @@ export default {
       timer: null, // 定时器
       goBack,
       topping,
-      play
+      play,
+      logo,
+      home
     }
   },
   created() {
@@ -124,6 +157,22 @@ export default {
   },
   methods: {
     getJson() {
+
+      let game_type = [{},{},{},{},{},{},{},{},{},{}]
+      game_type && game_type.map(()=>{
+        game_type[0].type = "SHOOTING"
+        game_type[1].type = "CAR"
+        game_type[2].type = "BALL"
+        game_type[3].type = "GIRLS"
+        game_type[4].type = "CASUAL"
+        game_type[5].type = "PUZZLE"
+        game_type[6].type = "ACTION"
+        game_type[7].type = "RACING"
+        game_type[8].type = "PARKOUR"
+        game_type[9].type = "3D"
+      })
+      this.typeList = game_type || []
+
       const { query } = this.$route
       const { gameId } = query || {}
       let arr = getJson() || []
@@ -134,8 +183,9 @@ export default {
         }
       })
       this.gameName = gameInfo.Name
+      this.gameType = gameInfo.Type
       this.iconUrl = gameInfo.iconUrl
-      this.description = gameInfo.dis
+      this.description = gameInfo.desc
       this.playUrl = gameInfo.Url
       this.gameTypeList = arr
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a Games`)
@@ -254,6 +304,33 @@ export default {
       left: var(--left);
       transform: translate(var(--offset),0);
       --offset: -9.3333rem;
+      .bfQcDW{
+        width: 92px;
+        height: 35px;
+        margin: 15px auto 11px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .bwKNQa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 2px solid #f0f5fc;
+        overflow: hidden;
+        border-top: 0px;
+        border-left: 2px solid #f0f5fc;
+        flex-direction: column;
+        border-top: 2px solid #f0f5fc;
+        width: 100%;
+        height: 40px;
+        border-radius: 0px 0px 16px 16px;
+        img{
+          width: 25px;
+          height: 22px;
+        }
+      }
     }
     .occupy{
       width: 5.875rem;
@@ -267,6 +344,7 @@ export default {
       border-radius: 16px;
       padding: 10px 16px;
       box-sizing: border-box;
+      word-break: break-all;
       h1{
         font: 700 1em/1em Torus, sans-serif;
         color: #002b50;
@@ -518,6 +596,63 @@ export default {
     }
     .recommend-list{
       margin-top: 0.625rem;
+    }
+  }
+  .bottom-text{
+    position: relative;
+    margin: 24px 0px;
+    padding: 18px 24px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    .gmEuRM ul {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      color: var(--grey-1);
+      list-style: none;
+      text-overflow: ellipsis;
+    }
+    .gmEuRM li {
+      display: inline;
+      color: #5d6b84;
+      a{
+        text-decoration: none;
+        color: #5d6b84;
+      }
+    }
+    .gmEuRM li:nth-of-type(2)::before {
+      content: "›";
+      margin: 0px 4px;
+      color: var(--grey-1);
+      font-size: 13px;
+    }
+    .kGpygg {
+      margin: 8px 0px 8px;
+      h2{
+        margin: 0px;
+        font: 700 24px Torus, sans-serif;
+        color: #002b50;
+      }
+    }
+    .jXgCKW{
+      color: #002b50;
+      font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
+    }
+    .durvAn {
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+    .jOvOhG li {
+      display: inline-block;
+      margin: 4px 4px 0px 0px;
+      padding: 0px 10px;
+      border: 2px solid #bac9de;
+      border-radius: 100px;
+      color: #bac9de;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
     }
   }
 }

@@ -1,7 +1,14 @@
 <template>
   <div class="big-box">
     <div style="display: contents" @click="goHome">
-      <nav class="sc-15orno7-0 dDVcIC">WEBH5GAME</nav>
+      <nav class="sc-15orno7-0 dDVcIC">
+        <div class="sc-11jy73d-3 bfQcDW">
+          <img :src="logo" alt="">
+        </div>
+        <div class="sc-jaa1t8-0 bwKNQa">
+          <img :src="home" alt="">
+        </div>
+      </nav>
     </div>
     <div class="sc-10l37ae-0 irIQZt">
       <div class="sc-13nflho-1 jMBaZr">
@@ -10,6 +17,7 @@
             <li v-for="(item,index) in bigImg" :key="index">
               <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
                 <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
+                <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
               </a>
             </li>
           </ul>
@@ -17,27 +25,40 @@
         <div style="display: contents">
           <a v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
             <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div style="display: contents">
           <a v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
             <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
       </div>
+    </div>
+    <div class="type-list">
+      <TypeList></TypeList>
     </div>
   </div>
 </template>
 
 <script>
+import TypeList from '@/components/TypeList.vue';
 import { getJson, recentGame } from '@/utils/utils.js'
+import logo from '@/assets/logo.png'
+import home from '@/assets/home.png'
 export default {
   name: "contentIndex",
+  components: {
+    TypeList
+  },
   data() {
     return {
       bigImg: [], // 大图片
       centreImg: [], // 中图片
       smallImg: [], // 小图片
+      logo,
+      home
     }
   },
   mounted() {
@@ -79,9 +100,25 @@ export default {
 <style lang="less" scoped>
 @media (min-width: 1871px) {
   .dDVcIC {
-    --offset: -927px!important;
+    --offset: -936px!important;
     width: 204px!important;
     flex-direction: row!important;
+  }
+  .bfQcDW {
+    width: 94px!important;
+    height: 42px!important;
+    margin: -2px auto 0px!important;
+  }
+  .bwKNQa {
+    border-top: 0px!important;
+    border-left: 2px solid #f0f5fc!important;
+    flex-direction: column!important;
+    height: 100%!important;
+    width: 46px!important;
+    border-radius: 0px 16px 16px 0px!important;
+  }
+  .type-list{
+    width: 1854px;
   }
   .irIQZt {
     width: 1854px;
@@ -105,6 +142,9 @@ export default {
   .dDVcIC {
     --offset: -771px!important;
   }
+  .type-list{
+    width: 1524px;
+  }
   .irIQZt {
     width: 1524px;
     .jMBaZr {
@@ -125,6 +165,9 @@ export default {
 @media (min-width: 1321px) and (max-width: 1540.9px) {
   .dDVcIC {
     --offset: -661px!important;
+  }
+  .type-list{
+    width: 1304px;
   }
   .irIQZt {
     width: 1304px;
@@ -149,6 +192,9 @@ export default {
   .dDVcIC {
     --offset: -605px!important;
   }
+  .type-list{
+    width: 1194px;
+  }
   .irIQZt {
     width: 1194px;
     .jMBaZr {
@@ -172,6 +218,9 @@ export default {
 @media (min-width: 991px) and (max-width: 1210.9px) {
   .dDVcIC {
     --offset: -496px!important;
+  }
+  .type-list{
+    width: 980px;
   }
   .irIQZt {
     width: 980px;
@@ -198,6 +247,9 @@ export default {
 @media (min-width: 111px) and (max-width: 990.9px) {
   .dDVcIC {
     --offset: -386px!important;
+  }
+  .type-list{
+    width: 760px;
   }
   .irIQZt {
     width: 760px;
@@ -231,6 +283,15 @@ export default {
     left: 0!important;
   }
 }
+@media (hover: hover) {
+  .cOWZsC:hover {
+    transform: scale(1.01869) translate(0px, -4px)!important;
+  }
+  .cOWZsC:hover .sc-963fcq-0 {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
   .big-box {
     display: flex;
     flex-direction: column;
@@ -251,6 +312,29 @@ export default {
       left: var(--left);
       --offset: -487px;
       transform: translate(var(--offset),0);
+      .bfQcDW{
+        width: 60px;
+        height: 28px;
+        margin: 15px auto 11px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .bwKNQa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 2px solid #f0f5fc;
+        width: 100%;
+        height: 40px;
+        border-radius: 0px 0px 16px 16px;
+        overflow: hidden;
+        img{
+          width: 20px;
+          height: 17px;
+        }
+      }
     }
 
     .irIQZt {
@@ -306,6 +390,10 @@ export default {
       border-radius: 16px;
       position: relative;
     }
+    .cASSfo:hover {
+      transform: scale(1.04255) translate(0px, -4px);
+      transition-duration: 0.3s;
+    }
     .cASSfo::after {
       content: "";
       opacity: 0;
@@ -320,6 +408,26 @@ export default {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
       border-radius: 16px;
       contain: strict;
+    }
+    .esaxGV {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      padding: 6px;
+      color: rgb(255, 255, 255);
+      font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova',sans-serif;
+      text-align: center;
+      z-index: 6;
+      transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s,opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
+      transform: translate(0px, 8px);
+      opacity: 0;
+      -webkit-font-smoothing: antialiased;
+      pointer-events: none;
+    }
+
+    .type-list{
+      margin: 32px auto 0;
     }
   }
 </style>

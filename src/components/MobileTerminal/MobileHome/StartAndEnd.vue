@@ -1,7 +1,7 @@
 <template>
   <div>
 <!--    <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null">-->
-<!--      <div><a :href="'/#/M/homeIndex'">WEBH5GAME</a></div>-->
+<!--      <div><a :href="'/#/M/homeIndex'">GUGOPLAY</a></div>-->
 <!--    </div>-->
     <slot></slot>
     <div class="end" v-if="bottomHide == false ? false : true">

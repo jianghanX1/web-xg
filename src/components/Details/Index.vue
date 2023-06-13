@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at webh5game.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at gugoplay.com'">
     <div class="details">
       <div class="main-center">
         <div class="main-game">
@@ -16,7 +16,10 @@
                 </div>
                 <div class="game-warp">
                   <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">
-                    <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+                    <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)">
+                      <img v-lazy="item.iconUrl" alt="">
+                      <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -32,15 +35,24 @@
             </div>
           </div>
           <div class="game-rec">
-            <div class="app-item" v-for="(item,index) in four" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+            <div class="app-item" v-for="(item,index) in four" :key="index" @click="switchGame(item)">
+              <img v-lazy="item.iconUrl" alt="">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            </div>
           </div>
         </div>
         <div class="main-waterfall">
           <div class="recommend-banner">
-            <div class="app-item" v-for="(item,index) in five" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+            <div class="app-item" v-for="(item,index) in five" :key="index" @click="switchGame(item)">
+              <img v-lazy="item.iconUrl" alt="">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            </div>
           </div>
           <div class="game-list" v-if="six.length">
-            <div class="app-item" v-for="(item,index) in six" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+            <div class="app-item" v-for="(item,index) in six" :key="index" @click="switchGame(item)">
+              <img v-lazy="item.iconUrl" alt="">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            </div>
             <div class="more-btn">
               <div v-if="intercept.length" @click="loadMoreGames">Load More Games</div>
             </div>
@@ -64,10 +76,20 @@
             <!--          <div class="title">{{ gameTypeList[0] }}</div>-->
             <div class="game-warp">
               <div class="game-list">
-                <div class="logo" @click="goHome"></div>
+                <div class="logo" @click="goHome">
+                  <div class="sc-11jy73d-3 bfQcDW">
+                    <img :src="logo" alt="">
+                  </div>
+                  <div class="sc-jaa1t8-0 bwKNQa">
+                    <img :src="home" alt="">
+                  </div>
+                </div>
                 <div class="app-item"></div>
                 <div class="app-item logo2"></div>
-                <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+                <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item)">
+                  <img v-lazy="item.iconUrl" alt="">
+                  <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -75,7 +97,10 @@
             <!--          <div class="title">{{ gameTypeList[1] }}</div>-->
             <div class="game-warp">
               <div class="game-list">
-                <div class="app-item" v-for="(item,index) in two" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+                <div class="app-item" v-for="(item,index) in two" :key="index" @click="switchGame(item)">
+                  <img v-lazy="item.iconUrl" alt="">
+                  <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -83,11 +108,31 @@
             <!--          <div class="title">{{ gameTypeList[2] }}</div>-->
             <div class="game-warp">
               <div class="game-list">
-                <div class="app-item" v-for="(item,index) in three" :key="index" @click="switchGame(item)"><img v-lazy="item.iconUrl" alt=""></div>
+                <div class="app-item" v-for="(item,index) in three" :key="index" @click="switchGame(item)">
+                  <img v-lazy="item.iconUrl" alt="">
+                  <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="bottom-text">
+        <nav class="sc-1oa7ili-0 gmEuRM">
+          <ul>
+            <li><a href="/">游戏</a></li>
+            <li>{{ gameInfo.Type }}</li>
+          </ul>
+        </nav>
+        <header class="sc-1v3c8lr-2 kGpygg">
+          <h2 class="sc-1v3c8lr-3 iBLcO">{{ gameInfo.Name }}</h2>
+        </header>
+        <div class="sc-1v3c8lr-9 jXgCKW">
+          {{ gameInfo.desc }}
+        </div>
+        <ul class="sc-g8xdfn-0 jOvOhG sc-1v3c8lr-4 durvAn">
+          <li v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</li>
+        </ul>
       </div>
     </div>
     <BottomNav></BottomNav>
@@ -96,7 +141,9 @@
 
 <script>
 import BottomNav from '../BottomNav';
-import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js'
+import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js';
+import logo from '@/assets/logo.png'
+import home from '@/assets/home.png'
 export default {
   name: "detailsIndex",
   components: {
@@ -134,6 +181,9 @@ export default {
       leftBtnType: true, // 侧按钮
       topBtnType: false, // 顶部按钮
       bottomBtnType: true, // 底部按钮
+      logo,
+      home,
+      typeList: [], // 游戏类型
     }
   },
   created() {
@@ -191,7 +241,23 @@ export default {
       },()=>{})
     },
     getJson() {
-      console.log(1111111111);
+
+      let game_type = [{},{},{},{},{},{},{},{},{},{}]
+      game_type && game_type.map(()=>{
+        game_type[0].type = "SHOOTING"
+        game_type[1].type = "CAR"
+        game_type[2].type = "BALL"
+        game_type[3].type = "GIRLS"
+        game_type[4].type = "CASUAL"
+        game_type[5].type = "PUZZLE"
+        game_type[6].type = "ACTION"
+        game_type[7].type = "RACING"
+        game_type[8].type = "PARKOUR"
+        game_type[9].type = "3D"
+      })
+      this.typeList = game_type || []
+
+
       const { query } = this.$route
       const { gameId } = query || {}
       let jsonArr = getJson()
@@ -339,6 +405,14 @@ export default {
         this.bottomBtnType = false
         this.topBtnType = true
       }
+    },
+    classClick(type) {
+      this.$router.push({
+        path: '/P/gameType',
+        query: {
+          gameType: type
+        }
+      },()=>{})
     }
   },
   watch: {
@@ -355,6 +429,20 @@ export default {
   .logo{
     --offset: -936px!important;
     width: 246px!important;
+    flex-direction: row!important;
+  }
+  .bfQcDW {
+    width: 94px!important;
+    height: 42px!important;
+    margin: -2px auto 0px!important;
+  }
+  .bwKNQa {
+    border-top: 0px!important;
+    border-left: 2px solid #f0f5fc!important;
+    flex-direction: column!important;
+    height: 100%!important;
+    width: 46px!important;
+    border-radius: 0px 16px 16px 0px!important;
   }
   .logo2{
     display: block!important;
@@ -826,6 +914,9 @@ export default {
           .game-list {
             //padding: 6px 7px 0;
             .logo{
+              display: flex;
+              align-items: center;
+              flex-direction: column;
               cursor: pointer;
               width: 120px;
               height: 120px;
@@ -836,6 +927,29 @@ export default {
               left: 50%;
               transform: translate(var(--offset),0);
               z-index: 3;
+              .bfQcDW{
+                width: 77px;
+                height: 39px;
+                margin: 15px auto 11px;
+                img{
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .bwKNQa {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top: 2px solid #f0f5fc;
+                width: 100%;
+                height: 40px;
+                border-radius: 0px 0px 16px 16px;
+                overflow: hidden;
+                img{
+                  width: 25px;
+                  height: 22px;
+                }
+              }
             }
             .logo2{
               display: none;
@@ -845,6 +959,7 @@ export default {
             .app-item {
               margin-bottom: 8px;
               float: left;
+              position: relative;
               img{
                 background: white;
               }
@@ -875,23 +990,109 @@ export default {
       background: white;
     }
   }
+  .app-item:hover {
+    transform: scale(1.04255) translate(0px, -4px);
+    transition-duration: 0.3s;
+  }
+  .esaxGV {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 6px;
+    color: rgb(255, 255, 255);
+    font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova',sans-serif;
+    text-align: center;
+    z-index: 6;
+    transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s,opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
+    transform: translate(0px, 8px);
+    opacity: 0;
+    -webkit-font-smoothing: antialiased;
+    pointer-events: none;
+  }
   //@keyframes example {
   //  0%  {transform: scale(1);}
   //  35%  {transform: scale(1.05);}
   //  65% {transform: scale(1.03);}
   //  100% {transform: scale(1.08);}
   //}
-  .app-item:hover{
-    cursor: pointer;
-    animation-name: example;
-    animation-duration: 0.6s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-    z-index: 1;
+  //.app-item:hover{
+  //  cursor: pointer;
+  //  animation-name: example;
+  //  animation-duration: 0.6s;
+  //  animation-timing-function: linear;
+  //  animation-delay: 0s;
+  //  animation-iteration-count: 1;
+  //  animation-direction: normal;
+  //  animation-fill-mode: forwards;
+  //  animation-play-state: running;
+  //  z-index: 1;
+  //}
+  @media (hover: hover) {
+    .app-item:hover {
+      transform: scale(1.01869) translate(0px, -4px)!important;
+    }
+    .app-item:hover .sc-963fcq-0 {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+  .bottom-text{
+    position: relative;
+    margin: 24px 0px;
+    padding: 18px 24px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    .gmEuRM ul {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      color: var(--grey-1);
+      list-style: none;
+      text-overflow: ellipsis;
+    }
+    .gmEuRM li {
+      display: inline;
+      color: #5d6b84;
+      a{
+        text-decoration: none;
+        color: #5d6b84;
+      }
+    }
+    .gmEuRM li:nth-of-type(2)::before {
+      content: "›";
+      margin: 0px 4px;
+      color: var(--grey-1);
+      font-size: 13px;
+    }
+    .kGpygg {
+      margin: 8px 0px 8px;
+      h2{
+        margin: 0px;
+        font: 700 24px Torus, sans-serif;
+        color: #002b50;
+      }
+    }
+    .jXgCKW{
+      color: #002b50;
+      font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
+    }
+    .durvAn {
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+    .jOvOhG li {
+      display: inline-block;
+      margin: 4px 4px 0px 0px;
+      padding: 0px 10px;
+      border: 2px solid #bac9de;
+      border-radius: 100px;
+      color: #bac9de;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
   }
 }
 </style>
