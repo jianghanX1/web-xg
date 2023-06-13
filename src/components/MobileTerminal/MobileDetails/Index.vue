@@ -59,6 +59,7 @@
           <ClassList styleType="1" :gameTypeList="gameTypeList"></ClassList>
         </div>
       </div>
+        <BottomList></BottomList>
       <div style="padding: 0 0.625rem">
         <div class="bottom-text">
           <nav class="sc-1oa7ili-0 gmEuRM">
@@ -105,6 +106,7 @@ import topping from '@/assets/topping.png';
 import play from '@/assets/play.png';
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
+import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import {shuffle, determinePcOrMove, setMeta, getJson, recentGame} from "@/utils/utils";
@@ -112,7 +114,7 @@ import { show_newAfg_preroll } from '../../../../webh5sdk';
 export default {
   name: "mobileDetailsIndex",
   components: {
-    ClassList,StartAndEnd
+    ClassList,StartAndEnd, BottomList
   },
   data() {
     return {
