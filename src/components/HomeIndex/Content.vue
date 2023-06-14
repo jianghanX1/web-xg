@@ -38,6 +38,18 @@
     </div>
     <div class="type-list">
       <TypeList></TypeList>
+      <div class="bottom-text">
+        <div class="jXgCKW">
+          Hi! Welcome to GUGOPLAY.com!
+          <br><br>
+          You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
+          <br><br>
+          Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
+          You can play all our games on your mobile phone, tablet, pad without download or installation, just visit GUGOPLAY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          <br><br>
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark GUGOPLAY.com and share it to your friends. Have fun!
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -443,6 +455,29 @@ export default {
 
     .type-list{
       margin: 32px auto 0;
+      .bottom-text{
+        position: relative;
+        margin: 30px 0 0;
+        padding: 18px 24px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+        p{
+          font-weight: bold;
+          font-size: 9px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin: 3px 0px 0px;
+        }
+        h1{
+          font-size: 20px;
+          margin: 0px 0px 8px;
+          color: #002b50;
+        }
+        .jXgCKW{
+          color: #002b50;
+          font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
+        }
+      }
     }
   }
 </style>

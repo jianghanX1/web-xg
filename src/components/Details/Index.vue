@@ -117,10 +117,13 @@
           </div>
         </div>
       </div>
+      <div style="margin-top: 45px">
+        <TypeList></TypeList>
+      </div>
       <div class="bottom-text">
         <nav class="sc-1oa7ili-0 gmEuRM">
           <ul>
-            <li><a href="/">游戏</a></li>
+            <li><a href="/">GAME</a></li>
             <li>{{ gameInfo.Type }}</li>
           </ul>
         </nav>
@@ -144,13 +147,14 @@
 
 <script>
 import BottomNav from '../BottomNav';
+import TypeList from '@/components/TypeList.vue';
 import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js';
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
 export default {
   name: "detailsIndex",
   components: {
-    BottomNav
+    BottomNav, TypeList
   },
   data() {
     return {
@@ -351,6 +355,9 @@ export default {
     // 切换游戏
     switchGame (item) {
       recentGame(item)
+      this.full = null
+      this.closeStyle = null
+      this.isBlock = false
       this.$router.push({
         path: '/P/details',
         query: {
@@ -937,8 +944,8 @@ export default {
               z-index: 3;
               .bfQcDW{
                 width: 95px;
-                height: 46px;
-                margin: 15px auto 11px;
+                height: 35px;
+                margin: 20px auto 11px;
                 img{
                   width: 100%;
                   height: 100%;

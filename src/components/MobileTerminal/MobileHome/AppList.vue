@@ -154,9 +154,9 @@ export default {
         transform: translate(var(--offset),0);
         --offset: -9.3333rem;
         .bfQcDW{
-          width: 92px;
+          width: 95px;
           height: 35px;
-          margin: 15px auto 11px;
+          margin: 20px auto 11px;
           img{
             width: 100%;
             height: 100%;

@@ -43,13 +43,15 @@
           </a>
           <div class="occupy"></div>
           <div class="game-name">
-            <h1>{{ gameName }}</h1>
+            <div style="margin: auto 0">
+              <h1>{{ gameName }}</h1>
+            </div>
           </div>
         </div>
         <div class="game-play">
           <div class="game-img-box" @click="playClick">
             <div class="svg"><img :src="play" alt=""></div>
-            <h2>开始游戏</h2>
+            <h2>PLAY NOW</h2>
             <img class="img" :src="iconUrl" alt="">
           </div>
         </div>
@@ -64,7 +66,7 @@
         <div class="bottom-text">
           <nav class="sc-1oa7ili-0 gmEuRM">
             <ul>
-              <li><a href="/">游戏</a></li>
+              <li><a href="/">GAME</a></li>
               <li>{{ gameType }}</li>
             </ul>
           </nav>
@@ -94,7 +96,7 @@
       </div>
       <div class="app-promote">
         <div class="promote-list">
-          <div class="item" @click="detailsClick()" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img :src="item.iconUrl" alt=""></a></div>
+          <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img :src="item.iconUrl" alt=""></a></div>
         </div>
       </div>
     </div>
@@ -318,9 +320,9 @@ export default {
       transform: translate(var(--offset),0);
       --offset: -9.3333rem;
       .bfQcDW{
-        width: 92px;
+        width: 95px;
         height: 35px;
-        margin: 15px auto 11px;
+        margin: 20px auto 11px;
         img{
           width: 100%;
           height: 100%;
@@ -358,6 +360,12 @@ export default {
       padding: 10px 16px;
       box-sizing: border-box;
       word-break: break-all;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+      align-items: flex-start;
+      font-size: 21px;
       h1{
         font: 700 1em/1em Torus, sans-serif;
         color: #002b50;
@@ -404,6 +412,7 @@ export default {
         z-index: 2;
         text-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
         transform: translateX(-50%);
+        font-size: 1.4em;
       }
       .img{
         width: 100%;
@@ -416,6 +425,17 @@ export default {
         background: rgba(255, 255, 255, 0.5);
         object-fit: contain;
       }
+    }
+    .game-img-box::after{
+      content: "";
+      position: absolute;
+      z-index: 1;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      height: 100%;
+      border-radius: 16px;
+      background: linear-gradient(rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.3) 100%);
     }
   }
   .nav-bar{
