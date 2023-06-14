@@ -127,8 +127,11 @@
         <header class="sc-1v3c8lr-2 kGpygg">
           <h2 class="sc-1v3c8lr-3 iBLcO">{{ gameInfo.Name }}</h2>
         </header>
+        <div class="sc-1v3c8lr-6 kXVnFE">
+          <span class="sc-1v3c8lr-8 bbPKoC"><i class="el-icon-star-on"></i> {{gameScore}}</span>
+        </div>
         <div class="sc-1v3c8lr-9 jXgCKW">
-          {{ gameInfo.desc }}
+          {{ gameInfo.desc ? gameInfo.desc : "Play best game on GUGOPLAY!" }}
         </div>
         <ul class="sc-g8xdfn-0 jOvOhG sc-1v3c8lr-4 durvAn">
           <li v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</li>
@@ -184,6 +187,7 @@ export default {
       logo,
       home,
       typeList: [], // 游戏类型
+      gameScore: "", // 游戏评分
     }
   },
   created() {
@@ -256,6 +260,10 @@ export default {
         game_type[9].type = "3D"
       })
       this.typeList = game_type || []
+
+      // 游戏评分
+      let score = Math.random()*0.8 + 4.2
+      this.gameScore = score.toFixed(1)
 
 
       const { query } = this.$route
@@ -928,8 +936,8 @@ export default {
               transform: translate(var(--offset),0);
               z-index: 3;
               .bfQcDW{
-                width: 77px;
-                height: 39px;
+                width: 95px;
+                height: 46px;
                 margin: 15px auto 11px;
                 img{
                   width: 100%;
@@ -1071,6 +1079,22 @@ export default {
         margin: 0px;
         font: 700 24px Torus, sans-serif;
         color: #002b50;
+      }
+    }
+    .kXVnFE{
+      margin: 4px 0px;
+      .bbPKoC {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: bold;
+        padding: 0px 8px;
+        color: #5d6b84;
+        background: #f0f5fc;
+        border-radius: 10px;
+        text-transform: uppercase;
+        height: 20px;
+        margin-right: 4px;
       }
     }
     .jXgCKW{

@@ -255,6 +255,7 @@ export default {
               border-radius: 0.875rem;
               overflow: hidden;
               border: 2px solid #fff;
+              box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
               img{
                 width: 100%;
                 height: 100%;
@@ -273,6 +274,7 @@ export default {
               border-radius: 0.875rem;
               overflow: hidden;
               border: 2px solid #fff;
+              box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
               img{
                 width: 100%;
                 height: 100%;
