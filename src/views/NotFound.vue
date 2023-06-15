@@ -1,7 +1,6 @@
 <template>
   <div>
     <div v-if="determinePcOrMove == 2">
-      <Navigation></Navigation>
       <div class="content">
         <div class="msg-404">
           <h4 class="msg-title">404</h4>
@@ -12,14 +11,12 @@
           <h6 class="title">The Most Popular Games</h6>
           <div class="games">
             <div class="item" @click="iconClick(item)" v-for="(item,index) in gameList" :key="index">
-              <div class="item_position">
-                <img v-lazy="item.iconUrl" alt="">
-              </div>
+              <img v-lazy="item.iconUrl" alt="">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
             </div>
           </div>
         </div>
       </div>
-      <BottomNav></BottomNav>
     </div>
     <div v-else>
       <StartAndEnd :bottomHide="false">
@@ -45,15 +42,13 @@
 </template>
 
 <script>
-import Navigation from '../components/Navigation';
-import BottomNav from '../components/BottomNav';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import {determinePcOrMove, recentGame, getJson} from "@/utils/utils";
 export default {
   name: "NotFound",
   components: {
-    Navigation, BottomNav, ClassList, StartAndEnd
+    ClassList, StartAndEnd
   },
   data() {
     return {
@@ -64,9 +59,9 @@ export default {
   mounted() {
     if (determinePcOrMove() == 1) {
       this.determinePcOrMove = 1
-      setTimeout(()=>{
-        window.addAds()
-      },1300)
+      // setTimeout(()=>{
+      //   window.addAds()
+      // },1300)
     } else {
       this.determinePcOrMove = 2
     }
@@ -96,6 +91,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media (hover: hover) {
+  .item:hover {
+    transform: scale(1.01869) translate(0px, -4px)!important;
+  }
+  .item:hover .sc-963fcq-0 {
+    opacity: 1!important;
+    transform: translate(0px, 0px)!important;
+  }
+}
 .content{
   .msg-404{
     padding-top: 42px;
@@ -133,89 +137,53 @@ export default {
       font-size: 30px;
     }
     .games{
-      width: 100%;
       margin-top: 18px;
       box-sizing: border-box;
-      //overflow: hidden;
-      @keyframes example {
-        0%  {transform: scale(1);}
-        35%  {transform: scale(1.2);}
-        65% {transform: scale(1.1);}
-        100% {transform: scale(1.3);}
-      }
-      .item:hover{
-        cursor: pointer;
-        animation-name: example;
-        animation-duration: 0.6s;
-        animation-timing-function: linear;
-        animation-delay: 0s;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        .item_position{
-          z-index: 23;
-        }
-      }
-
-      .item{
-        float: left;
-        padding: 10px;
-        box-sizing: border-box;
-        .item_position{
-          padding-top: 100%;
-          width: 100%;
-          position: relative;
-          height: 0;
-          z-index: -1;
-          img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            border: 2px solid #fff;
-            background: white;
-          }
-        }
+    }
+    .item {
+      width: 94px;
+      height: 94px;
+      float: left;
+      margin-right: 16px;
+      display: block;
+      overflow: hidden;
+      margin-bottom: 10px;
+      position: relative;
+      box-sizing: border-box;
+      cursor: pointer;
+      img{
+        width: 100%;
+        height: 100%;
+        //border: 2px solid #fff;
+        border-radius: 16px;
+        //background: white;
       }
     }
-    .big-box:after{
+    .item:hover {
+      transform: scale(1.04255) translate(0px, -4px);
+      transition-duration: 0.3s;
+    }
+    .games:after{
       content: ".";
       display: block;
       height: 0;
       clear: both;
     }
-    @media screen and (min-width: 1201px){
-      .item {
-        width: 11%;
-      }
-    }
-    @media screen and (min-width: 1081px) and (max-width: 1200px){
-      .item {
-        width: 12.5%;
-      }
-    }
-    @media screen and (min-width: 961px) and (max-width: 1080px){
-      .item {
-        width: 14.2%;
-      }
-    }
-    @media screen and (min-width: 841px) and (max-width: 960px){
-      .item {
-        width: 16.6%;
-      }
-    }
-    @media screen and (min-width: 721px) and (max-width: 840px){
-      .item {
-        width: 20%;
-      }
-    }
-    @media screen and (max-width: 720px){
-      .item {
-        width: 20%;
-      }
+    .esaxGV {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      padding: 6px;
+      color: rgb(255, 255, 255);
+      font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova',sans-serif;
+      text-align: center;
+      z-index: 6;
+      transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s,opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
+      transform: translate(0px, 8px);
+      opacity: 0;
+      -webkit-font-smoothing: antialiased;
+      pointer-events: none;
     }
   }
 }
@@ -249,8 +217,7 @@ export default {
     }
   }
   .popular-games {
-    margin-top: 0.875rem;
-    padding: 0 0.625rem;
+    margin: 16px auto 0;
     .title {
       color: #fff;
       font-size: 0.9275rem;
@@ -258,6 +225,26 @@ export default {
     .games{
       margin-top: 0.625rem;
     }
+  }
+}
+@media (min-width: 111px) and (max-width: 550.9px) {
+  .m-content .popular-games {
+    width: 314px;
+  }
+}
+@media (min-width: 551px) and (max-width: 660.9px) {
+  .m-content .popular-games {
+    width: 534px;
+  }
+}
+@media (min-width: 661px) and (max-width: 880.9px) {
+  .m-content .popular-games {
+    width: 644px;
+  }
+}
+@media (min-width: 881px) {
+  .m-content .popular-games {
+    width: 864px;
   }
 }
 </style>

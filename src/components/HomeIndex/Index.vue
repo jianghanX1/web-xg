@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="GUGOPLAY">
+  <div class="big" v-title data-title="Online Games on Gugo ——Let's play">
     <div>
       <Content></Content>
     </div>
@@ -32,6 +32,7 @@ export default {
       },()=>{})
     } else {
       this.getJson()
+      document.title = 'Online Games on Gugo ——Let\'s play'
     }
   },
   methods: {

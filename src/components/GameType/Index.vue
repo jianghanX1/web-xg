@@ -1,5 +1,5 @@
 <template>
-  <div id="game-type" v-title data-title="GUGOPLAY">
+  <div id="game-type" v-title data-title="Online Games on Gugo ——Let's play">
     <div style="display: contents" @click="goHome">
       <nav class="sc-15orno7-0 dDVcIC">
         <div class="sc-11jy73d-3 bfQcDW">

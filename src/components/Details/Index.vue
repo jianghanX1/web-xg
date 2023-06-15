@@ -207,31 +207,34 @@ export default {
     }
   },
   mounted() {
-    let headdiv = document.getElementById("girlsGames");
-    let adsBottom = document.getElementById("adsBottom");
-    let nTop = headdiv.offsetTop;
-    let adsBottomTop = adsBottom.offsetTop;
-    window.onscroll = function () {
-      //变量scrollTop是滚动条滚动时，距离顶部的距离
-      let scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
-      console.log(scrollTop);
-
-      console.log(nTop);
-      if (scrollTop > nTop) {
-        headdiv.style.position = "fixed"
-        headdiv.style.top = "10px"
-      } else {
-        headdiv.style.position="relative";
-        headdiv.style.top = "0px"
-      }
-      if (scrollTop > adsBottomTop + 2) {
-        adsBottom.style.position = "fixed"
-        adsBottom.style.top = "10px"
-      } else {
-        adsBottom.style.position="relative";
-        adsBottom.style.top = '0px'
-      }
-    }
+    // 跟随定位
+    // let headdiv = document.getElementById("girlsGames");
+    // let adsBottom = document.getElementById("adsBottom");
+    // let nTop = headdiv.offsetTop;
+    // let adsBottomTop = adsBottom.offsetTop;
+    // window.onscroll = function () {
+    //   //变量scrollTop是滚动条滚动时，距离顶部的距离
+    //   let scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+    //   console.log(scrollTop);
+    //
+    //   console.log(nTop);
+    //   if (scrollTop > nTop) {
+    //     headdiv.style.position = "fixed"
+    //     headdiv.style.top = "10px"
+    //     headdiv.style.width = "136px"
+    //     headdiv.style.overflow = "hidden"
+    //   } else {
+    //     headdiv.style.position="relative";
+    //     headdiv.style.top = "0px"
+    //   }
+    //   if (scrollTop > adsBottomTop + 2) {
+    //     adsBottom.style.position = "fixed"
+    //     adsBottom.style.top = "10px"
+    //   } else {
+    //     adsBottom.style.position="relative";
+    //     adsBottom.style.top = '0px'
+    //   }
+    // }
     this.getJson()
 
   },
@@ -722,9 +725,9 @@ export default {
                   width: 100%;
                   height: 100%;
                   border-radius: 12px;
-                  border: 2px solid #fff;
+                  //border: 2px solid #fff;
                   overflow: hidden;
-                  background: white;
+                  //background: white;
                 }
               }
             }
@@ -817,8 +820,8 @@ export default {
           width: 100%;
           height: 100%;
           border-radius: 12px;
-          border: 2px solid #fff;
-          background: white;
+          //border: 2px solid #fff;
+          //background: white;
         }
       }
     }
@@ -962,7 +965,7 @@ export default {
               float: left;
               position: relative;
               img{
-                background: white;
+                //background: white;
               }
             }
             .app-item:nth-child(2n-1){
@@ -986,9 +989,9 @@ export default {
     img{
       width: 100%;
       height: 100%;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      background: white;
+      //border: 2px solid #fff;
+      border-radius: 16px;
+      //background: white;
     }
   }
   .app-item:hover {

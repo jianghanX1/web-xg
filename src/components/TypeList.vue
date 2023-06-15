@@ -37,16 +37,6 @@ export default {
       transform: scale(1.01869) translate(0px, -4px)!important;
     }
   }
-  @media (min-width: 1321px) and (max-width: 1540.9px) {
-    .cMEgnO:nth-of-type(6){
-      margin-right: 0;
-    }
-  }
-  @media (min-width: 1541px) and (max-width: 1870.9px) {
-    .cMEgnO:nth-of-type(7){
-      margin-right: 0;
-    }
-  }
   .cMEgnO{
     width: 204px;
     height: 95px;
