@@ -1,6 +1,6 @@
 <template>
   <div id="mobile_classify" v-title data-title="GUGOPLAY">
-    <div class="info-top">
+    <div class="content">
       <a :href="'/#/M/homeIndex'">
         <div class="logo">
           <div class="sc-11jy73d-3 bfQcDW">
@@ -11,46 +11,23 @@
           </div>
         </div>
       </a>
-      <div class="occupy"></div>
-      <div class="game-name">
-        <h1>{{ gameType }}</h1>
-      </div>
-    </div>
-    <div class="content">
-      <div class="app-list" v-for="(item,index) in gameList" :key="index">
-        <div class="app-list-content">
-          <div class="content-middle" v-if="(index + 1) % 2 !== 0">
-            <div class="middle-left" v-if="item[0] && item[0].iconUrl">
-              <div class="item"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div>
-            </div>
-            <div class="middle-right">
-              <div class="item-box" v-if="item[1] && item[1].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div></div>
-              <div class="item-box" v-if="item[2] && item[2].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div></div>
-            </div>
-            <div></div>
+      <div class="app-list eZzVdA" v-for="(item,index) in gameList" :key="index">
+        <div class="sc-13nflho-0 cTVRlj">
+          <div class="game-name" v-if="index == 0" style="grid-area: ibx">
+            <h1>{{ gameType }}</h1>
           </div>
-          <div class="content-middle" v-if="(index + 1) % 2 === 0">
-            <div class="middle-right">
-              <div class="item-box" v-if="item[0] && item[0].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div></div>
-              <div class="item-box" v-if="item[1] && item[1].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div></div>
-            </div>
-            <div class="middle-left2" v-if="item[2] && item[2].iconUrl">
-              <div class="item"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div>
-            </div>
-            <div></div>
-          </div>
-          <div class="content-top" style="margin-top: 0.5625rem">
-            <div class="item-box" v-if="item[3] && item[3].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div></div>
-            <div class="item-box" v-if="item[4] && item[4].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div></div>
-              <div class="item-box" v-if="item[5] && item[5].iconUrl"><div class="item"><a :href="'/#/M/details?gameId='+item[5].gameId"><img v-lazy="item[5] && item[5].iconUrl" alt=""></a></div></div>
-          </div>
+          <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 7) ? {gridArea: 'bigIp' + indexs}: null">
+            <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 7)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+            <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
+          </a>
         </div>
       </div>
     </div>
-    <div class="recommend">
+    <div class="bottom">
       <ClassList :gameTypeList="recommend" :styleType="true"></ClassList>
+      <BottomList></BottomList>
     </div>
-    <BottomList></BottomList>
   </div>
 </template>
 
@@ -103,9 +80,9 @@ export default {
         }
       })
       let newArr = [] // 新数组
-      let num = Math.ceil(gameList.length / 6)
+      let num = Math.ceil(gameList.length / 12)
       for ( let i = 1; i <= num; i++ ) {
-        newArr[i - 1] = gameList.splice(0,6)
+        newArr[i - 1] = gameList.splice(0,12)
       }
       this.gameList = newArr
 
@@ -127,213 +104,224 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media (hover: hover){
+  .cOWZsC:hover {
+    transform: scale(1.01869) translate(0px, -4px)!important;
+  }
+  .cOWZsC:hover .sc-963fcq-0 {
+    opacity: 1!important;
+    transform: translate(0px, 0px)!important;
+  }
+}
+@media (min-width: 111px) and (max-width: 550.9px) {
+  .eZzVdA, .bottom {
+    width: 314px;
+  }
+  .cTVRlj {
+    grid-template-areas:
+          ". ibx ibx"
+          ". bigIp0 bigIp0"
+          ". bigIp0 bigIp0"
+          ". . ."
+          "bigIp6 bigIp6 ."
+          "bigIp6 bigIp6 ."
+          ". . ."
+  }
+}
+@media (min-width: 551px) and (max-width: 660.9px) {
+  .logo{
+    --offset: -268px!important;
+  }
+  .eZzVdA, .bottom {
+    width: 534px;
+  }
+  .cTVRlj {
+    --gridTemplateColumns: 5!important;
+    grid-template-areas:
+        ". ibx ibx bigIp0 bigIp0"
+        ". . . bigIp0 bigIp0"
+        "bigIp6 bigIp6 . . ."
+        "bigIp6 bigIp6 . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+  }
+}
+@media (min-width: 661px) and (max-width: 880.9px) {
+  .logo{
+    --offset: -322px!important;
+  }
+  .eZzVdA, .bottom {
+    width: 644px;
+  }
+  .cTVRlj {
+    --gridTemplateColumns: 6!important;
+    grid-template-areas:
+        ". ibx ibx . bigIp0 bigIp0"
+        "bigIp6 bigIp6 . . bigIp0 bigIp0"
+        "bigIp6 bigIp6 . . . ."
+        ". . . . . ."
+  }
+}
+@media (min-width: 881px) {
+  .logo{
+    --offset: -432px!important;
+  }
+  .eZzVdA, .bottom {
+    width: 864px;
+    .cTVRlj {
+      --gridTemplateColumns: 8!important;
+      grid-template-areas:
+        ". ibx ibx . . . bigIp0 bigIp0"
+        "bigIp6 bigIp6 . . . . bigIp0 bigIp0"
+        "bigIp6 bigIp6 . . . . . ."
+    }
+  }
+}
 #mobile_classify{
   height: 100vh;
   overflow-y: auto;
-  .info-top{
-    display: flex;
-    padding: 0 0.625rem;
-    margin-top: 0.5625rem;
-    .logo{
-      position: fixed;
-      z-index: 10;
-      top: 0.5625rem;
-      background: rgb(255, 255, 255);
-      box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
-      border-radius: 16px;
-      width: 5.875rem;
-      height: 5.875rem;
-      flex-direction: column;
-      --left: 50%;
-      left: var(--left);
-      transform: translate(var(--offset),0);
-      --offset: -9.3333rem;
-      .bfQcDW{
-        width: 92px;
-        height: 35px;
-        margin: 15px auto 11px;
-        img{
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .bwKNQa {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top: 2px solid #f0f5fc;
-        overflow: hidden;
-        border-top: 0px;
-        border-left: 2px solid #f0f5fc;
-        flex-direction: column;
-        border-top: 2px solid #f0f5fc;
+  .logo{
+    position: fixed;
+    z-index: 10;
+    top: 16px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
+    border-radius: 16px;
+    width: 94px;
+    height: 94px;
+    flex-direction: column;
+    --left: 50%;
+    left: var(--left);
+    transform: translate(var(--offset),0);
+    --offset: -157px;
+    .bfQcDW{
+      width: 72px;
+      height: 28px;
+      margin: 15px auto 11px;
+      font-size: 0;
+      img{
         width: 100%;
-        height: 40px;
-        border-radius: 0px 0px 16px 16px;
-        img{
-          width: 25px;
-          height: 22px;
-        }
+        height: 100%;
       }
     }
-    .occupy{
-      width: 5.875rem;
-      height: 5.875rem;
-      margin-right: 0.561rem;
-    }
-    .game-name{
-      width: 12.311rem;
-      height: 5.875rem;
-      background: white;
-      border-radius: 16px;
-      padding: 10px 16px;
-      box-sizing: border-box;
-      h1{
-        font: 700 1em/1em Torus, sans-serif;
-        color: #002b50;
-      }
+    .bwKNQa {
       display: flex;
-      justify-content: center;
-      flex-direction: column;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
       align-items: center;
-      font-size: 21px;
+      justify-content: center;
+      border-top: 2px solid #f0f5fc;
+      overflow: hidden;
+      border-top: 0px;
+      border-left: 2px solid #f0f5fc;
+      flex-direction: column;
+      border-top: 2px solid #f0f5fc;
+      width: 100%;
+      height: 40px;
+      border-radius: 0px 0px 16px 16px;
+      img{
+        width: 25px;
+        height: 22px;
+      }
     }
+  }
+  .game-name{
+    background: white;
+    border-radius: 16px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    h1{
+      font: 700 1em/1em Torus, sans-serif;
+      color: #002b50;
+    }
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    align-items: center;
+    font-size: 21px;
   }
   .content{
-    .app-list{
-      margin-top: 0.5625rem;
-      .app-list-content{
-        padding: 0 0.625rem;
-        .content-top{
-          width: 100%;
-          box-sizing: border-box;
-          .item-box{
-            float: left;
-            width: 5.875rem;
-            height: 5.875rem;
-            display: block;
-            position: relative;
-            background-color: #fff;
-            box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-            border-radius: 0.875rem;
-            .item{
-              width: 100%;
-              height: 100%;
-              border-radius: 0.875rem;
-              overflow: hidden;
-              border: 2px solid #fff;
-              img{
-                width: 100%;
-                height: 100%;
-                background: white;
-              }
-            }
-          }
-          .item-box:not(:last-child){
-            margin-right: 0.561rem;
-          }
-        }
-        .content-top:after{
-          content: ".";
-          display: block;
-          height: 0;
-          clear: both;
-          visibility: hidden;
-        }
-        .content-middle{
-          margin-top: 0.5625rem;
-          margin-bottom: 0.5625rem;
-          .middle-left{
-            float: left;
-            margin-right: 0.561rem;
-            width: 12.3125rem;
-            height: 12.3125rem;
-            .item{
-              width: 100%;
-              height: 100%;
-              border-radius: 0.875rem;
-              overflow: hidden;
-              border: 2px solid #fff;
-              box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-              img{
-                width: 100%;
-                height: 100%;
-                background: white;
-              }
-            }
-          }
-          .middle-left2{
-            float: left;
-            margin-left: 0.561rem;
-            width: 12.3125rem;
-            height: 12.3125rem;
-            .item{
-              width: 100%;
-              height: 100%;
-              border-radius: 0.875rem;
-              overflow: hidden;
-              border: 2px solid #fff;
-              box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-              img{
-                width: 100%;
-                height: 100%;
-                background: white;
-              }
-            }
-          }
-          .middle-right{
-            float: left;
-            .item-box{
-              width: 5.875rem;
-              height: 5.875rem;
-              display: block;
-              position: relative;
-              background-color: #fff;
-              box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-              border-radius: 0.875rem;
-              .item{
-                width: 100%;
-                height: 100%;
-                border-radius: 0.875rem;
-                overflow: hidden;
-                border: 2px solid #fff;
-                img{
-                  width: 100%;
-                  height: 100%;
-                  background: white;
-                }
-              }
-            }
-            .item-box:not(:first-child){
-              margin-top: 0.5625rem;
-            }
-          }
-        }
-        .content-middle:after{
-          content: ".";
-          display: block;
-          height: 0;
-          clear: both;
-          visibility: hidden;
-        }
-      }
-      .adv{
-        margin-top: 0.5625rem;
-        .adv-title{
-          background-color: #f7f7f7;
-          line-height: 1.4375rem;
-          font-size: .8125rem;
-          color: #333;
-          text-align: center;
-          margin: 0 -0.625rem;
-        }
-      }
+    .eZzVdA {
+      margin: 0px auto;
+      flex-grow: 1;
+    }
+    .eZzVdA:nth-of-type(1) .cTVRlj::before{
+      content: "";
+      display: block;
+    }
+    .cTVRlj {
+      display: grid;
+      grid-template-rows: repeat(auto-fill, 94px);
+      grid-gap: 16px;
+      grid-auto-flow: dense;
+      justify-content: center;
+      margin: 16px auto 0px;
+      padding: 0px;
+      list-style-type: none;
+      --gridTemplateColumns: 3;
+      grid-template-columns: repeat(var(--gridTemplateColumns),94px);
+    }
+    .eoBBYj {
+      display: block;
+      --minSize: 94px;
+      min-width: var(--minSize);
+      min-height: var(--minSize);
+      border-radius: inherit;
+      aspect-ratio: 1 / 1;
+    }
+    .global-cq {
+      container-type: inline-size;
+      container-name: tilecq;
+    }
+    .cOWZsC {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+      user-select: none;
+      aspect-ratio: 1 / 1;
+    }
+    .cASSfo {
+      display: block;
+      transition: transform .6s cubic-bezier(.25, .1, .25, 1);
+      border-radius: 16px;
+      position: relative;
+    }
+    .cASSfo:hover {
+      transform: scale(1.04255) translate(0px, -4px);
+      transition-duration: 0.3s;
+    }
+    .cASSfo::after {
+      content: "";
+      opacity: 0;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+      z-index: 4;
+      transition: box-shadow .6s cubic-bezier(.25, .1, .25, 1),opacity .3s cubic-bezier(.25, .1, .25, 1);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+      border-radius: 16px;
+      contain: strict;
+    }
+    .esaxGV {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      padding: 6px;
+      color: rgb(255, 255, 255);
+      font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova',sans-serif;
+      text-align: center;
+      z-index: 6;
+      transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s,opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
+      transform: translate(0px, 8px);
+      opacity: 0;
+      -webkit-font-smoothing: antialiased;
+      pointer-events: none;
     }
   }
-  .recommend{
-    margin-top: 16px;
-    padding: 0 0.625rem;
+  .bottom{
+    margin: 32px auto 0;
   }
 }
 </style>

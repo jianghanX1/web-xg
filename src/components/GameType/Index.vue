@@ -1,5 +1,5 @@
 <template>
-  <div id="game-type" v-title :data-title="GUGOPLAY">
+  <div id="game-type" v-title data-title="GUGOPLAY">
     <div style="display: contents" @click="goHome">
       <nav class="sc-15orno7-0 dDVcIC">
         <div class="sc-11jy73d-3 bfQcDW">
@@ -214,6 +214,7 @@ export default {
     width: 94px;
     height: 42px;
     margin: -2px auto 0px;
+    font-size: 0;
     img{
       width: 100%;
       height: 100%;
@@ -267,7 +268,7 @@ export default {
   }
 }
 .content, .recommend{
-  overflow: hidden;
+  //overflow: hidden;
   margin-top: 16px;
   .app-item {
     width: 204px;
@@ -284,7 +285,7 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 16px;
-      background: white;
+      //background: white;
     }
   }
   .app-item:hover {
@@ -323,6 +324,20 @@ export default {
     width: 94px;
     height: 94px;
   }
+}
+.content:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.recommend:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .type-list{
   margin: 32px auto 0;

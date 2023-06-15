@@ -89,6 +89,7 @@ export default {
     margin: 16px auto 0px;
     text-align: center;
     color: #5d6b84;
+    font-size: 16px;
     a:not(:last-child) {
       margin-right: 1rem;
     }

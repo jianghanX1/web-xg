@@ -1,98 +1,62 @@
 <template>
   <div>
-    <div class="app-list" v-for="(item,index) in appGameList" :key="index">
-      <div v-if="index == 0" class="app-list-content">
-        <div class="content-top">
-          <a :href="'/#/M/homeIndex'">
-            <div class="logo">
-              <div class="sc-11jy73d-3 bfQcDW">
-                <img :src="logo" alt="">
-              </div>
-              <div class="sc-jaa1t8-0 bwKNQa">
-                <img :src="home" alt="">
-              </div>
-            </div>
-          </a>
-          <div class="item" style="border: 0"></div>
-          <div class="item" @click="detailsClick(item[0])" v-if="item[0] && item[0].iconUrl"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[1])" v-if="item[1] && item[1].iconUrl"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div>
+    <a :href="'/#/M/homeIndex'">
+      <div class="logo">
+        <div class="sc-11jy73d-3 bfQcDW">
+          <img :src="logo" alt="">
         </div>
-        <div class="content-middle" v-if="(index + 1) % 2 !== 0">
-          <div class="middle-left" v-if="item[2] && item[2].iconUrl">
-            <div class="item" @click="detailsClick(item[2])"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div>
-          </div>
-          <div class="middle-right">
-            <div class="item-box" v-if="item[3] && item[3].iconUrl"><div class="item" @click="detailsClick(item[3])"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div></div>
-            <div class="item-box" v-if="item[4] && item[4].iconUrl"><div class="item" @click="detailsClick(item[4])"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div></div>
-          </div>
-          <div></div>
-        </div>
-        <div class="content-middle" v-if="(index + 1) % 2 === 0">
-          <div class="middle-right">
-            <div class="item-box" v-if="item[2] && item[2].iconUrl"><div class="item" @click="detailsClick(item[2])"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div></div>
-            <div class="item-box" v-if="item[3] && item[3].iconUrl"><div class="item" @click="detailsClick(item[3])"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div></div>
-          </div>
-          <div class="middle-left2" v-if="item[4] && item[4].iconUrl">
-            <div class="item" @click="detailsClick(item[4])"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div>
-          </div>
-          <div></div>
-        </div>
-        <!--        <div class="adv" v-if="index === 0">-->
-        <!--          <h6 class="adv-title">Advertisement</h6>-->
-        <!--          <div>-->
-
-        <!--          </div>-->
-        <!--        </div>-->
-        <div class="content-top" style="margin-top: 0.5625rem">
-          <div class="item" @click="detailsClick(item[5])" v-if="item[5] && item[5].iconUrl"><a :href="'/#/M/details?gameId='+item[5].gameId"><img v-lazy="item[5] && item[5].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[6])" v-if="item[6] && item[6].iconUrl"><a :href="'/#/M/details?gameId='+item[6].gameId"><img v-lazy="item[6] && item[6].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[7])" v-if="item[7] && item[7].iconUrl"><a :href="'/#/M/details?gameId='+item[7].gameId"><img v-lazy="item[7] && item[7].iconUrl" alt=""></a></div>
-        </div>
-        <div class="content-bottom">
-          <div class="item-box" v-if="item[8] && item[8].iconUrl"><div class="item" @click="detailsClick(item[8])"><a :href="'/#/M/details?gameId='+item[8].gameId"><img v-lazy="item[8] && item[8].iconUrl" alt=""></a></div></div>
-          <div class="item-box" v-if="item[9] && item[9].iconUrl"><div class="item" @click="detailsClick(item[9])"><a :href="'/#/M/details?gameId='+item[9].gameId"><img v-lazy="item[9] && item[9].iconUrl" alt=""></a></div></div>
+        <div class="sc-jaa1t8-0 bwKNQa">
+          <img :src="home" alt="">
         </div>
       </div>
-      <div v-else class="app-list-content">
-        <div class="content-top">
-          <div class="item" @click="detailsClick(item[0])" v-if="item[0] && item[0].iconUrl"><a :href="'/#/M/details?gameId='+item[0].gameId"><img v-lazy="item[0] && item[0].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[1])" v-if="item[1] && item[1].iconUrl"><a :href="'/#/M/details?gameId='+item[1].gameId"><img v-lazy="item[1] && item[1].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[2])" v-if="item[2] && item[2].iconUrl"><a :href="'/#/M/details?gameId='+item[2].gameId"><img v-lazy="item[2] && item[2].iconUrl" alt=""></a></div>
+    </a>
+    <div v-show="clientWidth <= 550.9" class="app-list eZzVdA" v-for="(item,index) in appGameList" :key="index">
+      <div class="sc-13nflho-0 cTVRlj">
+        <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="indexs == 0 || indexs == 6 ? {gridArea: 'bigIp' + indexs}: null">
+          <img v-if="indexs == 0 || indexs == 6" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+          <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+          <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
+        </a>
+      </div>
+    </div>
+    <div v-show="clientWidth > 550.9" class="sc-10l37ae-0 irIQZt">
+      <div class="sc-13nflho-1 jMBaZr">
+        <div style="display: contents">
+          <ul class="sc-al88rd-0 brZJOk">
+            <li v-for="(item,index) in bigImg" :key="index">
+              <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
+                <img v-lazy="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
+                <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="content-middle" v-if="(index + 1) % 2 !== 0">
-          <div class="middle-left" v-if="item[3] && item[3].iconUrl">
-            <div class="item" @click="detailsClick(item[3])"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div>
-          </div>
-          <div class="middle-right">
-            <div class="item-box" v-if="item[4] && item[4].iconUrl"><div class="item" @click="detailsClick(item[4])"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div></div>
-            <div class="item-box" v-if="item[5] && item[5].iconUrl"><div class="item" @click="detailsClick(item[5])"><a :href="'/#/M/details?gameId='+item[5].gameId"><img v-lazy="item[5] && item[5].iconUrl" alt=""></a></div></div>
-          </div>
-          <div></div>
+        <div style="display: contents">
+          <a v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
+            <img v-lazy="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+          </a>
         </div>
-        <div class="content-middle" v-if="(index + 1) % 2 === 0">
-          <div class="middle-right">
-            <div class="item-box" v-if="item[3] && item[3].iconUrl"><div class="item" @click="detailsClick(item[3])"><a :href="'/#/M/details?gameId='+item[3].gameId"><img v-lazy="item[3] && item[3].iconUrl" alt=""></a></div></div>
-            <div class="item-box" v-if="item[4] && item[4].iconUrl"><div class="item" @click="detailsClick(item[4])"><a :href="'/#/M/details?gameId='+item[4].gameId"><img v-lazy="item[4] && item[4].iconUrl" alt=""></a></div></div>
-          </div>
-          <div class="middle-left2" v-if="item[5] && item[5].iconUrl">
-            <div class="item" @click="detailsClick(item[5])"><a :href="'/#/M/details?gameId='+item[5].gameId"><img v-lazy="item[5] && item[5].iconUrl" alt=""></a></div>
-          </div>
-          <div></div>
+        <div style="display: contents">
+          <a v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
+            <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+          </a>
         </div>
-<!--        <div class="adv" v-if="index === 0">-->
-<!--          <h6 class="adv-title">Advertisement</h6>-->
-<!--          <div>-->
-
-<!--          </div>-->
-<!--        </div>-->
-        <div class="content-top" style="margin-top: 0.5625rem">
-          <div class="item" @click="detailsClick(item[6])" v-if="item[6] && item[6].iconUrl"><a :href="'/#/M/details?gameId='+item[6].gameId"><img v-lazy="item[6] && item[6].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[7])" v-if="item[7] && item[7].iconUrl"><a :href="'/#/M/details?gameId='+item[7].gameId"><img v-lazy="item[7] && item[7].iconUrl" alt=""></a></div>
-          <div class="item" @click="detailsClick(item[8])" v-if="item[8] && item[8].iconUrl"><a :href="'/#/M/details?gameId='+item[8].gameId"><img v-lazy="item[8] && item[8].iconUrl" alt=""></a></div>
-        </div>
-        <div class="content-bottom">
-          <div class="item-box" v-if="item[9] && item[9].iconUrl"><div class="item" @click="detailsClick(item[9])"><a :href="'/#/M/details?gameId='+item[9].gameId"><img v-lazy="item[9] && item[9].iconUrl" alt=""></a></div></div>
-          <div class="item-box" v-if="item[10] && item[10].iconUrl"><div class="item" @click="detailsClick(item[10])"><a :href="'/#/M/details?gameId='+item[10].gameId"><img v-lazy="item[10] && item[10].iconUrl" alt=""></a></div></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <BottomList></BottomList>
+      <div class="bottom-text">
+        <div class="jXgCKW">
+          Hi! Welcome to GUGOPLAY.com!
+          <br><br>
+          You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
+          <br><br>
+          Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
+          You can play all our games on your mobile phone, tablet, pad without download or installation, just visit GUGOPLAY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          <br><br>
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark GUGOPLAY.com and share it to your friends. Have fun!
         </div>
       </div>
     </div>
@@ -100,23 +64,42 @@
 </template>
 
 <script>
-import { recentGame } from '@/utils/utils.js';
+import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
+import {getJson, recentGame} from '@/utils/utils.js';
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
 export default {
   name: "AppList",
   props: ['appGameList'],
+  components: {
+    BottomList
+  },
   data() {
     return {
-      logo,home
+      bigImg: [], // 大图片
+      centreImg: [], // 中图片
+      smallImg: [], // 小图片
+      logo,home,
+      clientWidth: 0, // 屏幕宽度
     }
   },
   mounted() {
     // setTimeout(()=>{
     //   window.addAds()
     // },1300)
+    window.onresize = () => {
+      this.clientWidth = document.body.clientWidth
+    }
+    this.clientWidth = document.body.clientWidth
+    this.getJson()
   },
   methods: {
+    getJson() {
+      let arr = getJson()
+      this.bigImg = arr.splice(0,3)
+      this.centreImg = arr.splice(0,12)
+      this.smallImg = arr
+    },
     detailsClick(item) {
       recentGame(item)
       // this.$router.push({
@@ -134,201 +117,319 @@ export default {
 *{
   box-sizing: border-box;
 }
-.app-list{
-  margin-top: 0.5625rem;
-  .app-list-content{
-    padding: 0 0.625rem;
-    .content-top{
-      .logo{
-        position: fixed;
-        z-index: 10;
-        top: 0.5625rem;
-        background: rgb(255, 255, 255);
-        box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
-        border-radius: 16px;
-        width: 5.875rem;
-        height: 5.875rem;
-        flex-direction: column;
-        --left: 50%;
-        left: var(--left);
-        transform: translate(var(--offset),0);
-        --offset: -9.3333rem;
-        .bfQcDW{
-          width: 95px;
-          height: 35px;
-          margin: 20px auto 11px;
-          img{
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .bwKNQa {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-top: 2px solid #f0f5fc;
-          overflow: hidden;
-          border-top: 0px;
-          border-left: 2px solid #f0f5fc;
-          flex-direction: column;
-          border-top: 2px solid #f0f5fc;
-          width: 100%;
-          height: 40px;
-          border-radius: 0px 0px 16px 16px;
-          img{
-            width: 25px;
-            height: 22px;
-          }
-        }
-      }
-      width: 100%;
-      box-sizing: border-box;
-      .item{
-        float: left;
-        width: 5.875rem;
-        height: 5.875rem;
-        border-radius: 0.875rem;
-        overflow: hidden;
-        border: 2px solid #fff;
-        box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-        img{
-          width: 100%;
-          height: 100%;
-          background: white;
-        }
-      }
-      .item:not(:last-child){
-        margin-right: 0.561rem;
-      }
-    }
-    .content-top:after{
-      content: ".";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden;
-    }
-    .content-middle{
-      margin-top: 0.5625rem;
-      margin-bottom: 0.5625rem;
-      .middle-left{
-        float: left;
-        margin-right: 0.561rem;
-        width: 12.3125rem;
-        height: 12.3125rem;
-        .item{
-          width: 100%;
-          height: 100%;
-          border-radius: 0.875rem;
-          overflow: hidden;
-          border: 2px solid #fff;
-          box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-          img{
-            width: 100%;
-            height: 100%;
-            background: white;
-          }
-        }
-      }
-      .middle-left2{
-        float: left;
-        margin-left: 0.561rem;
-        width: 12.3125rem;
-        height: 12.3125rem;
-        .item{
-          width: 100%;
-          height: 100%;
-          border-radius: 0.875rem;
-          overflow: hidden;
-          border: 2px solid #fff;
-          box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-          img{
-            width: 100%;
-            height: 100%;
-            background: white;
-          }
-        }
-      }
-      .middle-right{
-        float: left;
-        .item-box{
-          width: 5.875rem;
-          height: 5.875rem;
-          display: block;
-          position: relative;
-          background-color: #fff;
-          box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-          border-radius: 0.875rem;
-          .item{
-            width: 100%;
-            height: 100%;
-            border-radius: 0.875rem;
-            overflow: hidden;
-            border: 2px solid #fff;
-            img{
-              width: 100%;
-              height: 100%;
-              background: white;
-            }
-          }
-        }
-        .item-box:not(:first-child){
-          margin-top: 0.5625rem;
-        }
-      }
-    }
-    .content-middle:after{
-      content: ".";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden;
-    }
-    .content-bottom{
-      margin-top: 0.5625rem;
-      .item-box{
-        float: left;
-        width: 9.0625rem;
-        height: 9.0625rem;
-        display: block;
-        position: relative;
-        background-color: #fff;
-        box-shadow: 0 0.125rem 0.375rem 0 rgba(0,0,0,.6);
-        border-radius: 0.875rem;
-        .item{
-          width: 100%;
-          height: 100%;
-          border-radius: 0.875rem;
-          overflow: hidden;
-          border: 2px solid #fff;
-          img{
-            width: 100%;
-            height: 100%;
-            background: white;
-          }
-        }
-      }
-      .item-box:not(:first-child){
-        margin-left: 0.624rem;
-      }
-    }
-    .content-bottom:after{
-      content: ".";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden;
+@media (hover: hover){
+  .cOWZsC:hover {
+    transform: scale(1.01869) translate(0px, -4px)!important;
+  }
+  .cOWZsC:hover .sc-963fcq-0 {
+    opacity: 1!important;
+    transform: translate(0px, 0px)!important;
+  }
+}
+
+@media (min-width: 111px) and (max-width: 550.9px) {
+  .eZzVdA, .bottom {
+    width: 314px;
+  }
+  .cTVRlj {
+    grid-template-areas:
+          ". bigIp0 bigIp0"
+          ". bigIp0 bigIp0"
+          ". . ."
+          "bigIp6 bigIp6 ."
+          "bigIp6 bigIp6 ."
+          ". . ."
+  }
+}
+@media (min-width: 551px) and (max-width: 660.9px) {
+  .logo{
+    --offset: -268px!important;
+  }
+  .irIQZt, .bottom {
+    width: 534px;
+    .jMBaZr {
+      --gridTemplateColumns: 5;
+      grid-template-areas:
+        ". . ip3 ip3 ."
+        "ip4 ip4 ip3 ip3 ."
+        "ip4 ip4 . . ."
+        "bigIp0 bigIp0 bigIp0 . ."
+        "bigIp0 bigIp0 bigIp0 ip5 ip5"
+        "bigIp0 bigIp0 bigIp0 ip5 ip5"
+        ". . ip6 ip6 ."
+        ". . ip6 ip6 ."
+        "ip7 ip7 bigIp1 bigIp1 bigIp1"
+        "ip7 ip7 bigIp1 bigIp1 bigIp1"
+        ". . bigIp1 bigIp1 bigIp1"
+        ". . ip8 ip8 ."
+        "ip9 ip9 ip8 ip8 ."
+        "ip9 ip9 . . ."
+        "bigIp2 bigIp2 bigIp2 . ."
+        "bigIp2 bigIp2 bigIp2 ip10 ip10"
+        "bigIp2 bigIp2 bigIp2 ip10 ip10"
+        ". . ip11 ip11 ."
+        ". . ip11 ip11 ."
+        ". . . . ."
+        ". . . . ."
+        ". ip12 ip12 . ."
+        ". ip12 ip12 . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . ip13 ip13"
+        ". . . ip13 ip13"
+        ". . . . ."
+        "ip14 ip14 . . ."
+        "ip14 ip14 . . ."
     }
   }
-  .adv{
-    margin-top: 0.5625rem;
-    .adv-title{
-      background-color: #f7f7f7;
-      line-height: 1.4375rem;
-      font-size: .8125rem;
-      color: #333;
-      text-align: center;
-      margin: 0 -0.625rem;
+}
+@media (min-width: 661px) and (max-width: 880.9px) {
+  .logo{
+    --offset: -322px!important;
+  }
+  .irIQZt, .bottom {
+    width: 644px;
+    .jMBaZr {
+      --gridTemplateColumns: 6;
+      grid-template-areas:
+        ". ip3 ip3 . . ."
+        ". ip3 ip3 . ip4 ip4"
+        "ip5 ip5 . . ip4 ip4"
+        "ip5 ip5 . bigIp0 bigIp0 bigIp0"
+        ". . . bigIp0 bigIp0 bigIp0"
+        ". . . bigIp0 bigIp0 bigIp0"
+        ". ip6 ip6 . . ."
+        ". ip6 ip6 . ip7 ip7"
+        ". . . . ip7 ip7"
+        "bigIp1 bigIp1 bigIp1 . . ."
+        "bigIp1 bigIp1 bigIp1 . . ."
+        "bigIp1 bigIp1 bigIp1 ip8 ip8 ."
+        ". . . ip8 ip8 ."
+        ". ip9 ip9 . . ."
+        ". ip9 ip9 ip10 ip10 ."
+        ". . . ip10 ip10 ."
+        "ip11 ip11 . . . ."
+        "ip11 ip11 . . . ."
+        ". bigIp2 bigIp2 bigIp2 . ."
+        ". bigIp2 bigIp2 bigIp2 . ."
+        ". bigIp2 bigIp2 bigIp2 ip12 ip12"
+        ". . . . ip12 ip12"
+        ". ip13 ip13 . . ."
+        ". ip13 ip13 . . ."
+        ". . . . ip14 ip14"
+        ". . . . ip14 ip14"
+    }
+  }
+}
+@media (min-width: 881px) {
+  .logo{
+    --offset: -432px!important;
+  }
+  .irIQZt, .bottom {
+    width: 864px;
+    .jMBaZr {
+      --gridTemplateColumns: 8;
+      grid-template-areas:
+        ". ip3 ip3 . . . . ."
+        ". ip3 ip3 . . . ip4 ip4"
+        "ip5 ip5 . . . . ip4 ip4"
+        "ip5 ip5 . . . bigIp0 bigIp0 bigIp0"
+        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
+        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
+        ". ip6 ip6 . . . . ."
+        ". ip6 ip6 . . . ip7 ip7"
+        ". . . . . . ip7 ip7"
+        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
+        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
+        "bigIp1 bigIp1 bigIp1 ip8 ip8 . . ."
+        ". . . ip8 ip8 . ip14 ip14"
+        ". ip9 ip9 . . . ip14 ip14"
+        ". ip9 ip9 ip10 ip10 . . ."
+        ". . . ip10 ip10 . . ."
+        "ip11 ip11 . . . . . ."
+        "ip11 ip11 . bigIp2 bigIp2 bigIp2 . ."
+        ". . . bigIp2 bigIp2 bigIp2 . ."
+        ". . . bigIp2 bigIp2 bigIp2 . ."
+
+    }
+  }
+}
+.logo{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  top: 16px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
+  border-radius: 16px;
+  width: 94px;
+  height: 94px;
+  flex-direction: column;
+  --left: 50%;
+  left: var(--left);
+  transform: translate(var(--offset),0);
+  --offset: -157px;
+  .bfQcDW{
+    width: 72px;
+    height: 28px;
+    margin: 15px auto 11px;
+    font-size: 0;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bwKNQa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #f0f5fc;
+    overflow: hidden;
+    border-top: 0px;
+    border-left: 2px solid #f0f5fc;
+    flex-direction: column;
+    border-top: 2px solid #f0f5fc;
+    width: 100%;
+    height: 40px;
+    border-radius: 0px 0px 16px 16px;
+    img{
+      width: 25px;
+      height: 22px;
+    }
+  }
+}
+.eZzVdA {
+  margin: 0px auto;
+  flex-grow: 1;
+}
+.eZzVdA:nth-of-type(1) .cTVRlj::before{
+  content: "";
+  display: block;
+}
+  .cTVRlj {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 94px);
+    grid-gap: 16px;
+    grid-auto-flow: dense;
+    justify-content: center;
+    margin: 16px auto 0px;
+    padding: 0px;
+    list-style-type: none;
+    --gridTemplateColumns: 3;
+    grid-template-columns: repeat(var(--gridTemplateColumns),94px);
+  }
+.eoBBYj {
+  display: block;
+  --minSize: 94px;
+  min-width: var(--minSize);
+  min-height: var(--minSize);
+  border-radius: inherit;
+  aspect-ratio: 1 / 1;
+}
+.global-cq {
+  container-type: inline-size;
+  container-name: tilecq;
+}
+.cOWZsC {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+  user-select: none;
+  aspect-ratio: 1 / 1;
+}
+.cASSfo {
+  display: block;
+  transition: transform .6s cubic-bezier(.25, .1, .25, 1);
+  border-radius: 16px;
+  position: relative;
+}
+.cASSfo:hover {
+  transform: scale(1.04255) translate(0px, -4px);
+  transition-duration: 0.3s;
+}
+.cASSfo::after {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 4;
+  transition: box-shadow .6s cubic-bezier(.25, .1, .25, 1),opacity .3s cubic-bezier(.25, .1, .25, 1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+  border-radius: 16px;
+  contain: strict;
+}
+.esaxGV {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding: 6px;
+  color: rgb(255, 255, 255);
+  font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova',sans-serif;
+  text-align: center;
+  z-index: 6;
+  transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s,opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
+  transform: translate(0px, 8px);
+  opacity: 0;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+.irIQZt {
+  margin: 0px auto;
+  flex-grow: 1;
+  .jMBaZr {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 94px);
+    grid-gap: 16px;
+    grid-auto-flow: dense;
+    justify-content: center;
+    margin: 16px auto 0px;
+    padding: 0px;
+    list-style-type: none;
+    //--gridTemplateColumns: 3;
+    grid-template-columns: repeat(var(--gridTemplateColumns),94px);
+    .brZJOk {
+      display: contents;
+      li{
+        display: contents;
+        a {
+          text-decoration: none;
+          color: #009cff;
+        }
+      }
+    }
+  }
+  .jMBaZr::before {
+    content: "";
+    display: block;
+  }
+}
+.bottom{
+  margin: 0 auto;
+  .bottom-text{
+    position: relative;
+    margin: 24px 0;
+    padding: 18px 24px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    p{
+      font-weight: bold;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 3px 0px 0px;
+    }
+    h1{
+      font-size: 20px;
+      margin: 0px 0px 8px;
+      color: #002b50;
+    }
+    .jXgCKW{
+      color: #002b50;
+      font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
     }
   }
 }

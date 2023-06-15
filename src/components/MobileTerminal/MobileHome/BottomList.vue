@@ -1,6 +1,8 @@
 <template>
   <div class="bottom-list">
-    <div class="item" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)"><img v-lazy="item.iconUrl" alt=""></div>
+    <div class="item" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">
+      <img v-lazy="item.iconUrl" alt="">
+    </div>
   </div>
 </template>
 
@@ -72,26 +74,38 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media (min-width: 551px) and (max-width: 660.9px) {
+  .item:not(:nth-child(2n)){
+    margin-right: 16px!important;
+  }
+}
+@media (min-width: 661px) and (max-width: 880.9px) {
+  .item:not(:nth-child(3n)){
+    margin-right: 16px!important;
+  }
+}
+@media (min-width: 881px) {
+  .item:not(:nth-child(4n)){
+    margin-right: 16px!important;
+  }
+}
 .bottom-list{
-  margin-top: 0.875rem;
-  padding: 0 0.625rem;
+  margin-top: 16px;
   .item{
-    width: 9.0625rem;
-    height: 4.6875rem;
-    border-radius: 0.1875rem;
-    margin-bottom: 0.375rem;
+    width: 204px;
+    height: 94px;
+    border-radius: 16px;
+    margin-bottom: 16px;
     float: left;
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
-    border: 2px solid #fff;
+    margin-right: 0;
+    //border: 2px solid #fff;
     img{
       width: 100%;
       height: 100%;
     }
-  }
-  .item:nth-of-type(2n-1){
-    margin-right: 0.624rem;
   }
 }
 .bottom-list:after{

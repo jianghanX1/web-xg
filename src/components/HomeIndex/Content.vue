@@ -15,7 +15,7 @@
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
             <li v-for="(item,index) in bigImg" :key="index">
-              <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
+              <a @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
                 <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
               </a>
@@ -23,13 +23,13 @@
           </ul>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
+          <a v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
             <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
+          <a v-for="(item,index) in smallImg" :key="index" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
             <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
@@ -410,6 +410,7 @@ export default {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
       user-select: none;
       aspect-ratio: 1 / 1;
+      cursor: pointer;
     }
     .cASSfo {
       display: block;
