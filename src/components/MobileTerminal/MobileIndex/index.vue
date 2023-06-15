@@ -24,17 +24,6 @@ import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 // import TopBox from "@/components/MobileTerminal/MobileHome/TopBox";
 import AppList from "@/components/MobileTerminal/MobileHome/AppList";
 
-import shooting from '@/assets/01shooting.jpg';
-import car from '@/assets/02car.jpg';
-import ball from '@/assets/03ball.jpg';
-import girls from '@/assets/04girls.jpg';
-import casual from '@/assets/05casu.jpg';
-import puzzle from '@/assets/06puzzle.jpg';
-import action from '@/assets/07action.jpg';
-import racing from '@/assets/08racing.jpg';
-import parkour from '@/assets/09parkour.jpg';
-import sand from '@/assets/093d.jpg';
-
 import { determinePcOrMove, getJson } from '@/utils/utils.js'
 import bgImg from '@/assets/advertisement/bg.jpg';
 import btnBg from '@/assets/advertisement/btn_anniu.png';
@@ -48,16 +37,6 @@ export default {
       topGameList: [], // 移动端头部游戏列表
       appGameList: [], // 中间游戏列表
       gameTypeList: [], // 底部游戏类型
-      shooting,
-      car,
-      ball,
-      girls,
-      casual,
-      puzzle,
-      action,
-      racing,
-      parkour,
-      sand,
       logoutCount: 0, // 长时间未操作
       timerDate: null, // 定时器
       advBg: {

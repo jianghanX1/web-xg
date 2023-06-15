@@ -7,58 +7,16 @@
 </template>
 
 <script>
-import shooting from '@/assets/01shooting.jpg';
-import car from '@/assets/02car.jpg';
-import ball from '@/assets/03ball.jpg';
-import girls from '@/assets/04girls.jpg';
-import casual from '@/assets/05casu.jpg';
-import puzzle from '@/assets/06puzzle.jpg';
-import action from '@/assets/07action.jpg';
-import racing from '@/assets/08racing.jpg';
-import parkour from '@/assets/09parkour.jpg';
-import sand from '@/assets/093d.jpg';
+import { getGameTypeList } from '@/utils/utils'
 export default {
   name: "BottomList",
   data() {
     return {
-      typeList: [],
-      shooting,
-      car,
-      ball,
-      girls,
-      casual,
-      puzzle,
-      action,
-      racing,
-      parkour,
-      sand,
+      typeList: []
     }
   },
   mounted() {
-    let game_type = [{},{},{},{},{},{},{},{},{},{}]
-    game_type && game_type.map(()=>{
-      game_type[0].iconUrl = this.shooting
-      game_type[0].type = "SHOOTING"
-      game_type[1].iconUrl = this.car
-      game_type[1].type = "CAR"
-      game_type[2].iconUrl = this.ball
-      game_type[2].type = "BALL"
-      game_type[3].iconUrl = this.girls
-      game_type[3].type = "GIRLS"
-      game_type[4].iconUrl = this.casual
-      game_type[4].type = "CASUAL"
-      game_type[5].iconUrl = this.puzzle
-      game_type[5].type = "PUZZLE"
-      game_type[6].iconUrl = this.action
-      game_type[6].type = "ACTION"
-      game_type[7].iconUrl = this.racing
-      game_type[7].type = "RACING"
-      game_type[8].iconUrl = this.parkour
-      game_type[8].type = "PARKOUR"
-      game_type[9].iconUrl = this.sand
-      game_type[9].type = "3D"
-    })
-    this.typeList = game_type || []
+    this.typeList = getGameTypeList() || []
   },
   methods: {
     classClick(gameType) {

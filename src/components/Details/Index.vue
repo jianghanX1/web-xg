@@ -148,7 +148,7 @@
 <script>
 import BottomNav from '../BottomNav';
 import TypeList from '@/components/TypeList.vue';
-import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js';
+import {determinePcOrMove, shuffle, setMeta, getJson, recentGame, getGameTypeList} from '@/utils/utils.js';
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
 export default {
@@ -249,21 +249,7 @@ export default {
       },()=>{})
     },
     getJson() {
-
-      let game_type = [{},{},{},{},{},{},{},{},{},{}]
-      game_type && game_type.map(()=>{
-        game_type[0].type = "SHOOTING"
-        game_type[1].type = "CAR"
-        game_type[2].type = "BALL"
-        game_type[3].type = "GIRLS"
-        game_type[4].type = "CASUAL"
-        game_type[5].type = "PUZZLE"
-        game_type[6].type = "ACTION"
-        game_type[7].type = "RACING"
-        game_type[8].type = "PARKOUR"
-        game_type[9].type = "3D"
-      })
-      this.typeList = game_type || []
+      this.typeList = getGameTypeList() || []
 
       // 游戏评分
       let score = Math.random()*0.8 + 4.2
