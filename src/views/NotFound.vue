@@ -27,7 +27,12 @@
             <p class="msg-text">Sorry, the page you requested does not exist on this site</p>
           </div>
           <div class="adv">
-
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2075998924432436"
+                 data-ad-slot="8403530511"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
           </div>
           <div class="popular-games">
             <h6 class="title">The Most Popular Games</h6>
@@ -59,9 +64,9 @@ export default {
   mounted() {
     if (determinePcOrMove() == 1) {
       this.determinePcOrMove = 1
-      // setTimeout(()=>{
-      //   window.addAds()
-      // },1300)
+      setTimeout(()=>{
+        window.addAds()
+      },1300)
     } else {
       this.determinePcOrMove = 2
     }
@@ -130,7 +135,7 @@ export default {
     }
   }
   .popular-games{
-    margin-top: 32px;
+    margin-top: 16px;
     padding: 0 21px;
     .title{
       color: #fff;
@@ -215,6 +220,9 @@ export default {
       color: #dde5ff;
       text-align: center;
     }
+  }
+  .adv{
+    margin-top: 16px;
   }
   .popular-games {
     margin: 16px auto 0;

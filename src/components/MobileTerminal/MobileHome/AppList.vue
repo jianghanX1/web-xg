@@ -10,17 +10,37 @@
         </div>
       </div>
     </a>
-    <div v-show="clientWidth <= 550.9" class="app-list eZzVdA" v-for="(item,index) in appGameList" :key="index">
-      <div class="sc-13nflho-0 cTVRlj">
-        <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="indexs == 0 || indexs == 6 ? {gridArea: 'bigIp' + indexs}: null">
-          <img v-if="indexs == 0 || indexs == 6" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
-          <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
-          <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
-        </a>
+    <div v-if="clientWidth <= 550.9">
+      <div class="app-list eZzVdA" v-for="(item,index) in appGameList" :key="index">
+        <div :class="homeAdv ? cTVRlj2 : cTVRlj">
+          <div class="adv" v-if="index == 0" v-show="homeAdv" style="grid-area: adv">
+            <ins class="adsbygoogle"
+                 id="homeAdv"
+                 style="display:block;min-height: 314px"
+                 data-ad-client="ca-pub-2075998924432436"
+                 data-ad-slot="9017774039"
+                 data-ad-format="true"
+                 data-full-width-responsive="true"></ins>
+          </div>
+          <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="indexs == 0 || indexs == 6 ? {gridArea: 'bigIp' + indexs}: null">
+            <img v-if="indexs == 0 || indexs == 6" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+            <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
+          </a>
+        </div>
       </div>
     </div>
-    <div v-show="clientWidth > 550.9" class="sc-10l37ae-0 irIQZt">
-      <div class="sc-13nflho-1 jMBaZr">
+    <div v-if="clientWidth > 550.9" class="sc-10l37ae-0 irIQZt">
+      <div :class="homeAdv ? jMBaZr2 : jMBaZr">
+        <div class="adv" v-show="homeAdv" style="grid-area: adv">
+          <ins class="adsbygoogle"
+               id="homeAdv"
+               style="display:block;min-height: 314px"
+               data-ad-client="ca-pub-2075998924432436"
+               data-ad-slot="9017774039"
+               data-ad-format="true"
+               data-full-width-responsive="true"></ins>
+        </div>
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
             <li v-for="(item,index) in bigImg" :key="index">
@@ -81,12 +101,23 @@ export default {
       smallImg: [], // 小图片
       logo,home,
       clientWidth: 0, // 屏幕宽度
+      homeAdv: false, // 是否展示广告位置
+      cTVRlj2: 'cTVRlj2', // 有广告样式
+      cTVRlj: 'cTVRlj', // 无广告样式
+      jMBaZr2: 'jMBaZr2', // 有广告样式
+      jMBaZr: 'jMBaZr', // 无广告样式
     }
   },
   mounted() {
-    // setTimeout(()=>{
-    //   window.addAds()
-    // },1300)
+    setTimeout(()=>{
+      window.addAds()
+      let innerHtml = document.getElementById('homeAdv') && document.getElementById('homeAdv').innerHTML
+      if (innerHtml) {
+        this.homeAdv = true
+      } else {
+        this.homeAdv = false
+      }
+    },1300)
     window.onresize = () => {
       this.clientWidth = document.body.clientWidth
     }
@@ -140,6 +171,18 @@ export default {
           "bigIp6 bigIp6 ."
           ". . ."
   }
+  .cTVRlj2 {
+    grid-template-areas:
+          ". bigIp0 bigIp0"
+          ". bigIp0 bigIp0"
+          ". . ."
+          "adv adv adv"
+          "adv adv adv"
+          "adv adv adv"
+          "bigIp6 bigIp6 ."
+          "bigIp6 bigIp6 ."
+          ". . ."
+  }
 }
 @media (min-width: 551px) and (max-width: 660.9px) {
   .logo{
@@ -147,9 +190,47 @@ export default {
   }
   .irIQZt, .bottom {
     width: 534px;
-    .jMBaZr {
-      --gridTemplateColumns: 5;
-      grid-template-areas:
+  }
+  .jMBaZr2 {
+    --gridTemplateColumns: 5;
+    grid-template-areas:
+        ". . ip3 ip3 ."
+        "ip4 ip4 ip3 ip3 ."
+        "ip4 ip4 . . ."
+        "adv adv adv adv adv"
+        "adv adv adv adv adv"
+        "adv adv adv adv adv"
+        "bigIp0 bigIp0 bigIp0 . ."
+        "bigIp0 bigIp0 bigIp0 ip5 ip5"
+        "bigIp0 bigIp0 bigIp0 ip5 ip5"
+        ". . ip6 ip6 ."
+        ". . ip6 ip6 ."
+        "ip7 ip7 bigIp1 bigIp1 bigIp1"
+        "ip7 ip7 bigIp1 bigIp1 bigIp1"
+        ". . bigIp1 bigIp1 bigIp1"
+        ". . ip8 ip8 ."
+        "ip9 ip9 ip8 ip8 ."
+        "ip9 ip9 . . ."
+        "bigIp2 bigIp2 bigIp2 . ."
+        "bigIp2 bigIp2 bigIp2 ip10 ip10"
+        "bigIp2 bigIp2 bigIp2 ip10 ip10"
+        ". . ip11 ip11 ."
+        ". . ip11 ip11 ."
+        ". . . . ."
+        ". . . . ."
+        ". ip12 ip12 . ."
+        ". ip12 ip12 . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . ip13 ip13"
+        ". . . ip13 ip13"
+        ". . . . ."
+        "ip14 ip14 . . ."
+        "ip14 ip14 . . ."
+  }
+  .jMBaZr {
+    --gridTemplateColumns: 5;
+    grid-template-areas:
         ". . ip3 ip3 ."
         "ip4 ip4 ip3 ip3 ."
         "ip4 ip4 . . ."
@@ -180,7 +261,6 @@ export default {
         ". . . . ."
         "ip14 ip14 . . ."
         "ip14 ip14 . . ."
-    }
   }
 }
 @media (min-width: 661px) and (max-width: 880.9px) {
@@ -189,6 +269,39 @@ export default {
   }
   .irIQZt, .bottom {
     width: 644px;
+    .jMBaZr2 {
+      --gridTemplateColumns: 6;
+      grid-template-areas:
+        ". ip3 ip3 . . ."
+        ". ip3 ip3 . ip4 ip4"
+        "ip5 ip5 . . ip4 ip4"
+        "ip5 ip5 . bigIp0 bigIp0 bigIp0"
+        ". . . bigIp0 bigIp0 bigIp0"
+        ". . . bigIp0 bigIp0 bigIp0"
+        "adv adv adv adv adv adv"
+        "adv adv adv adv adv adv"
+        "adv adv adv adv adv adv"
+        ". ip6 ip6 . . ."
+        ". ip6 ip6 . ip7 ip7"
+        ". . . . ip7 ip7"
+        "bigIp1 bigIp1 bigIp1 . . ."
+        "bigIp1 bigIp1 bigIp1 . . ."
+        "bigIp1 bigIp1 bigIp1 ip8 ip8 ."
+        ". . . ip8 ip8 ."
+        ". ip9 ip9 . . ."
+        ". ip9 ip9 ip10 ip10 ."
+        ". . . ip10 ip10 ."
+        "ip11 ip11 . . . ."
+        "ip11 ip11 . . . ."
+        ". bigIp2 bigIp2 bigIp2 . ."
+        ". bigIp2 bigIp2 bigIp2 . ."
+        ". bigIp2 bigIp2 bigIp2 ip12 ip12"
+        ". . . . ip12 ip12"
+        ". ip13 ip13 . . ."
+        ". ip13 ip13 . . ."
+        ". . . . ip14 ip14"
+        ". . . . ip14 ip14"
+    }
     .jMBaZr {
       --gridTemplateColumns: 6;
       grid-template-areas:
@@ -227,6 +340,34 @@ export default {
   }
   .irIQZt, .bottom {
     width: 864px;
+    .jMBaZr2 {
+      --gridTemplateColumns: 8;
+      grid-template-areas:
+        ". ip3 ip3 . . . . ."
+        ". ip3 ip3 . . . ip4 ip4"
+        "ip5 ip5 . . . . ip4 ip4"
+        "ip5 ip5 . . . bigIp0 bigIp0 bigIp0"
+        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
+        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
+        "adv adv adv adv adv adv adv adv"
+        "adv adv adv adv adv adv adv adv"
+        "adv adv adv adv adv adv adv adv"
+        ". ip6 ip6 . . . . ."
+        ". ip6 ip6 . . . ip7 ip7"
+        ". . . . . . ip7 ip7"
+        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
+        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
+        "bigIp1 bigIp1 bigIp1 ip8 ip8 . . ."
+        ". . . ip8 ip8 . ip14 ip14"
+        ". ip9 ip9 . . . ip14 ip14"
+        ". ip9 ip9 ip10 ip10 . . ."
+        ". . . ip10 ip10 . . ."
+        "ip11 ip11 . . . . . ."
+        "ip11 ip11 . bigIp2 bigIp2 bigIp2 . ."
+        ". . . bigIp2 bigIp2 bigIp2 . ."
+        ". . . bigIp2 bigIp2 bigIp2 . ."
+
+    }
     .jMBaZr {
       --gridTemplateColumns: 8;
       grid-template-areas:
@@ -303,11 +444,17 @@ export default {
   margin: 0px auto;
   flex-grow: 1;
 }
-.eZzVdA:nth-of-type(1) .cTVRlj::before{
-  content: "";
-  display: block;
+.eZzVdA:nth-of-type(1){
+  .cTVRlj::before{
+    content: "";
+    display: block;
+  }
+  .cTVRlj2::before{
+    content: "";
+    display: block;
+  }
 }
-  .cTVRlj {
+  .cTVRlj, .cTVRlj2 {
     display: grid;
     grid-template-rows: repeat(auto-fill, 94px);
     grid-gap: 16px;
@@ -380,7 +527,7 @@ export default {
 .irIQZt {
   margin: 0px auto;
   flex-grow: 1;
-  .jMBaZr {
+  .jMBaZr, .jMBaZr2 {
     display: grid;
     grid-template-rows: repeat(auto-fill, 94px);
     grid-gap: 16px;
@@ -403,6 +550,10 @@ export default {
     }
   }
   .jMBaZr::before {
+    content: "";
+    display: block;
+  }
+  .jMBaZr2::before {
     content: "";
     display: block;
   }

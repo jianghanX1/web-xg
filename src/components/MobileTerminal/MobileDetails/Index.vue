@@ -2,39 +2,6 @@
   <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at gugoplay.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
-<!--        <div class="info-top">-->
-<!--          <a :href="'/#/M/homeIndex'">-->
-<!--            <div class="logo">-->
-<!--              <div class="sc-11jy73d-3 bfQcDW">-->
-<!--                <img :src="logo" alt="">-->
-<!--              </div>-->
-<!--              <div class="sc-jaa1t8-0 bwKNQa">-->
-<!--                <img :src="home" alt="">-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </a>-->
-<!--          <div class="occupy"></div>-->
-<!--          <div class="game-name">-->
-<!--            <div style="margin: auto 0">-->
-<!--              <h1>{{ gameName }}</h1>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="game-play">-->
-<!--          <div class="game-img-box" @click="playClick">-->
-<!--            <div class="svg"><img :src="play" alt=""></div>-->
-<!--            <h2>PLAY NOW</h2>-->
-<!--            <img class="img" :src="iconUrl" alt="">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="details-recommend-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">-->
-<!--        <p class="recommend-title">Recommendations for similar games</p>-->
-<!--        <div class="recommend-list">-->
-<!--          <ClassList styleType="1" :gameTypeList="gameTypeList"></ClassList>-->
-<!--        </div>-->
-<!--      </div>-->
-
-
         <a :href="'/#/M/homeIndex'">
           <div class="logo">
             <div class="sc-11jy73d-3 bfQcDW">
@@ -46,7 +13,7 @@
           </div>
         </a>
         <div class="sc-10l37ae-0 eZzVdA">
-          <div class="sc-1o65d6p-0 hZDmFe">
+          <div :class="detailAdv ? hZDmFe2 : hZDmFe">
             <div class="game-name" style="grid-area: ibx">
               <h1>{{ gameType }}</h1>
             </div>
@@ -56,6 +23,15 @@
                 <h2>PLAY NOW</h2>
                 <img class="img" :src="iconUrl" alt="">
               </div>
+            </div>
+            <div class="adv" v-show="detailAdv" style="grid-area: adv">
+              <ins class="adsbygoogle"
+                   id="detailAdv"
+                   style="display:block;min-height: 314px"
+                   data-ad-client="ca-pub-2075998924432436"
+                   data-ad-slot="6935332335"
+                   data-ad-format="true"
+                   data-full-width-responsive="true"></ins>
             </div>
             <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
               <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'">
@@ -147,6 +123,9 @@ export default {
       logo,
       home,
       gameScore: "", // 游戏评分
+      detailAdv: false, // 是否展示广告位置
+      hZDmFe2: 'hZDmFe2', // 有广告样式
+      hZDmFe: 'hZDmFe', // 无广告样式
     }
   },
   created() {
@@ -162,9 +141,15 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(()=>{
-    //   window.addAds()
-    // },800)
+    setTimeout(()=>{
+      window.addAds()
+      let innerHtml = document.getElementById('detailAdv') && document.getElementById('detailAdv').innerHTML
+      if (innerHtml) {
+        this.detailAdv = true
+      } else {
+        this.detailAdv = false
+      }
+    },800)
     document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
     this.getJson()
   },
@@ -298,6 +283,16 @@ export default {
   .eZzVdA, .bottom {
     width: 314px;
   }
+  .hZDmFe2 {
+    grid-template-areas:
+        ". ibx ibx"
+        "bigIp0 bigIp0 bigIp0"
+        "bigIp0 bigIp0 bigIp0"
+        "bigIp0 bigIp0 bigIp0"
+        "adv adv adv"
+        "adv adv adv"
+        "adv adv adv"
+  }
   .hZDmFe {
     grid-template-areas:
         ". ibx ibx"
@@ -323,6 +318,19 @@ export default {
   .eZzVdA, .bottom {
     width: 534px;
   }
+  .hZDmFe2 {
+    --gridTemplateColumns: 5!important;
+    grid-template-areas:
+        ". bigIp0 bigIp0 bigIp0 ."
+        ". bigIp0 bigIp0 bigIp0 ."
+        ". bigIp0 bigIp0 bigIp0 ."
+        "adv adv adv adv adv"
+        "adv adv adv adv adv"
+        "adv adv adv adv adv"
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+  }
   .hZDmFe {
     --gridTemplateColumns: 5!important;
     grid-template-areas:
@@ -341,6 +349,18 @@ export default {
   }
   .eZzVdA, .bottom {
     width: 644px;
+  }
+  .hZDmFe2 {
+    --gridTemplateColumns: 6!important;
+    grid-template-areas:
+        ". ibx ibx ibx . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . ."
+        "adv adv adv adv adv adv"
+        "adv adv adv adv adv adv"
+        "adv adv adv adv adv adv"
   }
   .hZDmFe {
     --gridTemplateColumns: 6!important;
@@ -363,15 +383,27 @@ export default {
   }
   .eZzVdA, .bottom {
     width: 864px;
-    .hZDmFe {
-      --gridTemplateColumns: 8!important;
-      grid-template-areas:
+  }
+  .hZDmFe2 {
+    --gridTemplateColumns: 8!important;
+    grid-template-areas:
         ". ibx ibx ibx . . . ."
         "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
         "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
         "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
         "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
-    }
+        "adv adv adv adv adv adv adv adv"
+        "adv adv adv adv adv adv adv adv"
+        "adv adv adv adv adv adv adv adv"
+  }
+  .hZDmFe {
+    --gridTemplateColumns: 8!important;
+    grid-template-areas:
+        ". ibx ibx ibx . . . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
+        "bigIp0 bigIp0 bigIp0 bigIp0 . . . ."
   }
 }
 .mobile-details{
@@ -387,7 +419,7 @@ export default {
     margin: 0px auto;
     flex-grow: 1;
   }
-  .hZDmFe {
+  .hZDmFe, .hZDmFe2 {
     display: grid;
     grid-template-rows: repeat(auto-fill, 94px);
     grid-gap: 16px;
@@ -400,6 +432,10 @@ export default {
     grid-template-columns: repeat(var(--gridTemplateColumns),94px);
   }
   .hZDmFe::before {
+    content: "";
+    display: block;
+  }
+  .hZDmFe2::before {
     content: "";
     display: block;
   }
