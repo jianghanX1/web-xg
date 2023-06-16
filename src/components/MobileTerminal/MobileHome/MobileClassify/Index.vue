@@ -1,5 +1,5 @@
 <template>
-  <div id="mobile_classify" v-title data-title="GUGOPLAY">
+  <div id="mobile_classify" v-title data-title="Online Games on Gugo ——Let's play">
     <div class="content">
       <MobileLogo></MobileLogo>
       <div class="app-list eZzVdA" v-for="(item,index) in gameList" :key="index">

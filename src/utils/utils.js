@@ -183,7 +183,8 @@ export function getJson() {
             "RACING": 1,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "CAR,RACING"
+            "Type": "CAR,RACING",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/CrazyCars.mp4"
         }, {
             "gameId": 2,
             "Name": "Amazing Bubble Breaker",
@@ -200,7 +201,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "GIRLS,CASUAL"
+            "Type": "GIRLS,CASUAL",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/DriveMad.mp4"
         }, {
             "gameId": 3,
             "Name": "Avoid Dying",
@@ -217,7 +219,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "SHOOTING,CASUAL"
+            "Type": "SHOOTING,CASUAL",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/MotoX3M.mp4"
         }, {
             "gameId": 4,
             "Name": "Basket Ball",
@@ -234,7 +237,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "BALL,ACTION"
+            "Type": "BALL,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/StickmanHook.mp4"
         }, {
             "gameId": 5,
             "Name": "Bear SUS",
@@ -251,7 +255,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "ACTION"
+            "Type": "ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/CrazyCars.mp4"
         }, {
             "gameId": 6,
             "Name": "Big Tower Tiny Square 2",
@@ -268,7 +273,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "CASUAL,ACTION"
+            "Type": "CASUAL,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/DriveMad.mp4"
         }, {
             "gameId": 7,
             "Name": "Block Blast",
@@ -285,7 +291,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "GIRLS,CASUAL,PUZZLE"
+            "Type": "GIRLS,CASUAL,PUZZLE",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/MotoX3M.mp4"
         }, {
             "gameId": 8,
             "Name": "Blumgi Ball",
@@ -302,7 +309,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "BALL,GIRLS,ACTION"
+            "Type": "BALL,GIRLS,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/StickmanHook.mp4"
         }, {
             "gameId": 9,
             "Name": "Blumgi Castle",
@@ -319,7 +327,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "SHOOTING,ACTION"
+            "Type": "SHOOTING,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/CrazyCars.mp4"
         }, {
             "gameId": 10,
             "Name": "Blumgi Rocket",
@@ -336,7 +345,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "CAR,ACTION"
+            "Type": "CAR,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/DriveMad.mp4"
         }, {
             "gameId": 11,
             "Name": "Blumgi Slime",
@@ -353,7 +363,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "GIRLS,CASUAL,ACTION"
+            "Type": "GIRLS,CASUAL,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/MotoX3M.mp4"
         }, {
             "gameId": 12,
             "Name": "Bowling Stars",
@@ -370,7 +381,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 1,
-            "Type": "BALL,GIRLS,CASUAL,3D"
+            "Type": "BALL,GIRLS,CASUAL,3D",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/StickmanHook.mp4"
         }, {
             "gameId": 13,
             "Name": "Box Rob",
@@ -387,7 +399,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "CAR,PUZZLE,ACTION"
+            "Type": "CAR,PUZZLE,ACTION",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/CrazyCars.mp4"
         }, {
             "gameId": 14,
             "Name": "Brain Test Tricky Puzzles",
@@ -404,7 +417,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "GIRLS,CASUAL,PUZZLE"
+            "Type": "GIRLS,CASUAL,PUZZLE",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/DriveMad.mp4"
         }, {
             "gameId": 15,
             "Name": "Breakoid",
@@ -421,7 +435,8 @@ export function getJson() {
             "RACING": 0,
             "PARKOUR": 0,
             "3D": 0,
-            "Type": "BALL,GIRLS,CASUAL"
+            "Type": "BALL,GIRLS,CASUAL",
+            "VideoUrl": "https://www.gugoplay.com/g_videos/MotoX3M.mp4"
         }, {
             "gameId": 16,
             "Name": "Bubble Charms",

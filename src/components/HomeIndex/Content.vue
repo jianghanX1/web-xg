@@ -18,6 +18,11 @@
               <a @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
                 <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                <div class="sc-963fcq-1 jpSxzz" @mouseenter="playVid(index)" @mouseleave="pauseVid(index)">
+                  <video preload="none" loop class="sc-1s4z03m-0 evwDGU">
+                    <source :src="item.VideoUrl" type="video/mp4">
+                  </video>
+                </div>
               </a>
             </li>
           </ul>
@@ -26,6 +31,11 @@
           <a v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
             <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            <div class="sc-963fcq-1 jpSxzz" @mouseenter="playVid(index + 3)" @mouseleave="pauseVid(index + 3)">
+              <video preload="none" loop class="sc-1s4z03m-0 evwDGU">
+                <source :src="item.VideoUrl" type="video/mp4">
+              </video>
+            </div>
           </a>
         </div>
         <div style="display: contents">
@@ -70,11 +80,13 @@ export default {
       centreImg: [], // 中图片
       smallImg: [], // 小图片
       logo,
-      home
+      home,
+      videoDiv: null
     }
   },
   mounted() {
     this.getJson()
+    this.videoDiv = document.getElementsByClassName('sc-1s4z03m-0')
   },
   methods: {
     goHome() {
@@ -97,6 +109,25 @@ export default {
           gameId: item.gameId
         }
       },()=>{})
+    },
+    // 鼠标移入播放视频
+    playVid(index) {
+      this.videoDiv[index].muted = true
+      let playPromise = this.videoDiv[index].play()
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // // 这个时候可以安全的暂停
+          // this.videoDiv[index].pause();
+        })
+            .catch(() => {
+
+            });
+      }
+    },
+    // 鼠标移入播放视频
+    pauseVid(index) {
+      this.videoDiv[index].muted = false
+      this.videoDiv[index].pause()
     }
   },
   watch: {
@@ -314,9 +345,14 @@ export default {
   .cOWZsC:hover {
     transform: scale(1.01869) translate(0px, -4px)!important;
   }
-  .cOWZsC:hover .sc-963fcq-0 {
-    opacity: 1;
-    transform: translate(0px, 0px);
+  .cOWZsC:hover {
+    .sc-963fcq-0{
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+    .sc-963fcq-1{
+      visibility: visible;
+    }
   }
 }
   .big-box {
@@ -452,6 +488,24 @@ export default {
       opacity: 0;
       -webkit-font-smoothing: antialiased;
       pointer-events: none;
+    }
+    .jpSxzz {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 100%;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      visibility: hidden;
+      z-index: 5;
+      .evwDGU {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        transform: translate(-50%, 0px);
+      }
     }
 
     .type-list{

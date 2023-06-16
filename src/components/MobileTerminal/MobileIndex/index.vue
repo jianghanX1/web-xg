@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="GUGOPLAY" id="homeId">
+  <div v-title data-title="Online Games on Gugo ——Let's play" id="homeId">
     <StartAndEnd>
       <div>
         <AppList :appGameList="appGameList"></AppList>
