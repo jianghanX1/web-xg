@@ -15,22 +15,39 @@
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
             <li v-for="(item,index) in bigImg" :key="index">
-              <a @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
+              <a @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
+                 :style="{gridArea: 'bigIp' + index}">
                 <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
-                <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
                 <div class="sc-963fcq-1 jpSxzz" @mouseenter="playVid(index)" @mouseleave="pauseVid(index)">
                   <video preload="none" loop class="sc-1s4z03m-0 evwDGU">
                     <source :src="item.VideoUrl" type="video/mp4">
                   </video>
+                </div>
+                <div class="sc-15wj1kq-0 ggWjbY" v-if="index == 0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="sc-15wj1kq-1 cYmAAh">
+                    <defs>
+                      <linearGradient id="lgrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;"></stop>
+                        <stop offset="25%" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;"></stop>
+                        <stop offset="50%" style="stop-color: rgb(255, 255, 255); stop-opacity: 1;"></stop>
+                        <stop offset="75%" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;"></stop>
+                        <stop offset="100%" style="stop-color: rgb(238, 130, 238); stop-opacity: 0;"></stop>
+                      </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#lgrad)"></rect>
+                  </svg>
                 </div>
               </a>
             </li>
           </ul>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
+          <a v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)"
+             class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
+             :style="{gridArea: 'ip' + (index + 3)}">
             <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
-            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
             <div class="sc-963fcq-1 jpSxzz" @mouseenter="playVid(index + 3)" @mouseleave="pauseVid(index + 3)">
               <video preload="none" loop class="sc-1s4z03m-0 evwDGU">
                 <source :src="item.VideoUrl" type="video/mp4">
@@ -39,9 +56,10 @@
           </a>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in smallImg" :key="index" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
+          <a v-for="(item,index) in smallImg" :key="index" @click="iconClick(item)"
+             class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
             <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
-            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
           </a>
         </div>
       </div>
@@ -54,10 +72,13 @@
           <br><br>
           You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
           <br><br>
-          Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
-          You can play all our games on your mobile phone, tablet, pad without download or installation, just visit GUGOPLAY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon
+          games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
+          You can play all our games on your mobile phone, tablet, pad without download or installation, just visit
+          GUGOPLAY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
           <br><br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark GUGOPLAY.com and share it to your friends. Have fun!
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark GUGOPLAY.com and
+          share it to your friends. Have fun!
         </div>
       </div>
     </div>
@@ -66,9 +87,10 @@
 
 <script>
 import TypeList from '@/components/TypeList.vue';
-import { getJson, recentGame } from '@/utils/utils.js'
+import {getJson, recentGame} from '@/utils/utils.js'
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
+
 export default {
   name: "contentIndex",
   components: {
@@ -92,12 +114,13 @@ export default {
     goHome() {
       this.$router.push({
         path: '/'
-      },()=>{})
+      }, () => {
+      })
     },
     getJson() {
       let arr = getJson()
-      this.bigImg = arr.splice(0,3)
-      this.centreImg = arr.splice(0,12)
+      this.bigImg = arr.splice(0, 3)
+      this.centreImg = arr.splice(0, 12)
       this.smallImg = arr
     },
     // 点击跳转详情
@@ -108,7 +131,8 @@ export default {
         query: {
           gameId: item.gameId
         }
-      },()=>{})
+      }, () => {
+      })
     },
     // 鼠标移入播放视频
     playVid(index) {
@@ -132,7 +156,7 @@ export default {
   },
   watch: {
     '$route'(val) {
-      console.log(val,'数据更新了');
+      console.log(val, '数据更新了');
       this.getJson()
       // this.getList()
     }
@@ -143,28 +167,33 @@ export default {
 <style lang="less" scoped>
 @media (min-width: 1871px) {
   .dDVcIC {
-    --offset: -936px!important;
-    width: 204px!important;
-    flex-direction: row!important;
+    --offset: -936px !important;
+    width: 204px !important;
+    flex-direction: row !important;
   }
+
   .bfQcDW {
-    width: 94px!important;
-    height: 42px!important;
-    margin: -2px auto 0px!important;
+    width: 94px !important;
+    height: 42px !important;
+    margin: -2px auto 0px !important;
   }
+
   .bwKNQa {
-    border-top: 0px!important;
-    border-left: 2px solid #f0f5fc!important;
-    flex-direction: column!important;
-    height: 100%!important;
-    width: 46px!important;
-    border-radius: 0px 16px 16px 0px!important;
+    border-top: 0px !important;
+    border-left: 2px solid #f0f5fc !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    width: 46px !important;
+    border-radius: 0px 16px 16px 0px !important;
   }
-  .type-list{
+
+  .type-list {
     width: 1854px;
   }
+
   .irIQZt {
     width: 1854px;
+
     .jMBaZr {
       --gridTemplateColumns: 17;
       grid-template-areas:
@@ -178,20 +207,25 @@ export default {
         ". ip11 ip11 . . . ip13 ip13 . . . . . . . . ."
         ". . . . . . ip13 ip13 . . . . . . . . .";
     }
+
     .jMBaZr::before {
       grid-column-start: span 2;
     }
   }
 }
+
 @media (min-width: 1541px) and (max-width: 1870.9px) {
   .dDVcIC {
-    --offset: -771px!important;
+    --offset: -771px !important;
   }
-  .type-list{
+
+  .type-list {
     width: 1524px;
   }
+
   .irIQZt {
     width: 1524px;
+
     .jMBaZr {
       --gridTemplateColumns: 14;
       grid-template-areas:
@@ -209,15 +243,19 @@ export default {
     }
   }
 }
+
 @media (min-width: 1321px) and (max-width: 1540.9px) {
   .dDVcIC {
-    --offset: -661px!important;
+    --offset: -661px !important;
   }
-  .type-list{
+
+  .type-list {
     width: 1304px;
   }
+
   .irIQZt {
     width: 1304px;
+
     .jMBaZr {
       --gridTemplateColumns: 12;
       grid-template-areas:
@@ -237,15 +275,19 @@ export default {
     }
   }
 }
+
 @media (min-width: 1211px) and (max-width: 1320.9px) {
   .dDVcIC {
-    --offset: -605px!important;
+    --offset: -605px !important;
   }
-  .type-list{
+
+  .type-list {
     width: 1194px;
   }
+
   .irIQZt {
     width: 1194px;
+
     .jMBaZr {
       --gridTemplateColumns: 11;
       grid-template-areas:
@@ -266,15 +308,19 @@ export default {
     }
   }
 }
+
 @media (min-width: 991px) and (max-width: 1210.9px) {
   .dDVcIC {
-    --offset: -496px!important;
+    --offset: -496px !important;
   }
-  .type-list{
+
+  .type-list {
     width: 980px;
   }
+
   .irIQZt {
     width: 980px;
+
     .jMBaZr {
       --gridTemplateColumns: 9;
       grid-template-areas:
@@ -298,15 +344,19 @@ export default {
     }
   }
 }
+
 @media (min-width: 111px) and (max-width: 990.9px) {
   .dDVcIC {
-    --offset: -386px!important;
+    --offset: -386px !important;
   }
-  .type-list{
+
+  .type-list {
     width: 760px;
   }
+
   .irIQZt {
     width: 760px;
+
     .jMBaZr {
       --gridTemplateColumns: 7;
       grid-template-areas:
@@ -335,204 +385,292 @@ export default {
     }
   }
 }
+
 @media (max-width: 775px) {
   .dDVcIC {
     --offset: 3px !important;
-    left: 0!important;
+    left: 0 !important;
   }
 }
+
 @media (hover: hover) {
   .cOWZsC:hover {
-    transform: scale(1.01869) translate(0px, -4px)!important;
+    transform: scale(1.01869) translate(0px, -4px) !important;
   }
+
   .cOWZsC:hover {
-    .sc-963fcq-0{
+    .sc-963fcq-0 {
       opacity: 1;
       transform: translate(0px, 0px);
     }
-    .sc-963fcq-1{
+
+    .sc-963fcq-1 {
       visibility: visible;
     }
   }
 }
-  .big-box {
+
+.big-box {
+  display: flex;
+  flex-direction: column;
+
+  .dDVcIC {
+    cursor: pointer;
     display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 16px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
+    border-radius: 16px;
+    width: 94px;
+    height: 94px;
     flex-direction: column;
-    .dDVcIC {
-      cursor: pointer;
+    --left: 50%;
+    left: var(--left);
+    --offset: -487px;
+    transform: translate(var(--offset), 0);
+
+    .bfQcDW {
+      width: 80px;
+      height: 30px;
+      margin: 15px auto 11px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .bwKNQa {
       display: flex;
       align-items: center;
-      position: fixed;
-      z-index: 10;
-      top: 16px;
-      background: rgb(255, 255, 255);
-      box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
-      border-radius: 16px;
-      width: 94px;
-      height: 94px;
-      flex-direction: column;
-      --left: 50%;
-      left: var(--left);
-      --offset: -487px;
-      transform: translate(var(--offset),0);
-      .bfQcDW{
-        width: 80px;
-        height: 30px;
-        margin: 15px auto 11px;
-        img{
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .bwKNQa {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top: 2px solid #f0f5fc;
-        width: 100%;
-        height: 40px;
-        border-radius: 0px 0px 16px 16px;
-        overflow: hidden;
-        img{
-          width: 20px;
-          height: 17px;
-        }
-      }
-    }
-
-    .irIQZt {
-      margin: 0px auto;
-      flex-grow: 1;
-      .jMBaZr {
-        display: grid;
-        grid-template-rows: repeat(auto-fill, 94px);
-        grid-gap: 16px;
-        grid-auto-flow: dense;
-        justify-content: center;
-        margin: 16px auto 0px;
-        padding: 0px;
-        list-style-type: none;
-        //--gridTemplateColumns: 3;
-        grid-template-columns: repeat(var(--gridTemplateColumns),94px);
-        .brZJOk {
-          display: contents;
-          li{
-            display: contents;
-            a {
-              text-decoration: none;
-              color: #009cff;
-            }
-          }
-        }
-      }
-      .jMBaZr::before {
-        content: "";
-        display: block;
-      }
-    }
-    .eoBBYj {
-      display: block;
-      --minSize: 94px;
-      min-width: var(--minSize);
-      min-height: var(--minSize);
-      border-radius: inherit;
-      aspect-ratio: 1 / 1;
-    }
-    .global-cq {
-      container-type: inline-size;
-      container-name: tilecq;
-    }
-    .cOWZsC {
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
-      user-select: none;
-      aspect-ratio: 1 / 1;
-      cursor: pointer;
-    }
-    .cASSfo {
-      display: block;
-      transition: transform .6s cubic-bezier(.25, .1, .25, 1);
-      border-radius: 16px;
-      position: relative;
-    }
-    .cASSfo:hover {
-      transform: scale(1.04255) translate(0px, -4px);
-      transition-duration: 0.3s;
-    }
-    .cASSfo::after {
-      content: "";
-      opacity: 0;
-      position: absolute;
-      left: 0px;
-      bottom: 0px;
+      justify-content: center;
+      border-top: 2px solid #f0f5fc;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
-      z-index: 4;
-      transition: box-shadow .6s cubic-bezier(.25, .1, .25, 1),opacity .3s cubic-bezier(.25, .1, .25, 1);
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
-      border-radius: 16px;
-      contain: strict;
-    }
-    .esaxGV {
-      position: absolute;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      padding: 6px;
-      color: rgb(255, 255, 255);
-      font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova',sans-serif;
-      text-align: center;
-      z-index: 6;
-      transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s,opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
-      transform: translate(0px, 8px);
-      opacity: 0;
-      -webkit-font-smoothing: antialiased;
-      pointer-events: none;
-    }
-    .jpSxzz {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      height: 100%;
-      width: 100%;
-      border-radius: 16px;
+      height: 40px;
+      border-radius: 0px 0px 16px 16px;
       overflow: hidden;
-      visibility: hidden;
-      z-index: 5;
-      .evwDGU {
-        height: 100%;
-        position: absolute;
-        left: 50%;
-        top: 0px;
-        transform: translate(-50%, 0px);
-      }
-    }
 
-    .type-list{
-      margin: 32px auto 0;
-      .bottom-text{
-        position: relative;
-        margin: 30px 0 0;
-        padding: 18px 24px;
-        background: rgb(255, 255, 255);
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
-        p{
-          font-weight: bold;
-          font-size: 9px;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          margin: 3px 0px 0px;
-        }
-        h1{
-          font-size: 20px;
-          margin: 0px 0px 8px;
-          color: #002b50;
-        }
-        .jXgCKW{
-          color: #002b50;
-          font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
-        }
+      img {
+        width: 20px;
+        height: 17px;
       }
     }
   }
+
+  .irIQZt {
+    margin: 0px auto;
+    flex-grow: 1;
+
+    .jMBaZr {
+      display: grid;
+      grid-template-rows: repeat(auto-fill, 94px);
+      grid-gap: 16px;
+      grid-auto-flow: dense;
+      justify-content: center;
+      margin: 16px auto 0px;
+      padding: 0px;
+      list-style-type: none;
+      //--gridTemplateColumns: 3;
+      grid-template-columns: repeat(var(--gridTemplateColumns), 94px);
+
+      .brZJOk {
+        display: contents;
+
+        li {
+          display: contents;
+
+          a {
+            text-decoration: none;
+            color: #009cff;
+          }
+        }
+      }
+    }
+
+    .jMBaZr::before {
+      content: "";
+      display: block;
+    }
+  }
+
+  .eoBBYj {
+    display: block;
+    --minSize: 94px;
+    min-width: var(--minSize);
+    min-height: var(--minSize);
+    border-radius: inherit;
+    aspect-ratio: 1 / 1;
+  }
+
+  .global-cq {
+    container-type: inline-size;
+    container-name: tilecq;
+  }
+
+  .cOWZsC {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    user-select: none;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+  }
+
+  .cASSfo {
+    display: block;
+    transition: transform .6s cubic-bezier(.25, .1, .25, 1);
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .cASSfo:hover {
+    transform: scale(1.04255) translate(0px, -4px);
+    transition-duration: 0.3s;
+  }
+
+  .cASSfo::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 4;
+    transition: box-shadow .6s cubic-bezier(.25, .1, .25, 1), opacity .3s cubic-bezier(.25, .1, .25, 1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    border-radius: 16px;
+    contain: strict;
+  }
+
+  .esaxGV {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 6px;
+    color: rgb(255, 255, 255);
+    font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova', sans-serif;
+    text-align: center;
+    z-index: 6;
+    transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s, opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
+    transform: translate(0px, 8px);
+    opacity: 0;
+    -webkit-font-smoothing: antialiased;
+    pointer-events: none;
+  }
+  .ggWjbY {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  .cYmAAh {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(-50%, 0%, 0px);
+    will-change: transform, opacity;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 3;
+    animation: 6s linear 6s infinite normal none running jygSil;
+    width: 200%;
+    height: 200%;
+  }
+  .jpSxzz {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 5;
+
+    .evwDGU {
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0px;
+      transform: translate(-50%, 0px);
+    }
+  }
+
+  .type-list {
+    margin: 32px auto 0;
+
+    .bottom-text {
+      position: relative;
+      margin: 30px 0 0;
+      padding: 18px 24px;
+      background: rgb(255, 255, 255);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+
+      p {
+        font-weight: bold;
+        font-size: 9px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 3px 0px 0px;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 0px 0px 8px;
+        color: #002b50;
+      }
+
+      .jXgCKW {
+        color: #002b50;
+        font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
+      }
+    }
+  }
+}
+@keyframes jygSil {
+  0% {
+    transform: translate3d(-55%, -5%, 0px);
+    opacity: 0;
+  }
+  1% {
+    transform: translate3d(-50%, 0%, 0px);
+    opacity: 1;
+  }
+
+  10% {
+    transform: translate3d(0%, -50%, 0px);
+    opacity: 1;
+  }
+  15% {
+    transform: translate3d(0%, -50%, 0px);
+    opacity: 0;
+  }
+  39.99% {
+    transform: translate3d(-55%, -5%, 0px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate3d(-50%, 0%, 0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(0%, -50%, 0px);
+    opacity: 1;
+  }
+  66% {
+    transform: translate3d(0%, -50%, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0%, -50%, 0px);
+    opacity: 0;
+  }
+}
 </style>
