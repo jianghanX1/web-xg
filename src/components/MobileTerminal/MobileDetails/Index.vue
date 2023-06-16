@@ -2,16 +2,7 @@
   <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at gugoplay.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
-        <a :href="'/#/M/homeIndex'">
-          <div class="logo">
-            <div class="sc-11jy73d-3 bfQcDW">
-              <img :src="logo" alt="">
-            </div>
-            <div class="sc-jaa1t8-0 bwKNQa">
-              <img :src="home" alt="">
-            </div>
-          </div>
-        </a>
+        <MobileLogo></MobileLogo>
         <div class="sc-10l37ae-0 eZzVdA">
           <div :class="detailAdv ? hZDmFe2 : hZDmFe">
             <div class="game-name" style="grid-area: ibx">
@@ -91,8 +82,7 @@
 import goBack from '@/assets/goBack.png';
 import topping from '@/assets/topping.png';
 import play from '@/assets/play.png';
-import logo from '@/assets/logo.png'
-import home from '@/assets/home.png'
+import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import {shuffle, determinePcOrMove, setMeta, getJson, recentGame, getGameTypeList} from "@/utils/utils";
@@ -100,7 +90,7 @@ import { show_newAfg_preroll } from '../../../../webh5sdk';
 export default {
   name: "mobileDetailsIndex",
   components: {
-    StartAndEnd, BottomList
+    StartAndEnd, BottomList, MobileLogo
   },
   data() {
     return {
@@ -120,8 +110,6 @@ export default {
       goBack,
       topping,
       play,
-      logo,
-      home,
       gameScore: "", // 游戏评分
       detailAdv: false, // 是否展示广告位置
       hZDmFe2: 'hZDmFe2', // 有广告样式
@@ -312,9 +300,6 @@ export default {
   .game-name{
     display: none!important;
   }
-  .logo{
-    --offset: -268px!important;
-  }
   .eZzVdA, .bottom {
     width: 534px;
   }
@@ -344,9 +329,6 @@ export default {
   }
 }
 @media (min-width: 661px) and (max-width: 880.9px) {
-  .logo{
-    --offset: -322px!important;
-  }
   .eZzVdA, .bottom {
     width: 644px;
   }
@@ -378,9 +360,6 @@ export default {
   }
 }
 @media (min-width: 881px) {
-  .logo{
-    --offset: -432px!important;
-  }
   .eZzVdA, .bottom {
     width: 864px;
   }
@@ -438,48 +417,6 @@ export default {
   .hZDmFe2::before {
     content: "";
     display: block;
-  }
-  .logo{
-    position: fixed;
-    z-index: 10;
-    top: 16px;
-    background: rgb(255, 255, 255);
-    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
-    border-radius: 16px;
-    width: 94px;
-    height: 94px;
-    flex-direction: column;
-    --left: 50%;
-    left: var(--left);
-    transform: translate(var(--offset),0);
-    --offset: -157px;
-    .bfQcDW{
-      width: 72px;
-      height: 28px;
-      margin: 15px auto 11px;
-      font-size: 0;
-      img{
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .bwKNQa {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top: 2px solid #f0f5fc;
-      overflow: hidden;
-      border-top: 0px;
-      flex-direction: column;
-      border-top: 2px solid #f0f5fc;
-      width: 100%;
-      height: 40px;
-      border-radius: 0px 0px 16px 16px;
-      img{
-        width: 25px;
-        height: 22px;
-      }
-    }
   }
   .game-name{
     background: white;

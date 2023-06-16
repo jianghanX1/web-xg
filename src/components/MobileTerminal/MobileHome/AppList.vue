@@ -1,18 +1,9 @@
 <template>
   <div>
-    <a :href="'/#/M/homeIndex'">
-      <div class="logo">
-        <div class="sc-11jy73d-3 bfQcDW">
-          <img :src="logo" alt="">
-        </div>
-        <div class="sc-jaa1t8-0 bwKNQa">
-          <img :src="home" alt="">
-        </div>
-      </div>
-    </a>
-    <div v-if="clientWidth <= 550.9">
+    <MobileLogo></MobileLogo>
+    <div v-show="clientWidth <= 550.9">
       <div class="app-list eZzVdA" v-for="(item,index) in appGameList" :key="index">
-        <div :class="homeAdv ? cTVRlj2 : cTVRlj">
+        <div :class="homeAdv && index == 0 ? cTVRlj2 : cTVRlj">
           <div class="adv" v-if="index == 0" v-show="homeAdv" style="grid-area: adv">
             <ins class="adsbygoogle"
                  id="homeAdv"
@@ -30,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div v-if="clientWidth > 550.9" class="sc-10l37ae-0 irIQZt">
+    <div v-show="clientWidth > 550.9" class="sc-10l37ae-0 irIQZt">
       <div :class="homeAdv ? jMBaZr2 : jMBaZr">
         <div class="adv" v-show="homeAdv" style="grid-area: adv">
           <ins class="adsbygoogle"
@@ -84,22 +75,20 @@
 </template>
 
 <script>
+import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import {getJson, recentGame} from '@/utils/utils.js';
-import logo from '@/assets/logo.png'
-import home from '@/assets/home.png'
 export default {
   name: "AppList",
   props: ['appGameList'],
   components: {
-    BottomList
+    BottomList,MobileLogo
   },
   data() {
     return {
       bigImg: [], // 大图片
       centreImg: [], // 中图片
       smallImg: [], // 小图片
-      logo,home,
       clientWidth: 0, // 屏幕宽度
       homeAdv: false, // 是否展示广告位置
       cTVRlj2: 'cTVRlj2', // 有广告样式
@@ -185,9 +174,6 @@ export default {
   }
 }
 @media (min-width: 551px) and (max-width: 660.9px) {
-  .logo{
-    --offset: -268px!important;
-  }
   .irIQZt, .bottom {
     width: 534px;
   }
@@ -264,9 +250,6 @@ export default {
   }
 }
 @media (min-width: 661px) and (max-width: 880.9px) {
-  .logo{
-    --offset: -322px!important;
-  }
   .irIQZt, .bottom {
     width: 644px;
     .jMBaZr2 {
@@ -335,9 +318,6 @@ export default {
   }
 }
 @media (min-width: 881px) {
-  .logo{
-    --offset: -432px!important;
-  }
   .irIQZt, .bottom {
     width: 864px;
     .jMBaZr2 {
@@ -392,51 +372,6 @@ export default {
         ". . . bigIp2 bigIp2 bigIp2 . ."
         ". . . bigIp2 bigIp2 bigIp2 . ."
 
-    }
-  }
-}
-.logo{
-  display: flex;
-  align-items: center;
-  position: fixed;
-  z-index: 10;
-  top: 16px;
-  background: rgb(255, 255, 255);
-  box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
-  border-radius: 16px;
-  width: 94px;
-  height: 94px;
-  flex-direction: column;
-  --left: 50%;
-  left: var(--left);
-  transform: translate(var(--offset),0);
-  --offset: -157px;
-  .bfQcDW{
-    width: 72px;
-    height: 28px;
-    margin: 15px auto 11px;
-    font-size: 0;
-    img{
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .bwKNQa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 2px solid #f0f5fc;
-    overflow: hidden;
-    border-top: 0px;
-    border-left: 2px solid #f0f5fc;
-    flex-direction: column;
-    border-top: 2px solid #f0f5fc;
-    width: 100%;
-    height: 40px;
-    border-radius: 0px 0px 16px 16px;
-    img{
-      width: 25px;
-      height: 22px;
     }
   }
 }

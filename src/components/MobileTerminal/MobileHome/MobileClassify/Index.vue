@@ -1,23 +1,14 @@
 <template>
   <div id="mobile_classify" v-title data-title="GUGOPLAY">
     <div class="content">
-      <a :href="'/#/M/homeIndex'">
-        <div class="logo">
-          <div class="sc-11jy73d-3 bfQcDW">
-            <img :src="logo" alt="">
-          </div>
-          <div class="sc-jaa1t8-0 bwKNQa">
-            <img :src="home" alt="">
-          </div>
-        </div>
-      </a>
+      <MobileLogo></MobileLogo>
       <div class="app-list eZzVdA" v-for="(item,index) in gameList" :key="index">
         <div class="sc-13nflho-0 cTVRlj">
           <div class="game-name" v-if="index == 0" style="grid-area: ibx">
             <h1>{{ gameType }}</h1>
           </div>
-          <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 7) ? {gridArea: 'bigIp' + indexs}: null">
-            <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 7)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+          <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
+            <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
           </a>
@@ -32,23 +23,20 @@
 </template>
 
 <script>
+import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import {determinePcOrMove, getJson, shuffle} from '@/utils/utils.js'
-import logo from '@/assets/logo.png'
-import home from '@/assets/home.png'
 export default {
   name: "mobileClassifyIndex",
   components: {
-    BottomList, ClassList
+    BottomList, ClassList, MobileLogo
   },
   data() {
     return {
       gameList: [],
       recommend: [],
       gameType: "", // title
-      logo,
-      home
     }
   },
   created() {
@@ -129,9 +117,6 @@ export default {
   }
 }
 @media (min-width: 551px) and (max-width: 660.9px) {
-  .logo{
-    --offset: -268px!important;
-  }
   .eZzVdA, .bottom {
     width: 534px;
   }
@@ -148,9 +133,6 @@ export default {
   }
 }
 @media (min-width: 661px) and (max-width: 880.9px) {
-  .logo{
-    --offset: -322px!important;
-  }
   .eZzVdA, .bottom {
     width: 644px;
   }
@@ -164,9 +146,6 @@ export default {
   }
 }
 @media (min-width: 881px) {
-  .logo{
-    --offset: -432px!important;
-  }
   .eZzVdA, .bottom {
     width: 864px;
     .cTVRlj {
@@ -181,49 +160,6 @@ export default {
 #mobile_classify{
   height: 100vh;
   overflow-y: auto;
-  .logo{
-    position: fixed;
-    z-index: 10;
-    top: 16px;
-    background: rgb(255, 255, 255);
-    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, .24);
-    border-radius: 16px;
-    width: 94px;
-    height: 94px;
-    flex-direction: column;
-    --left: 50%;
-    left: var(--left);
-    transform: translate(var(--offset),0);
-    --offset: -157px;
-    .bfQcDW{
-      width: 72px;
-      height: 28px;
-      margin: 15px auto 11px;
-      font-size: 0;
-      img{
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .bwKNQa {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top: 2px solid #f0f5fc;
-      overflow: hidden;
-      border-top: 0px;
-      border-left: 2px solid #f0f5fc;
-      flex-direction: column;
-      border-top: 2px solid #f0f5fc;
-      width: 100%;
-      height: 40px;
-      border-radius: 0px 0px 16px 16px;
-      img{
-        width: 25px;
-        height: 22px;
-      }
-    }
-  }
   .game-name{
     background: white;
     border-radius: 16px;
