@@ -13,7 +13,7 @@
                  data-ad-format="true"
                  data-full-width-responsive="true"></ins>
           </div>
-          <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="indexs == 0 || indexs == 6 ? {gridArea: 'bigIp' + indexs}: null">
+          <a @click="detailsClick(items)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="indexs == 0 || indexs == 6 ? {gridArea: 'bigIp' + indexs}: null">
             <img v-if="indexs == 0 || indexs == 6" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
@@ -34,7 +34,7 @@
         </div>
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
-            <li v-for="(item,index) in bigImg" :key="index">
+            <li @click="detailsClick(item)" v-for="(item,index) in bigImg" :key="index">
               <a :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'bigIp' + index}">
                 <img v-lazy="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
@@ -43,13 +43,13 @@
           </ul>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
+          <a @click="detailsClick(item)" v-for="(item,index) in centreImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="{gridArea: 'ip' + (index + 3)}">
             <img v-lazy="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
+          <a @click="detailsClick(item)" v-for="(item,index) in smallImg" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
             <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>

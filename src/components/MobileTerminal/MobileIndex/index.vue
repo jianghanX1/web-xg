@@ -103,7 +103,7 @@ export default {
         this.topGameList = JSON.parse(localStorage.getItem('recentGame'))
       } else {
         arr.map((item)=>{
-          if (recentGame.length < 5) {
+          if (recentGame.length < 6) {
             item.filterStatus = 0 // 筛选状态用来判断点击游戏时替换数组中的位置元素
             recentGame.push(item)
           }

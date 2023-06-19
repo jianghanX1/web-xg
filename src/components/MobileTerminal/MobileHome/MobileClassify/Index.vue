@@ -7,7 +7,7 @@
           <div class="game-name" v-if="index == 0" style="grid-area: ibx">
             <h1>{{ gameType }}</h1>
           </div>
-          <a v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
+          <a @click="switchGame(item)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
             <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
@@ -26,7 +26,7 @@
 import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
-import {determinePcOrMove, getJson, shuffle} from '@/utils/utils.js'
+import {determinePcOrMove, getJson, recentGame, shuffle} from '@/utils/utils.js'
 export default {
   name: "mobileClassifyIndex",
   components: {
@@ -79,7 +79,11 @@ export default {
         arr.push(item)
       })
       this.recommend = shuffle(arr).splice(0,30)
-    }
+    },
+    // 切换游戏
+    switchGame (item) {
+      recentGame(item)
+    },
   },
   watch: {
     '$route'(val) {

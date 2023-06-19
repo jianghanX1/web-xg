@@ -1,14 +1,18 @@
 <template>
   <div id="game-type" v-title data-title="Online Games on Gugo ——Let's play">
-    <div style="display: contents" @click="goHome">
+    <div style="display: contents">
       <nav class="sc-15orno7-0 dDVcIC">
-        <div class="sc-11jy73d-3 bfQcDW">
+        <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
           <img :src="logo" alt="">
         </div>
         <div class="sc-jaa1t8-0 bwKNQa">
-          <img :src="home" alt="">
+          <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+          <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
+            <img :src="souSuo" alt="">
+          </button>
         </div>
       </nav>
+      <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse"  @searchClick="searchClick"/>
     </div>
     <div class="irIQZt">
       <div class="sc-1bi8huj-0 iRQTOz">
@@ -35,20 +39,23 @@
 
 <script>
 import TypeList from '@/components/TypeList.vue';
-import {determinePcOrMove, getJson, shuffle} from '@/utils/utils.js'
+import SearchFor from '@/components/SearchFor.vue';
+import {determinePcOrMove, getJson, recentGame, shuffle} from '@/utils/utils.js'
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
+import souSuo from '@/assets/sousuo.png'
 export default {
   name: "gameIndex",
   components: {
-    TypeList
+    TypeList, SearchFor
   },
   data() {
     return {
-      logo,home,
+      logo,home,souSuo,
       gameType: "", // title
       gameList: [], //
       recommend: [], // 推荐
+      UnfoldAndCollapse: false, // 展开收起
     }
   },
   created() {
@@ -74,6 +81,10 @@ export default {
         path: '/'
       },()=>{})
     },
+    // 点击搜索
+    searchClick() {
+      this.UnfoldAndCollapse = !this.UnfoldAndCollapse
+    },
     // 获取游戏列表
     getGameList() {
       const { query } = this.$route
@@ -95,6 +106,7 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
+      recentGame(item)
       this.$router.push({
         path: '/P/details',
         query: {
@@ -220,6 +232,9 @@ export default {
       height: 100%;
     }
   }
+  .bfQcDW:hover{
+    transform: scale(1.05);
+  }
   .bwKNQa {
     display: flex;
     align-items: center;
@@ -232,6 +247,45 @@ export default {
     height: 100%;
     width: 46px;
     border-radius: 0px 16px 16px 0px;
+    .GKasG {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #f0f5fc;
+      height: 50%;
+      width: 100%;
+    }
+    .GKasG:hover{
+      background: #f0f5fc;
+    }
+    .fjlzah{
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50%;
+      width: 100%;
+      border-top: 1px solid #f0f5fc;
+      text-indent: -200vw;
+      font-size: 0px;
+      background: white;
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    .fjlzah:hover{
+      background: #f0f5fc;
+    }
+    .koyGQc {
+      font-size: 100%;
+      font-family: inherit;
+      border: 0px;
+      padding: 0px;
+      background: none;
+      cursor: pointer;
+    }
     img{
       width: 20px;
       height: 17px;
@@ -288,9 +342,28 @@ export default {
       //background: white;
     }
   }
+  .app-item::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 4;
+    transition: box-shadow .6s cubic-bezier(.25, .1, .25, 1),opacity .3s cubic-bezier(.25, .1, .25, 1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    border-radius: 16px;
+    contain: strict;
+  }
   .app-item:hover {
     transform: scale(1.04255) translate(0px, -4px);
     transition-duration: 0.3s;
+  }
+  .app-item:hover::after {
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 12px 0px;
   }
   .esaxGV {
     position: absolute;

@@ -1,14 +1,18 @@
 <template>
   <div class="big-box">
-    <div style="display: contents" @click="goHome">
+    <div style="display: contents">
       <nav class="sc-15orno7-0 dDVcIC">
-        <div class="sc-11jy73d-3 bfQcDW">
+        <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
           <img :src="logo" alt="">
         </div>
         <div class="sc-jaa1t8-0 bwKNQa">
-          <img :src="home" alt="">
+          <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+          <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
+            <img :src="souSuo" alt="">
+          </button>
         </div>
       </nav>
+      <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse"  @searchClick="searchClick"/>
     </div>
     <div class="sc-10l37ae-0 irIQZt">
       <div class="sc-13nflho-1 jMBaZr">
@@ -87,14 +91,16 @@
 
 <script>
 import TypeList from '@/components/TypeList.vue';
-import {getJson, recentGame} from '@/utils/utils.js'
-import logo from '@/assets/logo.png'
-import home from '@/assets/home.png'
+import {getJson, recentGame} from '@/utils/utils.js';
+import logo from '@/assets/logo.png';
+import home from '@/assets/home.png';
+import souSuo from '@/assets/sousuo.png';
 
+import SearchFor from '@/components/SearchFor.vue';
 export default {
   name: "contentIndex",
   components: {
-    TypeList
+    TypeList, SearchFor
   },
   data() {
     return {
@@ -103,7 +109,9 @@ export default {
       smallImg: [], // 小图片
       logo,
       home,
-      videoDiv: null
+      souSuo,
+      videoDiv: null,
+      UnfoldAndCollapse: false, // 展开收起
     }
   },
   mounted() {
@@ -117,11 +125,31 @@ export default {
       }, () => {
       })
     },
+    // 点击搜索
+    searchClick() {
+      this.UnfoldAndCollapse = !this.UnfoldAndCollapse
+    },
     getJson() {
-      let arr = getJson()
-      this.bigImg = arr.splice(0, 3)
-      this.centreImg = arr.splice(0, 12)
-      this.smallImg = arr
+      let newArr = []
+      getJson() && getJson().map((item)=>{
+        newArr.push(item)
+      })
+      this.bigImg = newArr.splice(0, 3)
+      this.centreImg = newArr.splice(0, 12)
+      this.smallImg = newArr
+      let arr = getJson() || [] // 原数组
+      let recentGame = []
+      if (localStorage.getItem('recentGame')) {
+
+      } else {
+        arr.map((item)=>{
+          if (recentGame.length < 6) {
+            item.filterStatus = 0 // 筛选状态用来判断点击游戏时替换数组中的位置元素
+            recentGame.push(item)
+          }
+        })
+        localStorage.setItem('recentGame',JSON.stringify(recentGame))
+      }
     },
     // 点击跳转详情
     iconClick(item) {
@@ -185,6 +213,18 @@ export default {
     height: 100% !important;
     width: 46px !important;
     border-radius: 0px 16px 16px 0px !important;
+    .GKasG {
+      border-right: 0px !important;
+      border-bottom: 1px solid #f0f5fc !important;
+      height: 50%!important;
+      width: 100%!important;
+    }
+    .fjlzah {
+      border-left: 0px!important;
+      border-top: 1px solid #f0f5fc!important;
+      height: 50%!important;
+      width: 100%!important;
+    }
   }
 
   .type-list {
@@ -436,13 +476,14 @@ export default {
       width: 80px;
       height: 30px;
       margin: 15px auto 11px;
-
       img {
         width: 100%;
         height: 100%;
       }
     }
-
+    .bfQcDW:hover{
+      transform: scale(1.05);
+    }
     .bwKNQa {
       display: flex;
       align-items: center;
@@ -452,7 +493,45 @@ export default {
       height: 40px;
       border-radius: 0px 0px 16px 16px;
       overflow: hidden;
-
+      .GKasG {
+        flex-grow: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        border-right: 1px solid #f0f5fc;
+      }
+      .GKasG:hover{
+        background: #f0f5fc;
+      }
+      .fjlzah{
+        flex-grow: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        border-left: 1px solid #f0f5fc;
+        text-indent: -200vw;
+        font-size: 0px;
+        background: white;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .fjlzah:hover{
+        background: #f0f5fc;
+      }
+      .koyGQc {
+        font-size: 100%;
+        font-family: inherit;
+        border: 0px;
+        padding: 0px;
+        background: none;
+        cursor: pointer;
+      }
       img {
         width: 20px;
         height: 17px;

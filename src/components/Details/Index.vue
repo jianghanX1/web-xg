@@ -76,13 +76,19 @@
             <!--          <div class="title">{{ gameTypeList[0] }}</div>-->
             <div class="game-warp">
               <div class="game-list">
-                <div class="logo" @click="goHome">
-                  <div class="sc-11jy73d-3 bfQcDW">
-                    <img :src="logo" alt="">
+                <div>
+                  <div class="logo">
+                    <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
+                      <img :src="logo" alt="">
+                    </div>
+                    <div class="sc-jaa1t8-0 bwKNQa">
+                      <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+                      <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
+                        <img :src="souSuo" alt="">
+                      </button>
+                    </div>
                   </div>
-                  <div class="sc-jaa1t8-0 bwKNQa">
-                    <img :src="home" alt="">
-                  </div>
+                  <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse"  @searchClick="searchClick"/>
                 </div>
                 <div class="app-item"></div>
                 <div class="app-item logo2"></div>
@@ -148,13 +154,15 @@
 <script>
 import BottomNav from '../BottomNav';
 import TypeList from '@/components/TypeList.vue';
+import SearchFor from '@/components/SearchFor.vue';
 import {determinePcOrMove, shuffle, setMeta, getJson, recentGame, getGameTypeList} from '@/utils/utils.js';
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
+import souSuo from '@/assets/sousuo.png'
 export default {
   name: "detailsIndex",
   components: {
-    BottomNav, TypeList
+    BottomNav, TypeList, SearchFor
   },
   data() {
     return {
@@ -190,8 +198,10 @@ export default {
       bottomBtnType: true, // 底部按钮
       logo,
       home,
+      souSuo,
       typeList: [], // 游戏类型
       gameScore: "", // 游戏评分
+      UnfoldAndCollapse: false, // 展开收起
     }
   },
   created() {
@@ -250,6 +260,10 @@ export default {
       this.$router.push({
         path: '/'
       },()=>{})
+    },
+    // 点击搜索
+    searchClick() {
+      this.UnfoldAndCollapse = !this.UnfoldAndCollapse
     },
     getJson() {
       this.typeList = getGameTypeList() || []
@@ -447,6 +461,18 @@ export default {
     height: 100%!important;
     width: 46px!important;
     border-radius: 0px 16px 16px 0px!important;
+    .GKasG {
+      border-right: 0px !important;
+      border-bottom: 1px solid #f0f5fc !important;
+      height: 50%!important;
+      width: 100%!important;
+    }
+    .fjlzah {
+      border-left: 0px!important;
+      border-top: 1px solid #f0f5fc!important;
+      height: 50%!important;
+      width: 100%!important;
+    }
   }
   .logo2{
     display: block!important;
@@ -940,15 +966,57 @@ export default {
                   height: 100%;
                 }
               }
+              .bfQcDW:hover{
+                transform: scale(1.05);
+              }
               .bwKNQa {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border-top: 2px solid #f0f5fc;
                 width: 100%;
-                height: 40px;
+                height: 52px;
                 border-radius: 0px 0px 16px 16px;
                 overflow: hidden;
+                .GKasG {
+                  flex-grow: 1;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 50%;
+                  border-right: 1px solid #f0f5fc;
+                }
+                .GKasG:hover{
+                  background: #f0f5fc;
+                }
+                .fjlzah{
+                  flex-grow: 1;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 50%;
+                  border-left: 1px solid #f0f5fc;
+                  text-indent: -200vw;
+                  font-size: 0px;
+                  background: white;
+                  img {
+                    width: 18px;
+                    height: 18px;
+                  }
+                }
+                .fjlzah:hover{
+                  background: #f0f5fc;
+                }
+                .koyGQc {
+                  font-size: 100%;
+                  font-family: inherit;
+                  border: 0px;
+                  padding: 0px;
+                  background: none;
+                  cursor: pointer;
+                }
                 img{
                   width: 25px;
                   height: 22px;

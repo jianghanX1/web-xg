@@ -6,7 +6,8 @@
         <div class="sc-10l37ae-0 eZzVdA">
           <div :class="detailAdv ? hZDmFe2 : hZDmFe">
             <div class="game-name" style="grid-area: ibx">
-              <h1>{{ gameType }}</h1>
+              <div><h1>{{ gameName }}</h1></div>
+              <span class="sc-1ercfrx-6 eyfKaw">{{ gameType }}</span>
             </div>
             <div class="game-play" style="grid-area: bigIp0">
               <div class="game-img-box" @click="playClick">
@@ -433,6 +434,19 @@ export default {
     h1{
       font: 700 1em/1em Torus, sans-serif;
       color: #002b50;
+    }
+    .eyfKaw{
+      display: block;
+      color: #5d6b84;
+      font-size: 12px;
+      line-height: 15px;
+      margin: 4px 0px 0px;
+      letter-spacing: 0.3px;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
     }
   }
   .game-play{
