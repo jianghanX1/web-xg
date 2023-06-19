@@ -12,12 +12,12 @@
           </div>
         </div>
       </div>
-      <section v-if="!screenList.length" class="sc-746tnx-3 dikVfD">
-        <div v-if="screenType" class="sc-1tnpzxm-3 bMdTkk">
+      <section v-show="!screenList.length" class="sc-746tnx-3 dikVfD">
+        <div v-show="screenType" class="sc-1tnpzxm-3 bMdTkk">
           <h1>Hmm, nothing’s coming up for that.</h1>
           <p>Try searching for something else?</p>
         </div>
-        <div v-else class="sc-1nio9ia-0 dMifeo">
+        <div v-show="!screenType" class="sc-1nio9ia-0 dMifeo">
           <nav class="sc-1nio9ia-1 jmIBMY" id="nav">
             <div class="sc-1nio9ia-2 iWVJzN" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</div>
           </nav>
@@ -47,7 +47,7 @@
           </div>
         </div>
       </section>
-      <section v-else class="sc-746tnx-3 izRAmK">
+      <section v-show="screenList.length" class="sc-746tnx-3 izRAmK">
         <div class="sc-1tnpzxm-0 hSivpy">
           <div class="sc-1tnpzxm-2 cndJnf">
             <div class="app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
@@ -103,6 +103,7 @@ export default {
       let downX; // 鼠标点击的x下标
       let scrollLeft; // 当前元素滚动条的偏移量
       let nav = document.getElementById('nav')
+      console.log(nav);
       if (nav) {
         nav.addEventListener("mousedown", function (event) {
           flag = true;
@@ -281,6 +282,10 @@ export default {
 }
 input::placeholder{
   color: #bac9de;
+}
+
+input::-webkit-search-cancel-button {
+  display: none;
 }
 .kSNKUJ {
   position: absolute;
