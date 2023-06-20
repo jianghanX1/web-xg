@@ -55,12 +55,26 @@
       </section>
       <section v-show="screenList.length" class="izRAmK">
         <div class="hSivpy">
-          <div class="cndJnf">
+          <div class="fYlIeu" v-if="determinePcOrMove == 1">
+            <a @click="switchGame(item)" v-for="(item,index) in screenList" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="fcDjQV">
+              <img :src="item.iconUrl" class="dYqVqC" alt="">
+              <div class="kZbSoa">
+                <div class="hQIsLG">
+                  <div class="UVa-dc">{{item.Name}}</div>
+                </div>
+                <span class="eyfKaw"></span>
+              </div>
+            </a>
+          </div>
+          <div class="cndJnf" v-else>
             <div class="app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
               <img :src="item.iconUrl" alt="">
               <span class="esaxGV">{{item.Name}}</span>
             </div>
           </div>
+        </div>
+        <div>
+          <TypeList from="1"></TypeList>
         </div>
       </section>
       <button class="gwKjum kSNKUJ" @click="collapse">
@@ -79,10 +93,14 @@ import shuaXin from '@/assets/shuaxin.png';
 import huore from '@/assets/huore.png';
 import fanHui from '@/assets/fanhui.png';
 import guanBi from '@/assets/guanbi.png';
+import TypeList from '@/components/TypeList.vue'
 import {getGameTypeList, getJson, recentGame, determinePcOrMove} from '@/utils/utils'
 export default {
   name: "SearchFor",
   props: ['UnfoldAndCollapse'],
+  components: {
+    TypeList
+  },
   data() {
     return {
       gBGPWM: 'gBGPWM', // pc展开样式
@@ -155,16 +173,12 @@ export default {
       let allJson = getJson()
       this.popularGame = allJson.splice(0,6)
     },
-    classClick(type) {
-      this.$router.push({
-        path: '/P/gameType',
-        query: {
-          gameType: type
-        }
-      },()=>{})
+    classClick(value) {
+      this.screenValue = value
+      this.inputChange(value,1)
     },
     // 搜索框
-    inputChange(value) {
+    inputChange(value,type) {
       let inputValue = value.toLowerCase()
       if (inputValue == '') {
         this.screenType = false
@@ -175,8 +189,14 @@ export default {
         let arr = []
         let allJson = getJson()
         allJson && allJson.map((item)=>{
-          if (item.Name.toLowerCase().includes(`${inputValue}`)) {
-            arr.push(item)
+          if (type) {
+            if (item[value] == 1) {
+              arr.push(item)
+            }
+          } else {
+            if (item.Name.toLowerCase().includes(`${inputValue}`)) {
+              arr.push(item)
+            }
           }
         })
         this.screenList = arr
@@ -186,7 +206,6 @@ export default {
     },
     // 清空input
     emptyClick() {
-      console.log(11111);
       this.screenValue = ''
       this.screenList = []
       this.screenType = false
@@ -609,8 +628,8 @@ input::-webkit-search-cancel-button {
   transition: transform 0.1s ease-out 0s;
   transform: translateY(-62px);
   overflow: hidden scroll;
-  display: flex;
-  flex-direction: column;
+  //display: flex;
+  //flex-direction: column;
   position: absolute;
   top: 0px;
   bottom: -62px;
@@ -622,9 +641,9 @@ input::-webkit-search-cancel-button {
 .hSivpy {
   position: relative;
   width: calc(100% + 20px);
-  flex-grow: 1;
+  //flex-grow: 1;
   margin: 0px 0px 10px;
-  height: 100%;
+  //height: 100%;
 }
 .izRAmK::-webkit-scrollbar {
   display: none;
@@ -638,6 +657,34 @@ input::-webkit-search-cancel-button {
   height: 0;
   clear: both;
   visibility: hidden;
+}
+.fYlIeu {
+  margin: 48px 21px 0px 0px;
+  a{
+    text-decoration: none;
+  }
+}
+.fcDjQV {
+  font-size: 18px;
+  margin: 16px 0;
+  display: flex;
+}
+.dYqVqC {
+  border-radius: var(--borderRadius,8px);
+  box-shadow: var(--boxShadow,0 4px 8px 0 rgba(0,0,0,.24));
+  background: #bac9de;
+  margin: 0px 16px 0px 0px;
+  width: 64px;
+  height: 64px;
+}
+.kZbSoa {
+  margin: auto 0px;
+}
+.UVa-dc {
+  margin: 0px;
+  font: 700 1em/1em Torus, sans-serif;
+  padding: 0px 10px 0px 0px;
+  color: #002b50;
 }
 .bMdTkk {
   margin: 24px 0px 0px 8px;
