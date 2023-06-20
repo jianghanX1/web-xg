@@ -1,25 +1,42 @@
 <template>
-  <a :href="'/#/M/homeIndex'">
+  <div>
     <div class="logo">
       <div class="sc-11jy73d-3 bfQcDW">
-        <img :src="logo" alt="">
+        <a :href="'/#/M/homeIndex'"><img :src="logo" alt=""></a>
       </div>
       <div class="sc-jaa1t8-0 bwKNQa">
-        <img :src="home" alt="">
+        <a :href="'/#/M/homeIndex'" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+        <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
+          <img :src="souSuo" alt="">
+        </button>
       </div>
     </div>
-  </a>
+    <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
+  </div>
 </template>
 
 <script>
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
+import souSuo from '@/assets/sousuo.png'
+
+import SearchFor from '@/components/SearchFor.vue';
 export default {
   name: "MobileLogo",
+  components: {
+    SearchFor
+  },
   data() {
     return {
-      logo,home
+      logo,home,souSuo,
+      UnfoldAndCollapse: false, // 展开收起
     }
+  },
+  methods: {
+    // 点击搜索
+    searchClick() {
+      this.UnfoldAndCollapse = !this.UnfoldAndCollapse
+    },
   }
 }
 </script>
@@ -66,22 +83,60 @@ export default {
       height: 100%;
     }
   }
+  .bfQcDW:hover{
+    transform: scale(1.05);
+  }
   .bwKNQa {
     display: flex;
     align-items: center;
     justify-content: center;
     border-top: 2px solid #f0f5fc;
-    overflow: hidden;
-    border-top: 0px;
-    border-left: 2px solid #f0f5fc;
-    flex-direction: column;
-    border-top: 2px solid #f0f5fc;
     width: 100%;
     height: 40px;
     border-radius: 0px 0px 16px 16px;
-    img{
-      width: 25px;
-      height: 22px;
+    overflow: hidden;
+    .GKasG {
+      flex-grow: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      border-right: 1px solid #f0f5fc;
+    }
+    .GKasG:hover{
+      background: #f0f5fc;
+    }
+    .fjlzah{
+      flex-grow: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      border-left: 1px solid #f0f5fc;
+      text-indent: -200vw;
+      font-size: 0px;
+      background: white;
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    .fjlzah:hover{
+      background: #f0f5fc;
+    }
+    .koyGQc {
+      font-size: 100%;
+      font-family: inherit;
+      border: 0px;
+      padding: 0px;
+      background: none;
+      cursor: pointer;
+    }
+    img {
+      width: 20px;
+      height: 17px;
     }
   }
 }

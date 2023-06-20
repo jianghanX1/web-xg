@@ -1,67 +1,73 @@
 <template>
   <div>
-    <section role="search" :class="UnfoldAndCollapse ? gBGPWM : iYQTqc">
+    <section role="search" :class="determinePcOrMove == 1 ? UnfoldAndCollapse ? gfDODf : cBtLbj  : UnfoldAndCollapse ? gBGPWM : iYQTqc">
       <div class="sc-jkuq4p-0 bjFQNg">
-        <button class="sc-c36zwn-0 sc-jkuq4p-1 koyGQc gpJxFx" @click="collapse">
-          <img :src="logos" alt="">
+        <button class="koyGQc gpJxFx" @click="collapse">
+          <img v-if="determinePcOrMove == 1" class="lnRyAU" :src="fanHui" alt="">
+          <img :src="logos" class="logos" alt="">
         </button>
-        <div class="sc-jkuq4p-4 ildPAc">
-          <input placeholder="你今天要玩什么呢？" type="search" class="sc-jkuq4p-5 cpmosI" @input="inputChange($event.target.value)">
-          <div class="sc-jkuq4p-6 jVuRgK">
-            <img :src="souSuo2" alt="">
+        <div class="ildPAc">
+          <input :placeholder="determinePcOrMove == 1 ? 'search result' : 'What are you going to play today？'" type="search" v-model="screenValue" class="cpmosI" @input="inputChange($event.target.value)">
+          <div class="jVuRgK">
+            <div v-if="screenType" @click="emptyClick">
+              <div class="koyGQc iJOQIM">
+                <img :src="guanBi" alt="">清空
+              </div>
+            </div>
+            <img v-else :src="souSuo2" alt="">
           </div>
         </div>
       </div>
-      <section v-show="!screenList.length" class="sc-746tnx-3 dikVfD">
-        <div v-show="screenType" class="sc-1tnpzxm-3 bMdTkk">
+      <section v-show="!screenList.length" class="dikVfD">
+        <div v-show="screenType" class="bMdTkk">
           <h1>Hmm, nothing’s coming up for that.</h1>
           <p>Try searching for something else?</p>
         </div>
-        <div v-show="!screenType" class="sc-1nio9ia-0 dMifeo">
-          <nav class="sc-1nio9ia-1 jmIBMY" id="nav">
-            <div class="sc-1nio9ia-2 iWVJzN" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</div>
+        <div v-show="!screenType" class="dMifeo">
+          <nav class="jmIBMY" id="nav">
+            <div class="iWVJzN" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</div>
           </nav>
         </div>
-        <h2 class="sc-1tnpzxm-4 MMWDF">本周热门</h2>
-        <div class="sc-1tnpzxm-1 gA-dJmQ">
+        <h2 class="MMWDF">本周热门</h2>
+        <div class="gA-dJmQ">
           <div class="app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
-            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-            <div class="sc-wr3rvk-1 chTXCW" v-if="index == 0">
-              <div class="sc-wr3rvk-2 dtnyBS">
+            <span class="esaxGV">{{item.Name}}</span>
+            <div class="chTXCW" v-if="index == 0">
+              <div class="dtnyBS">
                 <img :src="huore" alt="">
               </div>
             </div>
           </div>
         </div>
-        <h2 class="sc-1tnpzxm-4 MMWDF">最近玩过</h2>
-        <div class="sc-1tnpzxm-1 gA-dJmQ">
+        <h2 class="MMWDF">最近玩过</h2>
+        <div class="gA-dJmQ">
           <div class="app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
-            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-            <div class="sc-wr3rvk-1 chTXCW">
-              <div class="sc-wr3rvk-2 dtnyBS">
+            <span class="esaxGV">{{item.Name}}</span>
+            <div class="chTXCW">
+              <div class="dtnyBS">
                 <img :src="shuaXin" alt="">
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section v-show="screenList.length" class="sc-746tnx-3 izRAmK">
-        <div class="sc-1tnpzxm-0 hSivpy">
-          <div class="sc-1tnpzxm-2 cndJnf">
+      <section v-show="screenList.length" class="izRAmK">
+        <div class="hSivpy">
+          <div class="cndJnf">
             <div class="app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
               <img :src="item.iconUrl" alt="">
-              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+              <span class="esaxGV">{{item.Name}}</span>
             </div>
           </div>
         </div>
       </section>
-      <button class="sc-n58opj-0 gwKjum sc-746tnx-2 kSNKUJ" @click="collapse">
+      <button class="gwKjum kSNKUJ" @click="collapse">
         <img :src="fanHui2" alt="">
       </button>
     </section>
-    <div class="sc-746tnx-0 diLFOL" v-if="UnfoldAndCollapse" @click="collapse"></div>
+    <div class="diLFOL" v-if="UnfoldAndCollapse" @click="collapse"></div>
   </div>
 </template>
 
@@ -71,23 +77,37 @@ import souSuo2 from '@/assets/sousuo2.png';
 import fanHui2 from '@/assets/fanhui2.png';
 import shuaXin from '@/assets/shuaxin.png';
 import huore from '@/assets/huore.png';
-import {getGameTypeList, getJson, recentGame} from '@/utils/utils'
+import fanHui from '@/assets/fanhui.png';
+import guanBi from '@/assets/guanbi.png';
+import {getGameTypeList, getJson, recentGame, determinePcOrMove} from '@/utils/utils'
 export default {
   name: "SearchFor",
   props: ['UnfoldAndCollapse'],
   data() {
     return {
-      gBGPWM: 'gBGPWM',
-      iYQTqc: 'iYQTqc',
-      logos, souSuo2, fanHui2, shuaXin, huore,
+      gBGPWM: 'gBGPWM', // pc展开样式
+      iYQTqc: 'iYQTqc', // pc收起样式
+      gfDODf: 'gfDODf', // 移动端展开样式
+      cBtLbj: 'cBtLbj', // 移动端收起样式
+      logos, souSuo2, fanHui2, shuaXin, huore, fanHui, guanBi,
       typeList: getGameTypeList() || [], // 类型
       popularGame: [], // 热门游戏
       screenList: [], // 筛选数据
       screenType: false, // 搜索状态
       topGameList: [], // 常玩游戏
+      determinePcOrMove: null,
+      screenValue: '', // 搜索框值
     }
   },
   mounted() {
+    if (determinePcOrMove() == 1) {
+      this.determinePcOrMove = 1
+      // setTimeout(()=>{
+      //   window.addAds()
+      // },1300)
+    } else {
+      this.determinePcOrMove = 2
+    }
     this.navSlide()
     this.getAllJson()
     this.topGameList = localStorage.getItem('recentGame') && JSON.parse(localStorage.getItem('recentGame'))
@@ -164,6 +184,13 @@ export default {
         this.screenList = []
       }
     },
+    // 清空input
+    emptyClick() {
+      console.log(11111);
+      this.screenValue = ''
+      this.screenList = []
+      this.screenType = false
+    },
     // 切换游戏
     switchGame (item) {
       recentGame(item)
@@ -179,7 +206,58 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.gBGPWM {
+@media (min-width: 111px) and (max-width: 770.9px) {
+  .gfDODf {
+    padding: 0px 15px 0px 29px!important;
+    width: 100%!important;
+    overflow: hidden!important;
+    .dikVfD {
+      padding: 84px 21px 0px!important;
+    }
+    .cBtLbj {
+      padding: 0px 15px 0px 29px!important;
+      width: 100%!important;
+      overflow: hidden!important;
+    }
+    .bjFQNg {
+      height: 60px!important;
+      border-radius: 0px 12px 12px 0px!important;
+      top: 16px!important;
+      left: -29px!important;
+      width: 96vw!important;
+    }
+  }
+  .kSNKUJ {
+    display: none!important;
+  }
+}
+@media (min-width: 111px) and (max-width: 359px) {
+  .app-item{
+    margin-right: 16px;
+  }
+}
+@media (min-width: 359px) and (max-width: 465px) {
+  .app-item:not(:nth-child(3n)){
+    margin-right: 16px;
+  }
+}
+@media (min-width: 465px) and (max-width: 576px) {
+  .app-item:not(:nth-child(4n)){
+    margin-right: 16px;
+  }
+}
+@media (min-width: 576px) and (max-width: 685px) {
+  .app-item:not(:nth-child(5n)){
+    margin-right: 16px;
+  }
+}
+@media (min-width: 685px) {
+  .app-item:not(:nth-child(6n)){
+    margin-right: 16px;
+  }
+}
+
+.gBGPWM, .gfDODf{
   position: fixed;
   z-index: 100003;
   top: 0px;
@@ -247,7 +325,12 @@ export default {
   padding: 0px;
   background: none;
   cursor: pointer;
-  img{
+  .lnRyAU{
+    width: 8px;
+    height: 10px;
+    margin: 0 8px 0 0;
+  }
+  .logos{
     width: 24px;
     height: 24px;
   }
@@ -278,6 +361,29 @@ export default {
     width: 24px;
     height: 24px;
     margin: 0 16px;
+  }
+  .iJOQIM {
+    background: #f0f5fc;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    margin: 0px 14px;
+    font: 700 12px/22px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #5d6b84;
+    overflow: hidden;
+    will-change: width;
+    transition: width 0.1s ease-in 0s;
+    img{
+      width: 16px;
+      height: 16px;
+      margin: 0 10px;
+    }
+  }
+  .iJOQIM:hover {
+    width: 88px;
   }
 }
 input::placeholder{
@@ -442,7 +548,8 @@ input::-webkit-search-cancel-button {
   box-sizing: border-box;
   cursor: pointer;
   float: left;
-  margin-right: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+  border-radius: 16px;
   img{
     width: 100%;
     height: 100%;
@@ -464,9 +571,6 @@ input::-webkit-search-cancel-button {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
   border-radius: 16px;
   contain: strict;
-}
-.app-item:nth-of-type(6n){
-  margin-right: 0;
 }
 .app-item:hover {
   transform: scale(1.04255) translate(0px, -4px);

@@ -335,6 +335,8 @@ export default {
     cursor: pointer;
     float: left;
     margin-right: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    border-radius: 16px;
     img{
       width: 100%;
       height: 100%;

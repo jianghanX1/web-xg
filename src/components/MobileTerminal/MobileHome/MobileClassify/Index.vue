@@ -2,8 +2,8 @@
   <div id="mobile_classify" v-title data-title="Online Games on Gugo ——Let's play">
     <div class="content">
       <MobileLogo></MobileLogo>
-      <div class="app-list eZzVdA" v-for="(item,index) in gameList" :key="index">
-        <div class="sc-13nflho-0 cTVRlj">
+      <div class="eZzVdA" v-for="(item,index) in gameList" :key="index">
+        <div class="cTVRlj">
           <div class="game-name" v-if="index == 0" style="grid-area: ibx">
             <h1>{{ gameType }}</h1>
           </div>
@@ -12,6 +12,13 @@
             <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
           </a>
+        </div>
+      </div>
+      <div class="eZzVdA2" v-if="!gameList.length">
+        <div class="cTVRlj2">
+          <div class="game-name" style="grid-area: ibx">
+            <h1>{{ gameType }}</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -106,7 +113,7 @@ export default {
   }
 }
 @media (min-width: 111px) and (max-width: 550.9px) {
-  .eZzVdA, .bottom {
+  .eZzVdA, .eZzVdA2, .bottom {
     width: 314px;
   }
   .cTVRlj {
@@ -119,9 +126,14 @@ export default {
           "bigIp6 bigIp6 ."
           ". . ."
   }
+  .cTVRlj2 {
+    grid-template-areas:
+          ". ibx ibx"
+          ". . ."
+  }
 }
 @media (min-width: 551px) and (max-width: 660.9px) {
-  .eZzVdA, .bottom {
+  .eZzVdA, .eZzVdA2, .bottom {
     width: 534px;
   }
   .cTVRlj {
@@ -135,9 +147,15 @@ export default {
         ". . . . ."
         ". . . . ."
   }
+  .cTVRlj2 {
+    --gridTemplateColumns: 5!important;
+    grid-template-areas:
+          ". ibx ibx . ."
+          ". . . . ."
+  }
 }
 @media (min-width: 661px) and (max-width: 880.9px) {
-  .eZzVdA, .bottom {
+  .eZzVdA, .eZzVdA2, .bottom {
     width: 644px;
   }
   .cTVRlj {
@@ -148,9 +166,15 @@ export default {
         "bigIp6 bigIp6 . . . ."
         ". . . . . ."
   }
+  .cTVRlj2 {
+    --gridTemplateColumns: 6!important;
+    grid-template-areas:
+          ". ibx ibx . . ."
+          ". . . . . ."
+  }
 }
 @media (min-width: 881px) {
-  .eZzVdA, .bottom {
+  .eZzVdA, .eZzVdA2, .bottom {
     width: 864px;
     .cTVRlj {
       --gridTemplateColumns: 8!important;
@@ -158,6 +182,12 @@ export default {
         ". ibx ibx . . . bigIp0 bigIp0"
         "bigIp6 bigIp6 . . . . bigIp0 bigIp0"
         "bigIp6 bigIp6 . . . . . ."
+    }
+    .cTVRlj2 {
+      --gridTemplateColumns: 8!important;
+      grid-template-areas:
+          ". ibx ibx . . . . ."
+          ". . . . . . . ."
     }
   }
 }
@@ -181,7 +211,7 @@ export default {
     font-size: 21px;
   }
   .content{
-    .eZzVdA {
+    .eZzVdA, .eZzVdA2{
       margin: 0px auto;
       flex-grow: 1;
     }
@@ -189,7 +219,11 @@ export default {
       content: "";
       display: block;
     }
-    .cTVRlj {
+    .eZzVdA2:nth-of-type(1) .cTVRlj2::before{
+      content: "";
+      display: block;
+    }
+    .cTVRlj, .cTVRlj2 {
       display: grid;
       grid-template-rows: repeat(auto-fill, 94px);
       grid-gap: 16px;
