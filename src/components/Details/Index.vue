@@ -88,7 +88,7 @@
                       </button>
                     </div>
                   </div>
-                  <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse"  @searchClick="searchClick"/>
+                  <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
                 </div>
                 <div class="app-item"></div>
                 <div class="app-item logo2"></div>

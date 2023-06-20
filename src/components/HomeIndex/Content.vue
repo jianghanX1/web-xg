@@ -12,7 +12,7 @@
           </button>
         </div>
       </nav>
-      <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse"  @searchClick="searchClick"/>
+      <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
     </div>
     <div class="sc-10l37ae-0 irIQZt">
       <div class="sc-13nflho-1 jMBaZr">
