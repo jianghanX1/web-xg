@@ -2,7 +2,7 @@
   <div id="mobile_classify" v-title data-title="Online Games on Gugo ——Let's play">
     <div class="content">
       <MobileLogo></MobileLogo>
-      <div class="eZzVdA" v-for="(item,index) in gameList" :key="index">
+      <div class="eZzVdA" :class="index == 0 ? eZzVdABef : null" v-for="(item,index) in gameList" :key="index">
         <div class="cTVRlj">
           <div class="game-name" v-if="index == 0" style="grid-area: ibx">
             <h1>{{ gameType }}</h1>
@@ -44,6 +44,7 @@ export default {
       gameList: [],
       recommend: [],
       gameType: "", // title
+      eZzVdABef: 'eZzVdABef'
     }
   },
   created() {
@@ -215,11 +216,11 @@ export default {
       margin: 0px auto;
       flex-grow: 1;
     }
-    .eZzVdA:nth-of-type(1) .cTVRlj::before{
+    .eZzVdABef .cTVRlj::before{
       content: "";
       display: block;
     }
-    .eZzVdA2:nth-of-type(1) .cTVRlj2::before{
+    .eZzVdA2 .cTVRlj2::before{
       content: "";
       display: block;
     }
