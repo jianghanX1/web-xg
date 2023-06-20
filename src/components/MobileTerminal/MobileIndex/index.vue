@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       allGameList: [], // 全部游戏
-      topGameList: [], // 移动端头部游戏列表
       appGameList: [], // 中间游戏列表
       gameTypeList: [], // 底部游戏类型
       logoutCount: 0, // 长时间未操作
@@ -98,19 +97,6 @@ export default {
       // clearInterval(this.timerDate)
       // this.timer(allGameList)
       let arr = jsonArr || [] // 原数组
-      let recentGame = []
-      if (localStorage.getItem('recentGame')) {
-        this.topGameList = JSON.parse(localStorage.getItem('recentGame'))
-      } else {
-        arr.map((item)=>{
-          if (recentGame.length < 6) {
-            item.filterStatus = 0 // 筛选状态用来判断点击游戏时替换数组中的位置元素
-            recentGame.push(item)
-          }
-        })
-        this.topGameList = recentGame
-        localStorage.setItem('recentGame',JSON.stringify(recentGame))
-      }
       let newArr = [] // 新数组
       let num = Math.ceil(arr.length / 12)
       console.log(num);

@@ -137,19 +137,6 @@ export default {
       this.bigImg = newArr.splice(0, 3)
       this.centreImg = newArr.splice(0, 12)
       this.smallImg = newArr
-      let arr = getJson() || [] // 原数组
-      let recentGame = []
-      if (localStorage.getItem('recentGame')) {
-
-      } else {
-        arr.map((item)=>{
-          if (recentGame.length < 6) {
-            item.filterStatus = 0 // 筛选状态用来判断点击游戏时替换数组中的位置元素
-            recentGame.push(item)
-          }
-        })
-        localStorage.setItem('recentGame',JSON.stringify(recentGame))
-      }
     },
     // 点击跳转详情
     iconClick(item) {

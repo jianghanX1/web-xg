@@ -1885,7 +1885,6 @@ export function getJson() {
         }]
     )
 }
-
 // 常玩游戏列表替换
 export function recentGame(element) {
     let recentGame = JSON.parse(localStorage.getItem('recentGame')) || []

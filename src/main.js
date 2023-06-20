@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 
 // 引入插件
 import VueLazyload from 'vue-lazyload'
+import {getJson} from "@/utils/utils";
 // 注册插件
 Vue.use(VueLazyload,{
   loading:'' // 懒加载默认图片
@@ -60,6 +61,19 @@ Vue.directive('title', {
     }
   }
 })
+
+// 默认常玩游戏
+let arr = getJson() || [] // 原数组
+let recentGame = []
+if (!localStorage.getItem('recentGame')) {
+  arr.map((item)=>{
+    if (recentGame.length < 6) {
+      item.filterStatus = 0 // 筛选状态用来判断点击游戏时替换数组中的位置元素
+      recentGame.push(item)
+    }
+  })
+  localStorage.setItem('recentGame',JSON.stringify(recentGame))
+}
 
 Vue.use(Button)
 Vue.use(Select)

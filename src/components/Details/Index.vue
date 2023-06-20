@@ -958,7 +958,7 @@ export default {
               transform: translate(var(--offset),0);
               z-index: 3;
               .bfQcDW{
-                width: 95px;
+                width: 85px;
                 height: 35px;
                 margin: 20px auto 11px;
                 img{
@@ -1018,8 +1018,8 @@ export default {
                   cursor: pointer;
                 }
                 img{
-                  width: 25px;
-                  height: 22px;
+                  width: 22px;
+                  height: 18px;
                 }
               }
             }
