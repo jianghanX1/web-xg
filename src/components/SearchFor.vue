@@ -32,7 +32,7 @@
         <div class="gA-dJmQ">
           <div class="app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
-            <span class="esaxGV">{{item.Name}}</span>
+            <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             <div class="chTXCW" v-if="index == 0">
               <div class="dtnyBS">
                 <img :src="huore" alt="">
@@ -44,7 +44,7 @@
         <div class="gA-dJmQ">
           <div class="app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
-            <span class="esaxGV">{{item.Name}}</span>
+            <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             <div class="chTXCW">
               <div class="dtnyBS">
                 <img :src="shuaXin" alt="">
@@ -69,7 +69,7 @@
           <div class="cndJnf" v-else>
             <div class="app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
               <img :src="item.iconUrl" alt="">
-              <span class="esaxGV">{{item.Name}}</span>
+              <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             </div>
           </div>
         </div>
