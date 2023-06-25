@@ -74,9 +74,9 @@
         </div>
       </div>
     </div>
-    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">
-      <img :src="topping" alt="">
-    </div>
+<!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
+<!--      <img :src="topping" alt="">-->
+<!--    </div>-->
   </div>
 </template>
 <script>
@@ -474,6 +474,7 @@ export default {
         transform: translate(-50%, -50%);
         animation: 4s ease-in-out 0s infinite normal both running scaleDelay;
         box-sizing: border-box;
+        font-size: 0;
         img{
           width: 24px;
           height: 24px;
@@ -489,7 +490,7 @@ export default {
         text-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
         transform: translateX(-50%);
         word-break: break-all;
-        font-size: 1.4em;
+        font-size: 28px;
       }
       .img{
         width: 100%;
@@ -570,6 +571,7 @@ export default {
     .gmEuRM li {
       display: inline;
       color: #5d6b84;
+      font-size: 16px;
       a{
         text-decoration: none;
         color: #5d6b84;
@@ -824,8 +826,8 @@ export default {
     overflow: hidden;
   }
   .app-promote .promote-list .item{
-    width: 1.971831rem;
-    height: 1.971831rem;
+    width: 1.571831rem;
+    height: 1.571831rem;
     margin: 0.23rem auto 0;
     display: block;
     border-radius: 0.492958rem;

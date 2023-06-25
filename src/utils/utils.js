@@ -51,7 +51,7 @@ export function shuffle(arr) {
 export function determinePcOrMove() {
     if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
         //fontsize计算
-        // document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 16 + 'px'
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 16 + 'px'
         console.log(11111);
         return 1
     } else {
