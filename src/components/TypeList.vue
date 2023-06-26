@@ -21,6 +21,9 @@ export default {
   },
   methods: {
     classClick(type) {
+      if (this.from == 1) {
+        this.$emit('collapse')
+      }
       this.$router.push({
         path: '/P/gameType',
         query: {

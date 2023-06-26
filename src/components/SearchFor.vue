@@ -74,7 +74,7 @@
           </div>
         </div>
         <div>
-          <TypeList from="1"></TypeList>
+          <TypeList from="1" @collapse="collapse"></TypeList>
         </div>
       </section>
       <button class="gwKjum kSNKUJ" @click="collapse">
