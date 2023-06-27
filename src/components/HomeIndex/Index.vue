@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="WEBH5GAME" id="homeId">
+  <div class="big" v-title data-title="H5PLAYS" id="homeId">
     <Navigation></Navigation>
     <div>
       <div class="top-text">
@@ -8,16 +8,16 @@
       <Content></Content>
       <div class="bottom-text">
         <div class="jXgCKW">
-          Hi! Welcome to WEBH5GAME.com!
+          Hi! Welcome to H5PLAYS.com!
           <br>
           <br>
           You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
           <br>
           <br>
-          Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit WEBH5GAME.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit H5PLAYS.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
           <br>
           <br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark WEBH5GAME.com and share it to your friends. Have fun!
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark H5PLAYS.com and share it to your friends. Have fun!
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@ export default {
 
   },
   mounted() {
-    document.title = 'WEBH5GAME'
+    document.title = 'H5PLAYS'
     if (determinePcOrMove() == 1) {
       this.$router.push({
         path: '/M/homeIndex'

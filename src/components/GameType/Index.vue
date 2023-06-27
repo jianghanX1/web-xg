@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'WEBH5GAME'
+    document.title = 'H5PLAYS'
   }
 }
 </script>

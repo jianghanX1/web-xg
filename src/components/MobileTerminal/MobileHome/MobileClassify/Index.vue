@@ -1,5 +1,5 @@
 <template>
-  <div id="mobile_classify" v-title data-title="WEBH5GAME">
+  <div id="mobile_classify" v-title data-title="H5PLAYS">
     <StartAndEnd>
       <div>
         <ClassList :gameTypeList="gameTypeList"></ClassList>

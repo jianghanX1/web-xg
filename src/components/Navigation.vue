@@ -2,7 +2,7 @@
     <div>
       <div class="bj" @click="vigooGamesClick">
         <div class="bj_left">
-          <div class="title">WEBH5GAME</div>
+          <div class="title">H5PLAYS</div>
 <!--          <div class="nav-list">-->
 <!--            <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>-->
 <!--          </div>-->
