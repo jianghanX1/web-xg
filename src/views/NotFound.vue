@@ -30,7 +30,12 @@
             <p class="msg-text">Sorry, the page you requested does not exist on this site</p>
           </div>
           <div class="adv">
-
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2989868722333767"
+                 data-ad-slot="5839531649"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
           </div>
           <div class="popular-games">
             <h6 class="title">The Most Popular Games</h6>

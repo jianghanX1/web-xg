@@ -28,7 +28,12 @@
 <!--        </div>-->
       </div>
       <div class="adv">
-
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2989868722333767"
+             data-ad-slot="3642960753"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
       </div>
       <div class="details-recommend-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
         <p class="recommend-title">Recommendations for similar games</p>
@@ -100,9 +105,9 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(()=>{
-    //   window.addAds()
-    // },800)
+    setTimeout(()=>{
+      window.addAds()
+    },800)
     document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
     this.getJson()
   },

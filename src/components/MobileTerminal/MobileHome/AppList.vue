@@ -30,7 +30,12 @@
         <div class="adv" v-if="index === 0">
           <h6 class="adv-title">Advertisement</h6>
           <div>
-
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2989868722333767"
+                 data-ad-slot="6222675027"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
           </div>
         </div>
         <div class="content-top" style="margin-top: 0.5625rem">
@@ -58,9 +63,9 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(()=>{
-    //   window.addAds()
-    // },1300)
+    setTimeout(()=>{
+      window.addAds()
+    },1300)
   },
   methods: {
     detailsClick(item) {

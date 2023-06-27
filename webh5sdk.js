@@ -1,8 +1,8 @@
 var webh5sdk;
 (function(webh5sdk) {
 		const platformConfig = {
-                "google_client_id": "",
-                "google_ad_channel": "",
+                "google_client_id": "2989868722333767",
+                "google_ad_channel": "1517143258",
                 "google_ad_frequency_hint": "45s",
                 "google_ads_slot_1": "",
                 "google_ads_slot_2": "",
@@ -30,7 +30,6 @@ var webh5sdk;
 		init_newAfg_config();
 		
 		function show_newAfg_preroll(_callback) {
-			return
 			adBreak({
 				type: 'preroll',  // ad shows at start of next level
 				name: 'app_start',
