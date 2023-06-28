@@ -128,7 +128,7 @@ export default {
 <style lang="less" scoped>
 @media (min-width: 1871px) {
   .dDVcIC {
-    --offset: -888px !important;
+    --offset: -880px !important;
   }
   .type-list{
     width: 1760px!important;
@@ -142,7 +142,7 @@ export default {
 }
 @media (min-width: 1541px) and (max-width: 1870.9px) {
   .dDVcIC {
-    --offset: -778px !important;
+    --offset: -770px !important;
   }
   .type-list{
     width: 1540px;
@@ -153,7 +153,7 @@ export default {
 }
 @media (min-width: 1321px) and (max-width: 1540.9px) {
   .dDVcIC {
-    --offset: -668px !important;
+    --offset: -660px !important;
   }
   .type-list{
     width: 1320px;
@@ -164,7 +164,7 @@ export default {
 }
 @media (min-width: 1211px) and (max-width: 1320.9px) {
   .dDVcIC {
-    --offset: -606px !important;
+    --offset: -597px !important;
   }
   .type-list{
     width: 1194px;
@@ -175,7 +175,7 @@ export default {
 }
 @media (min-width: 991px) and (max-width: 1210.9px) {
   .dDVcIC {
-    --offset: -499px !important;
+    --offset: -490px !important;
   }
   .type-list{
     width: 980px;
@@ -415,6 +415,6 @@ export default {
   visibility: hidden;
 }
 .type-list{
-  margin: 32px auto 0;
+  margin: 0 auto 0;
 }
 </style>

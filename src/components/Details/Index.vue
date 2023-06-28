@@ -1,129 +1,82 @@
 <template>
   <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at gugoplay.com'">
+    <PCLogo offsetName="2"></PCLogo>
     <div class="details">
-      <div class="main-center">
-        <div class="main-game">
-          <div class="game-part">
-            <div class="game-container" :style="full">
-              <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
-              <!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
-              <div class="close" :style="closeStyle" @click="closeClick"><i class="el-icon-close" /></div>
-              <div class="flex-games" v-show="isBlock" :style="leftHideStyle">
-                <div class="btns">
-                  <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>
-                  <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>
-                  <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>
-                </div>
-                <div class="game-warp">
-                  <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">
-                    <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)">
-                      <img v-lazy="item.iconUrl" alt="">
-                      <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+      <div class="gpagqS">
+        <div class="dsgWHA">
+          <div class="main-game">
+            <div class="game-part">
+              <div class="game-container" :style="full">
+                <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
+                <!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
+                <div class="close" :style="closeStyle" @click="closeClick"><i class="el-icon-close" /></div>
+                <div class="flex-games" v-show="isBlock" :style="leftHideStyle">
+                  <div class="btns">
+                    <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>
+                    <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>
+                    <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>
+                  </div>
+                  <div class="game-warp">
+                    <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">
+                      <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)">
+                        <img v-lazy="item.iconUrl" alt="">
+                        <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="game-bar">
-              <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.Name }}</span></div>
-              <!--            <div class="bar-app-icon"><img :src="gameInfo.iconUrl" alt=""><span>{{ gameInfo.gameName }}</span></div>-->
-              <div class="bar-btns">
-                <!--              <div class="download" v-if="$store.state.deferredPromptType" @click="addToDesktop"><span>Add to Desktop</span></div>-->
-                <!--              <div class="play-tag" @click="getGameType1(gameInfo.gameType)"><span>Play {{ gameInfo.gameType }} Games</span></div>-->
-                              <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="game-rec">
-            <div class="app-item" v-for="(item,index) in four" :key="index" @click="switchGame(item)">
-              <img v-lazy="item.iconUrl" alt="">
-              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-            </div>
-          </div>
-        </div>
-        <div class="main-waterfall">
-          <div class="recommend-banner">
-            <div class="app-item" v-for="(item,index) in five" :key="index" @click="switchGame(item)">
-              <img v-lazy="item.iconUrl" alt="">
-              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-            </div>
-          </div>
-          <div class="game-list" v-if="six.length">
-            <div class="app-item" v-for="(item,index) in six" :key="index" @click="switchGame(item)">
-              <img v-lazy="item.iconUrl" alt="">
-              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-            </div>
-            <div class="more-btn">
-              <div v-if="intercept.length" @click="loadMoreGames">Load More Games</div>
-            </div>
-          </div>
-        </div>
-        <!--      <Bottom />-->
-      </div>
-      <div class="main-float">
-        <div class="float-ads">
-          <div class="ads-top">
-            <div class="ads-title"></div>
-            <div class="ads-container"></div>
-          </div>
-          <div class="ads-bottom" id="adsBottom">
-            <div class="ads-title"></div>
-            <div class="ads-container"></div>
-          </div>
-        </div>
-        <div class="float-games">
-          <div class="games-container">
-            <!--          <div class="title">{{ gameTypeList[0] }}</div>-->
-            <div class="game-warp">
-              <div class="game-list">
-                <div>
-                  <div class="logo">
-                    <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
-                      <img :src="logo" alt="">
-                    </div>
-                    <div class="sc-jaa1t8-0 bwKNQa">
-                      <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
-                      <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
-                        <img :src="souSuo" alt="">
-                      </button>
-                    </div>
+              <div class="game-bar">
+                <div class="bar-app-icon">
+                  <img :src="gameInfo.iconUrl" alt="">
+                  <div class="kZbSoa">
+                    <div><h1>{{ gameInfo.Name }}</h1></div>
+                    <span>{{ gameInfo.Type }}</span>
                   </div>
-                  <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
                 </div>
-                <div class="app-item"></div>
-                <div class="app-item logo2"></div>
-                <div class="app-item" v-for="(item,index) in one" :key="index" @click="switchGame(item)">
-                  <img v-lazy="item.iconUrl" alt="">
-                  <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="games-container">
-            <!--          <div class="title">{{ gameTypeList[1] }}</div>-->
-            <div class="game-warp">
-              <div class="game-list">
-                <div class="app-item" v-for="(item,index) in two" :key="index" @click="switchGame(item)">
-                  <img v-lazy="item.iconUrl" alt="">
-                  <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="games-container" id="girlsGames">
-            <!--          <div class="title">{{ gameTypeList[2] }}</div>-->
-            <div class="game-warp">
-              <div class="game-list">
-                <div class="app-item" v-for="(item,index) in three" :key="index" @click="switchGame(item)">
-                  <img v-lazy="item.iconUrl" alt="">
-                  <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+                <div class="bar-btns">
+                  <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div style="display: contents">
+          <div v-for="(item,index) in bigImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 ftkfX global-cq" :style="innerWidth >= 1321 ? {gridArea: 'bigIp' + index} : null">
+            <img :src="item.iconUrl" alt="" class="sc-18mcksl-1 eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+          </div>
+        </div>
+        <div style="display: contents">
+          <div v-for="(item,index) in smallImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 global-cq">
+            <img :src="item.iconUrl" alt="" style="width: 94px;height: 94px" class="sc-18mcksl-1 eoBBYj">
+            <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+          </div>
+        </div>
+        <div class="gqnFJQ pAock">
+          <div class="bioerJ">
+            <div class="eDhvMX" style="height: 90px;width: 728px;overflow: hidden"></div>
+            <div class="keJcxs">广告</div>
+          </div>
+        </div>
+        <div class="gqnFJQ jxmECU">
+          <div class="iFmTCx">
+            <div class="eDhvMX" style="height: 250px; width: 300px; overflow: hidden;"></div>
+            <div class="iZJgLq">广告</div>
+          </div>
+        </div>
+        <div class="gqnFJQ SpDdJ">
+          <div class="iFmTCx">
+            <div style="width: 160px;height: 600px;overflow: hidden" class="eDhvMX">
+
+            </div>
+            <div class="iZJgLq">
+              广告
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="margin-top: 45px">
+      <div style="margin-top: 16px">
         <TypeList></TypeList>
       </div>
       <div class="bottom-text">
@@ -154,29 +107,17 @@
 <script>
 import BottomNav from '../BottomNav';
 import TypeList from '@/components/TypeList.vue';
-import SearchFor from '@/components/SearchFor.vue';
+import PCLogo from "@/components/PCLogo.vue";
 import {determinePcOrMove, shuffle, setMeta, getJson, recentGame, getGameTypeList} from '@/utils/utils.js';
-import logo from '@/assets/logo.png'
-import home from '@/assets/home.png'
-import souSuo from '@/assets/sousuo.png'
 export default {
   name: "detailsIndex",
   components: {
-    BottomNav, TypeList, SearchFor
+    BottomNav, TypeList, PCLogo
   },
   data() {
     return {
       gameInfo: {}, // 游戏详情数据
       theSame: [], // 同详情游戏类型相同的游戏，大屏用到
-      gameTypeList: [], // 左侧类型名称
-      one: [], // 左侧类型数据
-      two: [], // 左侧类型数据
-      three: [], // 左侧类型数据
-      four: [], // 右侧截取五个数据
-      five: [], // 右侧截取八个数据
-      six: [], // 右侧底部数据
-      intercept: [], // 右侧截取后数据用来点击更多时截取30个与six合并
-      gameList: [],
       full: null,
       fullStyle: {
         position: "fixed",
@@ -196,12 +137,12 @@ export default {
       leftBtnType: true, // 侧按钮
       topBtnType: false, // 顶部按钮
       bottomBtnType: true, // 底部按钮
-      logo,
-      home,
-      souSuo,
       typeList: [], // 游戏类型
       gameScore: "", // 游戏评分
       UnfoldAndCollapse: false, // 展开收起
+      bigImgList: [], // 大图片列表
+      smallImgList: [], // 小图片列表
+      innerWidth: 0, // 屏幕宽度
     }
   },
   created() {
@@ -217,44 +158,13 @@ export default {
     }
   },
   mounted() {
-    // 跟随定位
-    // let headdiv = document.getElementById("girlsGames");
-    // let adsBottom = document.getElementById("adsBottom");
-    // let nTop = headdiv.offsetTop;
-    // let adsBottomTop = adsBottom.offsetTop;
-    // window.onscroll = function () {
-    //   //变量scrollTop是滚动条滚动时，距离顶部的距离
-    //   let scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
-    //   console.log(scrollTop);
-    //
-    //   console.log(nTop);
-    //   if (scrollTop > nTop) {
-    //     headdiv.style.position = "fixed"
-    //     headdiv.style.top = "10px"
-    //     headdiv.style.width = "136px"
-    //     headdiv.style.overflow = "hidden"
-    //   } else {
-    //     headdiv.style.position="relative";
-    //     headdiv.style.top = "0px"
-    //   }
-    //   if (scrollTop > adsBottomTop + 2) {
-    //     adsBottom.style.position = "fixed"
-    //     adsBottom.style.top = "10px"
-    //   } else {
-    //     adsBottom.style.position="relative";
-    //     adsBottom.style.top = '0px'
-    //   }
-    // }
+    window.onresize = () => {
+      this.innerWidth = window.innerWidth
+    }
+    this.innerWidth = window.innerWidth
     this.getJson()
-
   },
   methods: {
-
-    addToDesktop() {
-      console.log(this.$store.state.deferredPrompt);
-      this.$store.state.deferredPrompt && this.$store.state.deferredPrompt.prompt();
-      this.$store.commit("changePWA",{deferredPrompt: null,deferredPromptType: this.$store.state.deferredPromptType})
-    },
     // 去首页
     goHome() {
       this.$router.push({
@@ -278,82 +188,33 @@ export default {
       let jsonArr = getJson()
       // 随机打乱数组
       let shuffleArr = shuffle(jsonArr)
-      let one = []
-      let two = []
-      let three = []
-      let copyArr = []
-      shuffleArr && shuffleArr.map((item)=>{
-        copyArr.push(item)
-      })
-      one = copyArr.splice(0,10)
-      two = copyArr.splice(0,12)
-      three = copyArr.splice(0,12)
-      // 截取五个放右边
-      let newArr = []
       let gameInfo = {}
-      let theSame = [] // 同类型游戏
+      let bigImgList = [] // 大图片列表
+      let smallImgList = [] // 小图列表
+      let theSame = [] // 同类型游戏(大屏用)
       shuffleArr && shuffleArr.map((item)=>{
         if (item.gameId == gameId) {
           gameInfo = item
         }
-        newArr.push(item)
       })
       shuffleArr && shuffleArr.map((item)=>{
+        if (item.ImgSize == 1 || item.ImgSize == 2) {
+          if (bigImgList.length < 2) {
+            bigImgList.push(item)
+          }
+        } else {
+          smallImgList.push(item)
+        }
         theSame.push(item)
       })
       this.theSame = shuffle(theSame).splice(0,30)
       this.gameInfo = gameInfo
-      this.one = one
-      this.two = two
-      this.three = three
-      this.four = newArr.splice(0,5)
-      this.five = newArr.splice(0,8)
-      this.six = newArr.splice(0,30)
-      this.intercept = newArr
-      this.gameList = shuffleArr
+      this.bigImgList = bigImgList
+      this.smallImgList = smallImgList
+
+
 
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.gameType} Games`)
-      // this.manifestIcon(gameInfo)
-    },
-    // 动态加载PWA图标
-    manifestIcon(gameInfo) {
-      let myDynamicManifest = {
-        "short_name": "AH5 GAMES",
-        "name": "AH5 GAMES",
-        "start_url": `${window.location.href}`,
-        "display": "standalone",
-        "background_color": "#0054ff",
-        "theme_color": "#080403",
-        "icons": [
-          {
-            "src": `${gameInfo.iconUrl}`,
-            "sizes": "192x192",
-            "type": "image/png"
-          },
-          {
-            "src": `${gameInfo.iconUrl}`,
-            "sizes": "256x256",
-            "type": "image/png"
-          },
-          {
-            "src": `${gameInfo.iconUrl}`,
-            "sizes": "512x512",
-            "type": "image/png"
-          },
-        ]
-      }
-      const stringManifest = JSON.stringify(myDynamicManifest);
-      const blob = new Blob([stringManifest], {type: 'application/json'});
-      const manifestURL = URL.createObjectURL(blob);
-      document.querySelector('#manifest').setAttribute('href', manifestURL)
-    },
-    // 点击加载更多
-    loadMoreGames () {
-      let six = this.six
-      let intercept = this.intercept
-      let interceptArr = intercept.splice(0,30)
-      this.six = [...six,...interceptArr]
-      this.intercept = intercept
     },
     // 切换游戏
     switchGame (item) {
@@ -443,235 +304,277 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@media screen and (min-width: 1883px){
-  .logo{
-    --offset: -936px!important;
-    width: 246px!important;
-    flex-direction: row!important;
-  }
-  .bfQcDW {
-    width: 94px!important;
-    height: 42px!important;
-    margin: -2px auto 0px!important;
-  }
-  .bwKNQa {
-    border-top: 0px!important;
-    border-left: 2px solid #f0f5fc!important;
-    flex-direction: column!important;
-    height: 100%!important;
-    width: 46px!important;
-    border-radius: 0px 16px 16px 0px!important;
-    .GKasG {
-      border-right: 0px !important;
-      border-bottom: 1px solid #f0f5fc !important;
-      height: 50%!important;
-      width: 100%!important;
-    }
-    .fjlzah {
-      border-left: 0px!important;
-      border-top: 1px solid #f0f5fc!important;
-      height: 50%!important;
-      width: 100%!important;
-    }
-  }
-  .logo2{
-    display: block!important;
-  }
+@media (min-width: 1871px) {
   .details {
-    width: 1875px;
-    position: relative;
-    .main-center {
-      margin-left: 520px;
-      box-sizing: border-box;
+    width: 1854px;
+  }
+  .gpagqS {
+    --gridTemplateColumns: 17!important;
+    grid-template-areas:
+        ". . igc igc igc igc igc igc igc igc igc igc bigIp0 bigIp0 adv3 adv3 adv3"
+        "adv1 adv1 igc igc igc igc igc igc igc igc igc igc bigIp0 bigIp0 adv3 adv3 adv3"
+        "adv1 adv1 igc igc igc igc igc igc igc igc igc igc bigIp1 bigIp1 adv3 adv3 adv3"
+        "adv1 adv1 igc igc igc igc igc igc igc igc igc igc bigIp1 bigIp1 . . ."
+        "adv1 adv1 igc igc igc igc igc igc igc igc igc igc . . . . ."
+        "adv1 adv1 igc igc igc igc igc igc igc igc igc igc . . . . ."
+        "adv1 adv1 . . . adv2 adv2 adv2 adv2 adv2 adv2 adv2 . . . . .";
+    .game-part {
+      width: 1031px!important;
+      height: 644px!important;
     }
-    .float-games .games-container {
-      width: 520px;
-    }
-  }
-  .float-games .games-container .game-list .app-item {
-    margin-right: 6px;
-  }
-  .float-games .games-container .game-list .app-item:nth-child(4n) {
-    //margin-right: 0;
-  }
-}
-@media screen and (min-width: 1755px) and (max-width: 1882px){
-  .logo{
-    --offset: -872px!important;
-  }
-  .details{
-    width: 1747px;
-    position: relative;
-  }
-  .main-center {
-    margin-left: 392px;
-    box-sizing: border-box;
-  }
-  .float-games .games-container {
-    width: 392px;
-  }
-  .float-games .games-container .game-list .app-item{
-    margin-right: 6px;
-  }
-}
-@media screen and (min-width: 1627px) and (max-width: 1754px){
-  .logo{
-    --offset: -808px!important;
-  }
-  .details{
-    width: 1619px;
-    position: relative;
-    .main-center {
-      margin-left: 264px;
-      box-sizing: border-box;
+    .SpDdJ {
+      display: flex;
     }
   }
-  .float-games .games-container {
-    width: 264px;
-  }
-  .float-games .games-container .game-list .app-item{
-    margin-right: 6px;
+  .gpagqS::before {
+    grid-column-start: span 2;
   }
 }
-@media screen and (min-width: 1499px) and (max-width: 1626px){
-  .logo{
-    --offset: -743px!important;
-  }
-  .details{
-    width: 1491px;
-    position: relative;
-    .main-center {
-      margin-left: 136px;
-      box-sizing: border-box;
-    }
-  }
-  .float-games .games-container {
-    width: 136px;
-  }
-}
-@media screen and (max-width: 1498px){
-  .float-games {
-    width: 136px;
-  }
-  .main-center{
-    margin-left: 136px;
-  }
-}
-@media screen and (min-width: 1363px) and (max-width: 1498px){
-  .logo{
-    --offset: -586px!important;
-  }
-  .details{
-    width: 1175px;
-    position: relative;
-  }
-}
-@media screen and (min-width: 1263px) and (max-width: 1362px){
-  .logo{
-    --offset: -535px!important;
-  }
-  .details{
-    width: 1075px;
-    position: relative;
-    .main-center {
-      width: 955px;
-      padding: 0 18px 0 5px;
-      box-sizing: border-box;
-      .recommend-banner .app-item:nth-of-type(1){
-        display: none;
-      }
-      .game-list .app-item {
-        float: left;
-        margin-right: 13px;
-      }
-      .game-list .app-item:nth-child(7n) {
-        margin-right: 0;
-      }
-    }
-  }
-}
-@media screen and (min-width: 1363px){
-  .main-center {
-    width: 1055px;
-    padding: 0 18px 0 5px;
-    box-sizing: border-box;
-  }
-  .main-game .game-container {
-    width: 900px;
-    height: 570px;
-    overflow: hidden;
-    position: relative;
-  }
-  .main-waterfall .game-list .app-item {
-    float: left;
-    margin-right: 8px;
-  }
-  .main-waterfall .game-list .app-item:nth-child(8n) {
-    margin-right: 0;
-  }
-}
-@media screen and (max-width: 1362px){
-  .main-game .game-container {
-    width: 800px;
-    height: 570px;
-    overflow: hidden;
-    position: relative;
-  }
-  .main-waterfall .game-list .app-item {
-    float: left;
-    margin-right: 8px;
-  }
-}
-@media screen and (min-width: 1500px){
-  .float-ads {
-    display: block!important;
-  }
-}
-@media screen and (max-width: 1262px){
-  .logo{
-    --offset: -535px!important;
-  }
+@media (min-width: 1541px) and (max-width: 1870.9px) {
   .details {
-    width: 1075px;
-    position: relative;
+    width: 1524px;
   }
-  .main-center {
-    margin-left: 136px;
-    width: 955px;
-    padding: 0 18px 0 5px;
-    box-sizing: border-box;
-  }
-  .recommend-banner .app-item:nth-of-type(1){
-    display: none!important;
-  }
-  .main-waterfall .game-list .app-item {
-    float: left;
-    margin-right: 13px;
-  }
-  .main-waterfall .game-list .app-item:nth-child(7n) {
-    margin-right: 0;
+  .gpagqS {
+    --gridTemplateColumns: 14!important;
+    grid-template-areas:
+        ". igc igc igc igc igc igc igc igc igc igc adv3 adv3 adv3"
+        ". igc igc igc igc igc igc igc igc igc igc adv3 adv3 adv3"
+        ". igc igc igc igc igc igc igc igc igc igc adv3 adv3 adv3"
+        ". igc igc igc igc igc igc igc igc igc igc bigIp0 bigIp0 ."
+        ". igc igc igc igc igc igc igc igc igc igc bigIp0 bigIp0 ."
+        ". igc igc igc igc igc igc igc igc igc igc bigIp1 bigIp1 ."
+        ". . . . adv2 adv2 adv2 adv2 adv2 adv2 adv2 bigIp1 bigIp1 .";
+    .game-part {
+      width: 1031px!important;
+      height: 644px!important;
+    }
+    .SpDdJ {
+      display: none!important;
+    }
   }
 }
-@media screen and (max-width: 1100px){
-  .logo{
-    --offset: 3px!important;
-    left: 0!important;
+@media (min-width: 1321px) and (max-width: 1540.9px) {
+  .details {
+    width: 1304px;
+  }
+  .gpagqS {
+    --gridTemplateColumns: 12!important;
+    grid-template-areas:
+        ". igc igc igc igc igc igc igc igc adv3 adv3 adv3"
+        ". igc igc igc igc igc igc igc igc adv3 adv3 adv3"
+        ". igc igc igc igc igc igc igc igc adv3 adv3 adv3"
+        ". igc igc igc igc igc igc igc igc bigIp0 bigIp0 ."
+        ". igc igc igc igc igc igc igc igc bigIp0 bigIp0 ."
+        ". . adv2 adv2 adv2 adv2 adv2 adv2 adv2 bigIp1 bigIp1 ."
+        ". . . . . . . . . bigIp1 bigIp1 .";
+    .game-part {
+      width: 836px!important;
+      height: 534px!important;
+    }
+    .SpDdJ {
+      display: none!important;
+    }
+  }
+}
+@media (min-width: 1211px) and (max-width: 1320.9px) {
+  .details {
+    width: 1194px;
+  }
+  .gpagqS {
+    --gridTemplateColumns: 11;
+    grid-template-areas:
+        ". igc igc igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc igc igc adv1 adv1"
+        ". . adv2 adv2 adv2 adv2 adv2 adv2 adv2 adv1 adv1";
+    .game-part {
+      width: 836px!important;
+      height: 534px!important;
+    }
+    .SpDdJ {
+      display: flex;
+    }
+    .jxmECU {
+      display: none!important;
+    }
+  }
+}
+@media (min-width: 991px) and (max-width: 1210.9px) {
+  .details {
+    width: 980px;
+  }
+  .gpagqS {
+    --gridTemplateColumns: 9!important;
+    grid-template-areas:
+        ". igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc adv1 adv1"
+        ". igc igc igc igc igc igc adv1 adv1"
+        "adv2 adv2 adv2 adv2 adv2 adv2 adv2 adv1 adv1"
+        ". . . . . . . adv1 adv1";
+    .game-part {
+      width: 640px!important;
+      height: 424px!important;
+    }
+    .SpDdJ {
+      display: flex;
+    }
+    .jxmECU {
+      display: none!important;
+    }
+  }
+}
+@media (min-width: 111px) and (max-width: 990.9px) {
+  .details {
+    width: 760px;
+  }
+  .gpagqS {
+    --gridTemplateColumns: 7!important;
+    grid-template-areas:
+        ". igc igc igc igc igc igc"
+        ". igc igc igc igc igc igc"
+        ". igc igc igc igc igc igc"
+        ". igc igc igc igc igc igc"
+        "adv2 adv2 adv2 adv2 adv2 adv2 adv2";
+    .SpDdJ {
+      display: none!important;
+    }
+    .jxmECU {
+      display: none!important;
+    }
+  }
+}
+@media (min-width: 1321px) {
+  .jxmECU {
+    display: flex;
+  }
+  .ftkfX{
+    img{
+      width: 204px!important;
+      height: 204px!important;
+    }
   }
 }
 .details{
-  margin: 10px auto 0;
-  position: relative;
+  margin: 0px auto;
+  flex-grow: 1;
+  .gpagqS {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 94px);
+    grid-gap: 16px;
+    grid-auto-flow: dense;
+    justify-content: center;
+    margin: 16px auto 0px;
+    padding: 0px;
+    list-style-type: none;
+    --gridTemplateColumns: 3;
+    grid-template-columns: repeat(var(--gridTemplateColumns),94px);
+    .dsgWHA {
+      grid-area: igc;
+      display: flex;
+      justify-content: center;
+    }
+    .SpDdJ {
+      display: none;
+      grid-area: adv1;
+      .iFmTCx {
+        display: inline-flex;
+        flex-direction: column;
+        .eDhvMX {
+          background: rgba(255, 255, 255, 0.5);
+        }
+        .iZJgLq {
+          font: 400 9px / 2 Arial, sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          opacity: 0.7;
+          height: 20px;
+          letter-spacing: 1px;
+          color: #002b50;
+        }
+      }
+    }
+    .pAock {
+      grid-area: adv2;
+      .bioerJ {
+        display: inline-flex;
+        flex-direction: row;
+        padding-right: 26px;
+        position: relative;
+        .eDhvMX {
+          background: rgba(255, 255, 255, 0.5);
+        }
+        .keJcxs {
+          font: 400 8px / 1 Arial, sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          opacity: 0.7;
+          height: 20px;
+          letter-spacing: 1px;
+          color: #002b50;
+          position: absolute;
+          right: 0px;
+          top: 50%;
+          transform: rotate3d(0, 0, 1, 90deg) translateX(50%) translate(-10px, 24px);
+          transform-origin: right center;
+        }
+      }
+    }
+    .jxmECU {
+      display: none;
+      grid-area: adv3;
+      height: 314px;
+      .iFmTCx {
+        display: inline-flex;
+        flex-direction: column;
+        .eDhvMX {
+          background: rgba(255, 255, 255, 0.5);
+        }
+        .iZJgLq{
+          font: 400 9px / 2 Arial, sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          opacity: 0.7;
+          height: 20px;
+          letter-spacing: 1px;
+          color: #002b50;
+        }
+      }
+    }
+    .gqnFJQ {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .gpagqS::before {
+    content: "";
+    display: block;
+  }
   #iframe{
     border: 1px solid #cccccc;
   }
   .main-game {
-    margin-bottom: 13px;
-    height: 632px;
+    width: 100%;
+    height: 100%;
     .game-part {
-      float: left;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
       .game-container {
-        padding: 0 4px 4px 0;
+        padding: 0 2px 2px 0;
         box-sizing: border-box;
+        width: 100%;
+        height: 100%;
         .close{
           display: none;
         }
@@ -761,26 +664,46 @@ export default {
         }
       }
       .game-bar{
-        height: 60px;
-        background-color: rgba(0,0,0,.3);
-        padding-left: 6px;
+        width: 100%;
+        overflow: hidden;
+        flex-grow: 0;
+        flex-shrink: 0;
         display: flex;
         justify-content: space-between;
+        height: 64px;
+        align-self: stretch;
+        background: rgb(255, 255, 255);
+        position: relative;
+        z-index: 3;
+        padding: 0px 16px 0px 0px;
+        box-sizing: border-box;
         .bar-app-icon {
-          margin-top: 6px;
-          img{
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            vertical-align: middle;
+          font-size: 21px;
+          display: flex;
+          margin: 12px;
+          .kZbSoa{
+            margin: auto 0px;
+            h1{
+              margin: 0px;
+              font: 700 1em/1em Torus, sans-serif;
+              padding: 0px 10px 0px 0px;
+              color: #002b50;
+            }
+            span{
+              display: block;
+              color: #5d6b84;
+              font-size: 12px;
+              line-height: 16px;
+              margin: 4px 0px 0px;
+              letter-spacing: 0.3px;
+            }
           }
-          span{
-            font-size: 16px;
-            color: white;
-            margin-left: 8px;
-            line-height: 45px;
+          img{
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            margin: 0px 8px 0px 0px;
+            background: #bac9de;
           }
         }
         .bar-btns{
@@ -826,245 +749,57 @@ export default {
             cursor: pointer;
             /deep/ .el-icon-rank{
               font-size: 36px;
-              color: #ffffff;
-            }
-          }
-        }
-      }
-    }
-    .game-rec {
-      float: left;
-      margin-left: 18px;
-      .app-item{
-        margin-bottom: 15px;
-        width: 114px;
-        height: 114px;
-        padding: 2px 4px 4px 2px;
-        box-sizing: border-box;
-        cursor: pointer;
-        img{
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          //border: 2px solid #fff;
-          //background: white;
-        }
-      }
-    }
-  }
-  .main-waterfall {
-    margin-bottom: 20px;
-    .recommend-banner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      height: 122px;
-    }
-    .game-list{
-      min-height: 300px;
-      .more-btn {
-        clear: both;
-        padding-top: 10px;
-        div{
-          cursor: pointer;
-          margin: 24px auto 0;
-          background: linear-gradient(to bottom, #3cf7dc 0%, #15c8d1 100%);
-          border-radius: 8px;
-          height: 56px;
-          width: 500px;
-          color: #fff;
-          font-size: 22px;
-          text-align: center;
-          display: block;
-          box-shadow: 0 6px 8px 0 rgb(0 0 0/20%);
-          line-height: 56px;
-        }
-      }
-    }
-  }
-  .main-desc{
-    margin: 18px auto 0;
-    background-color: rgba(0,0,0,.15);
-    padding: 28px 26px;
-    word-break: break-word;
-    word-wrap: break-word;
-    border-radius: 10px;
-  }
-  .main-float {
-    .float-ads{
-      display: none;
-      position: absolute;
-      top: 0;
-      right: 0;
-      .ads-top {
-        margin-bottom: 2px;
-        background-color: #f7f7f7;
-        .ads-title{
-          line-height: 30px;
-          font-size: 16px;
-          color: #333;
-          text-align: center;
-        }
-        .ads-container {
-          width: 300px;
-          height: 250px;
-        }
-      }
-      .ads-bottom {
-        background-color: #f7f7f7;
-        .ads-title{
-          line-height: 30px;
-          font-size: 16px;
-          color: #333;
-          text-align: center;
-        }
-        .ads-container {
-          width: 300px;
-          height: 600px;
-        }
-      }
-    }
-    .float-games {
-      position: absolute;
-      left: 0;
-      top: 0;
-      .games-container{
-        .title{
-          height: 40px;
-          line-height: 40px;
-          text-align: center;
-          font-size: 20px;
-          color: #fff;
-          background-color: #f83123;
-        }
-        .game-warp {
-          //padding: 2px 0 6px;
-          //background-color: rgba(0,0,0,.3);
-          .game-list {
-            //padding: 6px 7px 0;
-            .logo{
-              display: flex;
-              align-items: center;
-              flex-direction: column;
-              cursor: pointer;
-              width: 120px;
-              height: 120px;
-              background: white;
-              border-radius: 12px;
-              position: fixed;
-              top: 12px;
-              left: 50%;
-              transform: translate(var(--offset),0);
-              z-index: 3;
-              .bfQcDW{
-                width: 85px;
-                height: 35px;
-                margin: 20px auto 11px;
-                img{
-                  width: 100%;
-                  height: 100%;
-                }
-              }
-              .bfQcDW:hover{
-                transform: scale(1.05);
-              }
-              .bwKNQa {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-top: 2px solid #f0f5fc;
-                width: 100%;
-                height: 52px;
-                border-radius: 0px 0px 16px 16px;
-                overflow: hidden;
-                .GKasG {
-                  flex-grow: 1;
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  width: 50%;
-                  border-right: 1px solid #f0f5fc;
-                }
-                .GKasG:hover{
-                  background: #f0f5fc;
-                }
-                .fjlzah{
-                  flex-grow: 1;
-                  height: 100%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  width: 50%;
-                  border-left: 1px solid #f0f5fc;
-                  text-indent: -200vw;
-                  font-size: 0px;
-                  background: white;
-                  img {
-                    width: 18px;
-                    height: 18px;
-                  }
-                }
-                .fjlzah:hover{
-                  background: #f0f5fc;
-                }
-                .koyGQc {
-                  font-size: 100%;
-                  font-family: inherit;
-                  border: 0px;
-                  padding: 0px;
-                  background: none;
-                  cursor: pointer;
-                }
-                img{
-                  width: 22px;
-                  height: 18px;
-                }
-              }
-            }
-            .logo2{
-              display: none;
-            }
-            height: 390px;
-            overflow: hidden;
-            .app-item {
-              margin-bottom: 8px;
-              float: left;
-              position: relative;
-              img{
-                //background: white;
-              }
-            }
-            .app-item:nth-child(2n-1){
-              margin-right: 6px;
+              color: #009cff;
             }
           }
         }
       }
     }
   }
-  .app-item {
-    width: 122px;
-    height: 122px;
-    display: block;
-    overflow: hidden;
-    margin-bottom: 10px;
-    position: relative;
-    padding: 2px 4px 4px 2px;
-    box-sizing: border-box;
-    cursor: pointer;
+  .cOWZsC {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    user-select: none;
+    aspect-ratio: 1 / 1;
+  }
+  .ftkfX{
     img{
-      width: 100%;
-      height: 100%;
-      //border: 2px solid #fff;
-      border-radius: 16px;
-      //background: white;
+      width: 94px;
+      height: 94px;
     }
   }
-  .app-item:hover {
+  .cASSfo {
+    display: block;
+    transition: transform .6s cubic-bezier(.25, .1, .25, 1);
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+  }
+  .cASSfo::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 4;
+    transition: box-shadow .6s var(--bezier),opacity .3s var(--bezier);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    border-radius: 16px;
+    contain: strict;
+  }
+  .cASSfo:hover {
     transform: scale(1.04255) translate(0px, -4px);
     transition-duration: 0.3s;
+  }
+  .eoBBYj {
+    display: block;
+    --minSize: 94px;
+    min-width: var(--minSize);
+    min-height: var(--minSize);
+    border-radius: inherit;
+    aspect-ratio: 1 / 1;
   }
   .esaxGV {
     position: absolute;
@@ -1082,29 +817,11 @@ export default {
     -webkit-font-smoothing: antialiased;
     pointer-events: none;
   }
-  //@keyframes example {
-  //  0%  {transform: scale(1);}
-  //  35%  {transform: scale(1.05);}
-  //  65% {transform: scale(1.03);}
-  //  100% {transform: scale(1.08);}
-  //}
-  //.app-item:hover{
-  //  cursor: pointer;
-  //  animation-name: example;
-  //  animation-duration: 0.6s;
-  //  animation-timing-function: linear;
-  //  animation-delay: 0s;
-  //  animation-iteration-count: 1;
-  //  animation-direction: normal;
-  //  animation-fill-mode: forwards;
-  //  animation-play-state: running;
-  //  z-index: 1;
-  //}
   @media (hover: hover) {
-    .app-item:hover {
-      transform: scale(1.01869) translate(0px, -4px)!important;
+    .cOWZsC:hover {
+      transform: scale(1.01869) translate(0px, -4px);
     }
-    .app-item:hover .sc-963fcq-0 {
+    .cOWZsC:hover .sc-963fcq-0 {
       opacity: 1;
       transform: translate(0px, 0px);
     }

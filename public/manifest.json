@@ -1,14 +1,14 @@
 {
-  "short_name": "GUGOPLAY",
-  "name": "GUGOPLAY",
+  "short_name": "gugoplay.com",
+  "name": "gugoplay.com",
   "icons": [
     {
-      "src": "./favicon.ico",
+      "src": "./pwa.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./favicon.ico",
+      "src": "./pwa.png",
       "sizes": "512x512",
       "type": "image/png"
     }

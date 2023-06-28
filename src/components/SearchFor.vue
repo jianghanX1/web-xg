@@ -28,7 +28,7 @@
             <div class="iWVJzN" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</div>
           </nav>
         </div>
-        <h2 class="MMWDF">本周热门</h2>
+        <h2 class="MMWDF">Popular this week</h2>
         <div class="gA-dJmQ">
           <div class="app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <h2 class="MMWDF">最近玩过</h2>
+        <h2 class="MMWDF">Recently played</h2>
         <div class="gA-dJmQ">
           <div class="app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
