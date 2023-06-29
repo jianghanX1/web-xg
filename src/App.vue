@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="this.$store.state.fullScreenOrNot ? scrollClass1 : scrollClass">
     <router-view></router-view>
     <div class="sc-1ri0y0w-7 lFKjX">
       <div class="sc-1ri0y0w-2 fzkKCz" :style="svgBg"></div>
@@ -17,7 +17,9 @@ export default {
     return {
       svgBg: {
         backgroundImage: `url(${svgBg})`
-      }
+      },
+      scrollClass: 'scrollClass', // 滚动条样式
+      scrollClass1: 'scrollClass1', // 滚动条样式
     }
   },
   mounted() {
@@ -26,6 +28,14 @@ export default {
 }
 </script>
 <style lang="less">
+.scrollClass{
+  overflow: auto;
+  height: 100%;
+}
+.scrollClass1{
+  overflow: hidden;
+  height: 100vh;
+}
 .el-loading-spinner{
   font-size: 50px;
 }

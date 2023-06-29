@@ -5,26 +5,25 @@
       <div class="gpagqS">
         <div class="dsgWHA">
           <div class="main-game">
-            <div class="game-part">
-              <div class="game-container" :style="full">
+            <div class="game-part" :style="full">
+              <div class="game-container">
                 <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
                 <!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
-                <div class="close" :style="closeStyle" @click="closeClick"><i class="el-icon-close" /></div>
-                <div class="flex-games" v-show="isBlock" :style="leftHideStyle">
-                  <div class="btns">
-                    <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>
-                    <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>
-                    <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>
-                  </div>
-                  <div class="game-warp">
-                    <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">
-                      <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)">
-                        <img v-lazy="item.iconUrl" alt="">
-                        <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<!--                <div class="flex-games" v-show="isBlock" :style="leftHideStyle">-->
+<!--                  <div class="btns">-->
+<!--                    <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>-->
+<!--                    <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>-->
+<!--                    <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>-->
+<!--                  </div>-->
+<!--                  <div class="game-warp">-->
+<!--                    <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">-->
+<!--                      <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)">-->
+<!--                        <img v-lazy="item.iconUrl" alt="">-->
+<!--                        <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
               </div>
               <div class="game-bar">
                 <div class="bar-app-icon">
@@ -34,8 +33,34 @@
                     <span>{{ gameInfo.Type }}</span>
                   </div>
                 </div>
-                <div class="bar-btns">
-                  <div class="full-btn" @click="amplifyClick"><i class="el-icon-rank"></i></div>
+                <div class="evgOqe dTwGvC" v-if="isBlock">
+                  <img :src="logo" alt="">
+                </div>
+                <div class="bar-btns" v-if="isBlock">
+                  <div class="lcJldi" @click="closeClick">
+                    <div class="iAzhvC">
+                      <div class="sc-1wag0ht-0 ehxUGv">
+                        <img :src="reduce" alt="">
+                      </div>
+                    </div>
+                    <div class="iUqdTV">
+                      <span class="hEtgR faTlWW">Minimize</span>
+                      <span class="hEtgR jWGbzI">Minimize</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bar-btns" v-else>
+                  <div class="full-btn" @click="amplifyClick">
+                    <div class="cwcbpr">
+                      <div class="iqLrJG">
+                        <img :src="amplify" alt="">
+                      </div>
+                    </div>
+                    <div class="iUqdTV">
+                      <span class="hEtgR jhrTfi"></span>
+                      <span class="hEtgR jWGbzI">maximize</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -109,6 +134,9 @@ import BottomNav from '../BottomNav';
 import TypeList from '@/components/TypeList.vue';
 import PCLogo from "@/components/PCLogo.vue";
 import {determinePcOrMove, shuffle, setMeta, getJson, recentGame, getGameTypeList} from '@/utils/utils.js';
+import amplify from '@/assets/amplify.png'
+import reduce from '@/assets/reduce.png'
+import logo from '@/assets/logo.png'
 export default {
   name: "detailsIndex",
   components: {
@@ -117,32 +145,26 @@ export default {
   data() {
     return {
       gameInfo: {}, // 游戏详情数据
-      theSame: [], // 同详情游戏类型相同的游戏，大屏用到
       full: null,
       fullStyle: {
         position: "fixed",
-        width: "100%",
-        height: "100%",
+        width: "100%!important",
+        height: "100%!important",
         left: 0,
         top: 0,
         zIndex: 999,
-        background: '#0054ff'
+        background: '#002b50'
       },
-      closeStyle: null,
       isBlock: false, // 展示大屏广告状态
-      leftHideType: false, // 大屏广告隐藏状态
-      leftHideStyle: null, // 大屏广告隐藏样式
-      heightType: 0, // 偏移量
-      gameListValue: 0, // 滚动区域高度
-      leftBtnType: true, // 侧按钮
-      topBtnType: false, // 顶部按钮
-      bottomBtnType: true, // 底部按钮
       typeList: [], // 游戏类型
       gameScore: "", // 游戏评分
       UnfoldAndCollapse: false, // 展开收起
       bigImgList: [], // 大图片列表
       smallImgList: [], // 小图片列表
       innerWidth: 0, // 屏幕宽度
+      amplify,
+      reduce,
+      logo
     }
   },
   created() {
@@ -160,11 +182,32 @@ export default {
   mounted() {
     window.onresize = () => {
       this.innerWidth = window.innerWidth
+      if (!this.checkFull()) {
+        // 退出全屏后要执行的动作
+        this.closeClick()
+      }
     }
     this.innerWidth = window.innerWidth
     this.getJson()
+    this.$store.commit('changeScreen', false)
   },
   methods: {
+    checkFull() {
+      //判断浏览器是否处于全屏状态 （需要考虑兼容问题）
+      //火狐浏览器
+      let isFull =
+          document.mozFullScreen ||
+          document.fullScreen ||
+          //谷歌浏览器及Webkit内核浏览器
+          document.webkitIsFullScreen ||
+          document.webkitRequestFullScreen ||
+          document.mozRequestFullScreen ||
+          document.msFullscreenEnabled;
+      if (isFull === undefined) {
+        isFull = false;
+      }
+      return isFull;
+    },
     // 去首页
     goHome() {
       this.$router.push({
@@ -191,7 +234,6 @@ export default {
       let gameInfo = {}
       let bigImgList = [] // 大图片列表
       let smallImgList = [] // 小图列表
-      let theSame = [] // 同类型游戏(大屏用)
       shuffleArr && shuffleArr.map((item)=>{
         if (item.gameId == gameId) {
           gameInfo = item
@@ -205,22 +247,19 @@ export default {
         } else {
           smallImgList.push(item)
         }
-        theSame.push(item)
       })
-      this.theSame = shuffle(theSame).splice(0,30)
       this.gameInfo = gameInfo
       this.bigImgList = bigImgList
       this.smallImgList = smallImgList
 
 
 
-      setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.gameType} Games`)
+      setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a ${gameInfo.Type} Games`)
     },
     // 切换游戏
     switchGame (item) {
       recentGame(item)
       this.full = null
-      this.closeStyle = null
       this.isBlock = false
       this.$router.push({
         path: '/P/details',
@@ -231,59 +270,18 @@ export default {
     },
      // 点击放大游戏
     amplifyClick() {
+      // 放大全屏
+      this.$store.commit('changeScreen', true)
+      document.documentElement.webkitRequestFullscreen()
       this.full = this.fullStyle
-      this.closeStyle = {
-        display: 'block',
-        position: "absolute",
-        right: "12px",
-        top: "10px",
-        zIndex: 50,
-        fontSize: "32px",
-        color: '#ffffff',
-        cursor: 'pointer',
-        background: '#FF9900',
-        borderRadius: '50%',
-        width: '50px',
-        height: '50px',
-        textAlign: 'center',
-        lineHeight: '50px'
-      }
       this.isBlock = true
-      this.bottomBtnType = this.theSame.length > 8
-      setTimeout(() => {
-        this.gameListValue = document.getElementById('game-list').offsetHeight
-        console.log(this.gameListValue);
-      })
     },
     // 大屏点击关闭
     closeClick() {
+      this.$store.commit('changeScreen', false)
+      document.webkitExitFullscreen()
       this.full = null
-      this.closeStyle = null
       this.isBlock = false
-    },
-    // 大屏广告点击左侧隐藏
-    leftClick() {
-      this.leftBtnType = !this.leftBtnType
-      this.leftHideType = !this.leftHideType
-      this.leftHideStyle = this.leftHideType ? {
-        left: '-110px'
-      } : null
-    },
-    // 大屏广告点击顶部按键
-    topClick() {
-      this.heightType = this.heightType + 880
-      if (this.heightType == 0) {
-        this.topBtnType = false
-        this.bottomBtnType = true
-      }
-    },
-    // 大屏广告点击底部按键
-    bottomClick() {
-      this.heightType = this.heightType - 880
-      if ((Math.abs(this.heightType) + 880) > this.gameListValue) {
-        this.bottomBtnType = false
-        this.topBtnType = true
-      }
     },
     classClick(type) {
       this.$router.push({
@@ -578,90 +576,6 @@ export default {
         .close{
           display: none;
         }
-        .flex-games{
-          background-color: #9cd3ff;
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 50;
-          box-shadow: 6px 0 8px 0 rgba(0,0,0,.4);
-          transition: all 1s;
-          .btns{
-            a{
-              text-decoration: none;
-            }
-            .btn-left{
-              width: 34px;
-              height: 50px;
-              background-color: #fc5632;
-              top: 50%;
-              transform: translateY(-50%);
-              left: 100%;
-              position: absolute;
-              text-align: center;
-              line-height: 50px;
-              .el-icon-arrow-left,.el-icon-arrow-right{
-                color: white;
-                font-size: 20px;
-              }
-            }
-            .btn-top{
-              position: absolute;
-              width: 100%;
-              height: 30px;
-              background-color: #fc5632;
-              z-index: 2;
-              text-align: center;
-              line-height: 30px;
-              .el-icon-arrow-up{
-                color: white;
-                font-size: 20px;
-              }
-            }
-            .btn-bottom{
-              position: absolute;
-              bottom: 0;
-              width: 100%;
-              height: 30px;
-              background-color: #fc5632;
-              z-index: 2;
-              text-align: center;
-              line-height: 30px;
-              .el-icon-arrow-down{
-                color: white;
-                font-size: 20px;
-              }
-            }
-          }
-          .game-warp{
-            height: 876px;
-            padding: 10px 0;
-            width: 110px;
-            overflow: hidden;
-            .game-list{
-              transition: all 1s;
-              .app-item{
-                width: 94px;
-                height: 94px;
-                margin: 0 auto 16px;
-                box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
-                display: block;
-                border-radius: 12px;
-                overflow: hidden;
-                position: relative;
-                img{
-                  width: 100%;
-                  height: 100%;
-                  border-radius: 12px;
-                  //border: 2px solid #fff;
-                  overflow: hidden;
-                  //background: white;
-                }
-              }
-            }
-          }
-        }
       }
       .game-bar{
         width: 100%;
@@ -706,9 +620,28 @@ export default {
             background: #bac9de;
           }
         }
+        .dTwGvC.dTwGvC {
+          position: absolute;
+          width: auto;
+          height: 28px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .evgOqe {
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: 0px auto;
+        }
         .bar-btns{
           margin-right: 10px;
           display: flex;
+          position: relative;
           .download {
             height: 40px;
             background-color: #3be6a2;
@@ -737,20 +670,192 @@ export default {
             cursor: pointer;
           }
           .full-btn{
-            width: 30px;
-            height: 30px;
-            display: block;
-            background-color: transparent;
-            margin-top: 15px;
-            float: left;
-            margin-left: 8px;
             position: relative;
-            transform: rotate(45deg);
+            width: 40px;
+            height: 40px;
+            margin: 8px 8px auto;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0px;
             cursor: pointer;
-            /deep/ .el-icon-rank{
-              font-size: 36px;
-              color: #009cff;
+            .cwcbpr {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background: var(--gameBarLabelBackgroundColor,#FFFFFF);
+              transition: background-color 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+              padding: 8px;
+              .iqLrJG {
+                fill: var(--gameBarIconFill,var(--poki-blue));
+                transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
+                transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                overflow: visible;
+                text-align: center;
+                img{
+                  width: 16px;
+                  height: 16px;
+                }
+              }
             }
+            .iUqdTV {
+              position: absolute;
+              left: 70%;
+              bottom: 4px;
+              font: 700 10px / 12px "Proxima Nova", sans-serif;
+              .jhrTfi {
+                opacity: var(--gameBarLabelOpacity,1);
+                color: #5d6b84;
+                background-color: var(--gameBarLabelBackgroundColor,#FFFFFF00);
+              }
+              .jWGbzI {
+                opacity: var(--gameBarHoverLabelOpacity,0);
+                color: rgb(255, 255, 255);
+                background-color: #009cff;
+              }
+              .hEtgR {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                transform: translate(-50%);
+                border-radius: 16px;
+                padding: 0px 4px 2px;
+                white-space: nowrap;
+                transition: opacity 350ms cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+              }
+            }
+          }
+          .full-btn:hover {
+            --gameBarIconRotation: -5deg;
+            --gameBarLabelOpacity: 0;
+            --gameBarHoverLabelOpacity: 1;
+          }
+          .lcJldi {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            margin: 8px 8px auto;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0px;
+            cursor: pointer;
+            --gameBarIconRotation: -5deg;
+            --gameBarIconY: -2px;
+            @keyframes jtWJDL{
+              0% {
+                transform: scale(1);
+              }
+              40% {
+                transform: scale(1.1);
+                background-color: var(--gameBarButtonAnimationBackgroundColor,var(--green-3));
+              }
+              43% {
+                transform: scale(1.2);
+              }
+              60% {
+                transform: scale(0.9);
+              }
+              70% {
+                transform: scale(1.05);
+              }
+              80% {
+                transform: scale(1.01);
+              }
+              85% {
+                transform: scale(1);
+              }
+              100% {
+                transform: scale(1);
+                background-color: var(--gameBarLabelBackgroundColor);
+              }
+            }
+            .iAzhvC {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background: var(--gameBarLabelBackgroundColor,#FFFFFF);
+              transition: background-color 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+              padding: 8px;
+              animation: 1s ease 0s 1 normal forwards running jtWJDL;
+              --gameBarLabelBackgroundColor: #009cff;
+              --gameBarButtonBackgroundHoverColor: #0097f5;
+              box-sizing: border-box;
+              @keyframes comMCG{
+                0% {
+                  transform: rotate(0deg) translateY(var(--gameBarIconY,0px));
+                }
+                40% {
+                  transform: rotate(20deg) translateY(var(--gameBarIconY,0px));
+                }
+                43% {
+                  transform: rotate(25deg) translateY(var(--gameBarIconY,0px));
+                }
+                60% {
+                  transform: rotate(-15deg) translateY(var(--gameBarIconY,0px));
+                }
+                70% {
+                  transform: rotate(3deg) translateY(var(--gameBarIconY,0px));
+                }
+                80% {
+                  transform: rotate(-1deg) translateY(var(--gameBarIconY,0px));
+                }
+                85% {
+                  transform: rotate(-5deg) translateY(var(--gameBarIconY,0px));
+                }
+                100% {
+                  transform: rotate(-5deg) translateY(var(--gameBarIconY,0px));
+                }
+              }
+              .sc-1wag0ht-0 {
+                animation: 1s ease 0s 1 normal none running comMCG;
+              }
+              .ehxUGv {
+                fill: var(--gameBarIconFill,var(--poki-blue));
+                --gameBarIconFill: #FFFFFF;
+                transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
+                transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                overflow: visible;
+                img{
+                  width: 36px;
+                  height: 36px;
+                  margin-top: -5px;
+                  margin-left: -5px;
+                }
+              }
+            }
+            .iUqdTV {
+              position: absolute;
+              left: 50%;
+              bottom: 4px;
+              font: 700 10px / 12px "Proxima Nova", sans-serif;
+              .faTlWW {
+                opacity: var(--gameBarLabelOpacity,1);
+                color: #5d6b84;
+                background-color: var(--gameBarLabelBackgroundColor,#FFFFFF00);
+                --gameBarLabelBackgroundColor: #f0f5fc;
+              }
+              .jWGbzI {
+                opacity: var(--gameBarHoverLabelOpacity,0);
+                color: rgb(255, 255, 255);
+                background-color: #009cff;
+              }
+              .hEtgR {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                transform: translate(-50%);
+                border-radius: 16px;
+                padding: 0px 4px;
+                white-space: nowrap;
+                transition: opacity 350ms cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+              }
+            }
+          }
+          .lcJldi:hover {
+            --gameBarLabelOpacity: 0;
+            --gameBarIconRotation: 0deg;
+            --gameBarHoverLabelOpacity: 1;
           }
         }
       }
