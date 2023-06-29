@@ -1,22 +1,24 @@
 <template>
-  <div id="game-type" v-title data-title="Online Games on Gugo ——Let's play">
-    <div style="display: contents">
-      <nav class="sc-15orno7-0 dDVcIC">
-        <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
-          <img :src="logo" alt="">
-        </div>
-        <div class="sc-jaa1t8-0 bwKNQa">
-          <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
-          <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
-            <img :src="souSuo" alt="">
-          </button>
-        </div>
-      </nav>
-      <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
-    </div>
+  <div v-title data-title="Online Games on Gugo ——Let's play">
     <div class="irIQZt">
       <div class="sc-1bi8huj-0 iRQTOz">
-        <div class="title">{{gameType}}</div>
+        <div style="display: contents">
+          <nav class="sc-15orno7-0 dDVcIC">
+            <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
+              <img :src="logo" alt="">
+            </div>
+            <div class="sc-jaa1t8-0 bwKNQa">
+              <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+              <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
+                <img :src="souSuo" alt="">
+              </button>
+            </div>
+          </nav>
+          <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
+        </div>
+        <div class="top">
+          <div class="title">{{gameType}}</div>
+        </div>
         <div class="content">
           <div class="app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
@@ -62,6 +64,7 @@ export default {
 
   },
   mounted() {
+    document.documentElement.scrollTop = 0
     const { query } = this.$route
     const { gameType } = query || {}
     if (determinePcOrMove() == 1) {
@@ -102,7 +105,7 @@ export default {
       getJson().map((item)=>{
         arr.push(item)
       })
-      this.recommend = shuffle(arr).splice(0,30)
+      this.recommend = shuffle(arr).splice(0,50)
     },
     // 切换游戏
     switchGame (item) {
@@ -118,7 +121,7 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
-      document.getElementById('game-type').scrollTop = 0
+      document.documentElement.scrollTop = 0
       this.getGameList()
     }
   }
@@ -128,13 +131,13 @@ export default {
 <style lang="less" scoped>
 @media (min-width: 1871px) {
   .dDVcIC {
-    --offset: -880px !important;
+    --offset: -927px !important;
   }
   .type-list{
-    width: 1760px!important;
+    width: 1854px!important;
   }
   .irIQZt {
-    width: 1760px!important;
+    width: 1854px!important;
     .title{
       width: 424px!important;
     }
@@ -142,24 +145,24 @@ export default {
 }
 @media (min-width: 1541px) and (max-width: 1870.9px) {
   .dDVcIC {
-    --offset: -770px !important;
+    --offset: -762px !important;
   }
   .type-list{
-    width: 1540px;
+    width: 1524px;
   }
   .irIQZt {
-    width: 1540px;
+    width: 1524px;
   }
 }
 @media (min-width: 1321px) and (max-width: 1540.9px) {
   .dDVcIC {
-    --offset: -660px !important;
+    --offset: -652px !important;
   }
   .type-list{
-    width: 1320px;
+    width: 1304px;
   }
   .irIQZt {
-    width: 1320px;
+    width: 1304px;
   }
 }
 @media (min-width: 1211px) and (max-width: 1320.9px) {
@@ -175,7 +178,7 @@ export default {
 }
 @media (min-width: 991px) and (max-width: 1210.9px) {
   .dDVcIC {
-    --offset: -490px !important;
+    --offset: -489px !important;
   }
   .type-list{
     width: 980px;
@@ -186,7 +189,7 @@ export default {
 }
 @media (min-width: 111px) and (max-width: 990.9px) {
   .dDVcIC {
-    --offset: -388px !important;
+    --offset: -380px !important;
   }
   .type-list{
     width: 760px;
@@ -200,10 +203,6 @@ export default {
     --offset: 3px !important;
     left: 0!important;
   }
-}
-#game-type{
-  height: 100vh;
-  overflow-y: auto;
 }
 .dDVcIC {
   cursor: pointer;
@@ -300,12 +299,23 @@ export default {
     margin: 16px auto 0px;
     padding: 0px;
     list-style-type: none;
-  }
-  .iRQTOz::before {
-    content: "";
-    display: block;
+    .top{
+      display: grid;
+      grid-template-rows: repeat(auto-fill, 94px);
+      grid-gap: 16px;
+      grid-auto-flow: dense;
+      //justify-content: center;
+      grid-template-columns: repeat(6, 94px);
+      grid-template-areas: ". . ip0 ip0 ip0 ip0";
+    }
+    .top::before {
+      content: "";
+      display: block;
+      grid-column-start: span 2;
+    }
   }
   .title{
+    grid-area: ip0;
     width: 424px;
     height: 94px;
     display: flex;
@@ -318,7 +328,7 @@ export default {
     align-items: center;
     font-size: 21px;
     box-sizing: border-box;
-    margin-left: 220px;
+    //margin-left: 220px;
   }
 }
 .content, .recommend{

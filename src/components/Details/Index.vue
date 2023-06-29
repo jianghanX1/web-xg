@@ -50,6 +50,20 @@
                   </div>
                 </div>
                 <div class="bar-btns" v-else>
+                  <div class="hGklVU">
+                    <div class="jwXhHc">
+                      <div class="cwcbpr">
+                        <div class="iqLrJG">
+                          <img :src="like" alt="">
+                        </div>
+                      </div>
+                      <div class="iUqdTV">
+                        <span class="hEtgR jhrTfi"></span>
+                        <span class="hEtgR jWGbzI">like</span>
+                      </div>
+                    </div>
+                    <div class="jwXhHc"></div>
+                  </div>
                   <div class="full-btn" @click="amplifyClick">
                     <div class="cwcbpr">
                       <div class="iqLrJG">
@@ -134,9 +148,10 @@ import BottomNav from '../BottomNav';
 import TypeList from '@/components/TypeList.vue';
 import PCLogo from "@/components/PCLogo.vue";
 import {determinePcOrMove, shuffle, setMeta, getJson, recentGame, getGameTypeList} from '@/utils/utils.js';
-import amplify from '@/assets/amplify.png'
-import reduce from '@/assets/reduce.png'
-import logo from '@/assets/logo.png'
+import amplify from '@/assets/amplify.png';
+import reduce from '@/assets/reduce.png';
+import logo from '@/assets/logo.png';
+import like from '@/assets/like.png';
 export default {
   name: "detailsIndex",
   components: {
@@ -164,7 +179,8 @@ export default {
       innerWidth: 0, // 屏幕宽度
       amplify,
       reduce,
-      logo
+      logo,
+      like
     }
   },
   created() {
@@ -180,6 +196,7 @@ export default {
     }
   },
   mounted() {
+    document.documentElement.scrollTop = 0
     window.onresize = () => {
       this.innerWidth = window.innerWidth
       if (!this.checkFull()) {
@@ -642,32 +659,72 @@ export default {
           margin-right: 10px;
           display: flex;
           position: relative;
-          .download {
-            height: 40px;
-            background-color: #3be6a2;
-            border-radius: 8px;
-            margin-top: 10px;
-            margin-left: 12px;
-            padding: 0 10px 0 8px;
-            cursor: pointer;
-            span{
-              line-height: 40px;
-              font-size: 16px;
-              color: #fff;
+          .hGklVU {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            .jwXhHc {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              margin: 8px 8px auto;
+              border: none;
+              outline: none;
+              background: none;
+              padding: 0px;
+              cursor: pointer;
+              .cwcbpr {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: var(--gameBarLabelBackgroundColor,#FFFFFF);
+                transition: background-color 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                padding: 8px;
+                box-sizing: border-box;
+                .iqLrJG {
+                  fill: var(--gameBarIconFill,var(--poki-blue));
+                  transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
+                  transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                  overflow: visible;
+                  text-align: center;
+                  img{
+                    width: 16px;
+                    height: 16px;
+                  }
+                }
+              }
+              .iUqdTV {
+                position: absolute;
+                left: 50%;
+                bottom: 4px;
+                font: 700 10px / 12px "Proxima Nova", sans-serif;
+                .jhrTfi {
+                  opacity: var(--gameBarLabelOpacity,1);
+                  color: #5d6b84;
+                  background-color: var(--gameBarLabelBackgroundColor,#FFFFFF00);
+                }
+                .jWGbzI {
+                  opacity: var(--gameBarHoverLabelOpacity,0);
+                  color: rgb(255, 255, 255);
+                  background-color: #009cff;
+                }
+                .hEtgR {
+                  position: absolute;
+                  left: 0px;
+                  top: 0px;
+                  transform: translate(-50%);
+                  border-radius: 16px;
+                  padding: 0px 4px;
+                  white-space: nowrap;
+                  transition: opacity 350ms cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                }
+              }
             }
-          }
-          .play-tag{
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            padding: 0 12px;
-            margin-top: 10px;
-            border-radius: 8px;
-            background-color: hsla(0,0%,100%,.2);
-            margin-left: 12px;
-            font-size: 13px;
-            color: #fff;
-            cursor: pointer;
+            .jwXhHc:hover {
+              --gameBarIconRotation: -5deg;
+              --gameBarLabelOpacity: 0;
+              --gameBarHoverLabelOpacity: 1;
+            }
           }
           .full-btn{
             position: relative;
