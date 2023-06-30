@@ -51,21 +51,45 @@
                 </div>
                 <div class="bar-btns" v-else>
                   <div class="hGklVU">
-                    <div class="jwXhHc">
-                      <div class="cwcbpr">
-                        <div class="iqLrJG">
-                          <img :src="like" alt="">
+                    <div :class="likeStyle ? 'lcJldi' : 'jwXhHc'" @click="btnClick(1)">
+                      <div class="sc-1wag0ht-5" :class="likeStyle ? 'iAzhvC' : 'cwcbpr'">
+                        <div class="sc-1wag0ht-0" :class="likeStyle ? 'ehxUGv' : 'iqLrJG'">
+                          <img v-if="!likeStyle" :src="like" alt="">
+                          <img v-if="likeStyle" :src="likeWhite" alt="">
                         </div>
                       </div>
                       <div class="iUqdTV">
-                        <span class="hEtgR jhrTfi"></span>
-                        <span class="hEtgR jWGbzI">like</span>
+                        <span class="hEtgR jhrTfi">{{likeScore}}k</span>
+                        <span class="hEtgR jWGbzI">{{likeStyle ? 'remove' : 'like'}}</span>
                       </div>
                     </div>
-                    <div class="jwXhHc"></div>
+                    <div :class="dislikeStyle ? 'cxjzJO' : 'jwXhHc'" @click="btnClick(2)">
+                      <div class="sc-1wag0ht-5" :class="dislikeStyle ? 'dmtEVG' : 'gaptrT'">
+                        <div :class="dislikeStyle ? 'eukeXb' : 'kBtgKC'">
+                          <img v-if="!dislikeStyle" :src="dislike" alt="">
+                          <img v-if="dislikeStyle" :src="dislikeWhite" alt="" style="margin-left: 1px">
+                        </div>
+                      </div>
+                      <div class="iUqdTV">
+                        <span class="hEtgR jhrTfi">{{dislikeScore}}k</span>
+                        <span class="hEtgR jWGbzI">{{dislikeStyle ? 'remove' : 'dislike'}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div :class="flagStyle ? 'lcJldi' : 'full-btn'" @click="btnClick(3)">
+                    <div class="sc-1wag0ht-5" :class="flagStyle ? 'iAzhvC' : 'cwcbpr'" :style="flagStyle ? {lineHeight: '30px'} : null">
+                      <div class="sc-1wag0ht-0" :class="flagStyle ? 'ehxUGv' : 'iqLrJG'" :style="flagStyle ? {textAlign: 'center'} : null">
+                        <img v-if="!flagStyle" :src="flag" alt="">
+                        <img v-if="flagStyle" :src="flagWhite" alt="" style="width: 17px;height: 17px; margin-left: 1px">
+                      </div>
+                    </div>
+                    <div class="iUqdTV">
+                      <span class="hEtgR jhrTfi"></span>
+                      <span class="hEtgR jWGbzI">{{flagStyle ? '' : 'Report an error'}}</span>
+                    </div>
                   </div>
                   <div class="full-btn" @click="amplifyClick">
-                    <div class="cwcbpr">
+                    <div class="sc-1wag0ht-5 cwcbpr">
                       <div class="iqLrJG">
                         <img :src="amplify" alt="">
                       </div>
@@ -115,6 +139,54 @@
           </div>
         </div>
       </div>
+      <div style="display: contents">
+        <aside class="hotNyV">
+          <div :class="feedbackStyle ? 'cJsJca' : 'lbpyEn' " v-if="feedbackType">
+            <header class="iYUdDw">
+              <div class="jSEhHX">
+                <div class="hYpEdi">
+                  <div class="hBmUwV">
+                    <img v-if="btnClickStatus == 1" :src="likeBlack" alt="">
+                    <img v-if="btnClickStatus == 2" :src="dislikeBlack" alt="">
+                    <img v-if="btnClickStatus == 3" :src="flagBlack" alt="">
+                  </div>
+                  <div class="desc">
+                    {{btnClickStatus == 1 ? 'What do you like' : btnClickStatus == 2 ? 'What do you dislike' : 'You are'}}
+                    <strong>{{gameInfo.Name}}?</strong>
+                    {{btnClickStatus == 3 ? 'What vulnerabilities were found in' : ''}}
+                  </div>
+                </div>
+              </div>
+              <button class="kWUen" @click="feedbackClose">
+                <span class="sc-1219584-5 kzfNHa"></span>
+                <div class="gJmbLa">
+                  <i class="el-icon-close"></i>
+                </div>
+              </button>
+            </header>
+            <div class="AwRjN">
+              <el-form ref="form" :model="formData">
+                <el-form-item>
+                  <el-input
+                      v-model="formData.message"
+                      name="message"
+                      type="textarea"
+                      :rows="5"
+                      :placeholder="messagePlaceholder"
+                  ></el-input>
+                </el-form-item>
+              </el-form>
+              <img :src="star_feedback_v2" alt="" class="chqjsI">
+            </div>
+            <div class="eyffgn">
+              <button class="cLNPVX" @click="sendMessage('form')">sending</button>
+            </div>
+          </div>
+          <div class="kiYWjT" :style="messageBg" v-if="thankType">
+            Thank you
+          </div>
+        </aside>
+      </div>
       <div style="margin-top: 16px">
         <TypeList></TypeList>
       </div>
@@ -152,6 +224,17 @@ import amplify from '@/assets/amplify.png';
 import reduce from '@/assets/reduce.png';
 import logo from '@/assets/logo.png';
 import like from '@/assets/like.png';
+import dislike from '@/assets/dislike.png';
+import flag from '@/assets/flag.png';
+import likeBlack from '@/assets/likeBlack.png';
+import dislikeBlack from '@/assets/dislikeBlack.png';
+import flagBlack from '@/assets/flagBlack.png';
+import star_feedback_v2 from '@/assets/star_feedback_v2.svg';
+import message from '@/assets/message.png';
+import likeWhite from '@/assets/likeWhite.png';
+import dislikeWhite from '@/assets/dislikeWhite.png';
+import flagWhite from '@/assets/flagWhite.png';
+import request from "@/utils/request";
 export default {
   name: "detailsIndex",
   components: {
@@ -180,7 +263,33 @@ export default {
       amplify,
       reduce,
       logo,
-      like
+      like,
+      dislike,
+      flag,
+      likeBlack,
+      dislikeBlack,
+      flagBlack,
+      star_feedback_v2,
+      likeWhite,
+      dislikeWhite,
+      flagWhite,
+      messageBg: {
+        backgroundImage: `url(${message})`,
+        backgroundSize: '100% 100%'
+      },
+      likeScore: "", // 喜欢
+      dislikeScore: "", // 不喜欢
+      formData: {
+        message: '',
+      },
+      messagePlaceholder: '', //
+      btnClickStatus: 1, // 1喜欢/2不喜欢/3反馈
+      feedbackStyle: false, // 反馈框样式
+      feedbackType: false, // 反馈框状态
+      thankType: false, // 发送成功提示
+      likeStyle: false, // 喜欢样式
+      dislikeStyle: false, // 不喜欢样式
+      flagStyle: false, // 反馈样式
     }
   },
   created() {
@@ -242,6 +351,13 @@ export default {
       let score = Math.random()*0.8 + 4.2
       this.gameScore = score.toFixed(1)
 
+      // 喜欢
+      let likeScore = Math.random()*1900 + 100
+      this.likeScore = likeScore.toFixed(1)
+
+      // 不喜欢
+      let dislikeScore = Math.random()*99 + 1
+      this.dislikeScore = dislikeScore.toFixed(1)
 
       const { query } = this.$route
       const { gameId } = query || {}
@@ -307,7 +423,102 @@ export default {
           gameType: type
         }
       },()=>{})
-    }
+    },
+    // 点击喜欢/不喜欢/反馈
+    btnClick(status) {
+      if (status == 1) {
+        this.likeStyle = !this.likeStyle
+        this.dislikeStyle = false
+        this.flagStyle = false
+        if (this.likeStyle) {
+          this.feedbackStyle = false
+          setTimeout(()=>{
+            this.feedbackType = false
+            setTimeout(()=>{
+              this.btnClickStatus = 1
+              this.feedbackStyle = true
+              this.feedbackType = true
+              this.messagePlaceholder = 'please specify......'
+            })
+          },200)
+        } else {
+          this.feedbackStyle = false
+          setTimeout(()=>{
+            this.feedbackType = false
+          },500)
+        }
+      } else if (status == 2) {
+        this.dislikeStyle = !this.dislikeStyle
+        this.likeStyle = false
+        this.flagStyle = false
+        if (this.dislikeStyle) {
+          this.feedbackStyle = false
+          setTimeout(()=>{
+            this.feedbackType = false
+            setTimeout(()=>{
+              this.btnClickStatus = 2
+              this.feedbackStyle = true
+              this.feedbackType = true
+              this.messagePlaceholder = 'please specify......'
+            })
+          },200)
+        } else {
+          this.feedbackStyle = false
+          setTimeout(()=>{
+            this.feedbackType = false
+          },500)
+        }
+      } else {
+        this.flagStyle = !this.flagStyle
+        if (this.flagStyle) {
+          this.feedbackStyle = false
+          setTimeout(()=>{
+            setTimeout(()=>{
+              this.btnClickStatus = 3
+              this.feedbackStyle = true
+              this.feedbackType = true
+              this.messagePlaceholder = 'Help us understand the vulnerabilities you have discovered......'
+            })
+          },200)
+        } else {
+          this.feedbackStyle = false
+          setTimeout(()=>{
+            this.feedbackType = false
+          },500)
+        }
+      }
+    },
+    // 关闭反馈窗
+    feedbackClose() {
+      this.feedbackType = false
+    },
+    // 发送
+    sendMessage(form) {
+      this.$refs[form].validate((valid) => {
+        if (valid) {
+          request({
+            url: 'https://formspree.io/f/xrgvjyay',
+            method: 'post',
+            data: {
+              name: this.gameInfo.Name,
+              message: this.formData.message
+            }
+          }).then((res)=>{
+            console.log(res);
+            if (res.status == 200 && res.data.ok) {
+              // this.$message.success("发送成功")
+              this.feedbackType = false
+              this.thankType = true
+              setTimeout(()=>{
+                this.thankType = false
+              },3000)
+            }
+          }).catch((err)=>{
+            console.log(err);
+          })
+        }
+      })
+    },
   },
   watch: {
     '$route'(val) {
@@ -682,7 +893,26 @@ export default {
                 padding: 8px;
                 box-sizing: border-box;
                 .iqLrJG {
-                  fill: var(--gameBarIconFill,var(--poki-blue));
+                  transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
+                  transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                  overflow: visible;
+                  text-align: center;
+                  img{
+                    width: 16px;
+                    height: 16px;
+                  }
+                }
+              }
+              .gaptrT {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: var(--gameBarLabelBackgroundColor,#FFFFFF);
+                transition: background-color 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
+                padding: 8px;
+                --gameBarButtonAnimationBackgroundColor: #ff99b1;
+                box-sizing: border-box;
+                .kBtgKC {
                   transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
                   transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
                   overflow: visible;
@@ -724,6 +954,38 @@ export default {
               --gameBarIconRotation: -5deg;
               --gameBarLabelOpacity: 0;
               --gameBarHoverLabelOpacity: 1;
+              .sc-1wag0ht-5{
+                background: var(--gameBarButtonBackgroundHoverColor,#f0f5fc);
+              }
+            }
+            .lcJldi, .cxjzJO {
+              .iAzhvC, .dmtEVG {
+                line-height: 30px;
+                .ehxUGv, .eukeXb {
+                  text-align: center;
+                  img{
+                    width: 17px;
+                    height: 17px;
+                  }
+                }
+              }
+              .dmtEVG{
+                --gameBarButtonAnimationBackgroundColor: #ff99b1;
+              }
+              .iUqdTV {
+                .jhrTfi {
+                  background-color: var(--gameBarLabelBackgroundColor,#FFFFFF00);
+                  --gameBarLabelBackgroundColor: #f0f5fc;
+                }
+                .jWGbzI {
+                  opacity: var(--gameBarHoverLabelOpacity,0);
+                  color: rgb(255, 255, 255);
+                  background-color: #009cff;
+                }
+                .hEtgR {
+                  padding: 0px 4px 2px;
+                }
+              }
             }
           }
           .full-btn{
@@ -743,21 +1005,21 @@ export default {
               background: var(--gameBarLabelBackgroundColor,#FFFFFF);
               transition: background-color 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
               padding: 8px;
+              box-sizing: border-box;
               .iqLrJG {
-                fill: var(--gameBarIconFill,var(--poki-blue));
                 transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
                 transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
                 overflow: visible;
                 text-align: center;
                 img{
-                  width: 16px;
-                  height: 16px;
+                  width: 17px;
+                  height: 17px;
                 }
               }
             }
             .iUqdTV {
               position: absolute;
-              left: 70%;
+              left: 50%;
               bottom: 4px;
               font: 700 10px / 12px "Proxima Nova", sans-serif;
               .jhrTfi {
@@ -786,8 +1048,11 @@ export default {
             --gameBarIconRotation: -5deg;
             --gameBarLabelOpacity: 0;
             --gameBarHoverLabelOpacity: 1;
+            .sc-1wag0ht-5{
+              background: var(--gameBarButtonBackgroundHoverColor,#f0f5fc);
+            }
           }
-          .lcJldi {
+          .lcJldi, .cxjzJO {
             position: relative;
             width: 40px;
             height: 40px;
@@ -827,7 +1092,7 @@ export default {
                 background-color: var(--gameBarLabelBackgroundColor);
               }
             }
-            .iAzhvC {
+            .iAzhvC, .dmtEVG {
               width: 100%;
               height: 100%;
               border-radius: 50%;
@@ -867,8 +1132,7 @@ export default {
               .sc-1wag0ht-0 {
                 animation: 1s ease 0s 1 normal none running comMCG;
               }
-              .ehxUGv {
-                fill: var(--gameBarIconFill,var(--poki-blue));
+              .ehxUGv, .eukeXb {
                 --gameBarIconFill: #FFFFFF;
                 transform: rotate(var(--gameBarIconRotation,0deg)) translateY(var(--gameBarIconY,0px));
                 transition: fill 0.6s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s, transform 0.2s cubic-bezier(0.32, 1.2, 0.54, 1.17) 0s;
@@ -877,7 +1141,7 @@ export default {
                   width: 36px;
                   height: 36px;
                   margin-top: -5px;
-                  margin-left: -5px;
+                  margin-left: -6px;
                 }
               }
             }
@@ -910,6 +1174,11 @@ export default {
             }
           }
           .lcJldi:hover {
+            --gameBarLabelOpacity: 0;
+            --gameBarIconRotation: 0deg;
+            --gameBarHoverLabelOpacity: 1;
+          }
+          .cxjzJO:hover {
             --gameBarLabelOpacity: 0;
             --gameBarIconRotation: 0deg;
             --gameBarHoverLabelOpacity: 1;
@@ -1059,6 +1328,209 @@ export default {
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;
+    }
+  }
+  .hotNyV {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 3;
+    width: 100%;
+    max-width: 352px;
+    @keyframes ireoXe{
+      0% {
+        transform: translate(130%, 0px) scale(0.9);
+      }
+      60% {
+        transform: translate(0px, 0px) scale(0.9);
+      }
+      75% {
+        transform: translate(0px, 0px) scale(1.05);
+      }
+      85% {
+        transform: translate(0px, 0px) scale(0.97);
+      }
+      95%, 100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+    @keyframes iRsYLL{
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+      10% {
+        transform: translate(0px, 0px) scale(1);
+      }
+      35% {
+        transform: translate(0px, 0px) scale(0.9);
+      }
+      45% {
+        transform: translate(130%, 0px) scale(0.9);
+      }
+      100% {
+        transform: translate(130%, 0px) scale(0.9);
+      }
+    }
+    .cJsJca, .lbpyEn {
+      max-width: 352px;
+      width: 100%;
+      color: #5d6b84;
+      background: rgb(255, 255, 255);
+      box-shadow: rgba(9, 30, 66, 0.07) 0px 16px 16px, rgba(9, 30, 66, 0.07) 0px 0px 8px, rgba(9, 30, 66, 0.07) 0px 16px 32px;
+      border-radius: 12px;
+      margin: 16px auto 0px;
+      padding: 0px 0px 8px;
+      transform: translate(110%, 0px);
+      animation: 1000ms ease-in-out 0s 1 normal forwards running ireoXe;
+      .iYUdDw {
+        padding: 0px 40px 0px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        .jSEhHX {
+          font-family: Torus, sans-serif;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 18px;
+          padding: 14px 0px;
+          color: #002b50;
+          max-width: 90%;
+          display: flex;
+          align-items: center;
+          position: relative;
+          box-sizing: border-box;
+          .hYpEdi {
+            display: flex;
+            align-items: center;
+            padding: 4px 0px 0px;
+            font: 700 12px / 1 "Proxima Nova", sans-serif;
+            //text-transform: uppercase;
+            color: #5d6b84;
+            box-sizing: border-box;
+            .hBmUwV {
+              margin: 0px 13px 0px 0px;
+              flex-shrink: 0;
+              box-sizing: border-box;
+              img{
+                width: 17px;
+                height: 17px;
+              }
+            }
+            .desc{
+              line-height: 18px;
+            }
+            strong {
+              display: block;
+              color: #002b50;
+              font-size: 18px;
+              text-transform: none;
+            }
+          }
+        }
+        .kWUen {
+          width: 32px;
+          height: 46px;
+          padding: 3px 0px 0px;
+          background: rgb(255, 255, 255);
+          border: none;
+          overflow: hidden;
+          cursor: pointer;
+          position: absolute;
+          top: 0px;
+          right: 8px;
+          .kzfNHa {
+            position: absolute;
+            top: 8px;
+            left: 0px;
+            width: 32px;
+            height: 32px;
+            background: #ffc9dd;
+            border-radius: 16px;
+            transform: translate(0px, -140%);
+            transition: transform 0.25s cubic-bezier(0.19, 2.13, 0.73, 0.61) 0s;
+          }
+          .gJmbLa {
+            color: #009cff;
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            /deep/.el-icon-close{
+              font-weight: bold;
+            }
+          }
+        }
+        .kWUen:hover .sc-1219584-5, .kWUen:active .sc-1219584-5, .kWUen:focus .sc-1219584-5 {
+          transform: translate(0px, 0px);
+        }
+      }
+      .AwRjN {
+        border-top: 2px solid #f0f5fc;
+        padding: 8px 16px 16px;
+        font-size: 14px;
+        line-height: 20px;
+        /deep/.el-form-item{
+          margin-bottom: 0;
+        }
+        /deep/.el-textarea__inner{
+          resize: none;
+          height: 86px;
+          color: #5d6b84;
+          background: #f0f5fc;
+          border: 2px solid #bac9de;
+          font-size: 14px;
+        }
+        .chqjsI {
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          width: 176px;
+          height: 88px;
+          border-radius: 8px;
+          z-index: -1;
+        }
+        img {
+          color: transparent;
+        }
+      }
+      .eyffgn {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 4px 16px;
+        .cLNPVX {
+          font: 700 16px/1.5 Torus, sans-serif;
+          color: rgb(255, 255, 255);
+          padding: 6px 24px;
+          border-radius: 30px;
+          background: #009cff;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out 0s;
+        }
+      }
+    }
+    .lbpyEn {
+      animation: 1000ms ease-in-out 0s 1 normal forwards running iRsYLL;
+    }
+    .kiYWjT {
+      max-width: 352px;
+      width: 100%;
+      box-shadow: rgba(9,30,66,0.07) 0 16px 16px,rgba(9,30,66,0.07) 0 0 8px,rgba(9,30,66,0.07) 0 16px 32px;
+      border-radius: 12px;
+      margin: 16px auto 0;
+      transform: translate(110%, 0px);
+      animation: 1000ms ease-in-out 0s 1 normal forwards running ireoXe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 144px;
+      padding: 10px 28px;
+      background-color: #009cff;
+      font: 700 28px/1.1 Torus, sans-serif;
+      color: white;
+      box-sizing: border-box;
     }
   }
 }
