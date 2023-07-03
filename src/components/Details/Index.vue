@@ -141,7 +141,48 @@
       </div>
       <div style="display: contents">
         <aside class="hotNyV">
-          <div :class="feedbackStyle ? 'cJsJca' : 'lbpyEn' " v-if="feedbackType">
+          <div class="lbpyEn" v-if="feedbackType1">
+            <header class="iYUdDw">
+              <div class="jSEhHX">
+                <div class="hYpEdi">
+                  <div class="hBmUwV">
+                    <img v-if="btnClickStatus == 1" :src="likeBlack" alt="">
+                    <img v-if="btnClickStatus == 2" :src="dislikeBlack" alt="">
+                    <img v-if="btnClickStatus == 3" :src="flagBlack" alt="">
+                  </div>
+                  <div class="desc">
+                    {{btnClickStatus == 1 ? 'What do you like' : btnClickStatus == 2 ? 'What do you dislike' : 'You are'}}
+                    <strong>{{gameInfo.Name}}?</strong>
+                    {{btnClickStatus == 3 ? 'What vulnerabilities were found in' : ''}}
+                  </div>
+                </div>
+              </div>
+              <button class="kWUen" @click="feedbackClose">
+                <span class="sc-1219584-5 kzfNHa"></span>
+                <div class="gJmbLa">
+                  <i class="el-icon-close"></i>
+                </div>
+              </button>
+            </header>
+            <div class="AwRjN">
+              <el-form ref="form" :model="formData">
+                <el-form-item>
+                  <el-input
+                      v-model="formData.message"
+                      name="message"
+                      type="textarea"
+                      :rows="5"
+                      :placeholder="messagePlaceholder"
+                  ></el-input>
+                </el-form-item>
+              </el-form>
+              <img :src="star_feedback_v2" alt="" class="chqjsI">
+            </div>
+            <div class="eyffgn">
+              <button class="cLNPVX" @click="sendMessage('form')">sending</button>
+            </div>
+          </div>
+          <div :class="feedbackStyle ? 'lbpyEn' : 'cJsJca'" v-if="feedbackType">
             <header class="iYUdDw">
               <div class="jSEhHX">
                 <div class="hYpEdi">
@@ -284,8 +325,9 @@ export default {
       },
       messagePlaceholder: '', //
       btnClickStatus: 1, // 1喜欢/2不喜欢/3反馈
-      feedbackStyle: false, // 反馈框样式
       feedbackType: false, // 反馈框状态
+      feedbackType1: false, // 反馈框状态
+      feedbackStyle: false, // 反馈框状态
       thankType: false, // 发送成功提示
       likeStyle: false, // 喜欢样式
       dislikeStyle: false, // 不喜欢样式
@@ -428,42 +470,50 @@ export default {
     btnClick(status) {
       if (status == 1) {
         this.likeStyle = !this.likeStyle
-        this.dislikeStyle = false
-        this.flagStyle = false
         if (this.likeStyle) {
+          if (this.dislikeStyle || this.flagStyle) {
+            this.feedbackType1 = true
+            setTimeout(()=>{
+              this.feedbackType1 = false
+            },500)
+          }
+          this.dislikeStyle = false
+          this.flagStyle = false
+          this.feedbackType = false
           this.feedbackStyle = false
           setTimeout(()=>{
-            this.feedbackType = false
-            setTimeout(()=>{
-              this.btnClickStatus = 1
-              this.feedbackStyle = true
-              this.feedbackType = true
-              this.messagePlaceholder = 'please specify......'
-            })
-          },200)
+            this.btnClickStatus = 1
+            this.feedbackType = true
+            this.messagePlaceholder = 'please specify......'
+          })
         } else {
-          this.feedbackStyle = false
+          this.flagStyle = false
+          this.feedbackStyle = true
           setTimeout(()=>{
             this.feedbackType = false
           },500)
         }
       } else if (status == 2) {
         this.dislikeStyle = !this.dislikeStyle
-        this.likeStyle = false
-        this.flagStyle = false
         if (this.dislikeStyle) {
+          if (this.likeStyle || this.flagStyle) {
+            this.feedbackType1 = true
+            setTimeout(()=>{
+              this.feedbackType1 = false
+            },500)
+          }
+          this.likeStyle = false
+          this.flagStyle = false
+          this.feedbackType = false
           this.feedbackStyle = false
           setTimeout(()=>{
-            this.feedbackType = false
-            setTimeout(()=>{
-              this.btnClickStatus = 2
-              this.feedbackStyle = true
-              this.feedbackType = true
-              this.messagePlaceholder = 'please specify......'
-            })
-          },200)
+            this.btnClickStatus = 2
+            this.feedbackType = true
+            this.messagePlaceholder = 'please specify......'
+          })
         } else {
-          this.feedbackStyle = false
+          this.flagStyle = false
+          this.feedbackStyle = true
           setTimeout(()=>{
             this.feedbackType = false
           },500)
@@ -471,17 +521,21 @@ export default {
       } else {
         this.flagStyle = !this.flagStyle
         if (this.flagStyle) {
-          this.feedbackStyle = false
-          setTimeout(()=>{
+          if (this.likeStyle || this.dislikeStyle) {
+            this.feedbackType1 = true
             setTimeout(()=>{
-              this.btnClickStatus = 3
-              this.feedbackStyle = true
-              this.feedbackType = true
-              this.messagePlaceholder = 'Help us understand the vulnerabilities you have discovered......'
-            })
-          },200)
+              this.feedbackType1 = false
+            },500)
+          }
+          this.feedbackType = false
+          setTimeout(()=>{
+            this.btnClickStatus = 3
+            this.feedbackType = true
+            this.feedbackStyle = false
+            this.messagePlaceholder = 'Help us understand the vulnerabilities you have discovered......'
+          })
         } else {
-          this.feedbackStyle = false
+          this.feedbackStyle = true
           setTimeout(()=>{
             this.feedbackType = false
           },500)
