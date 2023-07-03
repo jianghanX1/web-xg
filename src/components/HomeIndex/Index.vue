@@ -119,7 +119,7 @@ export default {
         console.log(this.logoutCount);
         if (this.logoutCount >= 10) {
           recentGame(newArr[0])
-          window.location.href = '/#/P/details?gameId=' + newArr[0].gameId
+          // window.location.href = '/#/P/details?gameId=' + newArr[0].gameId
         }
       },1000)
     },
@@ -144,10 +144,7 @@ export default {
 
 <style lang="less" scoped>
 .big{
-  //display: flex;
-  //min-width: 730px;
-  //height: calc(100vh - 85px);
-  height: calc(100vh - 56px);
+  height: 100vh;
   overflow-y: auto;
   .top-text{
     text-align: center;
