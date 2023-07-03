@@ -118,23 +118,27 @@
         </div>
         <div class="gqnFJQ pAock">
           <div class="bioerJ">
-            <div class="eDhvMX" style="height: 90px;width: 728px;overflow: hidden"></div>
-            <div class="keJcxs">广告</div>
+            <div class="eDhvMX" style="height: 90px;width: 728px;overflow: hidden">
+              <div id='div-gpt-ad-1688371917521-0' ref="bottomAdv"></div>
+            </div>
+            <div class="keJcxs"></div>
           </div>
         </div>
         <div class="gqnFJQ jxmECU">
           <div class="iFmTCx">
-            <div class="eDhvMX" style="height: 250px; width: 300px; overflow: hidden;"></div>
-            <div class="iZJgLq">广告</div>
+            <div class="eDhvMX" style="height: 250px; width: 300px; overflow: hidden;">
+              <div id='div-gpt-ad-1688371871810-0' ref="rightAdv"></div>
+            </div>
+            <div class="iZJgLq">advertisement</div>
           </div>
         </div>
         <div class="gqnFJQ SpDdJ">
           <div class="iFmTCx">
             <div style="width: 160px;height: 600px;overflow: hidden" class="eDhvMX">
-
+              <div id='div-gpt-ad-1688371803760-0' ref="leftAdv"></div>
             </div>
             <div class="iZJgLq">
-              广告
+              advertisement
             </div>
           </div>
         </div>
@@ -358,6 +362,18 @@ export default {
     this.innerWidth = window.innerWidth
     this.getJson()
     this.$store.commit('changeScreen', false)
+
+    let leftAdv = document.createElement("script")
+    leftAdv.innerHTML = "googletag.cmd.push(function() { googletag.display('div-gpt-ad-1688371803760-0'); });"
+    this.$refs.leftAdv.append(leftAdv)
+
+    let rightAdv = document.createElement("script")
+    rightAdv.innerHTML = "googletag.cmd.push(function() { googletag.display('div-gpt-ad-1688371871810-0'); });"
+    this.$refs.rightAdv.append(rightAdv)
+
+    let bottomAdv = document.createElement("script")
+    bottomAdv.innerHTML = "googletag.cmd.push(function() { googletag.display('div-gpt-ad-1688371917521-0'); });"
+    this.$refs.bottomAdv.append(bottomAdv)
   },
   methods: {
     checkFull() {
@@ -767,7 +783,7 @@ export default {
         }
         .iZJgLq {
           font: 400 9px / 2 Arial, sans-serif;
-          text-transform: uppercase;
+          //text-transform: uppercase;
           text-align: center;
           opacity: 0.7;
           height: 20px;
@@ -788,7 +804,7 @@ export default {
         }
         .keJcxs {
           font: 400 8px / 1 Arial, sans-serif;
-          text-transform: uppercase;
+          //text-transform: uppercase;
           text-align: center;
           opacity: 0.7;
           height: 20px;
@@ -814,7 +830,7 @@ export default {
         }
         .iZJgLq{
           font: 400 9px / 2 Arial, sans-serif;
-          text-transform: uppercase;
+          //text-transform: uppercase;
           text-align: center;
           opacity: 0.7;
           height: 20px;
