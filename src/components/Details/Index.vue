@@ -216,6 +216,13 @@
           </div>
         </aside>
       </div>
+      <div style="display: contents" v-if="smegmaType">
+        <div class="AFSJx dgmlwU" style="background-color: #83ffe7">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div style="margin-top: 16px">
         <TypeList></TypeList>
       </div>
@@ -320,6 +327,7 @@ export default {
       likeStyle: false, // 喜欢样式
       dislikeStyle: false, // 不喜欢样式
       flagStyle: false, // 反馈样式
+      smegmaType: false, // 蒙层状态
     }
   },
   created() {
@@ -336,6 +344,12 @@ export default {
     }
   },
   mounted() {
+    // 蒙层状态
+    this.smegmaType = true
+    setTimeout(()=>{
+      this.smegmaType = false
+    },800)
+
     document.documentElement.scrollTop = 0
     window.onresize = () => {
       this.innerWidth = window.innerWidth
@@ -586,6 +600,11 @@ export default {
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
+      // 蒙层状态
+      this.smegmaType = true
+      setTimeout(()=>{
+        this.smegmaType = false
+      },800)
       this.getJson()
     }
   }
@@ -1318,6 +1337,47 @@ export default {
     .cOWZsC:hover .sc-963fcq-0 {
       opacity: 1;
       transform: translate(0px, 0px);
+    }
+  }
+  @keyframes djqRmU{
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+  @keyframes etkMLf{
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+  .dgmlwU{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: djqRmU .2s cubic-bezier(.25, .1, .25, 1) both;
+    z-index: 100001;
+  }
+  .AFSJx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+      width: 18px;
+      height: 18px;
+      margin: 0 2px;
+      border-radius: 100%;
+      background: white;
+      animation: 1.4s ease-in-out 0s infinite normal both running etkMLf;
+    }
+    div:nth-child(2){
+      animation-delay: -0.16s;
     }
   }
   .bottom-text{

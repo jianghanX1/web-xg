@@ -1941,19 +1941,19 @@ export function recentGame(element) {
 }
 
 // 获取游戏类型
-import shooting from '@/assets/01shooting.jpg';
-import car from '@/assets/02car.jpg';
-import ball from '@/assets/03ball.jpg';
-import girls from '@/assets/04girls.jpg';
-import casual from '@/assets/05casu.jpg';
-import puzzle from '@/assets/06puzzle.jpg';
-import action from '@/assets/07action.jpg';
-import racing from '@/assets/08racing.jpg';
-import parkour from '@/assets/09parkour.jpg';
-import sand from '@/assets/093d.jpg';
-import adventure from '@/assets/Adventure.jpg';
-import arcade from '@/assets/Arcade.jpg';
-import sports from '@/assets/sports.jpg';
+import shooting from '@/assets/01shooting.png';
+import car from '@/assets/02car.png';
+import ball from '@/assets/03ball.png';
+import girls from '@/assets/04girls.png';
+import casual from '@/assets/05casu.png';
+import puzzle from '@/assets/06puzzle.png';
+import action from '@/assets/07action.png';
+import racing from '@/assets/08racing.png';
+import parkour from '@/assets/09parkour.png';
+import sand from '@/assets/093d.png';
+import adventure from '@/assets/Adventure.png';
+import arcade from '@/assets/Arcade.png';
+import sports from '@/assets/sports.png';
 export function getGameTypeList () {
     let game_type = [{},{},{},{},{},{},{},{},{},{},{},{},{}]
     game_type && game_type.map(()=>{

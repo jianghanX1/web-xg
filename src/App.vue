@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="less">
 .scrollClass{
-  overflow: auto;
+  overflow: visible;
   height: 100%;
 }
 .scrollClass1{

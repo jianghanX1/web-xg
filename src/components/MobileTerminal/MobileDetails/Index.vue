@@ -77,6 +77,14 @@
 <!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
 <!--      <img :src="topping" alt="">-->
 <!--    </div>-->
+
+    <div style="display: contents" v-if="smegmaType">
+      <div class="AFSJx dgmlwU" style="background-color: #83ffe7">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -115,6 +123,7 @@ export default {
       detailAdv: false, // 是否展示广告位置
       hZDmFe2: 'hZDmFe2', // 有广告样式
       hZDmFe: 'hZDmFe', // 无广告样式
+      smegmaType: false, // 蒙层状态
     }
   },
   created() {
@@ -132,6 +141,11 @@ export default {
     }
   },
   mounted() {
+    // 蒙层状态
+    this.smegmaType = true
+    setTimeout(()=>{
+      this.smegmaType = false
+    },800)
     setTimeout(()=>{
       window.addAds()
       let innerHtml = document.getElementById('detailAdv') && document.getElementById('detailAdv').innerHTML
@@ -254,6 +268,11 @@ export default {
     '$route'(val) {
       console.log(val,'数据更新了');
       document.getElementById('mobile-details').scrollTop = 0
+      // 蒙层状态
+      this.smegmaType = true
+      setTimeout(()=>{
+        this.smegmaType = false
+      },800)
       this.getJson()
     }
   }
@@ -655,6 +674,47 @@ export default {
         border: 1px solid #cccccc;
       }
     }
+  }
+}
+@keyframes djqRmU{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes etkMLf{
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+.dgmlwU{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: djqRmU .2s cubic-bezier(.25, .1, .25, 1) both;
+  z-index: 100001;
+}
+.AFSJx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div{
+    width: 18px;
+    height: 18px;
+    margin: 0 2px;
+    border-radius: 100%;
+    background: white;
+    animation: 1.4s ease-in-out 0s infinite normal both running etkMLf;
+  }
+  div:nth-child(2){
+    animation-delay: -0.16s;
   }
 }
 .is-top{

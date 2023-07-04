@@ -37,7 +37,6 @@ export default {
 
 <style lang="less" scoped>
 .bottom-list, .bottom-list1{
-  overflow: hidden;
   @media (hover: hover){
     .cMEgnO:hover {
       transform: scale(1.01869) translate(0px, -4px)!important;
@@ -77,5 +76,19 @@ export default {
       margin-right: 0;
     }
   }
+}
+.bottom-list:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.bottom-list1:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 </style>
