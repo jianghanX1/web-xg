@@ -15,6 +15,21 @@
 <!--      ga-->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD1D1PZJ9Y"></script>
       <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+      <script>
+          let leftSlot = null
+          let rightSlot = null
+          let bottomSlot = null
+          window.googletag = window.googletag || {cmd: []};
+          googletag.cmd.push(function () {
+              leftSlot = googletag.defineSlot('/162381451/afantai_gugo_details_pcl', [160, 600], 'div-gpt-ad-1688371803760-0').addService(googletag.pubads());
+              rightSlot = googletag.defineSlot('/162381451/afantai_gugo_details_pcr', [300, 250], 'div-gpt-ad-1688371871810-0').addService(googletag.pubads());
+              bottomSlot = googletag.defineSlot('/162381451/afantai_gugo_details_pcb', [728, 90], 'div-gpt-ad-1688371917521-0').addService(googletag.pubads());
+              googletag.enableServices();
+          });
+          window.leftSlot = leftSlot
+          window.rightSlot = rightSlot
+          window.bottomSlot = bottomSlot
+      </script>
   </head>
   <body>
     <div id="app"></div>
@@ -24,22 +39,6 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date()); gtag('config', 'G-YD1D1PZJ9Y');
     </script>
-
-
-    <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/162381451/afantai_gugo_details_pcl', [160,600], 'div-gpt-ad-1688371803760-0').addService(googletag.companionAds()).addService(googletag.pubads());
-            googletag.defineSlot('/162381451/afantai_gugo_details_pcr', [300,250], 'div-gpt-ad-1688371871810-0').addService(googletag.companionAds()).addService(googletag.pubads());
-            googletag.defineSlot('/162381451/afantai_gugo_details_pcb', [728,90], 'div-gpt-ad-1688371917521-0').addService(googletag.companionAds()).addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.pubads().enableVideoAds();
-            googletag.companionAds().setRefreshUnfilledSlots(true);
-            googletag.enableServices();
-        });
-    </script>
-
-
     <script>
         window['addAds'] = function () {
             let childList = document.getElementsByClassName('adv')
@@ -47,6 +46,17 @@
             for (let i = 0; i < childList.length; i++) {
                 (adsbygoogle = window.adsbygoogle || []).push({});
             }
+        }
+    </script>
+    <script>
+        window['aftafg'] = function () {
+            var AFTAFG = window.AFTAFG = {};
+            window.addEventListener('message', function (e) {  // 监听 message 事件
+                if(e.data.message == "set_top_AFTAFG")
+                    AFTAFG = e.data.val
+
+                console.log("receive " + e.origin + " message " + e.data.message);
+            });
         }
     </script>
     <!-- built files will be auto injected -->

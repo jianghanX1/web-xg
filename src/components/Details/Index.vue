@@ -363,16 +363,19 @@ export default {
     this.getJson()
     this.$store.commit('changeScreen', false)
 
+    window.aftafg()
+
+    // 加载广告
     let leftAdv = document.createElement("script")
-    leftAdv.innerHTML = "googletag.cmd.push(function() { googletag.display('div-gpt-ad-1688371803760-0'); });"
+    leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.leftSlot){googletag.display('div-gpt-ad-1688371803760-0')}; googletag.pubads().refresh();});"
     this.$refs.leftAdv.append(leftAdv)
 
     let rightAdv = document.createElement("script")
-    rightAdv.innerHTML = "googletag.cmd.push(function() { googletag.display('div-gpt-ad-1688371871810-0'); });"
+    rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.rightSlot){googletag.display('div-gpt-ad-1688371871810-0')};});"
     this.$refs.rightAdv.append(rightAdv)
 
     let bottomAdv = document.createElement("script")
-    bottomAdv.innerHTML = "googletag.cmd.push(function() { googletag.display('div-gpt-ad-1688371917521-0'); });"
+    bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.bottomSlot){googletag.display('div-gpt-ad-1688371917521-0')};});"
     this.$refs.bottomAdv.append(bottomAdv)
   },
   methods: {
