@@ -1,14 +1,14 @@
 <template>
   <div class="bottom-box">
     <div class="bj">
-      <div class="title">YIYGAME</div>
-      <div class="small-title">Play online games on yiygames</div>
+      <div class="title">BIOH5</div>
+      <div class="small-title">Play online games on bioh5</div>
       <div class="text">
-        yiygames.COM is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all yiygames GAMES are free ! Everyone can play the lasted games and the best games for free!
+        bioh5.COM is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all bioh5 GAMES are free ! Everyone can play the lasted games and the best games for free!
       </div>
       <div class="small-title">Game selection</div>
       <div class="text">
-        yiygames devotes itself to provide games for all ages. For example, you can find fierce types of games such as shooting and driving. Also, there are casual brain-burning games like puzzle and decryption games. Not only that, MMORPGs, strategy, or games that require long hours of operation also can be your options. Besides, we provide a series of unique online games for children. Parents, please trust us, that our website is very faith worthy, 100% safe, and child-friendly.
+        bioh5 devotes itself to provide games for all ages. For example, you can find fierce types of games such as shooting and driving. Also, there are casual brain-burning games like puzzle and decryption games. Not only that, MMORPGs, strategy, or games that require long hours of operation also can be your options. Besides, we provide a series of unique online games for children. Parents, please trust us, that our website is very faith worthy, 100% safe, and child-friendly.
       </div>
     </div>
   </div>
@@ -34,9 +34,9 @@ export default {
     margin-bottom: 20px;
     .bj{
       padding: 40px 0 30px;
-      background-color: rgb(0 71 217);
+      background-color: #2e6d95;
       border-radius: 20px;
-      box-shadow: 0 3px 8px 0 rgb(16 0 76 / 60%);
+      //box-shadow: 0 3px 8px 0 rgb(16 0 76 / 60%);
       .title{
         font-size: 27px;
         color: #fff;

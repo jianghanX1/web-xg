@@ -1,35 +1,26 @@
 <template>
     <div>
-      <div class="bj" @click="vigooGamesClick">
+      <div class="bj">
         <div class="bj_left">
-          <div class="title">YIYGAMES</div>
-<!--          <div class="nav-list">-->
-<!--            <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>-->
-<!--          </div>-->
+          <div class="title" @click="vigooGamesClick"><i class="el-icon-menu" @click.stop="positionMenuClick"></i> BIOH5</div>
+          <div class="nav-list">
+            <div @click="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
+          </div>
         </div>
-<!--        <div class="search">-->
-<!--          <el-input-->
-<!--            placeholder="Search Games"-->
-<!--            prefix-icon="el-icon-search"-->
-<!--            v-model="searchInput"-->
-<!--            @keyup.enter.native="searchClick"-->
-<!--          >-->
-<!--          </el-input>-->
-<!--        </div>-->
-<!--        <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">-->
-<!--          <div @click="newGamesClick(item.code)" v-for="(item,index) in gameTypeList" :key="index">{{ item.name }}</div>-->
-<!--        </div>-->
+        <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">
+          <div @click="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
+        </div>
       </div>
     </div>
 </template>
 
 <script>
+import { getGameTypeList } from '@/utils/utils'
 export default {
   name: 'navigationIndex',
   data () {
     return {
-      searchInput: null,
-      gameTypeList: [], // 游戏分类
+      gameTypeList: getGameTypeList() || [], // 游戏分类
       positionMenu: false, // 菜单展示
     }
   },
@@ -37,36 +28,22 @@ export default {
 
   },
   methods: {
-    // 搜索
-    searchClick() {
-      this.$router.push({
-        path: '/P/gameType',
-        query: {
-          searchValue: this.searchInput.trim()
-        }
-      },()=>{})
-    },
     positionMenuClick() {
-      this.searchInput = null
       this.positionMenu = !this.positionMenu
-      console.log(this.positionMenu);
     },
     mouseleave() {
       this.positionMenu = false
     },
     vigooGamesClick() {
-      this.searchInput = null
       this.$router.push({
         path: '/'
       },()=>{})
     },
     newGamesClick(gameType) {
-      this.searchInput = null
       this.$router.push({
         path: '/P/gameType',
         query: {
-          gameType,
-          searchValue: null
+          gameType
         }
       },()=>{})
     },
@@ -97,7 +74,7 @@ export default {
       position: absolute;
       top: 51px;
       left: 0;
-      background: #f83123;
+      background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
       padding: 6px 0;
       min-width: 184px;
       z-index: 99;

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { getJson, recentGame } from '@/utils/utils.js'
+import { getJson, recentGame, shuffle } from '@/utils/utils.js'
 export default {
   name: "contentIndex",
   data() {
@@ -22,7 +22,25 @@ export default {
   },
   methods: {
     getJson() {
-      let arr = getJson()
+      const { query } = this.$route
+      const { gameType } = query || {}
+      let arr = []
+      if (gameType) {
+        getJson() && getJson().map((item)=>{
+          if (item[gameType] == 1) {
+            arr.push(item)
+          }
+        })
+        if (!arr.length) {
+          let newArr = []
+          getJson() && getJson().map((item)=>{
+            newArr.push(item)
+          })
+          arr = shuffle(newArr).splice(0, 30)
+        }
+      } else {
+        arr = getJson()
+      }
       this.gameList = arr
     },
     // 点击跳转详情

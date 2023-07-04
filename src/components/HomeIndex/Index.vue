@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="YIYGAMES" id="homeId">
+  <div class="big" v-title data-title="BIOH5" id="homeId">
     <Navigation></Navigation>
     <div>
       <div class="top-text">
@@ -7,9 +7,9 @@
       </div>
       <Content></Content>
       <div class="bottom-text">
-        Hi! Welcome to yiygames.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+        Hi! Welcome to bioh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
         <br>
-        So, what are you waiting for? If you feel happy when playing our games, remember to bookmark yiygames.com and share it to your friends. Have fun!
+        So, what are you waiting for? If you feel happy when playing our games, remember to bookmark bioh5.com and share it to your friends. Have fun!
       </div>
     </div>
     <BottomNav></BottomNav>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navigation></Navigation>
     <Content></Content>
     <div class="new-games-bottom">
       <Bottom />
@@ -8,13 +9,14 @@
 </template>
 
 <script>
+import Navigation from '@/components/Navigation';
 import Content from '@/components/HomeIndex/Content';
 import Bottom from '@/components/HomeIndex/Bottom';
 import { determinePcOrMove } from '@/utils/utils.js'
 export default {
   name: "gameIndex",
   components: {
-    Content,Bottom
+    Content,Bottom, Navigation
   },
   created() {
     const { query } = this.$route
@@ -29,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'YIYGAMES'
+    document.title = 'BIOH5'
   }
 }
 </script>
