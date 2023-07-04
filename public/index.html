@@ -43,6 +43,15 @@
             }
         }
     </script>
+    <script>
+        var AFTAFG = window.AFTAFG = {};
+        window.addEventListener('message', function (e) {  // 监听 message 事件
+        if(e.data.message == "set_top_AFTAFG")
+        AFTAFG = e.data.val
+
+        console.log("receive " + e.origin + " message " + e.data.message);
+        });
+    </script>
     <!-- built files will be auto injected -->
   </body>
 <style>
