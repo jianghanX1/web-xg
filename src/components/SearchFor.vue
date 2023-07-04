@@ -30,7 +30,7 @@
         </div>
         <h2 class="MMWDF">Popular this week</h2>
         <div class="gA-dJmQ">
-          <div class="app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
+          <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             <div class="chTXCW" v-if="index == 0">
@@ -38,11 +38,11 @@
                 <img :src="huore" alt="">
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <h2 class="MMWDF">Recently played</h2>
         <div class="gA-dJmQ">
-          <div class="app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
+          <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             <div class="chTXCW">
@@ -50,13 +50,13 @@
                 <img :src="shuaXin" alt="">
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
       <section v-show="screenList.length" class="izRAmK">
         <div class="hSivpy">
           <div class="fYlIeu" v-if="determinePcOrMove == 1">
-            <a @click="switchGame(item)" v-for="(item,index) in screenList" :key="index" :href="'/#/M/details?gameId='+item.gameId" class="fcDjQV">
+            <a @click="switchGame(item)" v-for="(item,index) in screenList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="fcDjQV">
               <img :src="item.iconUrl" class="dYqVqC" alt="">
               <div class="kZbSoa">
                 <div class="hQIsLG">
@@ -67,10 +67,10 @@
             </a>
           </div>
           <div class="cndJnf" v-else>
-            <div class="app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
+            <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
               <img :src="item.iconUrl" alt="">
               <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
-            </div>
+            </a>
           </div>
         </div>
         <div>
@@ -213,12 +213,12 @@ export default {
     // 切换游戏
     switchGame (item) {
       recentGame(item)
-      this.$router.push({
-        path: '/P/details',
-        query: {
-          gameId: item.gameId
-        }
-      },()=>{})
+      // this.$router.push({
+      //   path: '/P/details',
+      //   query: {
+      //     gameId: item.gameId
+      //   }
+      // },()=>{})
     },
   }
 }

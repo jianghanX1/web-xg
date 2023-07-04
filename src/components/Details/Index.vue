@@ -8,22 +8,6 @@
             <div class="game-part" :style="full">
               <div class="game-container">
                 <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
-                <!--            <iframe :src="gameInfo.playUrl ? gameInfo.playUrl : null" width="100%" height="100%" id="iframe"></iframe>-->
-<!--                <div class="flex-games" v-show="isBlock" :style="leftHideStyle">-->
-<!--                  <div class="btns">-->
-<!--                    <a href="javascript: void(0)" class="btn-left" @click="leftClick"><i class="el-icon-arrow-left" v-show="leftBtnType"></i><i class="el-icon-arrow-right" v-show="!leftBtnType"></i></a>-->
-<!--                    <a href="javascript: void(0)" class="btn-top" v-show="topBtnType" @click="topClick"><i class="el-icon-arrow-up"></i></a>-->
-<!--                    <a href="javascript: void(0)" class="btn-bottom" v-show="bottomBtnType" @click="bottomClick"><i class="el-icon-arrow-down"></i></a>-->
-<!--                  </div>-->
-<!--                  <div class="game-warp">-->
-<!--                    <div class="game-list" :style="{transform: `translateY(${heightType}px)`}" id="game-list">-->
-<!--                      <div class="app-item" v-for="(item,index) in theSame" :key="index" @click="switchGame(item)">-->
-<!--                        <img v-lazy="item.iconUrl" alt="">-->
-<!--                        <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
               </div>
               <div class="game-bar">
                 <div class="bar-app-icon">
@@ -105,16 +89,16 @@
           </div>
         </div>
         <div style="display: contents">
-          <div v-for="(item,index) in bigImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 ftkfX global-cq" :style="innerWidth >= 1321 ? {gridArea: 'bigIp' + index} : null">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" v-for="(item,index) in bigImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 ftkfX global-cq" :style="innerWidth >= 1321 ? {gridArea: 'bigIp' + index} : null">
             <img :src="item.iconUrl" alt="" class="sc-18mcksl-1 eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-          </div>
+          </a>
         </div>
         <div style="display: contents">
-          <div v-for="(item,index) in smallImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 global-cq">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" v-for="(item,index) in smallImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 global-cq">
             <img :src="item.iconUrl" alt="" style="width: 94px;height: 94px" class="sc-18mcksl-1 eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-          </div>
+          </a>
         </div>
         <div class="gqnFJQ pAock">
           <div class="bioerJ">
@@ -339,11 +323,12 @@ export default {
     }
   },
   created() {
-    const { query } = this.$route
+    const { query, params } = this.$route
     const { gameId } = query || {}
+    const { gameName } = params || {}
     if (determinePcOrMove() == 1) {
       this.$router.push({
-        path: '/M/details',
+        path: `/M/details${gameName ? '/'+gameName : ''}`,
         query: {
           gameId
         }
@@ -363,19 +348,23 @@ export default {
     this.getJson()
     this.$store.commit('changeScreen', false)
 
-    window.aftafg()
-
     // 加载广告
+
+    console.log(window.isDisplay);
+    if (window.isDisplay) {
+      googletag.cmd.push(function() { googletag.pubads().refresh(); });
+    }
+
     let leftAdv = document.createElement("script")
-    leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.leftSlot){googletag.display('div-gpt-ad-1688371803760-0')}; googletag.pubads().refresh();});"
+    leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371803760-0');};});"
     this.$refs.leftAdv.append(leftAdv)
 
     let rightAdv = document.createElement("script")
-    rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.rightSlot){googletag.display('div-gpt-ad-1688371871810-0')};});"
+    rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371871810-0');};});"
     this.$refs.rightAdv.append(rightAdv)
 
     let bottomAdv = document.createElement("script")
-    bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.bottomSlot){googletag.display('div-gpt-ad-1688371917521-0')};});"
+    bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
     this.$refs.bottomAdv.append(bottomAdv)
   },
   methods: {
@@ -452,15 +441,16 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
+      googletag.cmd.push(function() { googletag.pubads().refresh(); });
       recentGame(item)
       this.full = null
       this.isBlock = false
-      this.$router.push({
-        path: '/P/details',
-        query: {
-          gameId: item.gameId
-        }
-      },()=>{})
+      // this.$router.push({
+      //   path: '/P/details',
+      //   query: {
+      //     gameId: item.gameId
+      //   }
+      // },()=>{})
     },
      // 点击放大游戏
     amplifyClick() {

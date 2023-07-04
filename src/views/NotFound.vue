@@ -10,10 +10,10 @@
         <div class="popular-games">
           <h6 class="title">The Most Popular Games</h6>
           <div class="games">
-            <div class="item" @click="iconClick(item)" v-for="(item,index) in gameList" :key="index">
+            <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="item" @click="iconClick(item)" v-for="(item,index) in gameList" :key="index">
               <img v-lazy="item.iconUrl" alt="">
               <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -84,12 +84,12 @@ export default {
     // 点击跳转详情
     iconClick(item) {
       recentGame(item)
-      this.$router.push({
-        path: '/P/details',
-        query: {
-          gameId: item.gameId
-        }
-      },()=>{})
+      // this.$router.push({
+      //   path: '/P/details',
+      //   query: {
+      //     gameId: item.gameId
+      //   }
+      // },()=>{})
     }
   }
 }

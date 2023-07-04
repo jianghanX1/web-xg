@@ -20,16 +20,16 @@
           <div class="title">{{gameType}}</div>
         </div>
         <div class="content">
-          <div class="app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-          </div>
+          </a>
         </div>
         <div class="recommend">
-          <div class="app-item" v-for="(item,index) in recommend" :key="index" @click="switchGame(item)">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="app-item" v-for="(item,index) in recommend" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -110,12 +110,12 @@ export default {
     // 切换游戏
     switchGame (item) {
       recentGame(item)
-      this.$router.push({
-        path: '/P/details',
-        query: {
-          gameId: item.gameId
-        }
-      },()=>{})
+      // this.$router.push({
+      //   path: '/P/details',
+      //   query: {
+      //     gameId: item.gameId
+      //   }
+      // },()=>{})
     },
   },
   watch: {

@@ -29,7 +29,7 @@ const routes = [
     name: 'GameType',
     component: GameType,
   },{
-    path: '/P/details',
+    path: '/P/details/:gameName?',
     name: 'Details',
     component: Details
   },{
@@ -41,7 +41,7 @@ const routes = [
     name: 'MobileClassify',
     component: MobileClassify
   },{
-    path: '/M/details',
+    path: '/M/details/:gameName?',
     name: 'mobileDetails',
     component: MobileDetails
   },

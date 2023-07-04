@@ -1,7 +1,7 @@
 <template>
   <div class="top-box">
     <div class="item" v-for="(item,index) in topGameList" :key="index" @click="detailsClick(item)">
-      <a :href="'/#/M/details?gameId='+item.gameId"><img v-lazy="item.iconUrl" alt=""></a>
+      <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img v-lazy="item.iconUrl" alt=""></a>
     </div>
   </div>
 </template>

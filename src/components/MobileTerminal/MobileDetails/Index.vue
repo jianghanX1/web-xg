@@ -26,7 +26,7 @@
                    data-full-width-responsive="true"></ins>
             </div>
             <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
-              <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'">
+              <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId">
                 <img v-lazy="item.iconUrl" alt="">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
               </a>
@@ -66,11 +66,11 @@
           <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
         </div>
         <div class="iframe-back" @click="backClick"><img :src="goBack" alt=""></div>
-        <a class="tap-game" @click="detailsClick(item)" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
+        <a class="tap-game" @click="detailsClick(item)" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
       </div>
       <div class="app-promote">
         <div class="promote-list">
-          <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img :src="item.iconUrl" alt=""></a></div>
+          <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
         </div>
       </div>
     </div>
@@ -118,11 +118,13 @@ export default {
     }
   },
   created() {
-    const { query } = this.$route
+    const { query, params } = this.$route
     const { gameId } = query
+    const { gameName } = params || {}
+    console.log(gameName);
     if (determinePcOrMove() == 2) {
       this.$router.push({
-        path: '/P/details',
+        path: `/P/details${gameName ? '/'+gameName : ''}`,
         query: {
           gameId
         }

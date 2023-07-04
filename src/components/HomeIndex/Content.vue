@@ -6,7 +6,7 @@
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
             <li v-for="(item,index) in bigImg" :key="index">
-              <a @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
+              <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
                  :style="{gridArea: 'bigIp' + index}">
                 <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
@@ -34,7 +34,7 @@
           </ul>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)"
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)"
              class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
              :style="{gridArea: 'ip' + (index + 3)}">
             <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
@@ -47,7 +47,7 @@
           </a>
         </div>
         <div style="display: contents">
-          <a v-for="(item,index) in smallImg" :key="index" @click="iconClick(item)"
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" v-for="(item,index) in smallImg" :key="index" @click="iconClick(item)"
              class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq">
             <img v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
@@ -118,13 +118,13 @@ export default {
     // 点击跳转详情
     iconClick(item) {
       recentGame(item)
-      this.$router.push({
-        path: '/P/details',
-        query: {
-          gameId: item.gameId
-        }
-      }, () => {
-      })
+      // this.$router.push({
+      //   path: '/P/details',
+      //   query: {
+      //     gameId: item.gameId
+      //   }
+      // }, () => {
+      // })
     },
     // 鼠标移入播放视频
     playVid(index) {
