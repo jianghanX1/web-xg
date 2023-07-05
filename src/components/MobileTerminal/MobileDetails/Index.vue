@@ -23,9 +23,9 @@
           <div class="desc-title">{{ gameName }}</div>
           <div class="desc-text">{{ description }}</div>
         </div>
-<!--        <div class="seo-tags">-->
-<!--          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.code)">{{ item.name }}</a>-->
-<!--        </div>-->
+        <div class="seo-tags">
+          <a class="seo-tag" :style="index % 2 == 0 ? 'color: #f5b417' : index % 3 == 0 ? 'color: #54abd7' : 'color: #ff6215'" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{ item.type }}</a>
+        </div>
       </div>
       <div class="adv">
 
@@ -62,7 +62,7 @@ import goBack from '@/assets/goBack.png';
 import topping from '@/assets/topping.png';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
-import {shuffle, determinePcOrMove, setMeta, getJson, recentGame} from "@/utils/utils";
+import {shuffle, determinePcOrMove, setMeta, getJson, recentGame, getGameTypeList} from "@/utils/utils";
 import { show_newAfg_preroll } from '../../../../webh5sdk';
 export default {
   name: "mobileDetailsIndex",
@@ -76,7 +76,7 @@ export default {
       iconUrl: '', // 游戏icon
       description: '', // 游戏简介
       playUrl: '', // 游戏url
-      typeList: [], // 游戏分类
+      typeList: getGameTypeList() || [], // 游戏分类
       gameTypeList: [], // 游戏列表
       gameShuffleList: [], // 随机列表
       playValue: false,

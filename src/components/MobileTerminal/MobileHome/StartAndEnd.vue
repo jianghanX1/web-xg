@@ -1,7 +1,12 @@
 <template>
   <div>
-    <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null">
-      <div><a :href="'/#/M/homeIndex'">BIOH5</a></div>
+    <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null" @click="game">
+      <a :href="'/#/M/homeIndex'">BIOH5</a>
+      <div class="left" @click.stop="positionMenuClick"><i class="el-icon-menu"></i></div>
+      <div class="right"></div>
+      <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">
+        <div @click="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
+      </div>
     </div>
     <slot></slot>
     <div class="end" v-if="bottomHide == false ? false : true">
@@ -12,12 +17,15 @@
 </template>
 
 <script>
+import {getGameTypeList} from "@/utils/utils";
+
 export default {
   name: "StartAndEnd",
   props: ["bottomHide"],
   data() {
     return {
-
+      gameTypeList: getGameTypeList() || [], // 游戏分类
+      positionMenu: false, // 菜单展示
     }
   },
   mounted() {
@@ -25,9 +33,24 @@ export default {
   },
   methods: {
     game() {
-      // this.$router.push({
-      //   path: '/M/homeIndex'
-      // },()=>{})
+      this.$router.push({
+        path: '/M/homeIndex'
+      },()=>{})
+    },
+    positionMenuClick() {
+      this.positionMenu = !this.positionMenu
+    },
+    mouseleave() {
+      this.positionMenu = false
+    },
+    newGamesClick(gameType) {
+      this.positionMenu = false
+      this.$router.push({
+        path: '/M/gameType',
+        query: {
+          gameType
+        }
+      },()=>{})
     },
     privacyClick() {
       let pathInfo = this.$router.resolve({
@@ -61,15 +84,56 @@ export default {
   box-shadow: 0 0.125rem 0.1875rem 0 rgba(0,16,63,.4);
   background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
   z-index: 5;
-  div{
-    font-size: 1.125rem;
-    text-align: center;
-    line-height: 2.8125rem;
+  font-size: 1.125rem;
+  text-align: center;
+  line-height: 2.8125rem;
+  color: #ffffff;
+  font-weight: bold;
+  //overflow: hidden;
+  a{
+    text-decoration: none;
     color: #ffffff;
-    font-weight: bold;
-    a{
-      text-decoration: none;
-      color: #ffffff;
+  }
+  .left{
+    float: left;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 32px;
+    width: 40px;
+  }
+  .right{
+    float: right;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 32px;
+    width: 40px;
+    height: 100%;
+  }
+  .position{
+    position: absolute;
+    top: 2.8125rem;
+    left: 0;
+    background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
+    min-width: 185px;
+    z-index: 99;
+    //text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    div{
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      font-size: 14px;
+      overflow: hidden;
+      border-bottom: #427799 1px solid;
+      background: #307199;
+      padding: 3px 0;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    div:hover{
+      cursor: pointer;
+      background-color: rgba(0,0,0,.1);
     }
   }
 }

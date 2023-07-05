@@ -7,7 +7,8 @@
       <div>
         <TopBox :topGameList="topGameList"></TopBox>
         <AppList :appGameList="appGameList"></AppList>
-        <div style="padding: 30px">
+        <BottomList></BottomList>
+        <div style="padding: 10px">
           <div class="bottom-text">
             Hi! Welcome to bioh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
             <br>
@@ -34,6 +35,7 @@
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import TopBox from "@/components/MobileTerminal/MobileHome/TopBox";
 import AppList from "@/components/MobileTerminal/MobileHome/AppList";
+import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 
 import shooting from '@/assets/01shooting.jpg';
 import car from '@/assets/02car.jpg';
@@ -100,7 +102,7 @@ export default {
     StartAndEnd,
     TopBox,
     AppList,
-    // BottomList,
+    BottomList,
     // BottomText
   },
   created() {
