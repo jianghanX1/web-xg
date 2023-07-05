@@ -107,13 +107,21 @@ export default {
   },
   methods: {
     getJson() {
-      let newArr = []
+      let bigImg = []
+      let centreImg = []
+      let smallImg = []
       getJson() && getJson().map((item)=>{
-        newArr.push(item)
+        if (item.ImgSize == 1) {
+          bigImg.push(item)
+        } else if (item.ImgSize == 2) {
+          centreImg.push(item)
+        } else {
+          smallImg.push(item)
+        }
       })
-      this.bigImg = newArr.splice(0, 3)
-      this.centreImg = newArr.splice(0, 12)
-      this.smallImg = newArr
+      this.bigImg = bigImg
+      this.centreImg = centreImg
+      this.smallImg = smallImg
     },
     // 点击跳转详情
     iconClick(item) {

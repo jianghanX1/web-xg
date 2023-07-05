@@ -331,6 +331,9 @@ export default {
     }
   },
   created() {
+
+  },
+  mounted() {
     const { query, params } = this.$route
     const { gameId } = query || {}
     const { gameName } = params || {}
@@ -341,45 +344,44 @@ export default {
           gameId
         }
       },()=>{})
-    }
-  },
-  mounted() {
-    // 蒙层状态
-    this.smegmaType = true
-    setTimeout(()=>{
-      this.smegmaType = false
-    },800)
+    } else {
+      // 蒙层状态
+      this.smegmaType = true
+      setTimeout(()=>{
+        this.smegmaType = false
+      },800)
 
-    document.documentElement.scrollTop = 0
-    window.onresize = () => {
-      this.innerWidth = window.innerWidth
-      if (!this.checkFull()) {
-        // 退出全屏后要执行的动作
-        this.closeClick()
+      document.documentElement.scrollTop = 0
+      window.onresize = () => {
+        this.innerWidth = window.innerWidth
+        if (!this.checkFull()) {
+          // 退出全屏后要执行的动作
+          this.closeClick()
+        }
       }
+      this.innerWidth = window.innerWidth
+      this.getJson()
+      this.$store.commit('changeScreen', false)
+
+      // 加载广告
+
+      console.log(window.isDisplay);
+      if (window.isDisplay) {
+        googletag.cmd.push(function() { googletag.pubads().refresh(); });
+      }
+
+      let leftAdv = document.createElement("script")
+      leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371803760-0');};});"
+      this.$refs.leftAdv.append(leftAdv)
+
+      let rightAdv = document.createElement("script")
+      rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371871810-0');};});"
+      this.$refs.rightAdv.append(rightAdv)
+
+      let bottomAdv = document.createElement("script")
+      bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
+      this.$refs.bottomAdv.append(bottomAdv)
     }
-    this.innerWidth = window.innerWidth
-    this.getJson()
-    this.$store.commit('changeScreen', false)
-
-    // 加载广告
-
-    console.log(window.isDisplay);
-    if (window.isDisplay) {
-      googletag.cmd.push(function() { googletag.pubads().refresh(); });
-    }
-
-    let leftAdv = document.createElement("script")
-    leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371803760-0');};});"
-    this.$refs.leftAdv.append(leftAdv)
-
-    let rightAdv = document.createElement("script")
-    rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371871810-0');};});"
-    this.$refs.rightAdv.append(rightAdv)
-
-    let bottomAdv = document.createElement("script")
-    bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
-    this.$refs.bottomAdv.append(bottomAdv)
   },
   methods: {
     checkFull() {
@@ -440,6 +442,8 @@ export default {
         if (item.ImgSize == 1 || item.ImgSize == 2) {
           if (bigImgList.length < 2) {
             bigImgList.push(item)
+          } else {
+            smallImgList.push(item)
           }
         } else {
           smallImgList.push(item)

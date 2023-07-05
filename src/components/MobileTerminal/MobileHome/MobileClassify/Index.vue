@@ -2,16 +2,32 @@
   <div id="mobile_classify" v-title data-title="Online Games on Gugo ——Let's play">
     <div class="content">
       <MobileLogo></MobileLogo>
-      <div class="eZzVdA" :class="index == 0 ? eZzVdABef : null" v-for="(item,index) in gameList" :key="index">
-        <div class="cTVRlj">
-          <div class="game-name" v-if="index == 0" style="grid-area: ibx">
-            <h1>{{ gameType }}</h1>
+      <div v-if="clientWidth < 550.9">
+        <div class="eZzVdA" :class="index == 0 ? eZzVdABef : null" v-for="(item,index) in gameList" :key="index">
+          <div class="cTVRlj">
+            <div class="game-name" v-if="index == 0" style="grid-area: ibx">
+              <h1>{{ gameType }}</h1>
+            </div>
+            <a @click="switchGame(items)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details/'+items.Name.replace(/\s+/g, '')+'?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
+              <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+              <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
+            </a>
           </div>
-          <a @click="switchGame(items)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details/'+items.Name.replace(/\s+/g, '')+'?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
-            <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
-            <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
-            <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
-          </a>
+        </div>
+      </div>
+      <div v-else>
+        <div class="eZzVdA" :class="eZzVdABef">
+          <div class="cTVRlj">
+            <div class="game-name" style="grid-area: ibx">
+              <h1>{{ gameType }}</h1>
+            </div>
+            <a @click="switchGame(item)" v-for="(item,index) in gameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(index == 0 && gameList.length > 5) || (index == 1 && gameList.length > 5) ? {gridArea: 'bigIp' + index}: null">
+              <img v-if="(index == 0 && gameList.length > 5) || (index == 1 && gameList.length > 5)" v-lazy="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+              <img v-else v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="eZzVdA2" v-if="!gameList.length">
@@ -44,13 +60,21 @@ export default {
       gameList: [],
       recommend: [],
       gameType: "", // title
-      eZzVdABef: 'eZzVdABef'
+      eZzVdABef: 'eZzVdABef',
+      clientWidth: 0, // 屏幕宽度
     }
   },
   created() {
 
   },
   mounted() {
+
+    window.onresize = () => {
+      this.clientWidth = document.body.clientWidth
+      this.getGameList()
+    }
+    this.clientWidth = document.body.clientWidth
+
     const { query } = this.$route
     const { gameType } = query || {}
     if (determinePcOrMove() == 2) {
@@ -62,6 +86,11 @@ export default {
       },()=>{})
     }
     this.getGameList()
+    let arr = []
+    getJson().map((item)=>{
+      arr.push(item)
+    })
+    this.recommend = shuffle(arr).splice(0,30)
   },
   methods: {
     getGameList() {
@@ -75,18 +104,16 @@ export default {
           gameList.push(item)
         }
       })
-      let newArr = [] // 新数组
-      let num = Math.ceil(gameList.length / 12)
-      for ( let i = 1; i <= num; i++ ) {
-        newArr[i - 1] = gameList.splice(0,12)
+      if (this.clientWidth < 550.9) {
+        let newArr = [] // 新数组
+        let num = Math.ceil(gameList.length / 12)
+        for ( let i = 1; i <= num; i++ ) {
+          newArr[i - 1] = gameList.splice(0,12)
+        }
+        this.gameList = newArr
+      } else {
+        this.gameList = gameList
       }
-      this.gameList = newArr
-
-      let arr = []
-      getJson().map((item)=>{
-        arr.push(item)
-      })
-      this.recommend = shuffle(arr).splice(0,30)
     },
     // 切换游戏
     switchGame (item) {
@@ -98,6 +125,11 @@ export default {
       console.log(val,'数据更新了');
       document.getElementById('mobile_classify').scrollTop = 0
       this.getGameList()
+      let arr = []
+      getJson().map((item)=>{
+        arr.push(item)
+      })
+      this.recommend = shuffle(arr).splice(0,30)
     }
   }
 }
@@ -125,7 +157,6 @@ export default {
           ". . ."
           "bigIp6 bigIp6 ."
           "bigIp6 bigIp6 ."
-          ". . ."
   }
   .cTVRlj2 {
     grid-template-areas:
@@ -142,11 +173,8 @@ export default {
     grid-template-areas:
         ". ibx ibx bigIp0 bigIp0"
         ". . . bigIp0 bigIp0"
-        "bigIp6 bigIp6 . . ."
-        "bigIp6 bigIp6 . . ."
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
+        "bigIp1 bigIp1 . . ."
+        "bigIp1 bigIp1 . . ."
   }
   .cTVRlj2 {
     --gridTemplateColumns: 5!important;
@@ -163,9 +191,8 @@ export default {
     --gridTemplateColumns: 6!important;
     grid-template-areas:
         ". ibx ibx . bigIp0 bigIp0"
-        "bigIp6 bigIp6 . . bigIp0 bigIp0"
-        "bigIp6 bigIp6 . . . ."
-        ". . . . . ."
+        "bigIp1 bigIp1 . . bigIp0 bigIp0"
+        "bigIp1 bigIp1 . . . ."
   }
   .cTVRlj2 {
     --gridTemplateColumns: 6!important;
@@ -181,8 +208,8 @@ export default {
       --gridTemplateColumns: 8!important;
       grid-template-areas:
         ". ibx ibx . . . bigIp0 bigIp0"
-        "bigIp6 bigIp6 . . . . bigIp0 bigIp0"
-        "bigIp6 bigIp6 . . . . . ."
+        "bigIp1 bigIp1 . . . . bigIp0 bigIp0"
+        "bigIp1 bigIp1 . . . . . ."
     }
     .cTVRlj2 {
       --gridTemplateColumns: 8!important;
