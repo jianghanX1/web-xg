@@ -7,24 +7,26 @@
       <div>
         <TopBox :topGameList="topGameList"></TopBox>
         <AppList :appGameList="appGameList"></AppList>
-        <div class="bottom-text">
-          Hi! Welcome to bioh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
-          <br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark bioh5.com and share it to your friends. Have fun!
+        <div style="padding: 30px">
+          <div class="bottom-text">
+            Hi! Welcome to bioh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+            <br>
+            So, what are you waiting for? If you feel happy when playing our games, remember to bookmark bioh5.com and share it to your friends. Have fun!
+          </div>
         </div>
       </div>
     </StartAndEnd>
-    <div class="smegma" :style="bg" v-if="!smegmaHide">
-      <div class="btn" :style="btnBg" @click="smegmaHideClick(count == 0 ? true : false)">
-        {{ count == 0 ? countText : count }}
-      </div>
-      <div :style="advBg">
-        <div class="adv">
+<!--    <div class="smegma" :style="bg" v-if="!smegmaHide">-->
+<!--      <div class="btn" :style="btnBg" @click="smegmaHideClick(count == 0 ? true : false)">-->
+<!--        {{ count == 0 ? countText : count }}-->
+<!--      </div>-->
+<!--      <div :style="advBg">-->
+<!--        <div class="adv">-->
 
-        </div>
-      </div>
-      <div class="desc"><img :src="wz" alt=""></div>
-    </div>
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="desc"><img :src="wz" alt=""></div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -110,14 +112,14 @@ export default {
         path: '/P/homeIndex'
       },()=>{})
     } else {
-      let enterType = sessionStorage.getItem('enterType')
-      if (enterType) {
-        this.smegmaHide = true
-      } else {
-        sessionStorage.setItem('enterType', '1')
-        this.smegmaHide = false
-        this.countdown()
-      }
+      // let enterType = sessionStorage.getItem('enterType')
+      // if (enterType) {
+      //   this.smegmaHide = true
+      // } else {
+      //   sessionStorage.setItem('enterType', '1')
+      //   this.smegmaHide = false
+      //   this.countdown()
+      // }
 
       let jsonArr = getJson() || [] // 原数组
 
@@ -168,13 +170,13 @@ export default {
     }
   },
   methods: {
-    smegmaHideClick(type) {
-      this.smegmaHide = type
-      if (type) {
-        clearInterval(this.timerCountdown2)
-        this.timer(this.allGameList)
-      }
-    },
+    // smegmaHideClick(type) {
+    //   this.smegmaHide = type
+    //   if (type) {
+    //     clearInterval(this.timerCountdown2)
+    //     this.timer(this.allGameList)
+    //   }
+    // },
     timer(allGameList) {
       if (this.smegmaHide) {
         let arr = []
@@ -193,34 +195,34 @@ export default {
         },1000)
       }
     },
-    countdown() {
-      clearInterval(this.timerCountdown)
-      this.timerCountdown = setInterval(()=>{
-        this.count -= 1
-        console.log(this.count);
-        if (this.count <= 0) {
-          clearInterval(this.timerCountdown)
-          clearInterval(this.timerCountdown2)
-          this.countdown2()
-        }
-      },1000)
-    },
-    countdown2() {
-      // 倒计时结束后5s关闭推荐
-      clearInterval(this.timerCountdown2)
-      this.timerCountdown2 = setInterval(()=>{
-        this.count2 -= 1
-        console.log(this.count2);
-        if (this.count2 <= 0) {
-          clearInterval(this.timerCountdown2)
-          this.smegmaHideClick(true)
-        }
-      },1000)
-    }
+    // countdown() {
+    //   clearInterval(this.timerCountdown)
+    //   this.timerCountdown = setInterval(()=>{
+    //     this.count -= 1
+    //     console.log(this.count);
+    //     if (this.count <= 0) {
+    //       clearInterval(this.timerCountdown)
+    //       clearInterval(this.timerCountdown2)
+    //       this.countdown2()
+    //     }
+    //   },1000)
+    // },
+    // countdown2() {
+    //   // 倒计时结束后5s关闭推荐
+    //   clearInterval(this.timerCountdown2)
+    //   this.timerCountdown2 = setInterval(()=>{
+    //     this.count2 -= 1
+    //     console.log(this.count2);
+    //     if (this.count2 <= 0) {
+    //       clearInterval(this.timerCountdown2)
+    //       this.smegmaHideClick(true)
+    //     }
+    //   },1000)
+    // }
   },
   beforeDestroy() {
     clearInterval(this.timerDate);
-    clearInterval(this.timerCountdown)
+    // clearInterval(this.timerCountdown)
   }
 }
 </script>
@@ -241,7 +243,7 @@ export default {
 }
 .bottom-text{
   clear: both;
-  padding: 5px 10px 10px 10px;
+  padding: 30px;
   color: #fff;
   width: 100%;
   min-width: 240px;
@@ -249,7 +251,10 @@ export default {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 35px;
+  border-radius: 10px;
+  background-color: #2e6d95;
+  position: relative;
 }
 #homeId{
   height: 100vh;

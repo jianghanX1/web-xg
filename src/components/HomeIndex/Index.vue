@@ -6,10 +6,12 @@
         <h1>Play Free Online Games On Mobile & Tablet</h1>
       </div>
       <Content></Content>
-      <div class="bottom-text">
-        Hi! Welcome to bioh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
-        <br>
-        So, what are you waiting for? If you feel happy when playing our games, remember to bookmark bioh5.com and share it to your friends. Have fun!
+      <div style="padding: 30px 60px">
+        <div class="bottom-text">
+          Hi! Welcome to bioh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          <br>
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark bioh5.com and share it to your friends. Have fun!
+        </div>
       </div>
     </div>
     <BottomNav></BottomNav>
@@ -160,7 +162,7 @@ export default {
   }
   .bottom-text{
     clear: both;
-    padding: 5px 10px 10px 10px;
+    padding: 30px;
     color: #fff;
     width: 100%;
     min-width: 240px;
@@ -168,7 +170,10 @@ export default {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 35px;
+    border-radius: 10px;
+    background-color: #2e6d95;
+    position: relative;
   }
 }
 @media screen and (max-width: 840px){

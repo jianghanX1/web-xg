@@ -771,7 +771,7 @@ export default {
         }
         .game-warp {
           padding: 2px 0 6px;
-          background-color: rgba(0,0,0,.3);
+          //background-color: rgba(0,0,0,.3);
           .game-list {
             padding: 6px 7px 0;
             height: 390px;
