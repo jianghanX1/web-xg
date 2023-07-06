@@ -2,6 +2,7 @@
   <div class="contact">
     <div :class="determinePcOrMove ==1 ? contact_us_M : contact_us">
       <h4>Contact Us</h4>
+      <span>our email is: <span style="font-weight: 600;text-decoration: underline;display: inline-block">haileypanhk@gmail.com</span></span>
       <span>Drop us a line, we would like to hear from you!</span>
       <div class="form_box">
         <el-form ref="form" :model="formData" :rules="rules">
