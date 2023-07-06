@@ -151,6 +151,7 @@ export default {
     // 鼠标移入播放视频
     pauseVid(index) {
       this.videoDiv[index].muted = false
+      this.videoDiv[index].load()
       this.videoDiv[index].pause()
     }
   },
