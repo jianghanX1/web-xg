@@ -403,11 +403,53 @@ export default {
     }
   }
 }
+.content{
+  @media (min-width: 1541px) and (max-width: 1870.9px) {
+    .app-item:nth-child(7n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 1321px) and (max-width: 1540.9px) {
+    .app-item:nth-child(6n) {
+      margin-right: 0;
+    }
+  }
+}
 .recommend{
   margin-top: 32px;
   .app-item {
     width: 94px;
     height: 94px;
+  }
+  @media (min-width: 1871px) {
+    .app-item:nth-child(17n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 1541px) and (max-width: 1870.9px) {
+    .app-item:nth-child(14n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 1321px) and (max-width: 1540.9px) {
+    .app-item:nth-child(12n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 1211px) and (max-width: 1320.9px) {
+    .app-item:nth-child(11n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 991px) and (max-width: 1210.9px) {
+    .app-item:nth-child(9n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 111px) and (max-width: 990.9px) {
+    .app-item:nth-child(7n) {
+      margin-right: 0;
+    }
   }
 }
 .content:after{

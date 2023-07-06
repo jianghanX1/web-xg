@@ -36,6 +36,20 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media (min-width: 1541px) and (max-width: 1870.9px) {
+  .bottom-list{
+    .cMEgnO:nth-child(7n) {
+      margin-right: 0!important;
+    }
+  }
+}
+@media (min-width: 1321px) and (max-width: 1540.9px) {
+  .bottom-list{
+    .cMEgnO:nth-child(6n) {
+      margin-right: 0!important;
+    }
+  }
+}
 .bottom-list, .bottom-list1{
   @media (hover: hover){
     .cMEgnO:hover {
@@ -50,11 +64,27 @@ export default {
     margin-right: 16px;
     margin-bottom: 16px;
     cursor: pointer;
+    position: relative;
     img{
       width: 100%;
       height: 100%;
       border-radius: 16px;
     }
+  }
+  .cMEgnO::after{
+    content: "";
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 4;
+    transition: box-shadow 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    border-radius: 16px;
+    contain: strict;
   }
   .cASSfo{
     transition: transform .6s cubic-bezier(.25, .1, .25, 1);

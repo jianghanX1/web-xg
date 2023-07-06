@@ -444,7 +444,7 @@ export function getJson() {
             "ARCADE": 0,
             "SPORTS": 1,
             "Type": "SPORTS，ACTION，BALL",
-            "ImgSize": "",
+            "ImgSize": 2,
             "Flash": "",
             "VideoUrl": ""
         }, {
@@ -467,7 +467,7 @@ export function getJson() {
             "ARCADE": 0,
             "SPORTS": 0,
             "Type": "ACTION，CASUAL",
-            "ImgSize": "",
+            "ImgSize": 2,
             "Flash": "",
             "VideoUrl": ""
         }, {

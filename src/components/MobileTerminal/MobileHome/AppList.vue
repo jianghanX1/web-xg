@@ -115,10 +115,21 @@ export default {
   },
   methods: {
     getJson() {
-      let arr = getJson()
-      this.bigImg = arr.splice(0,3)
-      this.centreImg = arr.splice(0,12)
-      this.smallImg = arr
+      let bigImg = []
+      let centreImg = []
+      let smallImg = []
+      getJson() && getJson().map((item)=>{
+        if (item.ImgSize == 1) {
+          bigImg.push(item)
+        } else if (item.ImgSize == 2) {
+          centreImg.push(item)
+        } else {
+          smallImg.push(item)
+        }
+      })
+      this.bigImg = bigImg
+      this.centreImg = centreImg
+      this.smallImg = smallImg
     },
     detailsClick(item) {
       recentGame(item)
@@ -213,6 +224,11 @@ export default {
         ". . . . ."
         "ip14 ip14 . . ."
         "ip14 ip14 . . ."
+        ". . . . ."
+        ". ip15 ip15 . ."
+        ". ip15 ip15 . ."
+        ". . . ip16 ip16"
+        ". . . ip16 ip16"
   }
   .jMBaZr {
     --gridTemplateColumns: 5;
@@ -247,6 +263,11 @@ export default {
         ". . . . ."
         "ip14 ip14 . . ."
         "ip14 ip14 . . ."
+        ". . . . ."
+        ". ip15 ip15 . ."
+        ". ip15 ip15 . ."
+        ". . . ip16 ip16"
+        ". . . ip16 ip16"
   }
 }
 @media (min-width: 661px) and (max-width: 880.9px) {
@@ -284,6 +305,10 @@ export default {
         ". ip13 ip13 . . ."
         ". . . . ip14 ip14"
         ". . . . ip14 ip14"
+        ". ip15 ip15 . . ."
+        ". ip15 ip15 . . ."
+        ". . . ip16 ip16 ."
+        ". . . ip16 ip16 ."
     }
     .jMBaZr {
       --gridTemplateColumns: 6;
@@ -314,6 +339,10 @@ export default {
         ". ip13 ip13 . . ."
         ". . . . ip14 ip14"
         ". . . . ip14 ip14"
+        ". ip15 ip15 . . ."
+        ". ip15 ip15 . . ."
+        ". . . ip16 ip16 ."
+        ". . . ip16 ip16 ."
     }
   }
 }
@@ -327,26 +356,28 @@ export default {
         ". ip3 ip3 . . . ip4 ip4"
         "ip5 ip5 . . . . ip4 ip4"
         "ip5 ip5 . . . bigIp0 bigIp0 bigIp0"
-        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
-        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
+        ". . . ip6 ip6 bigIp0 bigIp0 bigIp0"
+        ". . . ip6 ip6 bigIp0 bigIp0 bigIp0"
         "adv adv adv adv adv adv adv adv"
         "adv adv adv adv adv adv adv adv"
         "adv adv adv adv adv adv adv adv"
-        ". ip6 ip6 . . . . ."
-        ". ip6 ip6 . . . ip7 ip7"
-        ". . . . . . ip7 ip7"
-        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
-        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
-        "bigIp1 bigIp1 bigIp1 ip8 ip8 . . ."
-        ". . . ip8 ip8 . ip14 ip14"
-        ". ip9 ip9 . . . ip14 ip14"
-        ". ip9 ip9 ip10 ip10 . . ."
-        ". . . ip10 ip10 . . ."
-        "ip11 ip11 . . . . . ."
-        "ip11 ip11 . bigIp2 bigIp2 bigIp2 . ."
+        ". ip7 ip7 . . . . ."
+        ". ip7 ip7 . . . ip8 ip8"
+        ". . . . . . ip8 ip8"
+        "bigIp1 bigIp1 bigIp1 . . ip9 ip9 ."
+        "bigIp1 bigIp1 bigIp1 . . ip9 ip9 ."
+        "bigIp1 bigIp1 bigIp1 ip10 ip10 . . ."
+        ". . . ip10 ip10 . ip11 ip11"
+        ". ip12 ip12 . . . ip11 ip11"
+        ". ip12 ip12 ip13 ip13 . . ."
+        ". . . ip13 ip13 . . ."
+        "ip14 ip14 . . . . . ."
+        "ip14 ip14 . bigIp2 bigIp2 bigIp2 . ."
         ". . . bigIp2 bigIp2 bigIp2 . ."
         ". . . bigIp2 bigIp2 bigIp2 . ."
-
+        ". . ip15 ip15 . . . ."
+        ". . ip15 ip15 ip16 ip16 . ."
+        ". . . . ip16 ip16 . ."
     }
     .jMBaZr {
       --gridTemplateColumns: 8;
@@ -355,22 +386,25 @@ export default {
         ". ip3 ip3 . . . ip4 ip4"
         "ip5 ip5 . . . . ip4 ip4"
         "ip5 ip5 . . . bigIp0 bigIp0 bigIp0"
-        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
-        ". . . ip12 ip12 bigIp0 bigIp0 bigIp0"
-        ". ip6 ip6 . . . . ."
-        ". ip6 ip6 . . . ip7 ip7"
-        ". . . . . . ip7 ip7"
-        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
-        "bigIp1 bigIp1 bigIp1 . . ip13 ip13 ."
-        "bigIp1 bigIp1 bigIp1 ip8 ip8 . . ."
-        ". . . ip8 ip8 . ip14 ip14"
-        ". ip9 ip9 . . . ip14 ip14"
-        ". ip9 ip9 ip10 ip10 . . ."
-        ". . . ip10 ip10 . . ."
-        "ip11 ip11 . . . . . ."
-        "ip11 ip11 . bigIp2 bigIp2 bigIp2 . ."
+        ". . . ip6 ip6 bigIp0 bigIp0 bigIp0"
+        ". . . ip6 ip6 bigIp0 bigIp0 bigIp0"
+        ". ip7 ip7 . . . . ."
+        ". ip7 ip7 . . . ip8 ip8"
+        ". . . . . . ip8 ip8"
+        "bigIp1 bigIp1 bigIp1 . . ip9 ip9 ."
+        "bigIp1 bigIp1 bigIp1 . . ip9 ip9 ."
+        "bigIp1 bigIp1 bigIp1 ip10 ip10 . . ."
+        ". . . ip10 ip10 . ip11 ip11"
+        ". ip12 ip12 . . . ip11 ip11"
+        ". ip12 ip12 ip13 ip13 . . ."
+        ". . . ip13 ip13 . . ."
+        "ip14 ip14 . . . . . ."
+        "ip14 ip14 . bigIp2 bigIp2 bigIp2 . ."
         ". . . bigIp2 bigIp2 bigIp2 . ."
         ". . . bigIp2 bigIp2 bigIp2 . ."
+        ". . ip15 ip15 . . . ."
+        ". . ip15 ip15 ip16 ip16 . ."
+        ". . . . ip16 ip16 . ."
 
     }
   }

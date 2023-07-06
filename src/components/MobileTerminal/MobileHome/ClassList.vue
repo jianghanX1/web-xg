@@ -82,12 +82,29 @@ export default {
       position: relative;
       box-sizing: border-box;
       cursor: pointer;
+      border-radius: 16px;
       margin-right: 0;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
       img{
         width: 100%;
         height: 100%;
         border-radius: 16px;
       }
+    }
+    .class-item::after{
+      content: "";
+      opacity: 0;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+      z-index: 4;
+      transition: box-shadow 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+      border-radius: 16px;
+      contain: strict;
     }
     .esaxGV {
       position: absolute;
