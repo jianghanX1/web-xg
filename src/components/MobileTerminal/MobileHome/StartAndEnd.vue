@@ -5,7 +5,7 @@
       <div class="left" @click.stop="positionMenuClick"><i class="el-icon-menu"></i></div>
       <div class="right"></div>
       <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">
-        <div @click="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
+        <div @click.stop="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
       </div>
     </div>
     <slot></slot>

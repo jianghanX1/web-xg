@@ -52,9 +52,9 @@
         </div>
       </div>
     </div>
-    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">
-      <i class="el-icon-top"></i>
-    </div>
+<!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
+<!--      <i class="el-icon-top"></i>-->
+<!--    </div>-->
   </div>
 </template>
 <script>
@@ -119,7 +119,7 @@ export default {
       })
       this.gameName = gameInfo.Name
       this.iconUrl = gameInfo.iconUrl
-      this.description = gameInfo.dis
+      this.description = gameInfo.desc
       this.playUrl = gameInfo.Url
       this.gameTypeList = arr
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a Games`)
