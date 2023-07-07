@@ -255,7 +255,16 @@
 import BottomNav from '../BottomNav';
 import TypeList from '@/components/TypeList.vue';
 import PCLogo from "@/components/PCLogo.vue";
-import {determinePcOrMove, shuffle, setMeta, getJson, recentGame, getGameTypeList} from '@/utils/utils.js';
+import {
+  determinePcOrMove,
+  shuffle,
+  setMeta,
+  getJson,
+  recentGame,
+  getGameTypeList,
+  pageInitLog,
+  pageOutLog, clickGameLog, Observer
+} from '@/utils/utils.js';
 import amplify from '@/assets/amplify.png';
 import reduce from '@/assets/reduce.png';
 import logo from '@/assets/logo.png';
@@ -345,6 +354,15 @@ export default {
         }
       },()=>{})
     } else {
+      // 获取需要曝光的item
+      setTimeout(()=>{
+        let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
+        itemArr && Array.from(itemArr).map((item)=>{
+          Observer('gugoplay_pc_detail').observe(item)
+        })
+      })
+      // 进入页面埋点
+      pageInitLog('gugoplay_pc_detail')
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{
@@ -411,6 +429,9 @@ export default {
       this.UnfoldAndCollapse = !this.UnfoldAndCollapse
     },
     getJson() {
+
+      document.documentElement.scrollTop = 0
+
       this.typeList = getGameTypeList() || []
 
       // 游戏评分
@@ -459,7 +480,10 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
+      // 刷新广告
       googletag.cmd.push(function() { googletag.pubads().refresh(); });
+      // 打点
+      clickGameLog('gugoplay_pc_detail', item)
       recentGame(item)
       this.full = null
       this.isBlock = false
@@ -601,9 +625,14 @@ export default {
       })
     },
   },
+  beforeDestroy() {
+    // 离开页面埋点
+    pageOutLog('gugoplay_pc_detail')
+  },
   watch: {
     '$route'(val) {
       console.log(val,'数据更新了');
+      document.documentElement.scrollTop = 0
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{

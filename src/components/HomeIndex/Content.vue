@@ -78,7 +78,7 @@
 
 <script>
 import TypeList from '@/components/TypeList.vue';
-import {getJson, recentGame} from '@/utils/utils.js';
+import {clickGameLog, getJson, recentGame, Observer} from '@/utils/utils.js';
 import logo from '@/assets/logo.png';
 import home from '@/assets/home.png';
 import souSuo from '@/assets/sousuo.png';
@@ -104,6 +104,13 @@ export default {
   mounted() {
     this.getJson()
     this.videoDiv = document.getElementsByClassName('sc-1s4z03m-0')
+    // 获取需要曝光的item
+    setTimeout(()=>{
+      let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
+      itemArr && Array.from(itemArr).map((item)=>{
+        Observer('gugoplay_pc_home').observe(item)
+      })
+    })
   },
   methods: {
     getJson() {
@@ -125,6 +132,7 @@ export default {
     },
     // 点击跳转详情
     iconClick(item) {
+      clickGameLog('gugoplay_pc_home', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/P/details',

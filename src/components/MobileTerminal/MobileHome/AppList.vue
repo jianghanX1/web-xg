@@ -77,7 +77,7 @@
 <script>
 import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
-import {getJson, recentGame} from '@/utils/utils.js';
+import {clickGameLog, getJson, Observer, recentGame} from '@/utils/utils.js';
 export default {
   name: "AppList",
   props: ['appGameList'],
@@ -98,6 +98,14 @@ export default {
     }
   },
   mounted() {
+    // 获取需要曝光的item
+    setTimeout(()=>{
+      let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
+      itemArr && Array.from(itemArr).map((item)=>{
+        Observer('gugoplay_mobile_home').observe(item)
+      })
+    })
+
     setTimeout(()=>{
       window.addAds()
       let innerHtml = document.getElementById('homeAdv') && document.getElementById('homeAdv').innerHTML
@@ -132,6 +140,7 @@ export default {
       this.smallImg = smallImg
     },
     detailsClick(item) {
+      clickGameLog('gugoplay_mobile_home', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/M/details',

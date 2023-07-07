@@ -79,7 +79,8 @@ export function setMeta(key, des) {
 // 全部数据
 export function getJson() {
     return (
-        [{
+        [
+            {
             "gameId": 1,
             "Name": "Crazy Cars",
             "Url": "https://www.gugoplay.com/gcenter/url/CrazyCars/",
@@ -2885,7 +2886,8 @@ export function getJson() {
             "ImgSize": "",
             "Flash": "",
             "VideoUrl": ""
-        }]
+        }
+        ]
     )
 }
 
@@ -2975,4 +2977,103 @@ export function getGameTypeList() {
         game_type[12].type = "SPORTS"
     })
     return game_type
+}
+
+// 埋点相关
+let beylaInstance = null
+try {
+    if (window.Beyla) {
+        beylaInstance = new window.Beyla({
+            appId: "gamerplay.bio", // 待确定
+            strict: false,
+        });
+    }
+} catch (e) {
+    console.log(e);
+}
+// 页面进入埋点
+let startTime = null
+export function pageInitLog(portal) {
+    const pveCur = `/${portal}/GameMain`;
+    startTime = new Date().getTime();
+    try {
+        beylaInstance.report({
+            pveCur: pveCur,
+            eventName: "in_page",
+        });
+    } catch (e) {
+        console.log(e, "in_page_error");
+    }
+}
+// 页面销毁埋点
+export function pageOutLog(portal) {
+    try {
+        let endTime = new Date().getTime();
+        let stayTime = endTime - startTime;
+        beylaInstance.report({
+            pveCur: `/${portal}/GameMain`,
+            eventName: "out_page",
+            extras: JSON.stringify({
+                time: stayTime,
+            }),
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// 点击游戏icon埋点
+export function clickGameLog(portal, item) {
+    const { gameId, Name } = item || {};
+    const pveCur = `/${portal}/GameMain/Main/game`;
+    try {
+        beylaInstance.report({
+            pveCur: pveCur,
+            eventName: "click_ve",
+            extras: JSON.stringify({
+                game_id: gameId,
+                game_name: Name,
+                game_url: `${window.location.href}`,
+            }),
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+export function showGameLog(portal, item){
+    const { gameId, Name } = item || {};
+    const pveCur = `/${portal}/GameMain/Main/game`;
+    return JSON.stringify({
+        isOutside: true,
+        params: {
+            pveCur: pveCur,
+            eventName: "show_ve",
+            extras: JSON.stringify({
+                game_id: gameId,
+                game_name: Name,
+                game_url: `${window.location.href}`
+            })
+        }
+    })
+}
+// 曝光
+export function Observer(portal) {
+    let observer = new IntersectionObserver((entries)=>{
+        //entries 为 IntersectionObserverEntry对像数组
+        entries.forEach((item) => {
+            //item 为 IntersectionObserverEntry对像
+            // isIntersecting是一个Boolean值，判断目标元素当前是否可见
+            if (item.isIntersecting) {
+                //div 可见时 进行相关操作
+                getJson() && getJson().map((items)=>{
+                    if (items.Name == item.target.innerText) {
+                        // console.log(items);
+                        showGameLog(portal,items)
+                    }
+                })
+                observer.unobserve(item.target); //停止监听该div DOM节点
+            }
+        })
+    })
+    return observer
 }

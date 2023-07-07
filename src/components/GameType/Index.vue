@@ -20,13 +20,13 @@
           <div class="title">{{gameType}}</div>
         </div>
         <div class="content">
-          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="sc-wr3rvk-0 app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div class="recommend">
-          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="app-item" v-for="(item,index) in recommend" :key="index" @click="switchGame(item)">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="sc-wr3rvk-0 app-item" v-for="(item,index) in recommend" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
@@ -42,7 +42,16 @@
 <script>
 import TypeList from '@/components/TypeList.vue';
 import SearchFor from '@/components/SearchFor.vue';
-import {determinePcOrMove, getJson, recentGame, shuffle} from '@/utils/utils.js'
+import {
+  clickGameLog,
+  determinePcOrMove,
+  getJson,
+  Observer,
+  pageInitLog,
+  pageOutLog,
+  recentGame,
+  shuffle
+} from '@/utils/utils.js'
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
 import souSuo from '@/assets/sousuo.png'
@@ -75,6 +84,15 @@ export default {
         }
       },()=>{})
     } else {
+      // 获取需要曝光的item
+      setTimeout(()=>{
+        let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
+        itemArr && Array.from(itemArr).map((item)=>{
+          Observer('gugoplay_pc_tab').observe(item)
+        })
+      })
+      // 进入页面埋点
+      pageInitLog('gugoplay_pc_tab')
       this.getGameList()
     }
   },
@@ -109,6 +127,7 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
+      clickGameLog('gugoplay_pc_tab', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/P/details',
@@ -117,6 +136,10 @@ export default {
       //   }
       // },()=>{})
     },
+  },
+  beforeDestroy() {
+    // 离开页面埋点
+    pageOutLog('gugoplay_pc_tab')
   },
   watch: {
     '$route'(val) {

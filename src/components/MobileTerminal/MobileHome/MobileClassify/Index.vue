@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="bottom">
-      <ClassList :gameTypeList="recommend" :styleType="true"></ClassList>
+      <ClassList :gameTypeList="recommend" :styleType="true" fromWhere="1"></ClassList>
       <BottomList></BottomList>
     </div>
   </div>
@@ -49,7 +49,16 @@
 import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
-import {determinePcOrMove, getJson, recentGame, shuffle} from '@/utils/utils.js'
+import {
+  clickGameLog,
+  determinePcOrMove,
+  getJson,
+  Observer,
+  pageInitLog,
+  pageOutLog,
+  recentGame,
+  shuffle
+} from '@/utils/utils.js'
 export default {
   name: "mobileClassifyIndex",
   components: {
@@ -68,13 +77,6 @@ export default {
 
   },
   mounted() {
-
-    window.onresize = () => {
-      this.clientWidth = document.body.clientWidth
-      this.getGameList()
-    }
-    this.clientWidth = document.body.clientWidth
-
     const { query } = this.$route
     const { gameType } = query || {}
     if (determinePcOrMove() == 2) {
@@ -84,13 +86,28 @@ export default {
           gameType
         }
       },()=>{})
+    } else {
+      // 获取需要曝光的item
+      setTimeout(()=>{
+        let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
+        itemArr && Array.from(itemArr).map((item)=>{
+          Observer('gugoplay_mobile_tab').observe(item)
+        })
+      })
+      // 进入页面埋点
+      pageInitLog('gugoplay_mobile_tab')
+      window.onresize = () => {
+        this.clientWidth = document.body.clientWidth
+        this.getGameList()
+      }
+      this.clientWidth = document.body.clientWidth
+      this.getGameList()
+      let arr = []
+      getJson().map((item)=>{
+        arr.push(item)
+      })
+      this.recommend = shuffle(arr).splice(0,30)
     }
-    this.getGameList()
-    let arr = []
-    getJson().map((item)=>{
-      arr.push(item)
-    })
-    this.recommend = shuffle(arr).splice(0,30)
   },
   methods: {
     getGameList() {
@@ -117,8 +134,14 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
+      // 打点
+      clickGameLog('gugoplay_mobile_tab', item)
       recentGame(item)
     },
+  },
+  beforeDestroy() {
+    // 离开页面埋点
+    pageOutLog('gugoplay_mobile_tab')
   },
   watch: {
     '$route'(val) {

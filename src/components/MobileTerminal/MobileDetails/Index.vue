@@ -25,7 +25,7 @@
                    data-ad-format="true"
                    data-full-width-responsive="true"></ins>
             </div>
-            <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
+            <div class="sc-wr3rvk-0 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
               <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId">
                 <img v-lazy="item.iconUrl" alt="">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
@@ -94,7 +94,16 @@ import play from '@/assets/play.png';
 import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
-import {shuffle, determinePcOrMove, setMeta, getJson, recentGame, getGameTypeList} from "@/utils/utils";
+import {
+  shuffle,
+  determinePcOrMove,
+  setMeta,
+  getJson,
+  recentGame,
+  getGameTypeList,
+  pageOutLog,
+  clickGameLog, pageInitLog, Observer
+} from "@/utils/utils";
 import { show_newAfg_preroll } from '../../../../webh5sdk';
 export default {
   name: "mobileDetailsIndex",
@@ -127,6 +136,9 @@ export default {
     }
   },
   created() {
+
+  },
+  mounted() {
     const { query, params } = this.$route
     const { gameId } = query
     const { gameName } = params || {}
@@ -138,25 +150,33 @@ export default {
           gameId
         }
       },()=>{})
+    } else {
+      // 获取需要曝光的item
+      setTimeout(()=>{
+        let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
+        itemArr && Array.from(itemArr).map((item)=>{
+          Observer('gugoplay_mobile_detail').observe(item)
+        })
+      })
+      // 进入页面埋点
+      pageInitLog('gugoplay_mobile_detail')
+      // 蒙层状态
+      this.smegmaType = true
+      setTimeout(()=>{
+        this.smegmaType = false
+      },800)
+      setTimeout(()=>{
+        window.addAds()
+        let innerHtml = document.getElementById('detailAdv') && document.getElementById('detailAdv').innerHTML
+        if (innerHtml) {
+          this.detailAdv = true
+        } else {
+          this.detailAdv = false
+        }
+      },800)
+      document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
+      this.getJson()
     }
-  },
-  mounted() {
-    // 蒙层状态
-    this.smegmaType = true
-    setTimeout(()=>{
-      this.smegmaType = false
-    },800)
-    setTimeout(()=>{
-      window.addAds()
-      let innerHtml = document.getElementById('detailAdv') && document.getElementById('detailAdv').innerHTML
-      if (innerHtml) {
-        this.detailAdv = true
-      } else {
-        this.detailAdv = false
-      }
-    },800)
-    document.getElementById('mobile-details').addEventListener("scroll",this.handleScroll, true)
-    this.getJson()
   },
   methods: {
     getJson() {
@@ -252,6 +272,8 @@ export default {
     },
     // 跳转详情
     detailsClick(item) {
+      // 打点
+      clickGameLog('gugoplay_mobile_detail', item)
       recentGame(item)
       clearInterval(this.timer)
       clearInterval(this.timer2)
@@ -263,6 +285,10 @@ export default {
       // },()=>{})
       this.playValue = false
     }
+  },
+  beforeDestroy() {
+    // 离开页面埋点
+    pageOutLog('gugoplay_mobile_detail')
   },
   watch: {
     '$route'(val) {

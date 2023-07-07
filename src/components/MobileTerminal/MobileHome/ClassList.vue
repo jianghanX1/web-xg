@@ -1,7 +1,7 @@
 <template>
   <div class="class-box" :style="styleType ? {marginTop: 0} : null">
     <div class="class-list" :style="styleType ? {padding: 0} : null">
-      <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
+      <div class="sc-wr3rvk-01 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
         <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId">
           <img v-lazy="item.iconUrl" alt="">
           <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
@@ -12,17 +12,32 @@
 </template>
 
 <script>
-import { recentGame } from '@/utils/utils.js';
+import {clickGameLog, Observer, recentGame} from '@/utils/utils.js';
 export default {
   name: "ClassList",
-  props: ["styleType",'gameTypeList'],
+  props: ["styleType",'gameTypeList','fromWhere'],
   data() {
     return {
 
     }
   },
+  mounted() {
+    if (this.fromWhere == 1) {
+      // 获取需要曝光的item
+      setTimeout(()=>{
+        let itemArr = [...document.getElementsByClassName("sc-wr3rvk-01")]
+        itemArr && Array.from(itemArr).map((item)=>{
+          Observer('gugoplay_mobile_tab').observe(item)
+        })
+      })
+    }
+  },
   methods: {
     detailsClick(item) {
+      if (this.fromWhere == 1) {
+        // 打点
+        clickGameLog('gugoplay_mobile_tab', item)
+      }
       recentGame(item)
       // this.$router.push({
       //   path: '/M/details',

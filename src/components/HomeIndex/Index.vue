@@ -10,7 +10,7 @@
 <script>
 import Content from '@/components/HomeIndex/Content';
 import BottomNav from '@/components/BottomNav';
-import { determinePcOrMove, getJson } from '@/utils/utils.js'
+import {determinePcOrMove, getJson, pageInitLog, pageOutLog} from '@/utils/utils.js'
 export default {
   name: "HomeIndex",
   components: {
@@ -31,6 +31,8 @@ export default {
         path: '/M/homeIndex'
       },()=>{})
     } else {
+      // 进入页面埋点
+      pageInitLog('gugoplay_pc_home')
       this.getJson()
       document.title = 'Online Games on Gugo ——Let\'s play'
     }
@@ -44,6 +46,10 @@ export default {
       })
     }
   },
+  beforeDestroy() {
+    // 离开页面埋点
+    pageOutLog('gugoplay_pc_home')
+  }
 }
 </script>
 

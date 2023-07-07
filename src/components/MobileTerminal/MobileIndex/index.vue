@@ -24,7 +24,7 @@ import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 // import TopBox from "@/components/MobileTerminal/MobileHome/TopBox";
 import AppList from "@/components/MobileTerminal/MobileHome/AppList";
 
-import { determinePcOrMove, getJson } from '@/utils/utils.js'
+import {determinePcOrMove, getJson, pageInitLog, pageOutLog} from '@/utils/utils.js'
 import bgImg from '@/assets/advertisement/bg.jpg';
 import btnBg from '@/assets/advertisement/btn_anniu.png';
 import wz from '@/assets/advertisement/wz.png';
@@ -78,6 +78,10 @@ export default {
         path: '/P/homeIndex'
       },()=>{})
     } else {
+
+      // 进入页面埋点
+      pageInitLog('gugoplay_mobile_home')
+
       // let enterType = sessionStorage.getItem('enterType')
       // if (enterType) {
       //   this.smegmaHide = true
@@ -181,6 +185,8 @@ export default {
   beforeDestroy() {
     // clearInterval(this.timerDate);
     // clearInterval(this.timerCountdown)
+    // 离开页面埋点
+    pageOutLog('gugoplay_mobile_home')
   }
 }
 </script>

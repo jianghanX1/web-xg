@@ -94,7 +94,15 @@ import huore from '@/assets/huore.png';
 import fanHui from '@/assets/fanhui.png';
 import guanBi from '@/assets/guanbi.png';
 import TypeList from '@/components/TypeList.vue'
-import {getGameTypeList, getJson, recentGame, determinePcOrMove} from '@/utils/utils'
+import {
+  getGameTypeList,
+  getJson,
+  recentGame,
+  determinePcOrMove,
+  pageInitLog,
+  clickGameLog,
+  pageOutLog
+} from '@/utils/utils'
 export default {
   name: "SearchFor",
   props: ['UnfoldAndCollapse'],
@@ -123,8 +131,11 @@ export default {
       // setTimeout(()=>{
       //   window.addAds()
       // },1300)
+      pageInitLog('gugoplay_mobile_search')
     } else {
       this.determinePcOrMove = 2
+      // 进入页面埋点
+      pageInitLog('gugoplay_pc_search')
     }
     this.navSlide()
     this.getAllJson()
@@ -212,6 +223,11 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
+      if (this.determinePcOrMove = 1) {
+        clickGameLog('gugoplay_mobile_search', item)
+      } else {
+        clickGameLog('gugoplay_pc_search', item)
+      }
       recentGame(item)
       // this.$router.push({
       //   path: '/P/details',
@@ -220,7 +236,15 @@ export default {
       //   }
       // },()=>{})
     },
-  }
+  },
+  beforeDestroy() {
+    // 离开页面埋点
+    if (this.determinePcOrMove = 1) {
+      pageOutLog('gugoplay_mobile_search')
+    } else {
+      pageOutLog('gugoplay_pc_search')
+    }
+  },
 }
 </script>
 
