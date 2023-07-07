@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import '@/assets/font/theFont.css'
 import { Button, Select, Input, Message, Form, FormItem } from 'element-ui'
 
 Vue.prototype.$axios = axios

@@ -251,8 +251,13 @@ export default {
     padding: 10px 16px;
     box-sizing: border-box;
     h1{
-      font: 700 1em/1em Torus, sans-serif;
+      font: 500 20px/24px Torus, sans-serif;
       color: #002b50;
+      margin: 0px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     display: flex;
     justify-content: center;

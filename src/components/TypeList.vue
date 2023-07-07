@@ -1,6 +1,6 @@
 <template>
   <div :class="from == 1 ? bottomList1 : bottomList">
-    <div class="cASSfo sc-963fcq-2 cMEgnO" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)"><img v-lazy="item.iconUrl" alt=""></div>
+    <div class="cASSfo sc-963fcq-2 cMEgnO" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)"><img :src="item.iconUrl" alt=""></div>
   </div>
 </template>
 

@@ -17,7 +17,9 @@
           <SearchFor :UnfoldAndCollapse="UnfoldAndCollapse" v-if="UnfoldAndCollapse"  @searchClick="searchClick"/>
         </div>
         <div class="top">
-          <div class="title">{{gameType}}</div>
+          <div class="title">
+            <h1>{{gameType}}</h1>
+          </div>
         </div>
         <div class="content">
           <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="sc-wr3rvk-0 app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
@@ -349,8 +351,16 @@ export default {
     padding: 10px 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
     align-items: center;
-    font-size: 21px;
     box-sizing: border-box;
+    h1{
+      margin: 0px;
+      font: 500 20px/24px Torus, sans-serif;
+      color: #002b50;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
     //margin-left: 220px;
   }
 }

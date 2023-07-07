@@ -482,15 +482,19 @@ export default {
     align-items: flex-start;
     font-size: 21px;
     h1{
-      font: 700 1em/1em Torus, sans-serif;
+      font: 500 20px/24px Torus, sans-serif;
       color: #002b50;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     .eyfKaw{
       display: block;
       color: #5d6b84;
       font-size: 12px;
       line-height: 15px;
-      margin: 4px 0px 0px;
+      margin: 5px 0px 0px;
       letter-spacing: 0.3px;
       overflow:hidden;
       text-overflow: ellipsis;
@@ -637,7 +641,7 @@ export default {
       margin: 8px 0px 8px;
       h2{
         margin: 0px;
-        font: 700 24px Torus, sans-serif;
+        font: 500 24px Torus, sans-serif;
         color: #002b50;
       }
     }

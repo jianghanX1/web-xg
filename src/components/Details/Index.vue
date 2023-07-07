@@ -942,7 +942,7 @@ export default {
             margin: auto 0px;
             h1{
               margin: 0px;
-              font: 700 1em/1em Torus, sans-serif;
+              font: 500 20px/24px Torus;
               padding: 0px 10px 0px 0px;
               color: #002b50;
             }
@@ -1426,6 +1426,7 @@ export default {
       color: var(--grey-1);
       list-style: none;
       text-overflow: ellipsis;
+      font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
     }
     .gmEuRM li {
       display: inline;
@@ -1445,7 +1446,7 @@ export default {
       margin: 8px 0px 8px;
       h2{
         margin: 0px;
-        font: 700 24px Torus, sans-serif;
+        font: 500 24px Torus, sans-serif;
         color: #002b50;
       }
     }
@@ -1656,7 +1657,7 @@ export default {
         align-items: center;
         padding: 4px 16px;
         .cLNPVX {
-          font: 700 16px/1.5 Torus, sans-serif;
+          font: 500 16px/1.5 Torus, sans-serif;
           color: rgb(255, 255, 255);
           padding: 6px 24px;
           border-radius: 30px;
@@ -1684,7 +1685,7 @@ export default {
       min-height: 144px;
       padding: 10px 28px;
       background-color: #009cff;
-      font: 700 28px/1.1 Torus, sans-serif;
+      font: 500 28px/1.1 Torus, sans-serif;
       color: white;
       box-sizing: border-box;
     }

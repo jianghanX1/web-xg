@@ -48,6 +48,7 @@ export default {
     margin: 16px auto 0px;
     text-align: center;
     color: #5d6b84;
+    font: 400 16px/24px Proxima Nova, Open Sans, Gill Sans MT, Gill Sans, Arial, sans-serif;
     a:not(:last-child) {
       margin-right: 1rem;
     }

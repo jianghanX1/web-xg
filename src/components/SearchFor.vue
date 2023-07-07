@@ -210,7 +210,7 @@ export default {
     },
     classClick(value) {
       this.screenValue = value
-      this.inputChange(value,1)
+      this.inputChange(value)
     },
     // 搜索框
     inputChange(value,type) {
@@ -224,12 +224,15 @@ export default {
         let arr = []
         let allJson = getJson()
         allJson && allJson.map((item)=>{
-          if (type) {
-            if (item[value] == 1) {
+          if (item[value.toUpperCase()] == 1) {
+            let index = arr.findIndex((items)=>items.gameId == item.gameId)
+            if (index == -1) {
               arr.push(item)
             }
-          } else {
-            if (item.Name.toLowerCase().includes(`${inputValue}`)) {
+          }
+          if (item.Name.toLowerCase().includes(`${inputValue}`)) {
+            let index = arr.findIndex((items)=>items.gameId == item.gameId)
+            if (index == -1) {
               arr.push(item)
             }
           }
@@ -573,7 +576,7 @@ input::-webkit-search-cancel-button {
 }
 .MMWDF {
   margin: 24px 8px 0px;
-  font: 700 24px Torus, sans-serif;
+  font: 500 24px Torus, sans-serif;
 }
 .gA-dJmQ {
   margin-top: 16px;
@@ -733,7 +736,7 @@ input::-webkit-search-cancel-button {
 }
 .UVa-dc {
   margin: 0px;
-  font: 700 1em/1em Torus, sans-serif;
+  font: 500 20px/24px Torus, sans-serif;
   padding: 0px 10px 0px 0px;
   color: #002b50;
 }
@@ -744,7 +747,7 @@ input::-webkit-search-cancel-button {
   padding: 18px 24px;
   h1{
     margin: 0px;
-    font: 700 24px Torus, sans-serif;
+    font: 500 24px Torus, sans-serif;
   }
 }
 </style>
