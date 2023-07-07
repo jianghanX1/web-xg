@@ -3071,6 +3071,7 @@ export function Observer(portal) {
                         showGameLog(portal,items)
                     }
                 })
+                // console.log(item.target.innerText);
                 observer.unobserve(item.target); //停止监听该div DOM节点
             }
         })
