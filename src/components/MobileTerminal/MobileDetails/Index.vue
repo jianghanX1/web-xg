@@ -65,14 +65,14 @@
         <div class="iframe-box">
           <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
         </div>
-        <div class="iframe-back" @click="backClick"><img :src="goBack" alt=""></div>
-        <a class="tap-game" @click="detailsClick(item)" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
       </div>
       <div class="app-promote">
         <div class="promote-list">
           <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
         </div>
       </div>
+      <div class="iframe-back" @click="backClick" :style="mobileNavDragY" @touchmove="backToucheMove"><img :src="goBack" alt=""></div>
+      <a class="tap-game" @click="detailsClick(item)" :style="mobileTapY"  @touchmove="tapToucheMove" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
     </div>
 <!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
 <!--      <img :src="topping" alt="">-->
@@ -133,6 +133,9 @@ export default {
       hZDmFe2: 'hZDmFe2', // 有广告样式
       hZDmFe: 'hZDmFe', // 无广告样式
       smegmaType: false, // 蒙层状态
+      mobileNavDragY: '--mobileNavDragY: 24px',
+      mobileTapY: '--mobileTapY: 150px',
+      clientY: null, // 拖拽初始位置
     }
   },
   created() {
@@ -236,6 +239,18 @@ export default {
     playClick() {
       // 广告
       show_newAfg_preroll().show_newAfg_preroll()
+      // 打开全屏
+      const { documentElement } = document;
+      if (documentElement.requestFullscreen) {
+        documentElement.requestFullscreen();
+      } else if (documentElement.mozRequestFullScreen) {
+        documentElement.mozRequestFullScreen();
+      } else if (documentElement.webkitRequestFullScreen) {
+        documentElement.webkitRequestFullScreen();
+      }
+      // 初始化图标位置
+      this.mobileNavDragY = `--mobileNavDragY: 24px`
+      this.mobileTapY = '--mobileTapY: 150px'
 
       this.playValue = true
       let arr = []
@@ -264,14 +279,34 @@ export default {
         this.tapGameList = shuffleArr.splice(0,1)
       },6000)
     },
+    // 退出全屏
+    exitFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      }
+    },
     // 返回
     backClick() {
+      this.exitFullscreen()
       this.playValue = false
       clearInterval(this.timer)
       clearInterval(this.timer2)
     },
+    // 鼠标拖动返回按钮
+    backToucheMove(e) {
+      this.mobileNavDragY = `--mobileNavDragY: ${e.targetTouches[0].clientY - 15 > 24 ? e.targetTouches[0].clientY - 15 > window.screen.height - 40 ? window.screen.height - 40 : e.targetTouches[0].clientY - 15 : 24}px`
+    },
+    // 鼠标拖动返回按钮
+    tapToucheMove(e) {
+      this.mobileTapY = `--mobileTapY: ${e.targetTouches[0].clientY - 25 > 150 ? e.targetTouches[0].clientY - 25 > window.screen.height - 50 ? window.screen.height - 50 : e.targetTouches[0].clientY - 25 : 150}px`
+    },
     // 跳转详情
     detailsClick(item) {
+      this.exitFullscreen()
       // 打点
       clickGameLog('gugoplay_mobile_detail', item)
       recentGame(item)
@@ -580,11 +615,28 @@ export default {
     box-sizing: border-box;
     cursor: pointer;
     margin-right: 0;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
     img{
       width: 100%;
       height: 100%;
       border-radius: 16px;
     }
+  }
+  .class-item::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 25%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 5;
+    transition: box-shadow .6s cubic-bezier(.25, .1, .25, 1),opacity .3s cubic-bezier(.25, .1, .25, 1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+    border-radius: 16px;
+    contain: strict;
   }
   .esaxGV {
     position: absolute;
@@ -683,12 +735,20 @@ export default {
     }
   }
 }
+@supports (height:100dvh) {
+  .app-module {
+    --minHeight: 100dvh;
+    --height: 100dvh;
+  }
+}
 .app-module {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  height: var(--height,100%);
+  width: var(--width,100%);
+  --width: 100vw;
+  min-height: var(--minHeight,100vh);
   z-index: 5;
   background-color: #127DAB;
   overflow: hidden;
@@ -774,54 +834,53 @@ export default {
     max-height: 100%;
     margin: 0 auto;
     position: relative;
-    .iframe-back{
-      position: absolute;
+  }
+  .iframe-back{
+    position: fixed;
+    top: 0;
+    border-radius: 0 1.125rem 1.125rem 0;
+    overflow: hidden;
+    width: 3.375rem;
+    height: 2.1875rem;
+    text-align: center;
+    transform: translate(0,var(--mobileNavDragY,24px));
+    /deep/ .el-icon-arrow-left{
+      font-size: 2rem;
+      color: #ffffff;
+      line-height: 2.1875rem;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .tap-game{
+    .img-tap-game{
       left: 0;
-      top: 1.125rem;
-      //box-shadow: 0 0.125rem 0 0.0625rem rgb(52 126 223);
-      border-radius: 0 1.125rem 1.125rem 0;
+      z-index: 110;
+      top: 0;
+      height: 50px;
+      width: 50px;
+      position: fixed;
+      -webkit-border-radius: 25px;
+      border-radius: 25px;
+      opacity: .1;
       overflow: hidden;
-      width: 3.375rem;
-      height: 2.1875rem;
-      //background-color: #589df7;
-      text-align: center;
-      /deep/ .el-icon-arrow-left{
-        font-size: 2rem;
-        color: #ffffff;
-        line-height: 2.1875rem;
-      }
-      img{
-        width: 100%;
-        height: 100%;
-      }
+      animation-name: breath;
+      animation-duration: 1200ms;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      -webkit-animation-name: breath;
+      -webkit-animation-duration: 1200ms;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+      transform: translate(0,var(--mobileTapY,150px));
     }
-    .tap-game{
-      .img-tap-game{
-        left: 0;
-        z-index: 110;
-        top: 20%;
-        height: 50px;
-        width: 50px;
-        position: fixed;
-        -webkit-border-radius: 25px;
-        border-radius: 25px;
-        opacity: .1;
-        overflow: hidden;
-        animation-name: breath;
-        animation-duration: 1200ms;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: breath;
-        -webkit-animation-duration: 1200ms;
-        -webkit-animation-timing-function: ease-in-out;
-        -webkit-animation-iteration-count: infinite;
-      }
-    }
-    @keyframes breath {
-      0%  {opacity: .1;}
-      50% {opacity: 1;}
-      100% {opacity: .1;}
-    }
+  }
+  @keyframes breath {
+    0%  {opacity: .1;}
+    50% {opacity: 1;}
+    100% {opacity: .1;}
   }
   .app-promote {
     height: 4.375rem;
@@ -861,54 +920,54 @@ export default {
     max-height: 100%;
     margin: 0 auto;
     position: relative;
-    .iframe-back{
-      text-align: center;
-      position: absolute;
-      left: 0;
-      top: 0.633803rem;
-      //box-shadow: 0 0.0714rem 0 0.0357rem rgb(52 126 223);
-      border-radius: 0 0.6429rem 0.6429rem 0;
+  }
+  .iframe-back{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 2.15rem;
+    border-radius: 0 0.6429rem 0.6429rem 0;
+    overflow: hidden;
+    width: 1.9286rem;
+    height: 1.25rem;
+    transform: translate(0,var(--mobileNavDragY,24px));
+    /deep/ .el-icon-arrow-left{
+      font-size: 1rem;
+      color: #ffffff;
+      line-height: 1rem;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .tap-game{
+    .img-tap-game{
+      left: 2.171831rem;
+      z-index: 110;
+      top: 0;
+      height: 50px;
+      width: 50px;
+      position: fixed;
+      -webkit-border-radius: 25px;
+      border-radius: 25px;
+      opacity: .1;
       overflow: hidden;
-      width: 1.9286rem;
-      height: 1.25rem;
-      //background-color: #589df7;
-      /deep/ .el-icon-arrow-left{
-        font-size: 1rem;
-        color: #ffffff;
-        line-height: 1rem;
-      }
-      img{
-        width: 100%;
-        height: 100%;
-      }
+      animation-name: breath;
+      animation-duration: 1200ms;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      -webkit-animation-name: breath;
+      -webkit-animation-duration: 1200ms;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+      transform: translate(0,var(--mobileTapY,150px));
     }
-    .tap-game{
-      .img-tap-game{
-        left: 2.171831rem;
-        z-index: 110;
-        top: 2.333803rem;
-        height: 50px;
-        width: 50px;
-        position: fixed;
-        -webkit-border-radius: 25px;
-        border-radius: 25px;
-        opacity: .1;
-        overflow: hidden;
-        animation-name: breath;
-        animation-duration: 1200ms;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: breath;
-        -webkit-animation-duration: 1200ms;
-        -webkit-animation-timing-function: ease-in-out;
-        -webkit-animation-iteration-count: infinite;
-      }
-    }
-    @keyframes breath {
-      0%  {opacity: .1;}
-      50% {opacity: 1;}
-      100% {opacity: .1;}
-    }
+  }
+  @keyframes breath {
+    0%  {opacity: .1;}
+    50% {opacity: 1;}
+    100% {opacity: .1;}
   }
   .app-promote {
     height: 100%;
