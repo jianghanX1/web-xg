@@ -62,16 +62,18 @@
     </div>
     <div class="app-module" :style="playValue ? {display: 'block'} : {display: 'none'}" v-if="playValue">
       <div class="app-iframe">
-        <div class="iframe-box">
-          <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
+        <div class="sc-1nfyi8d-1 kExbnh">
+          <div class="iframe-box">
+            <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
+          </div>
+          <div class="app-promote">
+            <div class="promote-list">
+              <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="app-promote">
-        <div class="promote-list">
-          <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
-        </div>
-      </div>
-      <div class="iframe-back" @click="backClick" :style="mobileNavDragY" @touchmove="backToucheMove"><img :src="goBack" alt=""></div>
+      <div class="iframe-back" @click="backClick" :style="mobileNavDragY"  @touchmove="backToucheMove"><img :src="goBack" alt=""></div>
       <a class="tap-game" @click="detailsClick(item)" :style="mobileTapY"  @touchmove="tapToucheMove" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
     </div>
 <!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
@@ -298,11 +300,13 @@ export default {
     },
     // 鼠标拖动返回按钮
     backToucheMove(e) {
-      this.mobileNavDragY = `--mobileNavDragY: ${e.targetTouches[0].clientY - 15 > 24 ? e.targetTouches[0].clientY - 15 > window.screen.height - 40 ? window.screen.height - 40 : e.targetTouches[0].clientY - 15 : 24}px`
+      e.preventDefault()
+      this.mobileNavDragY = `--mobileNavDragY: ${e.targetTouches[0].clientY - 17 > 24 ? e.targetTouches[0].clientY - 17 > window.innerHeight - 45 ? window.innerHeight - 45 : e.targetTouches[0].clientY - 17 : 24}px`
     },
     // 鼠标拖动返回按钮
     tapToucheMove(e) {
-      this.mobileTapY = `--mobileTapY: ${e.targetTouches[0].clientY - 25 > 150 ? e.targetTouches[0].clientY - 25 > window.screen.height - 50 ? window.screen.height - 50 : e.targetTouches[0].clientY - 25 : 150}px`
+      e.preventDefault()
+      this.mobileTapY = `--mobileTapY: ${e.targetTouches[0].clientY - 25 > 150 ? e.targetTouches[0].clientY - 25 > window.innerHeight - 50 ? window.innerHeight - 50 : e.targetTouches[0].clientY - 25 : 150}px`
     },
     // 跳转详情
     detailsClick(item) {
@@ -753,15 +757,37 @@ export default {
   background-color: #127DAB;
   overflow: hidden;
   .app-iframe{
-    width: 100%;
-    height: calc(100vh - 4.375rem);
-    .iframe-box{
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    position: relative;
+    z-index: 1;
+    width: 100% !important;
+    height: 100% !important;
+    //width: 100%;
+    //height: calc(100vh - 4.375rem);
+    .kExbnh {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 0;
       width: 100%;
       height: 100%;
-      padding: 0 2px 2px 0;
-      box-sizing: border-box;
-      #gameIframe{
-        border: 1px solid #cccccc;
+      background: var(--denim-blue);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 12px 0px;
+      .iframe-box{
+        width: 100%;
+        height: 100%;
+        padding: 0 2px 2px 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        position: relative;
+        #gameIframe{
+          border: 1px solid #cccccc;
+        }
       }
     }
   }
@@ -836,12 +862,13 @@ export default {
     position: relative;
   }
   .iframe-back{
+    z-index: 1;
     position: fixed;
     top: 0;
     border-radius: 0 1.125rem 1.125rem 0;
     overflow: hidden;
-    width: 3.375rem;
-    height: 2.1875rem;
+    width: 70px;
+    height: 45px;
     text-align: center;
     transform: translate(0,var(--mobileNavDragY,24px));
     /deep/ .el-icon-arrow-left{
@@ -883,10 +910,18 @@ export default {
     100% {opacity: .1;}
   }
   .app-promote {
-    height: 4.375rem;
+    height: 4.475rem;
     overflow: hidden;
     background-color: #127DAB;
     padding: 0.5rem 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
   }
   .app-promote .promote-list {
     white-space: nowrap;
@@ -913,6 +948,9 @@ export default {
     display: flex!important;
     flex-direction: row-reverse;
   }
+  .kExbnh {
+    flex-direction: row-reverse!important;
+  }
   .app-iframe {
     width: calc(100vw - 4.375rem);
     height: 100%!important;
@@ -922,14 +960,15 @@ export default {
     position: relative;
   }
   .iframe-back{
+    z-index: 1;
     text-align: center;
     position: fixed;
     top: 0;
     left: 2.15rem;
     border-radius: 0 0.6429rem 0.6429rem 0;
     overflow: hidden;
-    width: 1.9286rem;
-    height: 1.25rem;
+    width: 70px;
+    height: 45px;
     transform: translate(0,var(--mobileNavDragY,24px));
     /deep/ .el-icon-arrow-left{
       font-size: 1rem;
@@ -971,9 +1010,18 @@ export default {
   }
   .app-promote {
     height: 100%;
-    width: 2.353521rem;
+    width: 2.21rem;
     overflow: hidden;
     background-color: #127DAB;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    position: relative;
+    z-index: 3;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
   }
   .app-promote .promote-list {
     height: 100%;
