@@ -182,22 +182,23 @@ export default {
     //   }
     // },
     timer(allGameList) {
-      if (this.smegmaHide) {
-        let arr = []
-        allGameList && allGameList.map((item)=>{
-          arr.push(item)
-        })
-        let newArr = shuffle(arr.splice(0,30))
-        clearInterval(this.timerDate)
-        this.timerDate = setInterval(()=>{
-          this.logoutCount++
-          console.log(this.logoutCount);
-          if (this.logoutCount >= 10) {
-            recentGame(newArr[0])
-            window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
-          }
-        },1000)
-      }
+      // if (this.smegmaHide) {
+      //
+      // }
+      let arr = []
+      allGameList && allGameList.map((item)=>{
+        arr.push(item)
+      })
+      let newArr = shuffle(arr.splice(0,30))
+      clearInterval(this.timerDate)
+      this.timerDate = setInterval(()=>{
+        this.logoutCount++
+        console.log(this.logoutCount);
+        if (this.logoutCount >= 10) {
+          recentGame(newArr[0])
+          window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
+        }
+      },1000)
     },
     // countdown() {
     //   clearInterval(this.timerCountdown)

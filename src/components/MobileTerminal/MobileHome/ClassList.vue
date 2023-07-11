@@ -1,7 +1,40 @@
 <template>
-  <div class="class-box" :style="styleType ? {marginTop: 0} : null">
+  <div class="class-box" :style="styleType ? {marginTop: 0} : null" v-if="from == 1">
+    <div class="class-list" :style="styleType ? {padding: 0} : null" v-if="gameTypeList.length > 9">
+      <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in topList" :key="index">
+        <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
+      </div>
+      <div v-if="from == 1" class="adv" style="clear: both; margin-bottom: 0.5625rem">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9543177256867205"
+             data-ad-slot="7221753276"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in bottomList" :key="index + 9">
+        <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
+      </div>
+    </div>
+    <div class="class-list" :style="styleType ? {padding: 0} : null" v-else>
+      <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
+        <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
+      </div>
+      <div v-if="from == 1" class="adv" style="clear: both">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9543177256867205"
+             data-ad-slot="7221753276"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+  </div>
+  <div class="class-box" :style="styleType ? {marginTop: 0} : null" v-else>
     <div class="class-list" :style="styleType ? {padding: 0} : null">
-      <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index"><a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a></div>
+      <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
+        <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
+      </div>
     </div>
   </div>
 </template>
@@ -10,10 +43,17 @@
 import { recentGame } from '@/utils/utils.js';
 export default {
   name: "ClassList",
-  props: ["styleType",'gameTypeList'],
+  props: ["styleType",'gameTypeList','from','topList','bottomList'], // from 1 // 游戏类型引用
   data() {
     return {
 
+    }
+  },
+  mounted() {
+    if (this.from == 1) {
+      setTimeout(()=>{
+        window.addAds()
+      },1300)
     }
   },
   methods: {

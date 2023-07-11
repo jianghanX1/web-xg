@@ -29,8 +29,13 @@
         </div>
         <div class="adv" v-if="index === 0">
           <h6 class="adv-title">Advertisement</h6>
-          <div>
-
+          <div style="margin-top: 0.5625rem">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9543177256867205"
+                 data-ad-slot="6291814982"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
           </div>
         </div>
         <div class="content-top" style="margin-top: 0.5625rem">
@@ -42,6 +47,16 @@
           <div class="item-box" v-if="item[9] && item[9].iconUrl"><div class="item" @click="detailsClick(item[9])"><a :href="'/#/M/details?gameId='+item[9].gameId"><img v-lazy="item[9] && item[9].iconUrl" alt=""></a></div></div>
           <div class="item-box" v-if="item[10] && item[10].iconUrl"><div class="item" @click="detailsClick(item[10])"><a :href="'/#/M/details?gameId='+item[10].gameId"><img v-lazy="item[10] && item[10].iconUrl" alt=""></a></div></div>
         </div>
+      </div>
+    </div>
+    <div class="adv">
+      <div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9543177256867205"
+             data-ad-slot="1039488300"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
       </div>
     </div>
   </div>
@@ -58,9 +73,9 @@ export default {
     }
   },
   mounted() {
-    // setTimeout(()=>{
-    //   window.addAds()
-    // },1300)
+    setTimeout(()=>{
+      window.addAds()
+    },1300)
   },
   methods: {
     detailsClick(item) {

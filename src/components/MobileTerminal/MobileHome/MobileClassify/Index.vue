@@ -2,7 +2,7 @@
   <div id="mobile_classify" v-title data-title="BIOH5">
     <StartAndEnd>
       <div>
-        <ClassList :gameTypeList="gameTypeList"></ClassList>
+        <ClassList :gameTypeList="gameTypeList" :topList="topList" :bottomList="bottomList" from="1"></ClassList>
         <BottomList></BottomList>
         <BottomText></BottomText>
       </div>
@@ -24,6 +24,8 @@ export default {
   data() {
     return {
       gameTypeList: [],
+      topList: [],
+      bottomList: []
     }
   },
   created() {
@@ -64,6 +66,12 @@ export default {
         arr = []
       }
       this.gameTypeList = arr
+      let newArr = []
+      arr.map((item)=>{
+        newArr.push(item)
+      })
+      this.topList = newArr.splice(0,9)
+      this.bottomList = newArr
     },
   },
   watch: {
