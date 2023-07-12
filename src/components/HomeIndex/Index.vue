@@ -30,7 +30,7 @@
 import Navigation from '@/components/Navigation';
 import Content from '@/components/HomeIndex/Content';
 import BottomNav from '@/components/BottomNav';
-import { determinePcOrMove, getJson, shuffle, recentGame } from '@/utils/utils.js'
+import { determinePcOrMove, getJson, recentGame } from '@/utils/utils.js'
 export default {
   name: "HomeIndex",
   components: {
@@ -60,12 +60,15 @@ export default {
   methods: {
     getJson() {
       let jsonArr = getJson()
-      let allGameList = []
-      jsonArr && jsonArr.map((item)=>{
-        allGameList.push(item)
-      })
-      clearInterval(this.timerDatePC)
-      this.timer(allGameList)
+
+      // 随机跳转
+      // let allGameList = []
+      // jsonArr && jsonArr.map((item)=>{
+      //   allGameList.push(item)
+      // })
+      // clearInterval(this.timerDatePC)
+      // this.timer(allGameList)
+
       let arr = jsonArr || [] // 原数组
       let recentGame = []
       let recentGamePc = []
@@ -94,39 +97,39 @@ export default {
         this.recentGameList = recentGamePc
         localStorage.setItem('recentGame',JSON.stringify(recentGame))
       }
-      // 监听鼠标
-      document.getElementById('homeId').onmousedown = () => {
-        this.logoutCount = 0
-        this.timer(allGameList)
-      }
-      // 监听键盘
-      document.getElementById('homeId').onkeydown = () => {
-        this.logoutCount = 0
-        this.timer(allGameList)
-      }
-      console.log(document.getElementById('homeId'));
-      // 监听Scroll
-      document.getElementById('homeId').onscroll = () => {
-        this.logoutCount = 0
-        this.timer(allGameList)
-      }
+      // // 监听鼠标
+      // document.getElementById('homeId').onmousedown = () => {
+      //   this.logoutCount = 0
+      //   this.timer(allGameList)
+      // }
+      // // 监听键盘
+      // document.getElementById('homeId').onkeydown = () => {
+      //   this.logoutCount = 0
+      //   this.timer(allGameList)
+      // }
+      // console.log(document.getElementById('homeId'));
+      // // 监听Scroll
+      // document.getElementById('homeId').onscroll = () => {
+      //   this.logoutCount = 0
+      //   this.timer(allGameList)
+      // }
     },
-    timer(allGameList) {
-      let arr = []
-      allGameList && allGameList.map((item)=>{
-        arr.push(item)
-      })
-      let newArr = shuffle(arr.splice(0,30))
-      clearInterval(this.timerDatePC)
-      this.timerDatePC = setInterval(()=>{
-        this.logoutCount++
-        console.log(this.logoutCount);
-        if (this.logoutCount >= 10) {
-          recentGame(newArr[0])
-          window.location.href = '/#/P/details?gameId=' + newArr[0].gameId
-        }
-      },1000)
-    },
+    // timer(allGameList) {
+    //   let arr = []
+    //   allGameList && allGameList.map((item)=>{
+    //     arr.push(item)
+    //   })
+    //   let newArr = shuffle(arr.splice(0,30))
+    //   clearInterval(this.timerDatePC)
+    //   this.timerDatePC = setInterval(()=>{
+    //     this.logoutCount++
+    //     console.log(this.logoutCount);
+    //     if (this.logoutCount >= 10) {
+    //       recentGame(newArr[0])
+    //       window.location.href = '/#/P/details?gameId=' + newArr[0].gameId
+    //     }
+    //   },1000)
+    // },
     // 点击跳转详情
     iconClick(item) {
       recentGame(item)
@@ -139,9 +142,8 @@ export default {
     }
   },
   beforeDestroy() {
-    clearInterval(this.timerDatePC);
+    // clearInterval(this.timerDatePC);
     this.timerDatePC = null
-    console.log(111,'sdfsdffsfsfddsf');
   }
 }
 </script>

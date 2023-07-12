@@ -50,7 +50,7 @@ import racing from '@/assets/08racing.jpg';
 import parkour from '@/assets/09parkour.jpg';
 import sand from '@/assets/093d.jpg';
 
-import { determinePcOrMove, getJson, shuffle, recentGame } from '@/utils/utils.js'
+import { determinePcOrMove, getJson } from '@/utils/utils.js'
 import bgImg from '@/assets/advertisement/bg.jpg';
 import btnBg from '@/assets/advertisement/btn_anniu.png';
 import wz from '@/assets/advertisement/wz.png';
@@ -127,13 +127,16 @@ export default {
 
       let jsonArr = getJson() || [] // 原数组
 
-      let allGameList = []
-      jsonArr && jsonArr.map((item)=>{
-        allGameList.push(item)
-      })
-      this.allGameList = allGameList
-      clearInterval(this.timerDate)
-      this.timer(allGameList)
+      // 随机跳转
+      // let allGameList = []
+      // jsonArr && jsonArr.map((item)=>{
+      //   allGameList.push(item)
+      // })
+      // this.allGameList = allGameList
+      // clearInterval(this.timerDate)
+      // this.timer(allGameList)
+
+
       let arr = jsonArr || [] // 原数组
       let recentGame = []
       if (localStorage.getItem('recentGame')) {
@@ -156,21 +159,21 @@ export default {
       console.log(newArr);
       this.appGameList = newArr
 
-      // 监听鼠标
-      document.getElementById('homeId').onmousemove = () => {
-        this.logoutCount = 0
-        this.timer(allGameList)
-      }
-      // 监听键盘
-      document.getElementById('homeId').onkeydown = () => {
-        this.logoutCount = 0
-        this.timer(allGameList)
-      }
-      // 监听Scroll
-      document.getElementById('homeId').onscroll = () => {
-        this.logoutCount = 0
-        this.timer(allGameList)
-      }
+      // // 监听鼠标
+      // document.getElementById('homeId').onmousemove = () => {
+      //   this.logoutCount = 0
+      //   this.timer(allGameList)
+      // }
+      // // 监听键盘
+      // document.getElementById('homeId').onkeydown = () => {
+      //   this.logoutCount = 0
+      //   this.timer(allGameList)
+      // }
+      // // 监听Scroll
+      // document.getElementById('homeId').onscroll = () => {
+      //   this.logoutCount = 0
+      //   this.timer(allGameList)
+      // }
     }
   },
   methods: {
@@ -181,25 +184,25 @@ export default {
     //     this.timer(this.allGameList)
     //   }
     // },
-    timer(allGameList) {
-      // if (this.smegmaHide) {
-      //
-      // }
-      let arr = []
-      allGameList && allGameList.map((item)=>{
-        arr.push(item)
-      })
-      let newArr = shuffle(arr.splice(0,30))
-      clearInterval(this.timerDate)
-      this.timerDate = setInterval(()=>{
-        this.logoutCount++
-        console.log(this.logoutCount);
-        if (this.logoutCount >= 10) {
-          recentGame(newArr[0])
-          window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
-        }
-      },1000)
-    },
+    // timer(allGameList) {
+    //   // if (this.smegmaHide) {
+    //   //
+    //   // }
+    //   let arr = []
+    //   allGameList && allGameList.map((item)=>{
+    //     arr.push(item)
+    //   })
+    //   let newArr = shuffle(arr.splice(0,30))
+    //   clearInterval(this.timerDate)
+    //   this.timerDate = setInterval(()=>{
+    //     this.logoutCount++
+    //     console.log(this.logoutCount);
+    //     if (this.logoutCount >= 10) {
+    //       recentGame(newArr[0])
+    //       window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
+    //     }
+    //   },1000)
+    // },
     // countdown() {
     //   clearInterval(this.timerCountdown)
     //   this.timerCountdown = setInterval(()=>{

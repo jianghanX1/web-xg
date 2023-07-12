@@ -28,7 +28,7 @@
           <div></div>
         </div>
         <div class="adv" v-if="index === 0">
-          <h6 class="adv-title">Advertisement</h6>
+<!--          <h6 class="adv-title">Advertisement</h6>-->
           <div style="margin-top: 0.5625rem">
             <ins class="adsbygoogle"
                  style="display:block"
