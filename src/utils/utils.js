@@ -79,7 +79,8 @@ export function setMeta(key, des) {
 // 全部数据
 export function getJson() {
     return (
-        [{
+        [
+            {
             "gameId": 4,
             "Name": "Monkey Mart",
             "Url": "https://www.gugoplay.com/gcenter/url/MonkeyMart/",
@@ -3829,7 +3830,16 @@ export function Observer(portal) {
                 getJson() && getJson().map((items) => {
                     if (items.Name == item.target.innerText) {
                         // console.log(items);
-                        showGameLog(portal, items)
+                        const { isOutside, params } = JSON.parse(showGameLog(portal, items))  || {}
+                        if (isOutside) {
+                            if (window.Beyla) {
+                               let beylaInstance = new window.Beyla({
+                                    appId: "gamerplay.bio", // 待确定
+                                    strict: false,
+                                });
+                                beylaInstance.report(params)
+                            }
+                        }
                     }
                 })
                 // console.log(item.target.innerText);
