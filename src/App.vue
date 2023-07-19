@@ -15,6 +15,7 @@
 <script>
 // import Navigation from './components/Navigation';
 import { determinePcOrMove } from '@/utils/utils.js'
+import bg from '@/assets/tile.png'
 export default {
   name: 'App',
   components: {
@@ -23,7 +24,10 @@ export default {
   data() {
     return {
       determinePcOrMove: determinePcOrMove(),
-      navHide: true
+      navHide: true,
+      bg:{
+        backgroundImage: bg
+      }
     }
   },
   mounted() {
