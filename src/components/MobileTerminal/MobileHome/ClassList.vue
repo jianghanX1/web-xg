@@ -4,14 +4,6 @@
       <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in topList" :key="index">
         <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
       </div>
-      <div v-if="from == 1" class="adv" style="clear: both; margin-bottom: 0.5625rem">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9543177256867205"
-             data-ad-slot="7221753276"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-      </div>
       <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in bottomList" :key="index + 9">
         <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
       </div>
@@ -19,14 +11,6 @@
     <div class="class-list" :style="styleType ? {padding: 0} : null" v-else>
       <div class="class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
         <a :href="'/#/M/details?gameId='+item.gameId+'&jiaocha=1'"><img v-lazy="item.iconUrl" alt=""></a>
-      </div>
-      <div v-if="from == 1" class="adv" style="clear: both">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9543177256867205"
-             data-ad-slot="7221753276"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
       </div>
     </div>
   </div>
@@ -51,9 +35,9 @@ export default {
   },
   mounted() {
     if (this.from == 1) {
-      setTimeout(()=>{
-        window.addAds()
-      },1300)
+      // setTimeout(()=>{
+      //   window.addAds()
+      // },1300)
     }
   },
   methods: {

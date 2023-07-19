@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at bioh5.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at mih5.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
       <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
@@ -309,7 +309,7 @@ export default {
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #267AB0;
+        background: linear-gradient(to bottom,#ff9ead 0%,#fe74b2 100%);
         max-width: 100%;
         transition: width .5s linear;
         z-index: 1;
@@ -358,7 +358,7 @@ export default {
     margin: 0.7rem auto 0;
     width: 18.75rem;
     border-radius: 0.3125rem;
-    background-color: rgba(0,0,0,.2);
+    background-color: #fe74b2;
     max-height: 9.375rem;
     overflow: auto;
     padding: 0 0.625rem;

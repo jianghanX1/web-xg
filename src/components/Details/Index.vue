@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at bioh5.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at mih5.com'">
     <Navigation></Navigation>
     <div class="details">
       <div class="main-center">
@@ -700,7 +700,7 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background: linear-gradient(to bottom, #48a0c9 0%, #29638b 100%);
+          background: linear-gradient(to bottom,#ff9ead 0%,#fe74b2 100%);
           border-radius: 8px;
           height: 56px;
           width: 500px;

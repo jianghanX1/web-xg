@@ -28,15 +28,7 @@
           <div></div>
         </div>
         <div class="adv" v-if="index === 0">
-<!--          <h6 class="adv-title">Advertisement</h6>-->
-          <div style="margin-top: 0.5625rem">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-9543177256867205"
-                 data-ad-slot="6291814982"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-          </div>
+
         </div>
         <div class="content-top" style="margin-top: 0.5625rem">
           <div class="item" @click="detailsClick(item[6])" v-if="item[6] && item[6].iconUrl"><a :href="'/#/M/details?gameId='+item[6].gameId"><img v-lazy="item[6] && item[6].iconUrl" alt=""></a></div>
@@ -50,14 +42,7 @@
       </div>
     </div>
     <div class="adv">
-      <div>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9543177256867205"
-             data-ad-slot="1039488300"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-      </div>
+
     </div>
   </div>
 </template>
@@ -73,9 +58,9 @@ export default {
     }
   },
   mounted() {
-    setTimeout(()=>{
-      window.addAds()
-    },1300)
+    // setTimeout(()=>{
+    //   window.addAds()
+    // },1300)
   },
   methods: {
     detailsClick(item) {

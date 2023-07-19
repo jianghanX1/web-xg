@@ -2,7 +2,7 @@
     <div>
       <div class="bj">
         <div class="bj_left">
-          <div class="title" @click="vigooGamesClick"><i class="el-icon-menu" @click.stop="positionMenuClick"></i> BIOH5</div>
+          <div class="title" @click="vigooGamesClick"><i class="el-icon-menu" @click.stop="positionMenuClick"></i> MIH5</div>
           <div class="nav-list">
             <div @click="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
           </div>
@@ -65,7 +65,7 @@ export default {
   .bj{
     cursor: pointer;
     height: 56px;
-    background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
+    background: linear-gradient(to bottom,#ff9ead 0%,#fe74b2 100%);
     color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -74,7 +74,7 @@ export default {
       position: absolute;
       top: 51px;
       left: 0;
-      background: linear-gradient(to bottom,#48a0c9 0%,#29638b 100%);
+      background: linear-gradient(to bottom,#ff9ead 0%,#fe74b2 100%);
       padding: 6px 0;
       min-width: 184px;
       z-index: 99;
