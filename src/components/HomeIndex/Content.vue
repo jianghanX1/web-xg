@@ -15,7 +15,7 @@
                     <source :src="item.VideoUrl" type="video/mp4">
                   </video>
                 </div>
-                <div class="sc-15wj1kq-0 ggWjbY" v-if="index == 0">
+                <div class="sc-15wj1kq-0 ggWjbY" v-if="item.Flash == 1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="sc-15wj1kq-1 cYmAAh">
                     <defs>
                       <linearGradient id="lgrad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -125,6 +125,9 @@ export default {
         } else {
           smallImg.push(item)
         }
+      })
+      smallImg.map((item)=>{
+        console.log(item.Name);
       })
       this.bigImg = bigImg
       this.centreImg = centreImg
