@@ -10,9 +10,13 @@
         <BottomList></BottomList>
         <div style="padding: 10px">
           <div class="bottom-text">
-            Hi! Welcome to mih5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit yad.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+            Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at mih5.com !
             <br>
-            So, what are you waiting for? If you feel happy when playing our games, remember to bookmark mih5.com and share it to your friends. Have fun!
+            Let us introduce you something you always wanted to try. Games html5 for any taste are so different and entertaining that you will never forget about this gaming experience.
+            <br>
+            New strategy games and fancy arcade no download - whatever you will find online. If you want to leave the stress and to feel a free source of energy, then you should definitely try one of new html5 online games.
+            <br>
+            You are always free to switch to another game or to play differently. It depends on your taste and manners in online games.
           </div>
         </div>
       </div>
