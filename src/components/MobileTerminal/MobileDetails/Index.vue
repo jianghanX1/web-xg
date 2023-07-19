@@ -25,12 +25,10 @@
                    data-ad-format="true"
                    data-full-width-responsive="true"></ins>
             </div>
-            <div class="sc-wr3rvk-0 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
-              <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId">
-                <img v-lazy="item.iconUrl" alt="">
-                <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
-              </a>
-            </div>
+            <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-0 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
+              <img v-lazy="item.iconUrl" alt="">
+              <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
+            </a>
           </div>
         </div>
         <div class="bottom">
@@ -68,13 +66,13 @@
           </div>
           <div class="app-promote">
             <div class="promote-list">
-              <div class="item" @click="detailsClick(item)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
+              <div class="item" @click="detailsClick(item, true)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
             </div>
           </div>
         </div>
       </div>
       <div class="iframe-back" @click="backClick" :style="mobileNavDragY"  @touchmove="backToucheMove"><img :src="goBack" alt=""></div>
-      <a class="tap-game" @click="detailsClick(item)" :style="mobileTapY"  @touchmove="tapToucheMove" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
+      <a class="tap-game" @click="detailsClick(item, true)" :style="mobileTapY"  @touchmove="tapToucheMove" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
     </div>
 <!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
 <!--      <img :src="topping" alt="">-->
@@ -309,8 +307,10 @@ export default {
       this.mobileTapY = `--mobileTapY: ${e.targetTouches[0].clientY - 25 > 150 ? e.targetTouches[0].clientY - 25 > window.innerHeight - 50 ? window.innerHeight - 50 : e.targetTouches[0].clientY - 25 : 150}px`
     },
     // 跳转详情
-    detailsClick(item) {
-      this.exitFullscreen()
+    detailsClick(item, type) {
+      if (type) {
+        this.exitFullscreen()
+      }
       // 打点
       clickGameLog('gugoplay_mobile_detail', item)
       recentGame(item)
