@@ -259,6 +259,7 @@ export default {
         pageOutLog('gugoplay_pc_search')
       }
       recentGame(item)
+      this.collapse()
       // this.$router.push({
       //   path: '/P/details',
       //   query: {
