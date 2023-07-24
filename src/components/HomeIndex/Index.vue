@@ -27,8 +27,12 @@ export default {
   },
   mounted() {
     if (determinePcOrMove() == 1) {
+      let { channel } = this.$route.query
       this.$router.push({
-        path: '/M/homeIndex'
+        path: '/M/homeIndex',
+        query: {
+          channel
+        }
       },()=>{})
     } else {
       // 进入页面埋点

@@ -20,10 +20,12 @@ export default {
   },
   methods: {
     classClick(gameType) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/M/gameType',
         query: {
-          gameType
+          gameType,
+          channel
         }
       },()=>{})
     }

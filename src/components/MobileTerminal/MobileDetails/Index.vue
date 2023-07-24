@@ -25,7 +25,7 @@
                    data-ad-format="true"
                    data-full-width-responsive="true"></ins>
             </div>
-            <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-0 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
+            <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
               <img v-lazy="item.iconUrl" alt="">
               <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
             </a>
@@ -37,7 +37,7 @@
             <div class="bottom-text">
               <nav class="sc-1oa7ili-0 gmEuRM">
                 <ul>
-                  <li><a href="/">GAME</a></li>
+                  <li><a :href="'/#/P/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')">GAME</a></li>
                   <li>{{ gameType }}</li>
                 </ul>
               </nav>
@@ -66,13 +66,13 @@
           </div>
           <div class="app-promote">
             <div class="promote-list">
-              <div class="item" @click="detailsClick(item, true)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img :src="item.iconUrl" alt=""></a></div>
+              <div class="item" @click="detailsClick(item, true)" v-for="(item,index) in gameShuffleList" :key="index"><a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')"><img :src="item.iconUrl" alt=""></a></div>
             </div>
           </div>
         </div>
       </div>
       <div class="iframe-back" @click="backClick" :style="mobileNavDragY"  @touchmove="backToucheMove"><img :src="goBack" alt=""></div>
-      <a class="tap-game" @click="detailsClick(item, true)" :style="mobileTapY"  @touchmove="tapToucheMove" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
+      <a class="tap-game" @click="detailsClick(item, true)" :style="mobileTapY"  @touchmove="tapToucheMove" v-for="(item,index) in tapGameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')"><img class="img-tap-game" :src="item.iconUrl" alt=""></a>
     </div>
 <!--    <div class="is-top" :style="isTop ? {display: 'block'} : {display: 'none'}" @click="isTopClick">-->
 <!--      <img :src="topping" alt="">-->
@@ -147,10 +147,12 @@ export default {
     const { gameName } = params || {}
     console.log(gameName);
     if (determinePcOrMove() == 2) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: `/P/details${gameName ? '/'+gameName : ''}`,
         query: {
-          gameId
+          gameId,
+          channel
         }
       },()=>{})
     } else {
@@ -214,10 +216,12 @@ export default {
 
     // 跳转分类
     classClick(gameType) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/M/gameType',
         query: {
-          gameType
+          gameType,
+          channel
         }
       },()=>{})
     },
@@ -525,7 +529,7 @@ export default {
       color: #002b50;
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
     }
     .eyfKaw{

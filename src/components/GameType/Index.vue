@@ -8,7 +8,7 @@
               <img :src="logo" alt="">
             </div>
             <div class="sc-jaa1t8-0 bwKNQa">
-              <a href="/" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+              <a :href="'/#/P/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
               <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
                 <img :src="souSuo" alt="">
               </button>
@@ -22,13 +22,13 @@
           </div>
         </div>
         <div class="content">
-          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="sc-wr3rvk-0 app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 app-item" v-for="(item,index) in gameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div class="recommend">
-          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="sc-wr3rvk-0 app-item" v-for="(item,index) in recommend" :key="index" @click="switchGame(item)">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 app-item" v-for="(item,index) in recommend" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
@@ -79,10 +79,12 @@ export default {
     const { query } = this.$route
     const { gameType } = query || {}
     if (determinePcOrMove() == 1) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/M/gameType',
         query: {
-          gameType
+          gameType,
+          channel
         }
       },()=>{})
     } else {
@@ -100,8 +102,12 @@ export default {
   },
   methods:{
     goHome() {
+      let { channel } = this.$route.query
       this.$router.push({
-        path: '/'
+        path: '/P/homeIndex',
+        query: {
+          channel
+        }
       },()=>{})
     },
     // 点击搜索

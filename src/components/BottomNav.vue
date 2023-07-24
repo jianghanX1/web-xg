@@ -12,19 +12,23 @@ export default {
   name: "BottomNav",
   methods: {
     privacyClick() {
+      let { channel } = this.$route.query
       let pathInfo = this.$router.resolve({
         path: '/privacy',
         query: {
           routeType: 1, // 不走App.vue文件的判断
+          channel
         }
       })
       window.open(pathInfo.href, '_blank')
     },
     contactClick() {
+      let { channel } = this.$route.query
       let pathInfo = this.$router.resolve({
         path: '/contactUs',
         query: {
           routeType: 1, // 不走App.vue文件的判断
+          channel
         }
       })
       window.open(pathInfo.href, '_blank')

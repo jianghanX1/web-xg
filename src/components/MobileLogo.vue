@@ -2,10 +2,10 @@
   <div>
     <div class="logo">
       <div class="sc-11jy73d-3 bfQcDW">
-        <a :href="'/#/M/homeIndex'"><img :src="logo" alt=""></a>
+        <a :href="'/#/M/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')"><img :src="logo" alt=""></a>
       </div>
       <div class="sc-jaa1t8-0 bwKNQa">
-        <a :href="'/#/M/homeIndex'" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
+        <a :href="'/#/M/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
         <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
           <img :src="souSuo" alt="">
         </button>

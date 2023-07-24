@@ -8,7 +8,7 @@
             <div class="game-name" v-if="index == 0" style="grid-area: ibx">
               <h1>{{ gameType }}</h1>
             </div>
-            <a @click="switchGame(items)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details/'+items.Name.replace(/\s+/g, '')+'?gameId='+items.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
+            <a @click="switchGame(items)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details/'+items.Name.replace(/\s+/g, '')+'?gameId='+items.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9) ? {gridArea: 'bigIp' + indexs}: null">
               <img v-if="(indexs == 0 && item.length >4) || (indexs == 6 && item.length > 9)" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
               <img v-else v-lazy="items.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
               <span class="sc-963fcq-0 esaxGV global-cq-title">{{items.Name}}</span>
@@ -22,7 +22,7 @@
             <div class="game-name" style="grid-area: ibx">
               <h1>{{ gameType }}</h1>
             </div>
-            <a @click="switchGame(item)" v-for="(item,index) in gameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(index == 0 && gameList.length > 5) || (index == 1 && gameList.length > 5) ? {gridArea: 'bigIp' + index}: null">
+            <a @click="switchGame(item)" v-for="(item,index) in gameList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="(index == 0 && gameList.length > 5) || (index == 1 && gameList.length > 5) ? {gridArea: 'bigIp' + index}: null">
               <img v-if="(index == 0 && gameList.length > 5) || (index == 1 && gameList.length > 5)" v-lazy="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
               <img v-else v-lazy="item.iconUrl" alt="" width="94px" height="94px" class="eoBBYj">
               <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
@@ -80,10 +80,12 @@ export default {
     const { query } = this.$route
     const { gameType } = query || {}
     if (determinePcOrMove() == 2) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/P/gameType',
         query: {
-          gameType
+          gameType,
+          channel
         }
       },()=>{})
     } else {

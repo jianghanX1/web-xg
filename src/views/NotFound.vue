@@ -10,7 +10,7 @@
         <div class="popular-games">
           <h6 class="title">The Most Popular Games</h6>
           <div class="games">
-            <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" class="item" @click="iconClick(item)" v-for="(item,index) in gameList" :key="index">
+            <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="item" @click="iconClick(item)" v-for="(item,index) in gameList" :key="index">
               <img v-lazy="item.iconUrl" alt="">
               <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
             </a>

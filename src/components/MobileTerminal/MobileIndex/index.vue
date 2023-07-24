@@ -74,8 +74,12 @@ export default {
   },
   mounted() {
     if (determinePcOrMove() == 2) {
+      let { channel } = this.$route.query
       this.$router.push({
-        path: '/P/homeIndex'
+        path: '/P/homeIndex',
+        query: {
+          channel
+        }
       },()=>{})
     } else {
 

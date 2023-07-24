@@ -89,13 +89,13 @@
           </div>
         </div>
         <div style="display: contents">
-          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" v-for="(item,index) in bigImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 ftkfX global-cq" :style="innerWidth >= 1321 ? {gridArea: 'bigIp' + index} : null">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" v-for="(item,index) in bigImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 ftkfX global-cq" :style="innerWidth >= 1321 ? {gridArea: 'bigIp' + index} : null">
             <img :src="item.iconUrl" alt="" class="sc-18mcksl-1 eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div style="display: contents">
-          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId" v-for="(item,index) in smallImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 global-cq">
+          <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" v-for="(item,index) in smallImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 global-cq">
             <img :src="item.iconUrl" alt="" style="width: 94px;height: 94px" class="sc-18mcksl-1 eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
@@ -229,7 +229,7 @@
       <div class="bottom-text">
         <nav class="sc-1oa7ili-0 gmEuRM">
           <ul>
-            <li><a href="/">GAME</a></li>
+            <li><a :href="'/#/P/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')">GAME</a></li>
             <li>{{ gameInfo.Type }}</li>
           </ul>
         </nav>
@@ -347,10 +347,12 @@ export default {
     const { gameId } = query || {}
     const { gameName } = params || {}
     if (determinePcOrMove() == 1) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: `/M/details${gameName ? '/'+gameName : ''}`,
         query: {
-          gameId
+          gameId,
+          channel
         }
       },()=>{})
     } else {
@@ -420,8 +422,12 @@ export default {
     },
     // 去首页
     goHome() {
+      let { channel } = this.$route.query
       this.$router.push({
-        path: '/'
+        path: '/P/homeIndex',
+        query: {
+          channel
+        }
       },()=>{})
     },
     // 点击搜索
@@ -510,10 +516,12 @@ export default {
       this.isBlock = false
     },
     classClick(type) {
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/P/gameType',
         query: {
-          gameType: type
+          gameType: type,
+          channel
         }
       },()=>{})
     },

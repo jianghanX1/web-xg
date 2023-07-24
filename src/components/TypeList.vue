@@ -24,10 +24,12 @@ export default {
       if (this.from == 1) {
         this.$emit('collapse')
       }
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/P/gameType',
         query: {
-          gameType: type
+          gameType: type,
+          channel
         }
       },()=>{})
     }

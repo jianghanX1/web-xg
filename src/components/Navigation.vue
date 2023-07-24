@@ -39,10 +39,12 @@ export default {
   methods: {
     // 搜索
     searchClick() {
+      let { channel } = this.$route.query
       this.$router.push({
         path: '/P/gameType',
         query: {
-          searchValue: this.searchInput.trim()
+          searchValue: this.searchInput.trim(),
+          channel
         }
       },()=>{})
     },
@@ -55,18 +57,24 @@ export default {
       this.positionMenu = false
     },
     vigooGamesClick() {
+      let { channel } = this.$route.query
       this.searchInput = null
       this.$router.push({
-        path: '/'
+        path: '/M/homeIndex',
+        query: {
+          channel
+        }
       },()=>{})
     },
     newGamesClick(gameType) {
+      let { channel } = this.$route.query
       this.searchInput = null
       this.$router.push({
         path: '/P/gameType',
         query: {
           gameType,
-          searchValue: null
+          searchValue: null,
+          channel
         }
       },()=>{})
     },

@@ -10,8 +10,34 @@
       <meta name="description" content="">
       <meta name="theme-color" content="#080403">
       <link rel="manifest" id="manifest" href="/manifest.json">
+<!--      <script>-->
+<!--          // 获取渠道-->
+<!--          function getUrlParams(key) {-->
+<!--              let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");-->
+<!--              let r = window.location.hash.split('?')[1] && window.location.hash.split('?')[1].match(reg);-->
+<!--              if (r != null)-->
+<!--                  return decodeURIComponent(r[2]);-->
+<!--              return null;-->
+<!--          }-->
+<!--          // 筛选渠道信息-->
+<!--          var channelInfo = {}-->
+<!--          channelArr && channelArr.map((item)=>{-->
+<!--              if (item.channel_name == getUrlParams('channel')) {-->
+<!--                  channelInfo = item-->
+<!--              }-->
+<!--          })-->
+<!--          localStorage.setItem('channelInfo',JSON.stringify(channelInfo))-->
+<!--          let pub = channelInfo.channel_ca_pub ? channelInfo.channel_ca_pub : "ca-pub-2075998924432436"-->
+<!--          let src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pub}`-->
+<!--          let script = document.createElement('script');-->
+<!--          script.src = src;-->
+<!--          script.crossOrigin = "anonymous";-->
+<!--          document.head.appendChild(script);-->
+<!--      </script>-->
+
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075998924432436"
               crossorigin="anonymous"></script>
+
 <!--      ga-->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD1D1PZJ9Y"></script>
       <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>

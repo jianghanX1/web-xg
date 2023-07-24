@@ -2,7 +2,7 @@
   <div class="class-box" :style="styleType ? {marginTop: 0} : null">
     <div class="class-list" :style="styleType ? {padding: 0} : null">
       <div class="sc-wr3rvk-01 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
-        <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId">
+        <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')">
           <img v-lazy="item.iconUrl" alt="">
           <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
         </a>

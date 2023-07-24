@@ -30,7 +30,7 @@
         </div>
         <h2 class="MMWDF">Popular this week</h2>
         <div class="gA-dJmQ">
-          <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-02 app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
+          <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-02 app-item" v-for="(item,index) in popularGame" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             <div class="chTXCW" v-if="index == 0">
@@ -42,7 +42,7 @@
         </div>
         <h2 class="MMWDF">Recently played</h2>
         <div class="gA-dJmQ">
-          <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-02 app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
+          <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-02 app-item" v-for="(item,index) in topGameList" :key="index" @click="switchGame(item)">
             <img :src="item.iconUrl" alt="">
             <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             <div class="chTXCW">
@@ -56,7 +56,7 @@
       <section v-show="screenList.length" class="izRAmK">
         <div class="hSivpy">
           <div class="fYlIeu" v-if="determinePcOrMove == 1">
-            <a @click="switchGame(item)" v-for="(item,index) in screenList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-02 fcDjQV">
+            <a @click="switchGame(item)" v-for="(item,index) in screenList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-02 fcDjQV">
               <img :src="item.iconUrl" class="dYqVqC" alt="">
               <div class="kZbSoa">
                 <div class="hQIsLG">
@@ -67,7 +67,7 @@
             </a>
           </div>
           <div class="cndJnf" v-else>
-            <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId" class="sc-wr3rvk-02 app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
+            <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-02 app-item" v-for="(item,index) in screenList" :key="index" @click="switchGame(item)">
               <img :src="item.iconUrl" alt="">
               <span class="sc-963fcq-0 esaxGV">{{item.Name}}</span>
             </a>
