@@ -21,7 +21,7 @@
                    id="detailAdv"
                    style="display:block;min-height: 314px"
                    data-ad-client="ca-pub-2075998924432436"
-                   data-ad-slot="6935332335"
+                   :data-ad-slot="slot"
                    data-ad-format="true"
                    data-full-width-responsive="true"></ins>
             </div>
@@ -135,11 +135,14 @@ export default {
       smegmaType: false, // 蒙层状态
       mobileNavDragY: '--mobileNavDragY: 24px',
       mobileTapY: '--mobileTapY: 150px',
-      clientY: null, // 拖拽初始位置
+      clientY: null, // 拖拽初始位置,
+      slot: null
     }
   },
   created() {
-
+    let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
+    const { m_dtl_slot } = channelInfo || {}
+    this.slot = m_dtl_slot ? m_dtl_slot : '6935332335'
   },
   mounted() {
     const { query, params } = this.$route

@@ -390,16 +390,21 @@ export default {
         googletag.cmd.push(function() { googletag.pubads().refresh(); });
       }
 
+      let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
+      const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}
+      let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []
+      let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []
+      let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []
       let leftAdv = document.createElement("script")
-      leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371803760-0');};});"
+      leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcl[3] ? pcl[3] : 'div-gpt-ad-1688371803760-0');};});"
       this.$refs.leftAdv.append(leftAdv)
 
       let rightAdv = document.createElement("script")
-      rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371871810-0');};});"
+      rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcr[3] ? pcr[3] : 'div-gpt-ad-1688371871810-0');};});"
       this.$refs.rightAdv.append(rightAdv)
 
       let bottomAdv = document.createElement("script")
-      bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display('div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
+      bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcb[3] ? pcb[3] : 'div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
       this.$refs.bottomAdv.append(bottomAdv)
     }
   },

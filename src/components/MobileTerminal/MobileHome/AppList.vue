@@ -9,7 +9,7 @@
                  id="homeAdv"
                  style="display:block;min-height: 314px"
                  data-ad-client="ca-pub-2075998924432436"
-                 data-ad-slot="9017774039"
+                 :data-ad-slot="slot"
                  data-ad-format="true"
                  data-full-width-responsive="true"></ins>
           </div>
@@ -28,7 +28,7 @@
                id="homeAdv"
                style="display:block;min-height: 314px"
                data-ad-client="ca-pub-2075998924432436"
-               data-ad-slot="9017774039"
+               :data-ad-slot="slot"
                data-ad-format="true"
                data-full-width-responsive="true"></ins>
         </div>
@@ -95,7 +95,13 @@ export default {
       cTVRlj: 'cTVRlj', // 无广告样式
       jMBaZr2: 'jMBaZr2', // 有广告样式
       jMBaZr: 'jMBaZr', // 无广告样式
+      slot: null,
     }
+  },
+  created() {
+    let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
+    const { m_home_slot } = channelInfo || {}
+    this.slot = m_home_slot ? m_home_slot : '9017774039'
   },
   mounted() {
     // 获取需要曝光的item

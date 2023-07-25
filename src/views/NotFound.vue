@@ -30,7 +30,7 @@
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-2075998924432436"
-                 data-ad-slot="8403530511"
+                 :data-ad-slot="slot"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
           </div>
@@ -58,8 +58,14 @@ export default {
   data() {
     return {
       gameList: [],
-      determinePcOrMove: null
+      determinePcOrMove: null,
+      slot: null
     }
+  },
+  created() {
+    let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
+    const { m_404_slot } = channelInfo || {}
+    this.slot = m_404_slot ? m_404_slot : '8403530511'
   },
   mounted() {
     if (determinePcOrMove() == 1) {
