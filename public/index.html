@@ -28,10 +28,13 @@
               }
           })
           localStorage.setItem('channelInfo',JSON.stringify(channelInfo))
-          const { channel_ca_pub } = channelInfo || {}
+          const { channel_ca_pub, channel_id } = channelInfo || {}
           let pub = channel_ca_pub ? channel_ca_pub : "ca-pub-2075998924432436"
           let src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pub}`
           let script = document.createElement('script');
+          if (channel_id) {
+              script.setAttribute('data-ad-channel',channel_id)
+          }
           script.src = src;
           script.crossOrigin = "anonymous";
           document.head.appendChild(script);

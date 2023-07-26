@@ -458,7 +458,7 @@ export default {
       this.dislikeScore = dislikeScore.toFixed(1)
 
       const { query } = this.$route
-      const { gameId } = query || {}
+      const { gameId, channel } = query || {}
       let jsonArr = getJson()
       // 随机打乱数组
       let shuffleArr = shuffle(jsonArr)
@@ -481,6 +481,10 @@ export default {
           smallImgList.push(item)
         }
       })
+      // 渠道
+      if (channel) {
+        gameInfo.Url = gameInfo.Url + `?channel=` + channel
+      }
       this.gameInfo = gameInfo
       this.bigImgList = bigImgList
       this.smallImgList = smallImgList

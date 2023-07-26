@@ -52,10 +52,8 @@ export function determinePcOrMove() {
     if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
         //fontsize计算
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 320 * 16 + 'px'
-        console.log(11111);
         return 1
     } else {
-        console.log(222222);
         return 2
     }
 }
@@ -3874,6 +3872,15 @@ export function getGameTypeList() {
     return game_type
 }
 
+// 获取指定地址栏参数
+function getUrlParams(key) {
+    let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    let r = window.location.hash.split('?')[1] && window.location.hash.split('?')[1].match(reg);
+    if (r != null)
+        return decodeURIComponent(r[2]);
+    return null;
+}
+
 // 埋点相关
 let beylaInstance = null
 try {
@@ -3890,7 +3897,7 @@ try {
 let startTime = null
 
 export function pageInitLog(portal) {
-    const pveCur = `/${portal}/GameMain`;
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain` : `/${portal}/GameMain`;
     startTime = new Date().getTime();
     try {
         beylaInstance.report({
@@ -3908,7 +3915,7 @@ export function pageOutLog(portal) {
         let endTime = new Date().getTime();
         let stayTime = endTime - startTime;
         beylaInstance.report({
-            pveCur: `/${portal}/GameMain`,
+            pveCur: getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain` : `/${portal}/GameMain`,
             eventName: "out_page",
             extras: JSON.stringify({
                 time: stayTime,
@@ -3922,7 +3929,7 @@ export function pageOutLog(portal) {
 // 点击游戏icon埋点
 export function clickGameLog(portal, item) {
     const {gameId, Name} = item || {};
-    const pveCur = `/${portal}/GameMain/Main/game`;
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/game` : `/${portal}/GameMain/Main/game`;
     try {
         beylaInstance.report({
             pveCur: pveCur,
@@ -3940,7 +3947,7 @@ export function clickGameLog(portal, item) {
 
 export function showGameLog(portal, item) {
     const {gameId, Name} = item || {};
-    const pveCur = `/${portal}/GameMain/Main/game`;
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/game` : `/${portal}/GameMain/Main/game`;
     return JSON.stringify({
         isOutside: true,
         params: {

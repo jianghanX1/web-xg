@@ -198,7 +198,7 @@ export default {
 
 
       const { query } = this.$route
-      const { gameId } = query || {}
+      const { gameId, channel } = query || {}
       let arr = getJson() || []
       let newArr = []
       let gameInfo = {}
@@ -212,6 +212,10 @@ export default {
       this.gameType = gameInfo.Type
       this.iconUrl = gameInfo.iconUrl
       this.description = gameInfo.desc
+      // 渠道
+      if (channel) {
+        gameInfo.Url = gameInfo.Url + `?channel=` + channel
+      }
       this.playUrl = gameInfo.Url
       this.gameTypeList = shuffle(newArr).splice(0,30)
       setMeta(`${gameInfo.Name},${gameInfo.Name} Online,${gameInfo.Name} for free`,`${gameInfo.Name} is a Games`)
