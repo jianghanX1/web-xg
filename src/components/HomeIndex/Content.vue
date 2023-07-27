@@ -378,23 +378,6 @@ export default {
   }
 }
 
-@media (hover: hover) {
-  .cOWZsC:hover {
-    transform: scale(1.01869) translate(0px, -4px) !important;
-  }
-
-  .cOWZsC:hover {
-    .sc-963fcq-0 {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
-
-    .sc-963fcq-1 {
-      visibility: visible;
-    }
-  }
-}
-
 .big-box {
   display: flex;
   flex-direction: column;
@@ -490,7 +473,7 @@ export default {
     left: 0px;
     padding: 6px;
     color: rgb(255, 255, 255);
-    font: 700 var(--tileFontSize,12px)/1.3 'Proxima Nova', sans-serif;
+    font: 700 var(--tileFontSize,14px)/1.3 'Proxima Nova', sans-serif;
     text-align: center;
     z-index: 6;
     transition: transform .3s cubic-bezier(.25, .1, .25, 1) .1s, opacity .3s cubic-bezier(.25, .1, .25, 1) .1s;
@@ -609,6 +592,25 @@ export default {
   100% {
     transform: translate3d(0%, -50%, 0px);
     opacity: 0;
+  }
+}
+@media (hover: hover) {
+  .cOWZsC:hover {
+    transform: scale(1.01869) translate(0px, -4px) !important;
+  }
+  .cOWZsC:hover::after {
+    opacity: 1;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+  }
+  .cOWZsC:hover {
+    .sc-963fcq-0 {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+
+    .sc-963fcq-1 {
+      visibility: visible;
+    }
   }
 }
 </style>

@@ -80,9 +80,9 @@ if (!localStorage.getItem('recentGame')) {
 const VUE_APP_VERSION = require('../package.json').version
 const vers = window.localStorage.getItem('appVersion')
 if(VUE_APP_VERSION != vers){
-  localStorage.clear()
-  window.localStorage.setItem('appVersion', VUE_APP_VERSION)
-  location.reload()
+    localStorage.clear()
+    window.localStorage.setItem('appVersion', VUE_APP_VERSION)
+    location.reload()
 }
 
 

@@ -165,6 +165,10 @@ export default {
   .cOWZsC:hover {
     transform: scale(1.01869) translate(0px, -4px)!important;
   }
+  .cOWZsC:hover::after {
+    opacity: 1!important;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.3) 100%)!important;
+  }
   .cOWZsC:hover .sc-963fcq-0 {
     opacity: 1!important;
     transform: translate(0px, 0px)!important;
