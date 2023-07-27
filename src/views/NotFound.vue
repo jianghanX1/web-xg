@@ -69,9 +69,9 @@ export default {
   mounted() {
     if (determinePcOrMove() == 1) {
       this.determinePcOrMove = 1
-      setTimeout(()=>{
-        window.addAds()
-      },1300)
+      // setTimeout(()=>{
+      //   window.addAds()
+      // },1300)
     } else {
       this.determinePcOrMove = 2
     }

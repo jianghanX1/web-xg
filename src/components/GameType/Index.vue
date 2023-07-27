@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'BIOH5'
+    document.title = 'DREAMLIVE'
   }
 }
 </script>
