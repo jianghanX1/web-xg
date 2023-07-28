@@ -62,7 +62,7 @@
       <div class="app-iframe">
         <div class="sc-1nfyi8d-1 kExbnh">
           <div class="iframe-box">
-            <iframe id="gameIframe" :src="playUrl + '-M'" width="100%" height="100%"></iframe>
+            <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
           </div>
           <div class="app-promote">
             <div class="promote-list">
@@ -214,7 +214,7 @@ export default {
       this.description = gameInfo.desc
       // 渠道
       if (channel) {
-        gameInfo.Url = gameInfo.Url + `?channel=` + channel
+        gameInfo.Url = gameInfo.Url + `?channel=` + channel + '-M'
       }
       this.playUrl = gameInfo.Url
       this.gameTypeList = shuffle(newArr).splice(0,30)
