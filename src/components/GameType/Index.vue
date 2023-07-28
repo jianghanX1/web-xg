@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="type-list">
-      <TypeList></TypeList>
+      <TypeList whereFrom="4"></TypeList>
     </div>
   </div>
 </template>
@@ -45,7 +45,7 @@
 import TypeList from '@/components/TypeList.vue';
 import SearchFor from '@/components/SearchFor.vue';
 import {
-  clickGameLog,
+  clickGameLog, clickSearchLog,
   determinePcOrMove,
   getJson,
   Observer,
@@ -113,6 +113,8 @@ export default {
     // 点击搜索
     searchClick() {
       this.UnfoldAndCollapse = !this.UnfoldAndCollapse
+      // 点击搜索打点
+      clickSearchLog('gugoplay_pc_tab')
     },
     // 获取游戏列表
     getGameList() {

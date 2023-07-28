@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MobileLogo></MobileLogo>
+    <MobileLogo whereFrom="1"></MobileLogo>
     <div v-show="clientWidth <= 550.9">
       <div class="app-list eZzVdA" v-for="(item,index) in appGameList" :key="index">
         <div :class="homeAdv && index == 0 ? cTVRlj2 : cTVRlj">
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="bottom">
-      <BottomList></BottomList>
+      <BottomList whereFrom="1"></BottomList>
       <div class="bottom-text">
         <div class="jXgCKW">
           Hi! Welcome to GUGOPLAY.com!

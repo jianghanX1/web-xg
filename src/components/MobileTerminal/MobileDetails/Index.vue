@@ -2,7 +2,7 @@
   <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at gugoplay.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
-        <MobileLogo></MobileLogo>
+        <MobileLogo whereFrom="2"></MobileLogo>
         <div class="sc-10l37ae-0 eZzVdA">
           <div :class="detailAdv ? hZDmFe2 : hZDmFe">
             <div class="game-name" style="grid-area: ibx">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="bottom">
-          <BottomList></BottomList>
+          <BottomList whereFrom="2"></BottomList>
           <div>
             <div class="bottom-text">
               <nav class="sc-1oa7ili-0 gmEuRM">
@@ -62,7 +62,7 @@
       <div class="app-iframe">
         <div class="sc-1nfyi8d-1 kExbnh">
           <div class="iframe-box">
-            <iframe id="gameIframe" :src="playUrl" width="100%" height="100%"></iframe>
+            <iframe id="gameIframe" :src="playUrl + '-M'" width="100%" height="100%"></iframe>
           </div>
           <div class="app-promote">
             <div class="promote-list">

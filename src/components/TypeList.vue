@@ -1,14 +1,14 @@
 <template>
-  <div :class="from == 1 ? bottomList1 : bottomList">
-    <div class="cASSfo sc-963fcq-2 cMEgnO" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)"><img :src="item.iconUrl" alt=""></div>
+  <div :class="whereFrom == 1 ? bottomList1 : bottomList">
+    <div class="cASSfo sc-963fcq-2 cMEgnO" v-for="(item,index) in typeList" :key="index" :id="item.type" @click="classClick(item.type)"><img :src="item.iconUrl" alt=""></div>
   </div>
 </template>
 
 <script>
-import { getGameTypeList } from '@/utils/utils'
+import {clickClassificationLog, getGameTypeList, ClassificationObserver} from '@/utils/utils'
 export default {
   name: "TypeList",
-  props: ["from"],
+  props: ["whereFrom"],// whereFrom 0移动端搜索页 1搜索页 2首页 3详情页 4类型页
   data() {
     return {
       typeList: [],
@@ -18,10 +18,18 @@ export default {
   },
   mounted() {
     this.typeList = getGameTypeList() || []
+    // 获取需要曝光的item
+    setTimeout(()=>{
+      let itemArr = [...document.getElementsByClassName("sc-963fcq-2")]
+      let portal = this.whereFrom == 0 ? 'gugoplay_mobile_search' : this.whereFrom == 1 ? 'gugoplay_pc_search' : this.whereFrom == 2 ? 'gugoplay_pc_home' : this.whereFrom == 3 ? 'gugoplay_pc_detail' : 'gugoplay_pc_tab'
+      itemArr && Array.from(itemArr).map((item)=>{
+        ClassificationObserver(portal).observe(item)
+      })
+    })
   },
   methods: {
     classClick(type) {
-      if (this.from == 1) {
+      if (this.whereFrom == 1) {
         this.$emit('collapse')
       }
       let { channel } = this.$route.query
@@ -32,6 +40,9 @@ export default {
           channel
         }
       },()=>{})
+      // 点击类型打点
+      let portal = this.whereFrom == 0 ? 'gugoplay_mobile_search' : this.whereFrom == 1 ? 'gugoplay_pc_search' : this.whereFrom == 2 ? 'gugoplay_pc_home' : this.whereFrom == 3 ? 'gugoplay_pc_detail' : 'gugoplay_pc_tab'
+      clickClassificationLog(portal,type)
     }
   }
 }

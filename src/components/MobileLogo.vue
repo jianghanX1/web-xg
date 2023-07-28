@@ -21,8 +21,10 @@ import home from '@/assets/home.png'
 import souSuo from '@/assets/sousuo.png'
 
 import SearchFor from '@/components/SearchFor.vue';
+import {clickSearchLog} from "@/utils/utils";
 export default {
   name: "MobileLogo",
+  props: ["whereFrom"], // whereFrom 1首页 2详情页 3类型页
   components: {
     SearchFor
   },
@@ -36,6 +38,9 @@ export default {
     // 点击搜索
     searchClick() {
       this.UnfoldAndCollapse = !this.UnfoldAndCollapse
+      // 点击搜索打点
+      let portal = this.whereFrom == 1 ? 'gugoplay_mobile_home' : this.whereFrom == 2 ? 'gugoplay_mobile_detail' : 'gugoplay_mobile_tab'
+      clickSearchLog(portal)
     },
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="mobile_classify" v-title data-title="Online Games on Gugo ——Let's play">
     <div class="content">
-      <MobileLogo></MobileLogo>
+      <MobileLogo whereFrom="3"></MobileLogo>
       <div v-if="clientWidth < 550.9">
         <div class="eZzVdA" :class="index == 0 ? eZzVdABef : null" v-for="(item,index) in gameList" :key="index">
           <div class="cTVRlj">
@@ -40,7 +40,7 @@
     </div>
     <div class="bottom">
       <ClassList :gameTypeList="recommend" :styleType="true" fromWhere="1"></ClassList>
-      <BottomList></BottomList>
+      <BottomList whereFrom="3"></BottomList>
     </div>
   </div>
 </template>

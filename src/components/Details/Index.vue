@@ -1,13 +1,13 @@
 <template>
   <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at gugoplay.com'">
-    <PCLogo offsetName="2"></PCLogo>
+    <PCLogo offsetName="2" whereFrom="2"></PCLogo>
     <div class="details">
       <div class="gpagqS">
         <div class="dsgWHA">
           <div class="main-game">
             <div class="game-part" :style="full">
               <div class="game-container">
-                <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
+                <iframe :src="gameInfo.Url ? gameInfo.Url + '-P' : null" width="100%" height="100%" id="iframe"></iframe>
               </div>
               <div class="game-bar">
                 <div class="bar-app-icon">
@@ -224,7 +224,7 @@
         </div>
       </div>
       <div style="margin-top: 16px">
-        <TypeList></TypeList>
+        <TypeList whereFrom="3"></TypeList>
       </div>
       <div class="bottom-text">
         <nav class="sc-1oa7ili-0 gmEuRM">

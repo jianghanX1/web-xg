@@ -156,7 +156,7 @@ export default {
     //       console.log(this.logoutCount);
     //       if (this.logoutCount >= 10) {
     //         recentGame(newArr[0])
-    //         // window.location.href = '/#/M/details?gameId=' + newArr[0].gameId
+    //         // window.location.href = '/M/details?gameId=' + newArr[0].gameId
     //       }
     //     },1000)
     //   }

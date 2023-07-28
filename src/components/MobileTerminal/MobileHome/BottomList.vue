@@ -1,15 +1,16 @@
 <template>
   <div class="bottom-list">
-    <div class="item" v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">
+    <div class="item bl-963fcq-1" v-for="(item,index) in typeList" :id="item.type" :key="index" @click="classClick(item.type)">
       <img v-lazy="item.iconUrl" alt="">
     </div>
   </div>
 </template>
 
 <script>
-import { getGameTypeList } from '@/utils/utils'
+import {ClassificationObserver, clickClassificationLog, getGameTypeList} from '@/utils/utils'
 export default {
   name: "BottomList",
+  props: ["whereFrom"],// whereFrom 1首页 2详情页 3类型页
   data() {
     return {
       typeList: []
@@ -17,6 +18,14 @@ export default {
   },
   mounted() {
     this.typeList = getGameTypeList() || []
+    // 获取需要曝光的item
+    setTimeout(()=>{
+      let itemArr = [...document.getElementsByClassName("bl-963fcq-1")]
+      let portal = this.whereFrom == 1 ? 'gugoplay_mobile_home' : this.whereFrom == 2 ? 'gugoplay_mobile_detail' : 'gugoplay_mobile_tab'
+      itemArr && Array.from(itemArr).map((item)=>{
+        ClassificationObserver(portal).observe(item)
+      })
+    })
   },
   methods: {
     classClick(gameType) {
@@ -28,6 +37,9 @@ export default {
           channel
         }
       },()=>{})
+      // 点击类型打点
+      let portal = this.whereFrom == 1 ? 'gugoplay_mobile_home' : this.whereFrom == 2 ? 'gugoplay_mobile_detail' : 'gugoplay_mobile_tab'
+      clickClassificationLog(portal,gameType)
     }
   }
 }

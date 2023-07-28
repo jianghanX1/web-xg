@@ -15,15 +15,22 @@
           // 获取渠道
           function getUrlParams(key) {
               let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-              let r = window.location.hash.split('?')[1] && window.location.hash.split('?')[1].match(reg);
+              let r = (window.location.hash || window.location.href).split('?')[1] && (window.location.hash || window.location.href).split('?')[1].match(reg);
               if (r != null)
                   return decodeURIComponent(r[2]);
               return null;
           }
+          // 区分设备
+          let channerlName = null
+          if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+              channerlName = getUrlParams('channel') + '-M'
+          } else {
+              channerlName = getUrlParams('channel') + '-P'
+          }
           // 筛选渠道信息
           var channelInfo = {}
           channelList && channelList.map((item)=>{
-              if (item.channel_name == getUrlParams('channel')) {
+              if (item.channel_name == channerlName) {
                   channelInfo = item
               }
           })

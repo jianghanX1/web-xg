@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 
 // 引入插件
 import VueLazyload from 'vue-lazyload'
-import {getJson} from "@/utils/utils";
+import {determinePcOrMove, getJson, getUrlParams} from "@/utils/utils";
 // 注册插件
 Vue.use(VueLazyload,{
   loading:'' // 懒加载默认图片
@@ -83,6 +83,35 @@ if(VUE_APP_VERSION != vers){
     localStorage.clear()
     window.localStorage.setItem('appVersion', VUE_APP_VERSION)
     location.reload()
+}
+
+// 解决地址栏参数在/#前面问题
+let b = new URL(window.location.href);
+if (b.hash === '#/') {
+  if (determinePcOrMove() == 2) {
+    if (b.search) {
+      history.replaceState(null,null,`${b.origin + b.pathname}#/P/homeIndex${b.search}`)
+    } else if (getUrlParams('channel')){
+      history.replaceState(null,null,`${b.origin + b.pathname}#/P/homeIndex?channel=${getUrlParams('channel')}`)
+    } else {
+      history.replaceState(null,null,`${b.origin + b.pathname}#/P/homeIndex`)
+    }
+  } else {
+    if (b.search) {
+      history.replaceState(null,null,`${b.origin + b.pathname}#/M/homeIndex${b.search}`)
+    } else if (getUrlParams('channel')){
+      history.replaceState(null,null,`${b.origin + b.pathname}#/M/homeIndex?channel=${getUrlParams('channel')}`)
+    } else {
+      history.replaceState(null,null,`${b.origin + b.pathname}#/M/homeIndex`)
+    }
+  }
+}
+
+// 判断是通过网页启动还是通过主屏幕图标启动
+if(window.location.href.match('pwa=client')){
+  console.log('通过图标打开')
+}else{
+  console.log('网页端打开')
 }
 
 

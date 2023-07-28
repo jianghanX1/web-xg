@@ -1,6 +1,6 @@
 <template>
   <div class="big-box">
-    <PCLogo></PCLogo>
+    <PCLogo whereFrom="1"></PCLogo>
     <div class="sc-10l37ae-0 irIQZt">
       <div class="sc-13nflho-1 jMBaZr">
         <div style="display: contents">
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="type-list">
-      <TypeList></TypeList>
+      <TypeList whereFrom="2"></TypeList>
       <div class="bottom-text">
         <div class="jXgCKW">
           Hi! Welcome to GUGOPLAY.com!

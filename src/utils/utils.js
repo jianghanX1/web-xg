@@ -3873,7 +3873,7 @@ export function getGameTypeList() {
 }
 
 // 获取指定地址栏参数
-function getUrlParams(key) {
+export function getUrlParams(key) {
     let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
     let r = window.location.hash.split('?')[1] && window.location.hash.split('?')[1].match(reg);
     if (r != null)
@@ -3975,6 +3975,80 @@ export function Observer(portal) {
                     if (items.Name == item.target.innerText) {
                         // console.log(items);
                         const {isOutside, params} = JSON.parse(showGameLog(portal, items)) || {}
+                        if (isOutside) {
+                            if (window.Beyla) {
+                                let beylaInstance = new window.Beyla({
+                                    appId: "gamerplay.bio", // 待确定
+                                    strict: false,
+                                });
+                                beylaInstance.report(params)
+                            }
+                        }
+                    }
+                })
+                // console.log(item.target.innerText);
+                observer.unobserve(item.target); //停止监听该div DOM节点
+            }
+        })
+    })
+    return observer
+}
+
+// 点击搜索埋点
+export function clickSearchLog(portal) {
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/search` : `/${portal}/GameMain/Main/search`;
+    try {
+        beylaInstance.report({
+            pveCur: pveCur,
+            eventName: "click_ve",
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// 点击搜索埋点
+export function clickClassificationLog(portal, type) {
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/${portal}/GameMain/Main/category`;
+    try {
+        beylaInstance.report({
+            pveCur: pveCur,
+            eventName: "click_ve",
+            extras: JSON.stringify({
+                name: type
+            })
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+export function showClassificationLog(portal, type) {
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/${portal}/GameMain/Main/category`;
+    return JSON.stringify({
+        isOutside: true,
+        params: {
+            pveCur: pveCur,
+            eventName: "show_ve",
+            extras: JSON.stringify({
+                name: type
+            })
+        }
+    })
+}
+
+// 曝光
+export function ClassificationObserver(portal) {
+    let observer = new IntersectionObserver((entries) => {
+        //entries 为 IntersectionObserverEntry对像数组
+        entries.forEach((item) => {
+            //item 为 IntersectionObserverEntry对像
+            // isIntersecting是一个Boolean值，判断目标元素当前是否可见
+            if (item.isIntersecting) {
+                //div 可见时 进行相关操作
+                getGameTypeList() && getGameTypeList().map((items) => {
+                    if (items.type == item.target.id) {
+                        // console.log(items);
+                        const {isOutside, params} = JSON.parse(showClassificationLog(portal, items.type)) || {}
                         if (isOutside) {
                             if (window.Beyla) {
                                 let beylaInstance = new window.Beyla({

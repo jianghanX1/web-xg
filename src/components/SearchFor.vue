@@ -53,7 +53,7 @@
           </a>
         </div>
       </section>
-      <section v-show="screenList.length" class="izRAmK">
+      <section v-if="screenList.length" class="izRAmK">
         <div class="hSivpy">
           <div class="fYlIeu" v-if="determinePcOrMove == 1">
             <a @click="switchGame(item)" v-for="(item,index) in screenList" :key="index" :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-02 fcDjQV">
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div>
-          <TypeList from="1" @collapse="collapse"></TypeList>
+          <TypeList :whereFrom="determinePcOrMove == 1 ? 0 : 1" @collapse="collapse"></TypeList>
         </div>
       </section>
       <button class="gwKjum kSNKUJ" @click="collapse">
