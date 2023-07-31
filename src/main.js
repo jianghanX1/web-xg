@@ -24,22 +24,35 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // 防止 Chrome 67 及更早版本自动显示安装提示
   e.preventDefault();
   console.log(e);
-  // 稍后再触发此事件
-  store.commit("changePWA",{deferredPrompt: e,deferredPromptType: true})
-  setTimeout(()=>{
-    store.state.deferredPrompt.userChoice.then((choiceResult) => {
-      console.log(choiceResult.outcome);
-      if (choiceResult.outcome === 'dismissed') {
-        console.log('用户取消了安装');
-      }
-      else {
-        console.log('用户已安装程序');
-
-        store.commit("changePWA",{deferredPrompt: store.state.deferredPrompt,deferredPromptType: false})
-      }
-    });
-  })
+  /**直接触发浏览器安装保存数据通过监听appinstalled事件删除数据*/
+  window.deferredPrompt = e;
+  /**通过页面按钮触发安装*/
+  // // 稍后再触发此事件
+  // store.commit("changePWA",{deferredPrompt: e,deferredPromptType: true})
+  // setTimeout(()=>{
+  //   store.state.deferredPrompt.userChoice.then((choiceResult) => {
+  //     console.log(choiceResult.outcome);
+  //     if (choiceResult.outcome === 'dismissed') {
+  //       console.log('用户取消了安装');
+  //     }
+  //     else {
+  //       console.log('用户已安装程序');
+  //
+  //       store.commit("changePWA",{deferredPrompt: store.state.deferredPrompt,deferredPromptType: false})
+  //     }
+  //   });
+  // })
 });
+
+
+
+// 浏览器监听pwa点击安装后事件
+window.addEventListener('appinstalled',()=>{
+  console.log(1111111111111111);
+  window.deferredPrompt = null;
+})
+
+
 // 监听横屏竖屏切换
 window.addEventListener('orientationchange', function() {
   if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
@@ -113,7 +126,6 @@ if(window.location.href.match('pwa=client')){
 }else{
   console.log('网页端打开')
 }
-
 
 Vue.use(Button)
 Vue.use(Select)
