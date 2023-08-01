@@ -4067,3 +4067,29 @@ export function ClassificationObserver(portal) {
     })
     return observer
 }
+
+// 点击浏览器安装埋点
+export function clickInstallLog(portal) {
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/downloadClient` : `/${portal}/GameMain/Main/downloadClient`;
+    try {
+        beylaInstance.report({
+            pveCur: pveCur,
+            eventName: "click_ve",
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// 从桌面快捷方式进入
+export function followShortcutsLog(portal) {
+    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/clickClient` : `/${portal}/GameMain/Main/clickClient`;
+    try {
+        beylaInstance.report({
+            pveCur: pveCur,
+            eventName: "click_ve",
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}

@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 
 // 引入插件
 import VueLazyload from 'vue-lazyload'
-import {determinePcOrMove, getJson, getUrlParams} from "@/utils/utils";
+import {clickInstallLog, determinePcOrMove, followShortcutsLog, getJson, getUrlParams} from "@/utils/utils";
 // 注册插件
 Vue.use(VueLazyload,{
   loading:'' // 懒加载默认图片
@@ -48,9 +48,28 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 // 浏览器监听pwa点击安装后事件
 window.addEventListener('appinstalled',()=>{
-  console.log(1111111111111111);
+  if (determinePcOrMove() == 2) {
+    clickInstallLog('gugoplay_pc')
+  } else {
+    clickInstallLog('gugoplay_mobile')
+  }
   window.deferredPrompt = null;
 })
+
+// 判断是通过网页启动还是通过主屏幕图标启动
+if(window.location.href.match('pwa=client')){
+  if (determinePcOrMove() == 2) {
+    followShortcutsLog('gugoplay_pc')
+  } else {
+    followShortcutsLog('gugoplay_mobile')
+  }
+}else{
+  if (determinePcOrMove() == 2) {
+    followShortcutsLog('gugoplay_pc')
+  } else {
+    followShortcutsLog('gugoplay_mobile')
+  }
+}
 
 
 // 监听横屏竖屏切换
@@ -118,13 +137,6 @@ if (b.hash === '#/') {
       history.replaceState(null,null,`${b.origin + b.pathname}#/M/homeIndex`)
     }
   }
-}
-
-// 判断是通过网页启动还是通过主屏幕图标启动
-if(window.location.href.match('pwa=client')){
-  console.log('通过图标打开')
-}else{
-  console.log('网页端打开')
 }
 
 Vue.use(Button)

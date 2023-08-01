@@ -8,7 +8,7 @@
             <li v-for="(item,index) in bigImg" :key="index">
               <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" @click="iconClick(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
                  :style="{gridArea: 'bigIp' + index}">
-                <img :src="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
+                <img v-lazy="item.iconUrl" alt="" width="314px" height="314px" class="eoBBYj">
                 <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
                 <div class="sc-963fcq-1 jpSxzz" @mouseenter="playVid(index)" @mouseleave="pauseVid(index)">
                   <video preload="none" loop class="sc-1s4z03m-0 evwDGU">
@@ -37,7 +37,7 @@
           <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" v-for="(item,index) in centreImg" :key="index" @click="iconClick(item)"
              class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq"
              :style="{gridArea: 'ip' + (index + 3)}">
-            <img :src="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
+            <img v-lazy="item.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{ item.Name }}</span>
             <div class="sc-963fcq-1 jpSxzz" @mouseenter="playVid(index + 3)" @mouseleave="pauseVid(index + 3)">
               <video preload="none" loop class="sc-1s4z03m-0 evwDGU">

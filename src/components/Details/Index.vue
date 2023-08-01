@@ -90,13 +90,13 @@
         </div>
         <div style="display: contents">
           <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" v-for="(item,index) in bigImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 ftkfX global-cq" :style="innerWidth >= 1321 ? {gridArea: 'bigIp' + index} : null">
-            <img :src="item.iconUrl" alt="" class="sc-18mcksl-1 eoBBYj">
+            <img v-lazy="item.iconUrl" alt="" class="sc-18mcksl-1 eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
         <div style="display: contents">
           <a :href="'/#/P/details/'+item.Name.replace(/\s+/g, '') + '?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" v-for="(item,index) in smallImgList" :key="index" @click="switchGame(item)" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-3 global-cq">
-            <img :src="item.iconUrl" alt="" style="width: 94px;height: 94px" class="sc-18mcksl-1 eoBBYj">
+            <img v-lazy="item.iconUrl" alt="" style="width: 94px;height: 94px" class="sc-18mcksl-1 eoBBYj">
             <span class="sc-963fcq-0 esaxGV global-cq-title">{{item.Name}}</span>
           </a>
         </div>
