@@ -48,10 +48,20 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 // 浏览器监听pwa点击安装后事件
 window.addEventListener('appinstalled',()=>{
-  if (determinePcOrMove() == 2) {
-    clickInstallLog('gugoplay_pc')
+  let page = null
+  if (window.location.href.indexOf('/homeIndex/') > -1) {
+    page = 'home'
+  } else if (window.location.href.indexOf('/details/') > -1) {
+    page = 'detail'
+  } else if (window.location.href.indexOf('/gameType/') > -1) {
+    page = 'tab'
   } else {
-    clickInstallLog('gugoplay_mobile')
+    page = 'home'
+  }
+  if (determinePcOrMove() == 2) {
+    clickInstallLog(`gugoplay_pc_${page}`)
+  } else {
+    clickInstallLog(`gugoplay_mobile_${page}`)
   }
   window.deferredPrompt = null;
 })
@@ -59,15 +69,9 @@ window.addEventListener('appinstalled',()=>{
 // 判断是通过网页启动还是通过主屏幕图标启动
 if(window.location.href.match('pwa=client')){
   if (determinePcOrMove() == 2) {
-    followShortcutsLog('gugoplay_pc')
+    followShortcutsLog('gugoplay_pc_home')
   } else {
-    followShortcutsLog('gugoplay_mobile')
-  }
-}else{
-  if (determinePcOrMove() == 2) {
-    followShortcutsLog('gugoplay_pc')
-  } else {
-    followShortcutsLog('gugoplay_mobile')
+    followShortcutsLog('gugoplay_mobile_home')
   }
 }
 

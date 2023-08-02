@@ -4083,7 +4083,7 @@ export function clickInstallLog(portal) {
 
 // 从桌面快捷方式进入
 export function followShortcutsLog(portal) {
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/clickClient` : `/${portal}/GameMain/Main/clickClient`;
+    const pveCur = `/${portal}_client/GameMain/Main/clickClient`;
     try {
         beylaInstance.report({
             pveCur: pveCur,
