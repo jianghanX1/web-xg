@@ -7,7 +7,7 @@
           <div class="main-game">
             <div class="game-part" :style="full">
               <div class="game-container">
-                <iframe :src="gameInfo.Url ? gameInfo.Url : null" width="100%" height="100%" id="iframe"></iframe>
+                <iframe :src="gameInfo.Urlpc ? gameInfo.Urlpc : null" width="100%" height="100%" id="iframe"></iframe>
               </div>
               <div class="game-bar">
                 <div class="bar-app-icon">
@@ -483,7 +483,7 @@ export default {
       })
       // 渠道
       if (channel) {
-        gameInfo.Url = gameInfo.Url + `?channel=` + channel + '-P'
+        gameInfo.Urlpc = gameInfo.Urlpc + `?channel=` + channel + '-P'
       }
       this.gameInfo = gameInfo
       this.bigImgList = bigImgList

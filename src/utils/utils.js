@@ -80,6 +80,7 @@ export function getJson() {
         [{
             "gameId": 173,
             "Name": "PoorEddie",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PoorEddie/",
             "Url": "https://www.gugoplay.com/gcenter/url/PoorEddie/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PoorEddie/180x180.jpg",
             "desc": "Poor Eddie, he always get's put in the worst situations. From being thrown up in the air by a trampoline and kicked mid-air to being blown up by a bomb and thrown over large pits, Eddie never gets a break. In Poor Eddie, you take control of the man himself and must navigate each level by figuring out how to get Eddie over the finish line! There are tons of obstacles in the game like spikes and TnT, but also lots to help you like elevators or lifts to take you where you need to go! Can you protext Eddie and get him to where he needs to go?",
@@ -103,6 +104,7 @@ export function getJson() {
         }, {
             "gameId": 4,
             "Name": "Monkey Mart",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MonkeyMart/",
             "Url": "https://www.gugoplay.com/gcenter/url/MonkeyMart/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MonkeyMart/180x180.jpg",
             "desc": "Monkey Mart is an idle/management game where you control a cute monkey character who is in charge of a supermarket. Plant fruits, harvest produce, move around from station to station to fill the stands with various food items. Sell bananas, corn, eggs, peanuts, coffee beans, chocolate, wheat etc. Your customers will pick them up and wait for you at the cashier desk - simply stand next to the cash register to collect your money.",
@@ -126,6 +128,7 @@ export function getJson() {
         }, {
             "gameId": 154,
             "Name": "Subway Surfers 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SubwaySurfers2/",
             "Url": "https://www.gugoplay.com/gcenter/url/SubwaySurfers2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SubwaySurfers2/180x180.jpg",
             "desc": "Subway Surfers is a classic endless runner game. You play as Jake, who surfs the subways and tries to escape from the grumpy Inspector and his dog. You'll need to dodge trains, trams, obstacles, and more to go as far as you can in this endless running game. Collect coins to unlock power-ups and special gear to help you go further every time in Subway Surfers. Furthermore, coins can be used to unlock different characters and boards. With your keys you can customize the characters and upgrade your hoverboards with special powers.",
@@ -149,6 +152,7 @@ export function getJson() {
         }, {
             "gameId": 6,
             "Name": "Stickman Hook",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/StickmanHook/",
             "Url": "https://www.gugoplay.com/gcenter/url/StickmanHook/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/StickmanHook/180x180.jpg",
             "desc": "Stickman Hook is a skill game where you play as a swinging stickman through hundreds of challenging levels. This fun, colorful stickman game offers over 100 challenging levels. Unlock unique characters along the way to switch things up while you swing. Pay attention to the angle and direction of your swing to make it to the finish line! Can you control your swing?",
@@ -172,6 +176,7 @@ export function getJson() {
         }, {
             "gameId": 15,
             "Name": "Blumgi Ball",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BlumgiBall/",
             "Url": "https://www.gugoplay.com/gcenter/url/BlumgiBall/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BlumgiBall/180x180.jpg",
             "desc": "You aim is to simply get the ball through the hoop like the good old classic basketball. Blumgi Ball is a sports game that combines the platform and puzzle genres into one fun package. You do this using a slingshot system where you pull the indicator in accordance with the intensity at which you want to throw the ball, and release it to throw. Get the ball through the net using a slingshot system where you pull the indicator in accordance with the intensity at which you want to throw the ball, and release it to throw.",
@@ -195,6 +200,7 @@ export function getJson() {
         }, {
             "gameId": 106,
             "Name": "Match Good 3D",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MatchGood3D/",
             "Url": "https://www.gugoplay.com/gcenter/url/MatchGood3D/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MatchGood3D/180x180.jpg",
             "desc": "Have you ever fantasized about spending at the supermarket? How much can you take away in a limited time? Goods Match 3D, can you take all the snacks, chips, drinks, chocolates from the shelves? Is this just the content? Of course not, come and experience the fun of the level and unlock more interesting 3D items.",
@@ -218,6 +224,7 @@ export function getJson() {
         }, {
             "gameId": 3,
             "Name": "Drive Mad",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DriveMad/",
             "Url": "https://www.gugoplay.com/gcenter/url/DriveMad/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DriveMad/180x180.jpg",
             "desc": "Drive Mad is a car game where you drive on a track filled with obstacles. Your aim is to reach the finish line in one piece. You have to balance your speed so your car doesn't flip over. This is harder than it sounds, as there are many thrilling and creative stunts and obstacles for you to enjoy. Do you have what it takes to finish every level in Drive Mad?",
@@ -241,6 +248,7 @@ export function getJson() {
         }, {
             "gameId": 120,
             "Name": "Survivor Io",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SurvivorIo/",
             "Url": "https://www.gugoplay.com/gcenter/url/SurvivorIo/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SurvivorIo/180x180.jpg",
             "desc": "This renewed Survivor.io Revenge game is full of dangerous zombies that are ready to attack the city. You will have to assume the heroic mantle of saving the city as a human warrior with unlimited potential, you and other survivors will have to take up your weapons and fight against these zombies. evil and dangerous zombies!",
@@ -264,6 +272,7 @@ export function getJson() {
         }, {
             "gameId": 26,
             "Name": "Bubble Shooter Lak",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BubbleShooterLak/",
             "Url": "https://www.gugoplay.com/gcenter/url/BubbleShooterLak/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BubbleShooterLak/180x180.jpg",
             "desc": "Pop bubbles until they're all gone! This ball game is the original bubble shooter. Your goal is to clear every bubble from the board. You can earn maximum points by shooting groups of identical bubbles. Try clearing the entire board in just a few shots.",
@@ -287,6 +296,7 @@ export function getJson() {
         }, {
             "gameId": 73,
             "Name": "Stick Merge",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/StickMerge/",
             "Url": "https://www.gugoplay.com/gcenter/url/StickMerge/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/StickMerge/180x180.jpg",
             "desc": "Your aim is to combine various types of weapons to create more powerful guns, and ultimately use them on the moving stick figures in the shooting range. Prepare your arsenal, upgrade your pistol, explore all the power-ups and become the best shooter in town. How powerful can you get in Stick Merge? Stick around to find out!",
@@ -310,6 +320,7 @@ export function getJson() {
         }, {
             "gameId": 71,
             "Name": "Stickman Climb 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/StickmanClimb2/",
             "Url": "https://www.gugoplay.com/gcenter/url/StickmanClimb2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/StickmanClimb2/180x180.jpg",
             "desc": "Stickman Climb 2 is a stickman platform game where you must balance yourself using a pickaxe and reach the flag at the end of the level. There are dangerous traps and spikes on your way, so be careful and pay attention to checkpoints. You can customize your stickman avatar by unlocking new colors, vessels, and weapons. You can play Stickman Climb 2 by yourself or race against your friend locally!",
@@ -333,6 +344,7 @@ export function getJson() {
         }, {
             "gameId": 7,
             "Name": "Who Is Lying",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/WhoIsLying/",
             "Url": "https://www.gugoplay.com/gcenter/url/WhoIsLying/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/WhoIsLying/180x180.jpg",
             "desc": "This is a fun riddle game that presents you with over a hundred tricky scenarios and you have to think outside the box to solve them. Every level brings something new to the table so you will never get bored. There are choice-based scenarios such as \"Who is an imposter?\" or \"Who is lying?\", but there are also riddles where you must find the hidden object, and much more. You can use the help system if you get stuck and even skip levels. Who is having fun? You, if you play this game and share it with your friends.",
@@ -356,6 +368,7 @@ export function getJson() {
         }, {
             "gameId": 2,
             "Name": "Dreadhead Parkour",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DreadheadParkour/",
             "Url": "https://www.gugoplay.com/gcenter/url/DreadheadParkour/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DreadheadParkour/180x180.jpg",
             "desc": "Dreadhead Parkour is a parkour game where you play as the flashy Dreadhead and get to slide, backflip, frontflip and move around each level to reach the end! Collect all the coins to get new skins and max your score on each level! There are plenty of bombs, spikes, huge jumps and tons more to hop over or slide under to keep your eyes open and your head up so as not to get hit! How hardcore is your parkour...?",
@@ -379,6 +392,7 @@ export function getJson() {
         }, {
             "gameId": 8,
             "Name": "Adventure Drivers",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AdventureDrivers/",
             "Url": "https://www.gugoplay.com/gcenter/url/AdventureDrivers/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AdventureDrivers/180x180.jpg",
             "desc": "Go on an exciting adventure and compete in thrilling car races for fame, glory and treasure! Explore 30 obstacle courses on a mysterious island and try to be the first to cross the finish line. Race against opponents, perform cool stunts, and collect coins, treasure chests, and power-ups that can give you a decisive edge over your competition.",
@@ -402,6 +416,7 @@ export function getJson() {
         }, {
             "gameId": 128,
             "Name": "Battle Wheels",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BattleWheels/",
             "Url": "https://www.gugoplay.com/gcenter/url/BattleWheels/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BattleWheels/180x180.jpg",
             "desc": "Battle Wheels is an arcade game where you control a car in a 1 on 1 battle against your enemy! Unfortunately, there are no roofs on these battle vehicles but you can use that to your advantage and hit your opponent on the head with your car to win. You can pretty much fly around the arena and flip your way onto your opposition's head to defeat them.",
@@ -425,6 +440,7 @@ export function getJson() {
         }, {
             "gameId": 36,
             "Name": "Dungeon　Miner",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DungeonMiner/",
             "Url": "https://www.gugoplay.com/gcenter/url/DungeonMiner/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DungeonMiner/180x180.jpg",
             "desc": "Your late uncle has left you a mine to teach you all about hard work and earn your fortune. Now grab your pickaxe and delve deep into all the areas on your piece of land. Craft new weapons and tools, explore dungeons to find valuables and blueprints, fight creatures, upgrade your gear and embark on an exciting adventure. Dungeon Miner will never get boring as it's laden with rich content and many surprises for you to explore.",
@@ -448,6 +464,7 @@ export function getJson() {
         }, {
             "gameId": 49,
             "Name": "It Is Story Time",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ItIsStoryTime/",
             "Url": "https://www.gugoplay.com/gcenter/url/ItIsStoryTime/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ItIsStoryTime/180x180.jpg",
             "desc": "Do you want to put your brainpower to the test? It's Story Time features various mini-games full of challenging puzzles you can solve by thinking outside the box. Find hidden objects, drag and drop multiple objects to mix them, remove parts of objects, open closets and drawers, and much more. The game will present you with a list of tasks, which you need to complete by manipulating the objects you see in the game. Feel free to use the hint button if you're stuck. This game will boost your focus and attention while offering suitable entertainment for the whole family!",
@@ -471,6 +488,7 @@ export function getJson() {
         }, {
             "gameId": 114,
             "Name": "Rainbow Cubes",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/RainbowCubes/",
             "Url": "https://www.gugoplay.com/gcenter/url/RainbowCubes/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/RainbowCubes/180x180.jpg",
             "desc": "Play fun and easy matching games and enjoy a fantastic gaming journey.Play when you want to relax.Challenge yourself to get a higher score.The classic game is added with new gameplay to give you a new experience.",
@@ -494,6 +512,7 @@ export function getJson() {
         }, {
             "gameId": 10,
             "Name": "Avoid Dying",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AvoidDying/",
             "Url": "https://www.gugoplay.com/gcenter/url/AvoidDying/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AvoidDying/180x180.jpg",
             "desc": "With bow and arrow you have to hit the target. Don't get frustrated when little stickman dreams of avoiding death.",
@@ -517,6 +536,7 @@ export function getJson() {
         }, {
             "gameId": 1,
             "Name": "Crazy Cars",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CrazyCars/",
             "Url": "https://www.gugoplay.com/gcenter/url/CrazyCars/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CrazyCars/180x180.jpg",
             "desc": "Crazy Cars is a 3D car game that takes place in a vibrant location full of interesting tracks, entertaining obstacles, and rewarding challenges. Pick a fast car and speed up on exciting ramps, climb Mount Egg, go full throttle on race tracks, perform stunts at drag races, and explore many other fun areas and activities for you to take part in. There are obstacle courses that could even fling your car across the map! Make sure to collect every star, wrench, and other collectible you come across in order to spend them on shiny new vehicles. There are over 17 unique cars you can drive! The game even lets you play against your friend with split screen functionality. Are you ready to sate your need for speed with Crazy Cars?",
@@ -540,6 +560,7 @@ export function getJson() {
         }, {
             "gameId": 50,
             "Name": "James　Gun",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/JamesGun/",
             "Url": "https://www.gugoplay.com/gcenter/url/JamesGun/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/JamesGun/180x180.jpg",
             "desc": "You're busted and you need to jump out of your lover’s window, now! Try to land on your sports car without falling to your certain death. Hold onto the ledges to slow down your fall, grab onto another ledge and let go when it’s safe to do so. You’ll soon find out that your relationship gravity is far more dangerous than the one that’s making you sneak out of this apartment.",
@@ -563,6 +584,7 @@ export function getJson() {
         }, {
             "gameId": 105,
             "Name": "Jelly Quest Mania",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/JellyQuestMania/",
             "Url": "https://www.gugoplay.com/gcenter/url/JellyQuestMania/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/JellyQuestMania/180x180.jpg",
             "desc": "Collect the jellies in this free and fun match-3 puzzle game. Whenever you want to pass time, this game can provide the right experience thanks to the cool gameplay. Collect jellies! Challenging match-3 50 diverse levels Uplifting graphics",
@@ -586,6 +608,7 @@ export function getJson() {
         }, {
             "gameId": 97,
             "Name": "Drift Dudes",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DriftDudes/",
             "Url": "https://www.gugoplay.com/gcenter/url/DriftDudes/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DriftDudes/180x180.jpg",
             "desc": "Drift Dudes is a multiplayer racing game where you must try your best to be the first! Collect coins and upgrade your car to make it even faster and cooler!",
@@ -609,6 +632,7 @@ export function getJson() {
         }, {
             "gameId": 90,
             "Name": "Boom Kart 3D",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BoomKart3D/",
             "Url": "https://www.gugoplay.com/gcenter/url/BoomKart3D/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BoomKart3d/180x180.jpg",
             "desc": "Boom Kart 3D is a unique kart racing game in which you will enjoy all kinds of emotions and magical details as you advance. Select one of the different vehicles offered and decide which is your favorite character to face this adventure at full speed.",
@@ -632,6 +656,7 @@ export function getJson() {
         }, {
             "gameId": 174,
             "Name": "Recoil",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Recoil/",
             "Url": "https://www.gugoplay.com/gcenter/url/Recoil/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Recoil/180x180.jpg",
             "desc": "Recoil is a platform/action game. You play as a little character and using various weapons you will need to kill the nasty pink viruses ! You cannot move around though, your only way to move is by using the recoil of your weapon to propel yourself ! Watch out for the spikes, they will eliminate you instantly ! Interact with many differents mechanics and make your way through each level !",
@@ -655,6 +680,7 @@ export function getJson() {
         }, {
             "gameId": 11,
             "Name": "Basket Ball",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BasketBall/",
             "Url": "https://www.gugoplay.com/gcenter/url/BasketBall/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BasketBall/180x180.jpg",
             "desc": "Basketball Battle has powerful yet simple controls that give you total control over your players on the basketball court. Use feints and clever footwork to drive to the rim and score, breaking opponents' angles and leaving them behind for big rewards. Score three barrels in a row to catch fire and take your game to the next level",
@@ -678,6 +704,7 @@ export function getJson() {
         }, {
             "gameId": 12,
             "Name": "Bear SUS",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BearSUS/",
             "Url": "https://www.gugoplay.com/gcenter/url/BearSUS/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BearSUS/180x180.jpg",
             "desc": "Bear Sus is an action game where you play as a brawler bear going against other bears in various fighting arenas. Fight with ease thanks to the classic, unbearably simple two-button control scheme! Choose from 8 playable wrestling bears with mix-and-matching moves, so you can come up with your own unique style. Sharpen your claws and jump into the Arcade Mode where you play against 5 grizzly bears and unlock new fighters and color pawlettes.",
@@ -701,6 +728,7 @@ export function getJson() {
         }, {
             "gameId": 13,
             "Name": "Big Tower Tiny Square 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BigTowerTinySquare2/",
             "Url": "https://www.gugoplay.com/gcenter/url/BigTowerTinySquare2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BigTowerTinySquare2/180x180.jpg",
             "desc": "Big Tower Tiny Square 2 is a puzzle platform game where you jump and pass dangerous obstacles and traps. Our square character is back for more adventure in the pursuit of finding the famous pineapple! Move up the carefully-designed tower while dodging spikes, traps, and other hazards. Touch every checkpoint in order to save your progress in this relentless multi-level platform.",
@@ -724,6 +752,7 @@ export function getJson() {
         }, {
             "gameId": 14,
             "Name": "Block Blast",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BlockBlast/",
             "Url": "https://www.gugoplay.com/gcenter/url/BlockBlast/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BlockBlast/180x180.jpg",
             "desc": "Welcome to Block Blast! This is a sliding block puzzle game that is fun, addictive and easy to play.\nThe game is both fun and strategic. Unique gameplay and endless fun, take a break anytime!",
@@ -747,6 +776,7 @@ export function getJson() {
         }, {
             "gameId": 160,
             "Name": "AppleKnight",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AppleKnight/",
             "Url": "https://www.gugoplay.com/gcenter/url/AppleKnight/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AppleKnight/180x180.jpg",
             "desc": "Apple Knight is an action platform role-playing game where you're the valiant hero who is exploring a vast, magical fantasyland. Discover secrets, exciting quests, pets, and valuable loot in your adventures. Defeat tough bosses using your weapons, magical items and spells. Fight wizards, knights, and monsters - or use traps to take them out from a safe distance! Make sure to upgrade your abilities regularly to stay on top of the challenge. You can upgrade armor, pets, weapons, and spells! There are several difficulty settings as well, so everyone can play Apple Knight and have fun!",
@@ -770,6 +800,7 @@ export function getJson() {
         }, {
             "gameId": 16,
             "Name": "Blumgi Castle",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BlumgiCastle/",
             "Url": "https://www.gugoplay.com/gcenter/url/BlumgiCastle/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BlumgiCastle/180x180.jpg",
             "desc": "Blumgi Castle is a skill game where you equip various explosives and special weapons in order to sink your enemies into the water. Blow your foes up, or demolish the ground that they are standing on! Use the indicator around your character to aim, hold down the action button to set intensity, and release to rain bombs upon monsters. You will finish a level successfully if every creature in the level is defeated. You will unlock a brand new cool character every few levels, so make sure you play as every single one of them! Make sure to check the special weapons at the top - as there are really entertaining ones like bigger explosions, buzzsaw, dynamites, laser beams, and even the famous teleporting basketball from its sibling game Blumgi Ball! There is no one right way to clear a level, so feel free to create destruction and enjoy this addictive skill game to the fullest!",
@@ -793,6 +824,7 @@ export function getJson() {
         }, {
             "gameId": 111,
             "Name": "Peet A Lock",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PeetALock/",
             "Url": "https://www.gugoplay.com/gcenter/url/PeetALock/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PeetALock/180x180.jpg",
             "desc": "Unlock the fun and help Peet get to the bathroom in Peet a Lock - the ultimate lockpicking game! Guide Peet through the toughest challenge of his life - a locked bathroom door! With your lockpicking skills, you must tap the screen to hit highlighted spots as a line moves in a circle. With each level, the challenge increases as more spots are required to be hit.",
@@ -816,6 +848,7 @@ export function getJson() {
         }, {
             "gameId": 48,
             "Name": "Idle Ants 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/IdleAnts2/",
             "Url": "https://www.gugoplay.com/gcenter/url/IdleAnts2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/IdleAnts2/180x180.jpg",
             "desc": "Idle Ants 2 is a simulation game where you command an army of hungry ants collect food. Help them break apart and carry various snacks, fruits, vegetables, meat, and even inedible objects back into the burrow underground. Click, tap or repeatedly press space to make your ants work more efficiently. Upgrade your colony using the three buttons at the bottom of the screen. Boost \"Speed\" to make your colony work faster, \"Workers\" to recruit a new ant, and \"Strength\" to make your ants carry larger pieces. The more you play, the cooler maps and objects you will encounter. Beach, park, classroom, kitchen, carnival, picnic blanket, city square, and more! Can you and your ants visit all of the places Idle Ants has to offer?",
@@ -839,6 +872,7 @@ export function getJson() {
         }, {
             "gameId": 113,
             "Name": "Pirate Pop",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PiratePop/",
             "Url": "https://www.gugoplay.com/gcenter/url/PiratePop/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/piratePop/180x180.jpg",
             "desc": "Embark on a journey to explore the world of colored balls, become a genius treasure hunt captain of your kingdom and rule the seas. A lot of interesting things are waiting for you, let's start playing Pirate Pop now!",
@@ -862,6 +896,7 @@ export function getJson() {
         }, {
             "gameId": 17,
             "Name": "Blumgi Rocket",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BlumgiRocket/",
             "Url": "https://www.gugoplay.com/gcenter/url/BlumgiRocket/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BlumgiRocket/180x180.jpg",
             "desc": "Blumgi Rocket is a platform game where you drive a rocket-fast car in colorful levels filled with obstacles. Go up hills, down slopes, through tunnels, mountains, and more in absolute full speed! Experience the thrill of the cool slow motion animation as you fire your rockets. The longer you hold down the rocket button, the more powerfully you will be propelled. When you're mid-air, perform stunts to finish the level quicker and impress your fans. Unlock new vehicle skins by progressing through the game and finishing every level. How quickly can you finish Blumgi Rocket and master this game?",
@@ -885,6 +920,7 @@ export function getJson() {
         }, {
             "gameId": 18,
             "Name": "Blumgi Slime",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BlumgiSlime/",
             "Url": "https://www.gugoplay.com/gcenter/url/BlumgiSlime/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BlumgiSlime/180x180.jpg",
             "desc": "Blumgi Slime is an arcade game that will put your timing and aiming skills to the test by jumping to the finish line. You control a cute bouncy character that can only move around by jumping. Hold down the action button to channel your strength - the longer you hold it down, the higher and more intensely you will jump. Pass over various types of obstacles to touch the checkered platform. Each stage will introduce something fun and quirky in this game from new colors to obstacle types. You'll appreciate the perfect blend of challenge and colorful atmosphere when playing Blumgi Slime. Can you finish all of the levels?",
@@ -908,6 +944,7 @@ export function getJson() {
         }, {
             "gameId": 5,
             "Name": "Moto X3M",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MotoX3M/",
             "Url": "https://www.gugoplay.com/gcenter/url/MotoX3M/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MotoX3M/180x180.jpg",
             "desc": "Moto X3M is an online bike racing game. The goal is to race your motorbike through levels with massive, moving obstacles that you have to jump over or avoid. You can flip in the air to decrease your final time and earn a perfect score. Know when to stop, or crash and respawn. Try to complete the levels in as little time as possible.",
@@ -931,6 +968,7 @@ export function getJson() {
         }, {
             "gameId": 28,
             "Name": "Bumper Cars Soccer",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BumperCarsSoccer/",
             "Url": "https://www.gugoplay.com/gcenter/url/BumperCarsSoccer/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BumperCarsSoccer/180x180.jpg",
             "desc": "Bumper Cars Soccer is a sports and car game created by Avix Games. Are you ready for a new type of soccer played in cars? Choose your vehicle, drive around a football pitch and try to score goals against your opponent. Combine your driving skills with your agility to be the champion in this game. You can play against your friends locally or match against challenging bots. Whether you're rocket fast or slow behind the wheel, you have a shot at this league!",
@@ -954,6 +992,7 @@ export function getJson() {
         }, {
             "gameId": 29,
             "Name": "Cannon　Strike",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CannonStrike/",
             "Url": "https://www.gugoplay.com/gcenter/url/CannonStrike/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CannonStrike/180x180.jpg",
             "desc": "Your objective is to fill the bucket below with the colorful balls in your arsenal. Aim smart, shoot the cannon and fill all the buckets with colors. The balls you can't get into the bucket will deduct points from your final score. Go ahead and share Cannon Strike with your friends to compare your high scores!",
@@ -977,6 +1016,7 @@ export function getJson() {
         }, {
             "gameId": 93,
             "Name": "Car Crash Star",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CarCrashStar/",
             "Url": "https://www.gugoplay.com/gcenter/url/CarCrashStar/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CarCrashStar/180x180.jpg",
             "desc": "Car Crash Star is a car fighting game. Your goal is to destroy other players and collect crowns. Of course, you need to collect reinforcement props to boost your combat power to survive to the end. Dozens of cars of different levels are waiting for you to unlock. What are you hesitating for? Call your friends and join the battle together!",
@@ -1000,6 +1040,7 @@ export function getJson() {
         }, {
             "gameId": 30,
             "Name": "Cats Love Cake 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CatsLoveCake2/",
             "Url": "https://www.gugoplay.com/gcenter/url/CatsLoveCake2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CatsLoveCake2/180x180.jpg",
             "desc": "You play as a bouncy cat character and you have to bounce your way through the leve to reach the delicious cake ! Beware of the spikes and traps on the way ! Unlock more and more playable animals as you complete levels. If you fail a couple times, the level will show you the perfect route to take. Can you finish all levels and unlock all playable characters?",
@@ -1023,6 +1064,7 @@ export function getJson() {
         }, {
             "gameId": 145,
             "Name": "Brain Test 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BrainTest2/",
             "Url": "https://www.gugoplay.com/gcenter/url/BrainTest2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BrainTest2/180x180.jpg",
             "desc": "Brain Test 2: Tricky Stories is a puzzle game. Exercise your brain with hundreds of tricky questions and puzzles! In this new brain game, puzzles have stories with colorful characters. Defeat the Lion King with Tom the Cat, cultivate your farm with Emily, hunt monsters with Joe. Think on your feet and outside the box to solve these riddles. Everything you see on the screen could be used to solve the problem.",
@@ -1046,6 +1088,7 @@ export function getJson() {
         }, {
             "gameId": 163,
             "Name": "Dadish2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Dadish2/",
             "Url": "https://www.gugoplay.com/gcenter/url/Dadish2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Dadish2/180x180.jpg",
             "desc": "Dadish 2 is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch. Explore an exciting world, face off with fast-food themed foes, and reunite Dadish with his missing children in this challenging platforming adventure. Collect stars, unlock secrets, enjoy the playful soundtrack, get to know unforgettable characters, play more than 50 exciting levels, and much more!",
@@ -1069,6 +1112,7 @@ export function getJson() {
         }, {
             "gameId": 178,
             "Name": "Save The Doge",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SaveTheDoge/",
             "Url": "https://www.gugoplay.com/gcenter/url/SaveTheDoge/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SaveTheDoge/180x180.jpg",
             "desc": "A witty and funny puzzle-solving level game, you have to help the puppy avoid the attack of bees, by drawing lines on the screen, help the puppy build a defensive range, and pass the level without receiving an attack for a few seconds",
@@ -1092,6 +1136,7 @@ export function getJson() {
         }, {
             "gameId": 45,
             "Name": "Gold Digger 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/GoldDigger2/",
             "Url": "https://www.gugoplay.com/gcenter/url/GoldDigger2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/GoldDigger2/180x180.jpg",
             "desc": "You are a miner with a shovel and you are discovering the underground world. Shovelling your way through mud, earth and rock, you can collect money to improve your skills and buy better tools. The game is an ongoing adventure in which you can improve your character step by step.",
@@ -1115,6 +1160,7 @@ export function getJson() {
         }, {
             "gameId": 103,
             "Name": "Hero Space Run",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/HeroSpaceRun/",
             "Url": "https://www.gugoplay.com/gcenter/url/HeroSpaceRun/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/HeroSpaceRun/180x180.jpg",
             "desc": "Don't stop dodging the obstacles as you explore this endless galaxy!",
@@ -1138,6 +1184,7 @@ export function getJson() {
         }, {
             "gameId": 101,
             "Name": "Happy Puppy Crush",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/HappyPuppyCrush/",
             "Url": "https://www.gugoplay.com/gcenter/url/HappyPuppyCrush/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/HappyPuppyCrush/180x180.jpg",
             "desc": "Use the left mouse button or your finger to click and smash the same blocks. At the end of each level, the fewer blocks you have left, the more points you can earn.",
@@ -1161,6 +1208,7 @@ export function getJson() {
         }, {
             "gameId": 102,
             "Name": "Help The Couple",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/HelpTheCouple/",
             "Url": "https://www.gugoplay.com/gcenter/url/HelpTheCouple/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/HelpTheCouple/180x180.jpg",
             "desc": "Welcome to Help the couple. Help the couple is a slide puzzle game. And which contains 30 tricky puzzles level. Here your task is to slide pieces around to get them in the right spot and create a way to meet the couple. Play and have fun.",
@@ -1184,6 +1232,7 @@ export function getJson() {
         }, {
             "gameId": 47,
             "Name": "Hero Rescue",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/HeroRescue/",
             "Url": "https://www.gugoplay.com/gcenter/url/HeroRescue/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/HeroRescue/180x180.jpg",
             "desc": "In this game, you are in charge of controlling a rescue helicopter. Click or tap on the screen to lift the rescue chopper up. Pilot the chopper skillfully and rescue civilians from a wildfire. You get more stars if you don't leave anyone behind. Can you finish Hero Rescue without any casualties?",
@@ -1207,6 +1256,7 @@ export function getJson() {
         }, {
             "gameId": 96,
             "Name": "Donhoop",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Donhoop/",
             "Url": "https://www.gugoplay.com/gcenter/url/Donhoop/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Donhoop/180x180.jpg",
             "desc": "Solve the puzzle by lining up the colored donuts. Grab one of the donuts on the filled sticks. Move it to the empty or same color donut. Continue in this way to complete the puzzle.",
@@ -1230,6 +1280,7 @@ export function getJson() {
         }, {
             "gameId": 179,
             "Name": "Shoot Bubbles Pop",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ShootBubblesPop/",
             "Url": "https://www.gugoplay.com/gcenter/url/ShootBubblesPop/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ShootBubblesPop/180x180.jpg",
             "desc": "A classic bubble dragon game, each level has exquisite level design, aiming and shooting to get high scores!",
@@ -1253,6 +1304,7 @@ export function getJson() {
         }, {
             "gameId": 63,
             "Name": "Ping Pong",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PingPong/",
             "Url": "https://www.gugoplay.com/gcenter/url/PingPong/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PingPong/180x180.jpg",
             "desc": "Grab one of the digital paddles and enjoy an exciting Ping Pong experience. In this simple yet challenging sports game, you need to hit the ball to your opponent's side of the table. First player to reach 10 wins the match! So be quick on your feet and confuse your opponent with tricky shoots. You can even control the speed of your hits by paying attention to the intensity of your flick. Go ahead and beat the clever AI opponents this game has!",
@@ -1276,6 +1328,7 @@ export function getJson() {
         }, {
             "gameId": 94,
             "Name": "Cooking Street",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CookingStreet/",
             "Url": "https://www.gugoplay.com/gcenter/url/CookingStreet/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CookingStreet/180x180.jpg",
             "desc": "Cooking Street is an exciting kitchen time management game, in which you will be the only employee in an up-and-coming restaurant. Every business has its ups and downs. The bad thing is that, in general, you will start from the bottom. The good thing is that you will be able to climb to the top.",
@@ -1299,6 +1352,7 @@ export function getJson() {
         }, {
             "gameId": 172,
             "Name": "MovingTruckConstruction",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MovingTruckConstruction/",
             "Url": "https://www.gugoplay.com/gcenter/url/MovingTruckConstruction/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MovingTruckConstruction/180x180.jpg",
             "desc": "Moving Truck: Construction is a puzzle platform game in which you move your customers' belongings to their new house in time without damaging anything. Steer your truck along treacherous paths with bumps and obstacles. You will face difficulties such as potholes that are simple, but also more advanced ones like gigantic anti-clockwise wheels that you must drive over. Avoid damaging your cargo or you will lose your earnings. And you can purchase many awesome items with the money you've earned, like a new paint job, car skins, tags, new wheels, you name it! Don't forget to use Nitro to maximize your score!",
@@ -1322,6 +1376,7 @@ export function getJson() {
         }, {
             "gameId": 32,
             "Name": "Crush It",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CrushIt/",
             "Url": "https://www.gugoplay.com/gcenter/url/CrushIt/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CrushIt/180x180.jpg",
             "desc": "Crush It! is an arcade game created by Sakkat Studio. Start your own juice factory where you need to crush fruits the old-fashioned way: Using your fists! Punch various types of fruits and treasure chests on the conveyor belt to make money. Avoid punching bombs, as they will cost you a life. The money you've earned can be spent on new types of fruits, and even on cool accessories for your hand. Go ahead and give it a play. You will go bananas over Crush It!",
@@ -1345,6 +1400,7 @@ export function getJson() {
         }, {
             "gameId": 33,
             "Name": "DAdish",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DAdish/",
             "Url": "https://www.gugoplay.com/gcenter/url/DAdish/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DAdish/180x180.jpg",
             "desc": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch. Explore an exciting world, face off with fast-food themed foes, and reunite Dadish with his missing children in this challenging platforming adventure. Collect stars, unlock secrets, enjoy the playful soundtrack, get to know unforgettable characters, play more than 50 exciting levels, and much more! Are you ready for the radventure of your life?",
@@ -1368,6 +1424,7 @@ export function getJson() {
         }, {
             "gameId": 34,
             "Name": "Detective Loupe Puzzle",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DetectiveLoupePuzzle/",
             "Url": "https://www.gugoplay.com/gcenter/url/DetectiveLoupePuzzle/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DetectiveLoupePuzzle/180x180.jpg",
             "desc": "Detective Loupe Puzzle is a thinking point-and-click game where you are a detective whose job is to solve various cases. Be a resilient investigator and start investigating crime scenes to find possible clues. Use hints or the magnifying glass to focus on a certain area and spot signs of suspicious activity. Look for clues, interview potential suspects, and pick up evidence to solve a different crime every level. There are many exciting different cases to solve with unique characters, stories, and events. People need you Mr. Detective. Can you help save innocent lives and shed light to the truth?",
@@ -1391,6 +1448,7 @@ export function getJson() {
         }, {
             "gameId": 95,
             "Name": "Cooking Tile",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CookingTile/",
             "Url": "https://www.gugoplay.com/gcenter/url/CookingTile/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CookingTile/180x180.jpg",
             "desc": "If you like sweets, snacks and puzzles, this colorful and challenging puzzle game is made for you! Follow the simple rules and try to get all the stars in each level by doing a good job while cooking the tastiest ingredients. Enjoy this unique experience alone or with friends and explore new, sweeter and more colorful worlds. Have fun!",
@@ -1414,6 +1472,7 @@ export function getJson() {
         }, {
             "gameId": 155,
             "Name": "Yo Ho Ho Io",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/YoHoHoIo/",
             "Url": "https://www.gugoplay.com/gcenter/url/YoHoHoIo/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/YoHoHoIo/180x180.jpg",
             "desc": "YoHoHo Matey! In this game you are a pirate and you have had a shipwreck. You stranded on a desolate island with the other pirates that were on board. Now that your there, the only thing that counts is you ending on top of the rest! Defeat the other pirates and plunder all of the booty. Only one pirate will survive.",
@@ -1437,6 +1496,7 @@ export function getJson() {
         }, {
             "gameId": 88,
             "Name": "Air Traffic Control",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AirTrafficControl/",
             "Url": "https://www.gugoplay.com/gcenter/url/AirTrafficControl/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AirTrafficControl/180x180.jpg",
             "desc": "Air Traffic Controller is an online airport simulation game where you direct aircraft on the ground and through controlled airspace. Organize and expedite the flow of air traffic at a major airport. Your mission is to manage the airport avoiding any delays or collisions. Watch out for the planes in the air as for the once on the ground.",
@@ -1460,6 +1520,7 @@ export function getJson() {
         }, {
             "gameId": 89,
             "Name": "Army Driver",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ArmyDriver/",
             "Url": "https://www.gugoplay.com/gcenter/url/ArmyDriver/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ArmyDriver/180x180.jpg",
             "desc": "Army Driver is an amazing racing game where you customize an army vehicle and drive it to collect coins! The player has to customize an army truck and drive it to take the first place!",
@@ -1483,6 +1544,7 @@ export function getJson() {
         }, {
             "gameId": 176,
             "Name": "SpiderSolitaire",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SpiderSolitaire/",
             "Url": "https://www.gugoplay.com/gcenter/url/SpiderSolitaire/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SpiderSolitaire/180x180.jpg",
             "desc": "Spider Solitaire is a card game where you stack all given cards in the deck by ascending or descending order. You can enjoy a classic spider solitaire experience with multiple difficulty modes ranging from 1 to 4 suits. There are customizable themes, customizable card backs, statistics, magic wand, and many more power-ups and hidden surprises! Click on the lightbulb and the other hint icons to get help when you're stuck. You can even reshuffle the cards for free!",
@@ -1506,6 +1568,7 @@ export function getJson() {
         }, {
             "gameId": 19,
             "Name": "Bowling Stars",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BowlingStars/",
             "Url": "https://www.gugoplay.com/gcenter/url/BowlingStars/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BowlingStars/180x180.jpg",
             "desc": "Bowling Stars is a realistic bowling game with stunning graphics, smooth controls and customizable items. Choose your favorite ball among more than a dozen styles and hit the bowling alley! You need to aim very carefully, considering the speed at which you throw is directly related to how hard you flick the ball. Go ahead and practice your real-life bowling skills in Bowling Stars! How many strikes were you able to score this time?",
@@ -1529,6 +1592,7 @@ export function getJson() {
         }, {
             "gameId": 20,
             "Name": "Box Rob",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BoxRob/",
             "Url": "https://www.gugoplay.com/gcenter/url/BoxRob/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BoxRob/180x180.jpg",
             "desc": "In the puzzle platformer BoxRob, you can load goods onto your truck with the most adaptable and mobile forklift ever! You must collect each box and place it in the correct slot in order to mark it as completed. The stages become harder and harder as the game progresses. At first, you just run around collecting boxes in simple levels. To crack the code and complete the level, perform special actions or follow the sequence. Compare your high scores with your friends and share BoxRob 2 with them. Don't forget to play BoxRob, the first game in the series!",
@@ -1552,6 +1616,7 @@ export function getJson() {
         }, {
             "gameId": 21,
             "Name": "Brain Test Tricky Puzzles",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BrainTestTrickyPuzzles/",
             "Url": "https://www.gugoplay.com/gcenter/url/BrainTestTrickyPuzzles/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BrainTestTrickyPuzzles/180x180.jpg",
             "desc": "Brain Test  brings a host of new characters, new customization mechanics, and most importantly, a brand new brain teaser. We're going \"back to basics\" by updating the original Brain Test 1 formula in tons of tricky ways. Brain Test is an addictive free tricky puzzle game with a series of tricky brain teasers. Different riddles and tricky tests will challenge your mind. Join the Tricky Club, unlock all its members, and help them overcome tricky situations.",
@@ -1575,6 +1640,7 @@ export function getJson() {
         }, {
             "gameId": 22,
             "Name": "Breakoid",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Breakoid/",
             "Url": "https://www.gugoplay.com/gcenter/url/Breakoid/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Breakoid/180x180.jpg",
             "desc": "Breakoid is a new take on the classic block-breaker / Arkanoid game genre with amazing graphics, visuals and sound! Try your hand at the normal mode and see how many levels you can break your way through or test out the endless mode and use special abilities to make your way to the top! If you get too good for the original levels, try out the level editor and create your ultimate block-breaking extravaganza!",
@@ -1598,6 +1664,7 @@ export function getJson() {
         }, {
             "gameId": 171,
             "Name": "LandsOfBlight",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/LandsOfBlight/",
             "Url": "https://www.gugoplay.com/gcenter/url/LandsOfBlight/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/LandsOfBlight/180x180.jpg",
             "desc": "Lands of Blight is an action adventure game where you take control of a character that automatically attacks every few seconds, and you need to survive the continuous waves of monsters. Simply walk around the area and attack as many monsters as you can while trying to escape their clutch. You will gain experience and level up as you mow down your countless foes, similar to other rogue-lite and role-playing games. And every time you level up, you unlock a random power that will change how you play the game. Choose which power-up you'll receive as it will have consequences. Strategize your hero's development and make sure you only choose the best powers to help you through the night. There are powers like healing, increased attack power, enlarged hit radius, and even exciting spells such as fireball and lightning strike. Make sure you hit the chests to unlock surprising awards! Can you survive until dawn in Lands of Blight?",
@@ -1621,6 +1688,7 @@ export function getJson() {
         }, {
             "gameId": 25,
             "Name": "Bubbles Cool",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BubblesCool/",
             "Url": "https://www.gugoplay.com/gcenter/url/BubblesCool/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BubblesCool/180x180.jpg",
             "desc": "Burst the holiday bubbles! In this festive arcade game, you will help Santa's elf clear the snowy sky. Aim for a cluster of matching pieces, and pop the group to score. There are yellow jingle bells, green Christmas trees, and purple candy canes. You can use a color bomb to transform a whole group. In Bubble Charms Xmas, you will level up after every 500 points. Launch a fireball to destroy every bubble in your path. In order to eliminate the stone blockers, you must remove all of the surrounding pieces!",
@@ -1644,6 +1712,7 @@ export function getJson() {
         }, {
             "gameId": 98,
             "Name": "Fantastic Sniper",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FantasticSniper/",
             "Url": "https://www.gugoplay.com/gcenter/url/FantasticSniper/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FantasticSniper/180x180.jpg",
             "desc": "Play the ultimate FPS sniper game, more exciting than you can imagine. In this combat mission sniper game, you have to prove yourself against your enemies, but be careful because they won't sit still and let a brave sniper shooter take them down.",
@@ -1667,6 +1736,7 @@ export function getJson() {
         }, {
             "gameId": 37,
             "Name": "Flipper Dunk",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FlipperDunk/",
             "Url": "https://www.gugoplay.com/gcenter/url/FlipperDunk/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FlipperDunk/180x180.jpg",
             "desc": "Flipper Dunk is a skill game developed by QKY Games. In this game, you'll use your flippers to send the orange ball flying and rack up as many points as possible. Your goal is to not let the ball get past your flippers, and try to score as many points as you can before the time runs out. This game is much more fun when you share the game with your friends and compare your scores!",
@@ -1690,6 +1760,7 @@ export function getJson() {
         }, {
             "gameId": 38,
             "Name": "Football Penalty Champions",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FootballPenaltyChampions/",
             "Url": "https://www.gugoplay.com/gcenter/url/FootballPenaltyChampions/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FootballPenaltyChampions/180x180.jpg",
             "desc": "Football Penalty Champions is a cool HTML5 game that is playable both on your desktop and on your mobile phone!",
@@ -1713,6 +1784,7 @@ export function getJson() {
         }, {
             "gameId": 39,
             "Name": "Footyzag",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FootyZag/",
             "Url": "https://www.gugoplay.com/gcenter/url/FootyZag/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FootyZag/180x180.jpg",
             "desc": "FootyZag is a soccer game where you have to build up your attack from the back and pass to your teammates to get near the opponents goal. When you have reached the strike you can take a shot on goal to score.Adjust the power and the effect just in the right way to curl the ball around the keeper and make sure to go to the next round. Pass your way through all the other teams and become the ultimate FootyZag player!",
@@ -1736,6 +1808,7 @@ export function getJson() {
         }, {
             "gameId": 40,
             "Name": "Forgotten Hill",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ForgottenHill/",
             "Url": "https://www.gugoplay.com/gcenter/url/ForgottenHill/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ForgottenHill/180x180.jpg",
             "desc": "Forgotten Hill: Surgery is a scary point and click game. It's the third chapter of the mysteries of Forgotten Hill series. After the events of Forgotten Hill: Fall and Forgotten Hill: Puppeteer, you woke up in a creepy room inside a surgery clinic. Find all the clues and try to escape the surgery clinic. Can you unravel the mystery?",
@@ -1759,6 +1832,7 @@ export function getJson() {
         }, {
             "gameId": 41,
             "Name": "Free Kick Shooter",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FreeKickShooter/",
             "Url": "https://www.gugoplay.com/gcenter/url/FreeKickShooter/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FreeKickShooter/180x180.jpg",
             "desc": "Free Kick Shooter is a soccer game in which the player has to score as many goals as possible. Show your soccer skills and put yourself to the test in this challenging game. Shoot as many free kicks as you can before time runs out, get points based on your precision, and beat your own record! Do you dare to show who is the best on the field?",
@@ -1782,6 +1856,7 @@ export function getJson() {
         }, {
             "gameId": 99,
             "Name": "Fruit Master",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FruitMaster/",
             "Url": "https://www.gugoplay.com/gcenter/url/FruitMaster/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FruitMaster/180x180.jpg",
             "desc": "Time your throws perfectly, slash all of the fruits to make delicious fruit juices, buy new knives in the shop, and try to become the ultimate Fruit Master in this addictive online game!",
@@ -1805,6 +1880,7 @@ export function getJson() {
         }, {
             "gameId": 152,
             "Name": "Pool Club",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PoolClub/",
             "Url": "https://www.gugoplay.com/gcenter/url/PoolClub/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PoolClub/180x180.jpg",
             "desc": "Pool Club will challenge you to sink as many racks of balls as possible in 90 seconds. With each sunken ball, you'll get some extra seconds allowing you to extend your play limitlessly. The feature of Combos and Super Combos will add even more bonus seconds to the timer so you can impress all of your friends with your streak.",
@@ -1828,6 +1904,7 @@ export function getJson() {
         }, {
             "gameId": 43,
             "Name": "Fun Water Sorting",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FunWaterSorting/",
             "Url": "https://www.gugoplay.com/gcenter/url/FunWaterSorting/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FunWaterSorting/180x180.jpg",
             "desc": "Fun Water Sorting is a puzzle game in which your objective is to sort liquids by color by mixing them properly. Start by moving the fluids into the right tubes until there is only one color per tube. Think logically and find your own way to sort the colorful water. If you get stuck or make mistakes, you can always get a hint or undo your last movement! Share Fun Water Sorting with your friends and learn who can finish the game the fastest!",
@@ -1851,6 +1928,7 @@ export function getJson() {
         }, {
             "gameId": 44,
             "Name": "Game Of Farmers",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/GameOfFarmers/",
             "Url": "https://www.gugoplay.com/gcenter/url/GameOfFarmers/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/GameOfFarmers/180x180.jpg",
             "desc": "Leave the chaotic city life behind and start building your dream farm. Unlock various types of plants, vegetables, fruits, and animals and make money with their help even when you're offline. Sell your crops and organic products to buy new types of seeds, even magical ones. This is your first step to becoming the world's most successful farmer. You know what they say: When life gives you lemons, plant their seeds and watch 'em grow!",
@@ -1874,6 +1952,7 @@ export function getJson() {
         }, {
             "gameId": 46,
             "Name": "Golf Champions",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/GolfChampions/",
             "Url": "https://www.gugoplay.com/gcenter/url/GolfChampions/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/GolfChampions/180x180.jpg",
             "desc": "Golf Champions is a golf tournament game like no other! Your goal is to get the ball in the hole as few strokes as possible. Hit the ball with just the right amount of force. This is a game where both playing too safe and too risky will have consequences. Aim to get the highest score you can get & brag to all your friends about your digital golfing skills!",
@@ -1897,6 +1976,7 @@ export function getJson() {
         }, {
             "gameId": 100,
             "Name": "Gun King",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/GunKing/",
             "Url": "https://www.gugoplay.com/gcenter/url/GunKing/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/GunKing/180x180.jpg",
             "desc": "1. Easy to operate and quick to use.2. Play different animal troops and destroy the enemy.3. There are random buff effects in the scene, you can get them when you encounter them.4. Unique skill system, you can use skills after defeating some opponents.5. A variety of game modes bring the ultimate challenge to the gun king.",
@@ -1920,6 +2000,7 @@ export function getJson() {
         }, {
             "gameId": 104,
             "Name": "Hyper Drift Car",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/HyperDriftCar/",
             "Url": "https://www.gugoplay.com/gcenter/url/HyperDriftCar/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/HyperDriftCar/180x180.jpg",
             "desc": "This is extraordinary fast drive! This is Draft Race! You will love this game from the first race. Single-player practice passes and unlocks online battles",
@@ -1943,6 +2024,7 @@ export function getJson() {
         }, {
             "gameId": 51,
             "Name": "Jigsaw Photo Puzzle Christmas",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/JigsawPhotoPuzzleChristmas/",
             "Url": "https://www.gugoplay.com/gcenter/url/JigsawPhotoPuzzleChristmas/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/JigsawPhotoPuzzleChristmas/180x180.jpg",
             "desc": "Jigsaw Photo Puzzle: Christmas is a jigsaw puzzle game where you must drag puzzle pieces around and place them in the right spot to reveal a stunning, cool image related to the Christmas holiday. If you have all pieces in the right spot, you complete the level! There are 3 difficulty levels to choose from: easy, normal and hard, each adding more and more pieces to the puzzle. Get under the blanket with a cup of hot chocolate and play this relaxing puzzle experience in the most wonderful time of the year!",
@@ -1966,6 +2048,7 @@ export function getJson() {
         }, {
             "gameId": 52,
             "Name": "Joy Rider",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/JoyRider/",
             "Url": "https://www.gugoplay.com/gcenter/url/JoyRider/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/JoyRider/180x180.jpg",
             "desc": "Show off your riding and stunt skills on your fancy bike across canyons, forests, and even outer space! Blaze through various levels filled with simple or deceptive obstacles that you have to avoid. Show that you're a pro by doing flips, backflips, or any other cool move you can think of. Then complete your swag by unlocking colorful new headpieces, costumes, and motorcycles. To maximize your success, pay attention to the tasks such as completing a level without crashing once. If you're stuck in a level, you can use the skip button that appears at the top after crashing several times. Go ahead and give Joyrider a try!",
@@ -1989,6 +2072,7 @@ export function getJson() {
         }, {
             "gameId": 53,
             "Name": "LikeAKing",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/LikeAKing/",
             "Url": "https://www.gugoplay.com/gcenter/url/LikeAKing/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/LikeAKing/180x180.jpg",
             "desc": "You are a king who must battle other kings using and combining the units in your collection of cards. Each card is a unique unit you can use on the battlefield. Some of them attack the enemy, but some of them mine gold and even lay out traps for the enemy unit. Complete quests, build a strong deck, and most importantly, strategize wisely to be the one true king that stands!",
@@ -2012,6 +2096,7 @@ export function getJson() {
         }, {
             "gameId": 54,
             "Name": "Magic Bridge",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MagicBridge/",
             "Url": "https://www.gugoplay.com/gcenter/url/MagicBridge/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MagicBridge/180x180.jpg",
             "desc": "Take control of one of the many cat characters and try to stay alive on a bridge that keeps moving upward. The bridge will point downward depending on where you stand, so you have to be quick on your paws to keep a steady balance. Avoid all enemies, pick up all the coins and unlock more characters who have different strengths. Jump on the bridge and experience this endless fun!",
@@ -2035,6 +2120,7 @@ export function getJson() {
         }, {
             "gameId": 150,
             "Name": "Murder",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Murder/",
             "Url": "https://www.gugoplay.com/gcenter/url/Murder/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Murder/180x180.jpg",
             "desc": "Murder is a fun assasination game. Creep up behind the king and take him out quickly and quietly. Be careful – if he catches you, it’s off to the dungeon with you! Play Murder and experience what life is like for the typical scheming vizier. If you succeed, you’ll be the new king – but be careful, your adviser is after your crown!",
@@ -2058,6 +2144,7 @@ export function getJson() {
         }, {
             "gameId": 107,
             "Name": "Minecraft Runner",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MinecraftRunner/",
             "Url": "https://www.gugoplay.com/gcenter/url/MinecraftRunner/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MinecraftRunner/180x180.jpg",
             "desc": "Minecraft Runner is a cool running and jumping distance game with the graphics from the popular game Minecraft and you can play it online and for free. Customize your character and make him run and jump from platform to platform without falling down and try to collect all sorts of items, like stones or treasure chests. How far can you reach?",
@@ -2081,6 +2168,7 @@ export function getJson() {
         }, {
             "gameId": 56,
             "Name": "Mini Battles Survivor",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MiniBattlesSurvivor/",
             "Url": "https://www.gugoplay.com/gcenter/url/MiniBattlesSurvivor/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MiniBattlesSurvivor/180x180.jpg",
             "desc": "Minibattles Survivor is an arcade game that contains 65 easy-to-play casual mini games! Say goodbye to stress with these simple yet challenging party games in Minibattles Survivor. Climb the winner's ladder that consists of 20 rounds, and beat all of the games to prove to your friends that you are the true survivor! Represent your country in the global leaderboards, unlock Pro Mode to practice and get better, replay your favorite games, and most importantly, have fun!",
@@ -2104,6 +2192,7 @@ export function getJson() {
         }, {
             "gameId": 57,
             "Name": "Mini Train",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MiniTrain/",
             "Url": "https://www.gugoplay.com/gcenter/url/MiniTrain/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MiniTrain/180x180.jpg",
             "desc": "Mini Train is a puzzle game where you drag blocks and shapes that are scattered around the platform in order to make way for the oncoming train. These pieces are the necessary pieces that form the train track, and only you can help the train arrive its destination. Use the mouse or long-press with your finger to grab a block and move it wherever you want by dragging it across the screen.",
@@ -2127,6 +2216,7 @@ export function getJson() {
         }, {
             "gameId": 108,
             "Name": "My Style Hotel Empire",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MyStyleHotelEmpire/",
             "Url": "https://www.gugoplay.com/gcenter/url/MyStyleHotelEmpire/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MyStyleHotelEmpire/180x180.jpg",
             "desc": "My Style Hotel Empire is a very hot idle game of running a hotel. Have you ever fantasized about running a hotel? The hotel owner of this game doesn't know where to start renovating the dilapidated hotel, can you help him? You can use your imagination and creativity to your heart's content. DIY rooms, match furniture, and solve the needs of guests whenever you want.",
@@ -2150,6 +2240,7 @@ export function getJson() {
         }, {
             "gameId": 109,
             "Name": "Nails Art",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/NailsArt/",
             "Url": "https://www.gugoplay.com/gcenter/url/NailsArt/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/NailsArt/180x180.jpg",
             "desc": "Nail Art is a cool nail salon game that lets you perform the greatest nail designs on the beautiful Disney princesses and characters. Imagine if Elsa from the movie Frozen walks into your salon and asks for a snowflake on each one of her nails. Wouldn’t that be great?",
@@ -2173,6 +2264,7 @@ export function getJson() {
         }, {
             "gameId": 58,
             "Name": "Noet Master",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/NoetMaster/",
             "Url": "https://www.gugoplay.com/gcenter/url/NoetMaster/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/NoetMaster/180x180.jpg",
             "desc": "Find two identical tiles and connect them with three or less straight lines! Connecting tiles open up new options to further clear the level. Try to beat all the new levels. Got stuck? You can use a hint on the top of the page to get you going again. Will you become the true Onet Master?",
@@ -2196,6 +2288,7 @@ export function getJson() {
         }, {
             "gameId": 59,
             "Name": "Noob Drive",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/NoobDrive/",
             "Url": "https://www.gugoplay.com/gcenter/url/NoobDrive/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/NoobDrive/180x180.jpg",
             "desc": "Noob Drive is a fast-paced car game with blocky aesthetics. Your objective is to drive your to the destination point as fast as you can. Go full speed while using the steering buttons to balance yourself on air, and always try to land on your wheels! Time your stunts carefully so you don't lose speed, otherwise you can't fly over the dangerous cliffs and treacherous gaps that could destroy your vehicle.",
@@ -2219,6 +2312,7 @@ export function getJson() {
         }, {
             "gameId": 110,
             "Name": "Northem Heights",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/NorthemHeights/",
             "Url": "https://www.gugoplay.com/gcenter/url/NorthemHeights/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/NorthemHeights/180x180.jpg",
             "desc": "We are pleased to welcome you in an exciting sports game \"Northern Heights\", in which you will have the opportunity to go to the most extreme ski resort and demonstrate their skills in snowboarding! Ahead of you waiting for a lot of exciting levels in which you need to gain maximum speed while descending from numerous snow-covered slopes, in order to perform a spectacular jump from the ramp and fly as much distance as possible.",
@@ -2242,6 +2336,7 @@ export function getJson() {
         }, {
             "gameId": 60,
             "Name": "One Button Bounce",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/OneButtonBounce/",
             "Url": "https://www.gugoplay.com/gcenter/url/OneButtonBounce/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/OneButtonBounce/180x180.jpg",
             "desc": "One Button Bounce is a puzzle game where you control a character who is constantly running back and forth on a platform. Unable to stop, your job is to time the character's jumps right so that your curse turns into a way to solve the puzzle. Use the W, space bar or up arrow to jump and bounce off of walls. Hop from one platform to the other until you get to the portal to take you to the next one. There are many creative obstacles standing in the way of the portal, so you will discover many surprising and satisfying puzzles to solve. Don't worry if you get stuck - you can always use a hint to show you how to pass the level.",
@@ -2265,6 +2360,7 @@ export function getJson() {
         }, {
             "gameId": 61,
             "Name": "Penalty Shooters 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PenaltyShooters2/",
             "Url": "https://www.gugoplay.com/gcenter/url/PenaltyShooters2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PenaltyShooters2/180x180.jpg",
             "desc": "Penalty Shooters 2 is a soccer game where you score goals to win the soccer tournament! Penalty Shooters 2 features hundreds of teams from around the globe. Choose a fantasy league with clubs from England, France, or North America. Each round consists of 5 turns. Score and make saves in this fun penalty simulator game!",
@@ -2288,6 +2384,7 @@ export function getJson() {
         }, {
             "gameId": 62,
             "Name": "Penalty Superstar",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PenaltySuperstar/",
             "Url": "https://www.gugoplay.com/gcenter/url/PenaltySuperstar/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PenaltySuperstar/180x180.jpg",
             "desc": "Here you can play Penalty Superstar. Penalty Superstar is one of our selected Sports Games.",
@@ -2311,6 +2408,7 @@ export function getJson() {
         }, {
             "gameId": 112,
             "Name": "Pengu Slide",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PenguSlide/",
             "Url": "https://www.gugoplay.com/gcenter/url/PenguSlide/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PenguSlide/180x180.jpg",
             "desc": "Pengu Slide is a casual game where you slide to survive and fly to thrive on a thrilling ride down the icy slopes, where danger lurks at every turn. With an avalanche hot on your tail, it's up to you to skillfully navigate the terrain by sliding, jumping, and flying your way to safety. But beware, one wrong move could mean certain doom for our feathered friend!",
@@ -2334,6 +2432,7 @@ export function getJson() {
         }, {
             "gameId": 64,
             "Name": "Power Badminton",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PowerBadminton/",
             "Url": "https://www.gugoplay.com/gcenter/url/PowerBadminton/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PowerBadminton/180x180.jpg",
             "desc": "Power Badminton is a single player sports game, where the player must earn more points than his opponent to win the match. Choose a character, hop on the court and demonstrate your bandmintong skills by defeating all of the other contestants!",
@@ -2357,6 +2456,7 @@ export function getJson() {
         }, {
             "gameId": 115,
             "Name": "Real Bus",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/RealBus/",
             "Url": "https://www.gugoplay.com/gcenter/url/RealBus/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/RealBus/180x180.jpg",
             "desc": "RealBus game is the latest addition in Coach Bus 3d Games and Bus 3d Simulator games gives you the chance to become a real bus driver in a very interesting, addictive and thrilling tourist transportation coach bus 3d Driving Games. Enjoy the bus games 3d:",
@@ -2380,6 +2480,7 @@ export function getJson() {
         }, {
             "gameId": 116,
             "Name": "Real Excavator Simulator",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/RealExcavatorSimulator/",
             "Url": "https://www.gugoplay.com/gcenter/url/RealExcavatorSimulator/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/RealExcavatorSimulator/180x180.jpg",
             "desc": "Complete all the tasks and see if you would make a good operative in Real Excavator Simulator! You have a long day waiting for you, so be sure that you are focused enough. Can you handle all the hard work about the construction now?",
@@ -2403,6 +2504,7 @@ export function getJson() {
         }, {
             "gameId": 65,
             "Name": "Rhomb",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Rhomb/",
             "Url": "https://www.gugoplay.com/gcenter/url/Rhomb/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Rhomb/180x180.jpg",
             "desc": "In this relaxing minimalistic puzzle experience, you need to untie a knot of rhombuses following the right order. Examine each line and its connection to determine which rhombus you need to release first, and avoid colliding with other rhombuses. A level is completed when you release all of the rhombuses successfully. If you're stuck, use the hint feature by tapping the three dots button that's above the puzzle. Can you finish all the levels in Rhomb? Go ahead and give it a try!",
@@ -2426,6 +2528,7 @@ export function getJson() {
         }, {
             "gameId": 117,
             "Name": "Rude Races",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/RudeRaces/",
             "Url": "https://www.gugoplay.com/gcenter/url/RudeRaces/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/RudeRaces/180x180.jpg",
             "desc": "Rude Races is a racing game, but instead of just a regular race, you can also swing your weapon to fight your opponents and make them lose the race. You can also modify your ATV and complete all the tasks available to make a perfect score. Grab your weapon and join the battle with Rude Races.",
@@ -2449,6 +2552,7 @@ export function getJson() {
         }, {
             "gameId": 66,
             "Name": "Sling World Cup",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SlingWorldCup/",
             "Url": "https://www.gugoplay.com/gcenter/url/SlingWorldCup/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SlingWorldCup/180x180.jpg",
             "desc": "Choose your dream team and get into the fast-paced football action where you control all three teammates. You can score goals with just a swipe of your finger or mouse. You are in charge of both the offense and the defense in this game, so you have to be quick to gain the upper hand. There are 18 teams and 7 rounds to reach the finals. So go ahead and win them all so everyone can see that you have what it takes to be the champion!",
@@ -2472,6 +2576,7 @@ export function getJson() {
         }, {
             "gameId": 67,
             "Name": "Sniper Code 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SniperCode2/",
             "Url": "https://www.gugoplay.com/gcenter/url/SniperCode2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SniperCode2/180x180.jpg",
             "desc": "Sniper Code 2 is a puzzle game where you shoot enemies and complete various tasks from a distance using your sniper rifle. There are many challenging levels with creative missions where you won't be just shooting people, but you will be taking part in tactical missions. Sometimes only shooting the lamps and objects around the environment is enough to solve the situation without bloodshed. Also, use your bullets creatively in order not to run out of ammo in the middle of the mission. Your accuracy matters a great deal in this game, so does your stealth ability. Don't forget to spend the money you earned in the store to improve your skills. Do you have what it takes to finish every mission in Sniper Code 2?",
@@ -2495,6 +2600,7 @@ export function getJson() {
         }, {
             "gameId": 118,
             "Name": "Sniper Master",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SniperMaster/",
             "Url": "https://www.gugoplay.com/gcenter/url/SniperMaster/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SniperMaster/180x180.jpg",
             "desc": "Ready to Play? Download now the best shooting game for free!If you like sniper games or FPS games, you will love Elite Sniper Shooter 2: one of the most fun shooting games ever!\nFIGHT the global war on crime and become the ELITE SHOOTER.",
@@ -2518,6 +2624,7 @@ export function getJson() {
         }, {
             "gameId": 119,
             "Name": "Sniper Shooter 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SniperShooter2/",
             "Url": "https://www.gugoplay.com/gcenter/url/SniperShooter2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SniperShooter2/180x180.jpg",
             "desc": "Dangerous zombies are attacking the entire city! The city is in peril!Awakened by the trial of dreams, you've no choice but to take on the heroic mantle of saving the city!As a human warrior with unlimited potential, you and other survivors will have to pick up your weapons and battle these evil and dangerous zombies!",
@@ -2541,6 +2648,7 @@ export function getJson() {
         }, {
             "gameId": 68,
             "Name": "Soccer All Stars",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SoccerAllStars/",
             "Url": "https://www.gugoplay.com/gcenter/url/SoccerAllStars/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SoccerAllStars/180x180.jpg",
             "desc": "Use your big head to knock the ball into the goal! Heads Arena: Soccer All Stars lets you play for 13 world-class teams with outstanding soccer heads. You can compete in solo, 1-on-1, or 2-on-2 match-ups. In this head soccer game, you can choose your favorite football club, and try to win the tournament!",
@@ -2564,6 +2672,7 @@ export function getJson() {
         }, {
             "gameId": 69,
             "Name": "Space Bubbles",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SpaceBubbles/",
             "Url": "https://www.gugoplay.com/gcenter/url/SpaceBubbles/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SpaceBubbles/180x180.jpg",
             "desc": "Space Bubbles is a high quality bubble shooting game based on the golden oldie bubble-shooters. This game is set in a space environment and it contains 80 levels with increasing difficulties, so don't worry about finishing this game any time soon!",
@@ -2587,6 +2696,7 @@ export function getJson() {
         }, {
             "gameId": 70,
             "Name": "Stick Defenders",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/StickDefenders/",
             "Url": "https://www.gugoplay.com/gcenter/url/StickDefenders/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/StickDefenders/180x180.jpg",
             "desc": "Stick Defenders is an action and merging game where you combine stickman units into stronger ones, so that they can protect your base from phases of enemies. Merge identical gunmen, enhance your offensive abilities, improve your walls, and much more. There are fun side activities like \"spin the wheel\" where you can get surprising items to help you become stronger and unlock new possibilities. Make sure to use your skills on the oncoming horde of enemies as soon as their cooldown's over, so you don't get overwhelmed by them. How long can you hold down the fort in Stick Defenders?",
@@ -2610,6 +2720,7 @@ export function getJson() {
         }, {
             "gameId": 72,
             "Name": "Stickman War",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/StickmanWar/",
             "Url": "https://www.gugoplay.com/gcenter/url/StickmanWar/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/StickmanWar/180x180.jpg",
             "desc": "Come battle the mighty army of Stickmen! In this stickman game you’ll be challenged level after level to shoot down as many stickmen as you can. But be careful, they’ll come at you from all sides. Kill them all and you’ll pass to the next level!",
@@ -2633,6 +2744,7 @@ export function getJson() {
         }, {
             "gameId": 74,
             "Name": "Stupid Zombies 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/StupidZombies2/",
             "Url": "https://www.gugoplay.com/gcenter/url/StupidZombies2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/StupidZombies2/180x180.jpg",
             "desc": "Stupid Zombies 2 is a puzzle game that lets you fight against hordes of zombies by shooting them with as few bullets as possible. Your bullets will go through zombies and hit every one of them on the way. Your bullets also bounce back, so we advise you to think outside the box with your shots and be creative. Work on your angles to score the highest number of zombie kills. Are you ready to hit two birds with one stone… or two zombies with one gun… or something like that…?",
@@ -2656,6 +2768,7 @@ export function getJson() {
         }, {
             "gameId": 75,
             "Name": "Super Bubble Shooter",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SuperBubbleShooter/",
             "Url": "https://www.gugoplay.com/gcenter/url/SuperBubbleShooter/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SuperBubbleShooter/180x180.jpg",
             "desc": "SUPERHOT Prototype is a first-person shooter game where time moves once you move. Shoot and move around to see your bullets fly off. Stand still and your bullets will stop moving too. This counts for enemy fire as well! Move around and shoot your enemies. Stand still and look for the best ways to move and dodge incoming fire. Your gun only has a couple bullets, so make sure to pick up another one to continue. The game features 5 cool levels. Can you defeat the final boss in SUPERHOT Prototype?",
@@ -2679,6 +2792,7 @@ export function getJson() {
         }, {
             "gameId": 158,
             "Name": "Anycolor",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Anycolor/",
             "Url": "https://www.gugoplay.com/gcenter/url/Anycolor/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Anycolor/180x180.jpg",
             "desc": "Anycolor is a coloring game where you use unique color palettes to fill up the sections in a variety of pre-designed drawings. The game gives you full control over how and where you want to use each color, so the possibilities are endless. Make use of the fill tool and the brush to customize each painting like no other. There are drawings of animals, humans, food, vehicles, and even abstract ideas! The list of drawings are constantly updated, so you will occasionally find new ones to work on. There are also extra palettes that you can unlock, so make sure to explore to color menu to explore it. Don't forget to download your art after you're done coloring them. And make sure to share Anycolor with your friends and show off your creations!",
@@ -2702,6 +2816,7 @@ export function getJson() {
         }, {
             "gameId": 77,
             "Name": "Super Fowlst 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SuperFowlst2/",
             "Url": "https://www.gugoplay.com/gcenter/url/SuperFowlst2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SuperFowlst2/180x180.jpg",
             "desc": "Super Fowlst 2 is a skill-based action game where you swipe-attack enemies to save the world. Do you miss Fowlst after finishing Super Fowlst? Well, Fowlst returns in a new adventure that’s all about squashing bad guys with a swipe. The demons are meaner, the bosses are bigger and there’s still only one chicken that can stop them! There are sprawling, procedurally-generated stages to conquer, huge bosses to defeat, and all manner of gadgets and gizmos to interact with. Trade your treasure for cool powers like egg bombs and rockets so you can really show those demons who’s boss! Super Fowlst 2 has everything: Portals! Cannons! Buzz saws! Spiky things! Fire!",
@@ -2725,6 +2840,7 @@ export function getJson() {
         }, {
             "gameId": 78,
             "Name": "Super Nova",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SuperNova/",
             "Url": "https://www.gugoplay.com/gcenter/url/SuperNova/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SuperNova/180x180.jpg",
             "desc": "Hey there Super Shopper! Race your shopping cart through the grocery store to collect the products on your shopping list. Navigate between the aisles and dodge the promotional stands in order to finish your groceries in time. Finish all the levels or try to fill up your cart in the endless mode of this fast paced grocery game hit!",
@@ -2748,6 +2864,7 @@ export function getJson() {
         }, {
             "gameId": 79,
             "Name": "Swingers",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Swingers/",
             "Url": "https://www.gugoplay.com/gcenter/url/Swingers/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Swingers/180x180.jpg",
             "desc": "Swingers is a skill game where you have to cross the finish line by swinging through the level. As soon as you hit the borders of the level, or the blocks that are thrown in your way, it's a game-over. Make sure you can quickly adapt to moving blocks, and make your way around them. Swingers builds up in difficulty, and tests your skills. Be sure to collect some coins along the way, as there are a ton of unlockable characters.\nAre you skilled enough to get through all the levels? Swing your way and see how far you get in Swingers!",
@@ -2771,6 +2888,7 @@ export function getJson() {
         }, {
             "gameId": 80,
             "Name": "Swingo",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Swingo/",
             "Url": "https://www.gugoplay.com/gcenter/url/Swingo/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Swingo/180x180.jpg",
             "desc": "Swingo is an arcade game that combines the platform and action genres into one fun package. You control a cute bouncy character that can only move around using a grappling hook. Fire the hook and pull yourself in the direction you want to go ! Your character will swing around and bounce around until you reach the fruit at the end of each level. Every successfully finished level awards you some points which add up to unlock cool new characters. The first one is a frog, will you be able to unlock all animals? You will love exploring the vibrant and creative levels full of surprises in Swingo!",
@@ -2794,6 +2912,7 @@ export function getJson() {
         }, {
             "gameId": 121,
             "Name": "Tattoo Girl",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/TattooGirl/",
             "Url": "https://www.gugoplay.com/gcenter/url/TattooGirl/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/TattooGirl/180x180.jpg",
             "desc": "You are the successful owner of a tattoo parlor, and you're responsible for giving a wide range of customers cool and colorful tattoos. Choose the right design for your customer depending on your perception of their personality.",
@@ -2817,6 +2936,7 @@ export function getJson() {
         }, {
             "gameId": 81,
             "Name": "Tetra Blocks",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/TetraBlocks/",
             "Url": "https://www.gugoplay.com/gcenter/url/TetraBlocks/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/TetraBlocks/180x180.jpg",
             "desc": "Breathing new life into the famous arcade classic, this game improves the nostalgic experience by introducing an original game mechanic where matching stars gives you an extra boost of points. Its groovy neon colors create a mesmerizing atmosphere that induces you in a game-flow mental state where time fades away. Block out some time and try out Tetra Blocks!",
@@ -2840,6 +2960,7 @@ export function getJson() {
         }, {
             "gameId": 82,
             "Name": "Thumb Fighter Christmas",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ThumbFighterChristmas/",
             "Url": "https://www.gugoplay.com/gcenter/url/ThumbFighterChristmas/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ThumbFighterChristmas/180x180.jpg",
             "desc": "Get those thumbs ready! The classic Thumb Fighter game is here and ready for the holiday season. Battle it out in classic thumb war fashion against your friends or play against the computer for ultimate Christmas bragging rights.",
@@ -2863,6 +2984,7 @@ export function getJson() {
         }, {
             "gameId": 83,
             "Name": "Tiny Town Racing",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/TinyTownRacing/",
             "Url": "https://www.gugoplay.com/gcenter/url/TinyTownRacing/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/TinyTownRacing/180x180.jpg",
             "desc": "Tiny Fishing is a fishing game where you have to upgrade your gear to get bigger fish! Each fish you catch will earn you some money, which you can then spend on better equipment to fish deeper and deeper. The deeper you go, the more rare the fish become. Can you catch the biggest fish?",
@@ -2886,6 +3008,7 @@ export function getJson() {
         }, {
             "gameId": 169,
             "Name": "IdleMiningEmpire",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/IdleMiningEmpire/",
             "Url": "https://www.gugoplay.com/gcenter/url/IdleMiningEmpire/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/IdleMiningEmpire/180x180.jpg",
             "desc": "Idle Mining Empire is an Idle game where you develop your own mining empire ! Recruit workers, create new tunnels and upgrade your tools to develop a huge mineshaft network !",
@@ -2909,6 +3032,7 @@ export function getJson() {
         }, {
             "gameId": 122,
             "Name": "Uphill Rush 12",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/UphillRush12/",
             "Url": "https://www.gugoplay.com/gcenter/url/UphillRush12/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/UphillRush12/180x180.jpg",
             "desc": "The twelfth Uphill Rush game is here! Enjoy this brand new entry in one of the best arcade game franchises. Drive to the finish as quickly as possible and make sure you do not end up upside down! In this instalment of Uphill Rush, you drive a car, but that doesn’t mean the road to the finish is a straight one.",
@@ -2932,6 +3056,7 @@ export function getJson() {
         }, {
             "gameId": 85,
             "Name": "Yokai Dungeon",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/YokaiDungeon/",
             "Url": "https://www.gugoplay.com/gcenter/url/YokaiDungeon/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/YokaiDungeon/180x180.jpg",
             "desc": "Explore an ever-changing beautiful land inspired by Japanese folklore. Help our friend Tanuki (and 19 additional characters) clear randomly generated dungeons of treasures and foes. Smash movable objects against your enemies and collect loot. Use the cash you've earned to unlock more characters and explore their unique story and abilities. Yokai Dungeon contains six different areas that are divided into separate rooms. Explore these rooms to find special surprises such as a singular shop room and a boss room! You will find many surprises in this game. Can you unlock every character in Yokai Dungeon?",
@@ -2955,6 +3080,7 @@ export function getJson() {
         }, {
             "gameId": 86,
             "Name": "Zen Blocks",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ZenBlocks/",
             "Url": "https://www.gugoplay.com/gcenter/url/ZenBlocks/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ZenBlocks/180x180.jpg",
             "desc": "Zen Blocks is a puzzle game where you stack blocks of different materials and shapes to create beautiful shapes. Each level contains a set of blocks that must be stacked in a way that it will stay still for three seconds. There is no right way to stack these blocks, so feel free to play it safe or take risks if you're feeling adventurous. Use the rules of physics to your advantage and don't let any of the pieces fall into the water, as it will cost you a life. But don't worry, you can always replay it and try different techniques! Like its name, Zen Blocks offers a relaxing, stress-free gaming experience.",
@@ -2978,6 +3104,7 @@ export function getJson() {
         }, {
             "gameId": 157,
             "Name": "1111",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/1111/",
             "Url": "https://www.gugoplay.com/gcenter/url/1111/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/1111/180x180.jpg",
             "desc": "11-11 is a puzzle game where the user has to place blocks in a board and group them to get points. Drag the colored blocks to the board and earn points by completing rows and columns. Pay attention to the shapes so you don't run out of space, and put yourself to the test in this addictive puzzle!",
@@ -3001,6 +3128,7 @@ export function getJson() {
         }, {
             "gameId": 124,
             "Name": "Amazing Spider Solitaire",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AmazingSpiderSolitaire/",
             "Url": "https://www.gugoplay.com/gcenter/url/AmazingSpiderSolitaire/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AmazingSpiderSolitaire/180x180.jpg",
             "desc": "Amazing Spider Solitaire is a card game where you stack all given cards in the deck by ascending or descending order. Train your brain by playing solitaire that require skill, strategy and patience to win. In addition to the solitaire experience, you can enjoy features such as reshuffling cards, counting your moves, and checking your overall statistics to see your playing habits and achievements. There are three difficulty settings, and also three game modes so you can find the perfect pace for you: One suit, two suits, and four suits.",
@@ -3024,6 +3152,7 @@ export function getJson() {
         }, {
             "gameId": 125,
             "Name": "Anycolor By Numbers",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AnycolorByNumbers/",
             "Url": "https://www.gugoplay.com/gcenter/url/AnycolorByNumbers/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AnycolorByNumbers/180x180.jpg",
             "desc": "Anycolor by Numbers is a coloring game like Anycolor but with a unique twist! This time you match the colors with the right numbers in order to complete all drawings. Make sure you fill every part of the drawing to complete it! Do you like the designs? Make sure to check out all the great designed drawings. Do you have a favorite drawing? Make sure to use the download button to save it. Have fun with Anycolor by Numbers!",
@@ -3047,6 +3176,7 @@ export function getJson() {
         }, {
             "gameId": 126,
             "Name": "Australian Patience",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/AustralianPatience/",
             "Url": "https://www.gugoplay.com/gcenter/url/AustralianPatience/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/AustralianPatience/180x180.jpg",
             "desc": "Australian Patience is a challenging solitaire game where your goal is to move all cards to the four foundation stacks beginning with Aces. Use the card that's one-up and in-suit with the displayed card and you will soon build your way from Aces to Kings. You can even unlock gorgeous background themes with your hard earned points. How quickly can you empty out your deck?",
@@ -3070,6 +3200,7 @@ export function getJson() {
         }, {
             "gameId": 127,
             "Name": "Basketball Legends 2020",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BasketballLegends2020/",
             "Url": "https://www.gugoplay.com/gcenter/url/BasketballLegends2020/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BasketballLegends2020/180x180.jpg",
             "desc": "Basketball Legends 2020 is the ultimate basketball game where you can play as LeBron James, James Harden, Kawhi Leonard, Giannis Antetokounmpo, Luka Doncic, and much more, created by MadPuffers.",
@@ -3093,6 +3224,7 @@ export function getJson() {
         }, {
             "gameId": 129,
             "Name": "Bubble Shooter",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BubbleShooter/",
             "Url": "https://www.gugoplay.com/gcenter/url/BubbleShooter/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BubbleShooter/180x180.jpg",
             "desc": "Battle Wheels is an arcade game where you control a car in a 1 on 1 battle against your enemy! Unfortunately, there are no roofs on these battle vehicles but you can use that to your advantage and hit your opponent on the head with your car to win. You can pretty much fly around the arena and flip your way onto your opposition's head to defeat them.",
@@ -3116,6 +3248,7 @@ export function getJson() {
         }, {
             "gameId": 130,
             "Name": "Cat Gunner Super Zombie Shoot",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/CatGunnerSuperZombieShoot/",
             "Url": "https://www.gugoplay.com/gcenter/url/CatGunnerSuperZombieShoot/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/CatGunnerSuperZombieShoot/180x180.jpg",
             "desc": "Battle Wheels is an arcade game where you control a car in a 1 on 1 battle against your enemy! Unfortunately, there are no roofs on these battle vehicles but you can use that to your advantage and hit your opponent on the head with your car to win. You can pretty much fly around the arena and flip your way onto your opposition's head to defeat them.",
@@ -3139,6 +3272,7 @@ export function getJson() {
         }, {
             "gameId": 131,
             "Name": "Gob Dun",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/GobDun/",
             "Url": "https://www.gugoplay.com/gcenter/url/GobDun/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/GobDun/180x180.jpg",
             "desc": "Gobdun is a 3D grid-based dungeon crawling role playing game where you traverse a maze full of secrets, treasures and creatures. Use your sword to attack dungeon dwellers, and lift up your shield at the right moment to block, or even super-block their attacks. Your mission is to ascend as much as possible and get to the top, but there are stronger enemies and goblins waiting to attack you.",
@@ -3162,6 +3296,7 @@ export function getJson() {
         }, {
             "gameId": 132,
             "Name": "Hefty Shaman Deluxe",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/HeftyShamanDeluxe/",
             "Url": "https://www.gugoplay.com/gcenter/url/HeftyShamanDeluxe/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/HeftyShamanDeluxe/180x180.jpg",
             "desc": "Hefty Shaman Deluxe is a platform game where you play as part of a tribe of people who worship the rain and call upon it every day. To do this, they need to bring the Rain-Stone to their alter. In order to do so, you must collect your fellow tribes-people and traverse the increasingly difficult levels with spikes, boar and tough parkour! Each new level brings new mechanics to look out for and even more enemies trying to stop the rain! Don't forget about the collectible birds in each level to collect",
@@ -3185,6 +3320,7 @@ export function getJson() {
         }, {
             "gameId": 140,
             "Name": "Tennis Masters",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/TennisMasters/",
             "Url": "https://www.gugoplay.com/gcenter/url/TennisMasters/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/TennisMasters/180x180.jpg",
             "desc": "Sweet World is a matching game. Get ready for a sweet journey that takes place in a magical candy land! Find two identical candies that can be connected by three or fewer straight lines. Connecting tiles open up new options to further clear the level.",
@@ -3208,6 +3344,7 @@ export function getJson() {
         }, {
             "gameId": 133,
             "Name": "Mahjong Linker Kyodai Game",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MahjongLinkerKyodaiGame/",
             "Url": "https://www.gugoplay.com/gcenter/url/MahjongLinkerKyodaiGame/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MahjongLinkerKyodaiGame/180x180.jpg",
             "desc": "Mahjong Linker Kyodai Game is a cool HTML5 game that is playable both on your desktop and on your mobile phone!",
@@ -3231,6 +3368,7 @@ export function getJson() {
         }, {
             "gameId": 134,
             "Name": "Merge Arena",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MergeArena/",
             "Url": "https://www.gugoplay.com/gcenter/url/MergeArena/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MergeArena/180x180.jpg",
             "desc": "Mahjong Linker Kyodai Game is a cool HTML5 game that is playable both on your desktop and on your mobile phone!",
@@ -3254,6 +3392,7 @@ export function getJson() {
         }, {
             "gameId": 135,
             "Name": "Refuge Solitaire",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/RefugeSolitaire/",
             "Url": "https://www.gugoplay.com/gcenter/url/RefugeSolitaire/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/RefugeSolitaire/180x180.jpg",
             "desc": "Refuge Solitaire is a card game. This game offers the 2-deck variation of the classic solitaire experience. Sort the outer piles to the 8 decks in the middle, 4 of them in the order King to 2, and the other deck from Ace to King.",
@@ -3277,6 +3416,7 @@ export function getJson() {
         }, {
             "gameId": 136,
             "Name": "Soccer Skills World Cup",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SoccerSkillsWorldCup/",
             "Url": "https://www.gugoplay.com/gcenter/url/SoccerSkillsWorldCup/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SoccerSkillsWorldCup/180x180.jpg",
             "desc": "Soccer Skills World Cup is a 3D sports game that lets you play action-packed soccer tournaments on the go. Play fast-paced realistic online football matches against the computer or real people, and lead your favorite team to victory! Choose a national football team, go through the rounds from the quarter finals and semi finals to the grand finale of the championship! Regardless of whether you call it soccer or football, you’ll love this challenging game.",
@@ -3300,6 +3440,7 @@ export function getJson() {
         }, {
             "gameId": 137,
             "Name": "Solitaire Klondike 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SolitaireKlondike2/",
             "Url": "https://www.gugoplay.com/gcenter/url/SolitaireKlondike2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SolitaireKlondike2/180x180.jpg",
             "desc": "Solitaire Klondike is a card game where the objective is to stack the cards in the deck by ascending or descending order. Make sure to always follow up with the opposite color and have fun!",
@@ -3323,6 +3464,7 @@ export function getJson() {
         }, {
             "gameId": 138,
             "Name": "Spider Solitaire Ctl",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SpiderSolitaireCtl/",
             "Url": "https://www.gugoplay.com/gcenter/url/SpiderSolitaireCtl/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SpiderSolitaireCtl/180x180.jpg",
             "desc": "Spider Solitaire is a card game where you stack all given cards in the deck by ascending or descending order. You can enjoy a classic spider solitaire experience with multiple difficulty modes ranging from 1 to 4 suits. There are customizable themes, customizable card backs, statistics, magic wand, and many more power-ups and hidden surprises!",
@@ -3346,6 +3488,7 @@ export function getJson() {
         }, {
             "gameId": 139,
             "Name": "Sweet World",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SweetWorld/",
             "Url": "https://www.gugoplay.com/gcenter/url/SweetWorld/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SweetWorld/180x180.jpg",
             "desc": "Sweet World is a matching game created by TapLabGames. Get ready for a sweet journey that takes place in a magical candy land! Find two identical candies that can be connected by three or fewer straight lines. Connecting tiles open up new options to further clear the level.",
@@ -3369,6 +3512,7 @@ export function getJson() {
         }, {
             "gameId": 140,
             "Name": "Tennis Masters",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/TennisMasters/",
             "Url": "https://www.gugoplay.com/gcenter/url/TennisMasters/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/TennisMasters/180x180.jpg",
             "desc": "Sweet World is a matching game. Get ready for a sweet journey that takes place in a magical candy land! Find two identical candies that can be connected by three or fewer straight lines. Connecting tiles open up new options to further clear the level.",
@@ -3392,6 +3536,7 @@ export function getJson() {
         }, {
             "gameId": 141,
             "Name": "Tunnel Rush 2",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/TunnelRush2/",
             "Url": "https://www.gugoplay.com/gcenter/url/TunnelRush2/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/TunnelRush2/180x180.jpg",
             "desc": "Sweet World is a matching game created by TapLabGames. Get ready for a sweet journey that takes place in a magical candy land! Find two identical candies that can be connected by three or fewer straight lines. Connecting tiles open up new options to further clear the level.",
@@ -3415,6 +3560,7 @@ export function getJson() {
         }, {
             "gameId": 142,
             "Name": "Unicycle Hero",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/UnicycleHero/",
             "Url": "https://www.gugoplay.com/gcenter/url/UnicycleHero/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/UnicycleHero/180x180.jpg",
             "desc": "Sweet World is a matching game created by TapLabGames. Get ready for a sweet journey that takes place in a magical candy land! Find two identical candies that can be connected by three or fewer straight lines. Connecting tiles open up new options to further clear the level.",
@@ -3438,6 +3584,7 @@ export function getJson() {
         }, {
             "gameId": 143,
             "Name": "Water Color Sort",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/WaterColorSort/",
             "Url": "https://www.gugoplay.com/gcenter/url/WaterColorSort/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/WaterColorSort/180x180.jpg",
             "desc": "Sweet World is a matching game created by TapLabGames. Get ready for a sweet journey that takes place in a magical candy land! Find two identical candies that can be connected by three or fewer straight lines. Connecting tiles open up new options to further clear the level.",
@@ -3461,6 +3608,7 @@ export function getJson() {
         }, {
             "gameId": 144,
             "Name": "A Small World Cup",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ASmallWorldCup/",
             "Url": "https://www.gugoplay.com/gcenter/url/ASmallWorldCup/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ASmallWorldCup/180x180.jpg",
             "desc": "A Small World Cup is a funny two-player soccer game. Your team consists of only a rag-doll which you have to slam against the ball to score a goal. A Small World Cup was created by Rujo Games. In this game the popular title 'Mutilate a Doll' meets football which allows for hilarious situations to arise. Choose to play the practice mode, or play for the world cup. Select the difficulty, pick a team, and make your way through the tournament.",
@@ -3484,6 +3632,7 @@ export function getJson() {
         }, {
             "gameId": 165,
             "Name": "DuoSurvival",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/DuoSurvival/",
             "Url": "https://www.gugoplay.com/gcenter/url/DuoSurvival/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/DuoSurvival/180x180.jpg",
             "desc": "Duo Survival is a 2-player cooperative game. where you help two apocalypse survivors escape from the zombies through obstacle-filled levels. Join this duo of brave adventurers and enter a post-apocalyptic world full of hungry zombies. Play with a friend and solve exciting puzzles, step on buttons, open doors, activate elevators... and lead the characters to the cure for the virus. This is your last chance: Decide the fate of humanity in Duo Survival!",
@@ -3507,6 +3656,7 @@ export function getJson() {
         }, {
             "gameId": 146,
             "Name": "Bubble Trouble",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/BubbleTrouble/",
             "Url": "https://www.gugoplay.com/gcenter/url/BubbleTrouble/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/BubbleTrouble/180x180.jpg",
             "desc": "Bubble Trouble is an arcade bubble shooter game. In this game, your objective is to shoot bubbles with the devil! Use your spike gun to pop all the bubbles from the largest to the smallest bits. Every time you pop a bubble, it will get smaller in size but it will also be multiplied. Race against time, collect all the traps and power-ups you can use to be the best at this game.",
@@ -3530,6 +3680,7 @@ export function getJson() {
         }, {
             "gameId": 147,
             "Name": "Football Legends",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FootballLegends/",
             "Url": "https://www.gugoplay.com/gcenter/url/FootballLegends/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FootballLegends/180x180.jpg",
             "desc": "Choose your team and play fast-paced soccer games against your friend or computer. You're in charge of the offense as well as the defense here. Jump, kick, slide, and use special powers to score as many goals as possible until the end of the match. You can also enroll in tournaments if you're looking for a challenge. Go ahead and practice until you can prove you have what it takes to win the tournament!",
@@ -3553,6 +3704,7 @@ export function getJson() {
         }, {
             "gameId": 148,
             "Name": "Football Masters",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FootballMasters/",
             "Url": "https://www.gugoplay.com/gcenter/url/FootballMasters/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FootballMasters/180x180.jpg",
             "desc": "In Football Masters you control a football team consisting of 1 or 2 players and you can play quick games or you can go for the cup in tournament-mode. Make your way through the rounds and win the final to become the champion. You can choose between two players, each having their own unique special ability.",
@@ -3576,6 +3728,7 @@ export function getJson() {
         }, {
             "gameId": 149,
             "Name": "Merge Round Racers",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MergeRoundRacers/",
             "Url": "https://www.gugoplay.com/gcenter/url/MergeRoundRacers/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MergeRoundRacers/180x180.jpg",
             "desc": "Merge Round Racers is a car-merging game, where the user has to generate coins, buy cars, and merge them to get an even better vehicle. Prepare your garage, buy and collect cars, and merge them two by two to get a new and improved model! Are your cars ready? Move them to the race track and receive coins every time they pass the finish line.",
@@ -3599,6 +3752,7 @@ export function getJson() {
         }, {
             "gameId": 150,
             "Name": "Murder",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/Murder/",
             "Url": "https://www.gugoplay.com/gcenter/url/Murder/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/Murder/180x180.jpg",
             "desc": "Murder is a fun assasination game. Creep up behind the king and take him out quickly and quietly. Be careful – if he catches you, it’s off to the dungeon with you! Play Murder and experience what life is like for the typical scheming vizier. If you succeed, you’ll be the new king – but be careful, your adviser is after your crown!",
@@ -3622,6 +3776,7 @@ export function getJson() {
         }, {
             "gameId": 151,
             "Name": "Parkour Race",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/ParkourRace/",
             "Url": "https://www.gugoplay.com/gcenter/url/ParkourRace/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/ParkourRace/180x180.jpg",
             "desc": "Take control of your stickman and race against the crowd. You can run, dash or jump from rooftop to rooftop! Run over the glowing speed bumpers to gain momentum and do vaults and flips to show off your style. There are daily challenges, power-ups, and even glamorous accessories for you to create a stickman that looks like no other.",
@@ -3645,6 +3800,7 @@ export function getJson() {
         }, {
             "gameId": 152,
             "Name": "Pool Club",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/PoolClub/",
             "Url": "https://www.gugoplay.com/gcenter/url/PoolClub/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/PoolClub/180x180.jpg",
             "desc": "Pool Club will challenge you to sink as many racks of balls as possible in 90 seconds. With each sunken ball, you'll get some extra seconds allowing you to extend your play limitlessly. The feature of Combos and Super Combos will add even more bonus seconds to the timer so you can impress all of your friends with your streak.",
@@ -3668,6 +3824,7 @@ export function getJson() {
         }, {
             "gameId": 153,
             "Name": "Soccer Skills Champions League",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/SoccerSkillsChampionsLeague/",
             "Url": "https://www.gugoplay.com/gcenter/url/SoccerSkillsChampionsLeague/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/SoccerSkillsChampionsLeague/180x180.jpg",
             "desc": "Enjoy a 3D fast-paced soccer game that has 11-versus-11 matches. Choose a national football team, go through the rounds from the quarter finals and semi finals to the grand finale of the championship! Regardless of whether you call it soccer or football, you’ll love this challenging game. It will put you right in the middle of the action and bring out your top skills.",
@@ -3691,6 +3848,7 @@ export function getJson() {
         }, {
             "gameId": 87,
             "Name": "2K Shoot",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/2KShoot/",
             "Url": "https://www.gugoplay.com/gcenter/url/2KShoot/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/2KShoot/180x180.jpg",
             "desc": "A bubble shooting merge game. Can you make a 2k bubble? Hold down your mouse button or finger to aim and release to shoot. Aim for bubbles with the same number to make them merge. New bubbles are added when the time reaches zero. Don’t let the screen fill up or it is game over!",
@@ -3714,6 +3872,7 @@ export function getJson() {
         }, {
             "gameId": 55,
             "Name": "Maze：Path Of Light",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/MazePathOfLight/",
             "Url": "https://www.gugoplay.com/gcenter/url/MazePathOfLight/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/MazePathOfLight/180x180.jpg",
             "desc": "Maze: Path of Light is a thinking puzzle game where you go through a maze as a beam of light. Your objective is to reach the end of each maze to get to the next level. You move around by picking a direction at each crossroad, sending the beam of light to follow the path. Think of which path is the best to take before choosing ! Are you ready to relax with this satisfying labyrinth game ?",
@@ -3737,6 +3896,7 @@ export function getJson() {
         }, {
             "gameId": 42,
             "Name": "Fruit Ninja",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/FruitNinja/",
             "Url": "https://www.gugoplay.com/gcenter/url/FruitNinja/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/FruitNinja/180x180.jpg",
             "desc": "Fruit Ninja is an arcade game where you have to swipe and slash your way through all kinds of fruit, from pears and apples, to coconuts and bananas. Aim for the highest score by slicing multiple fruits at once and build up your combo to surpass everyone else! You can also get huge scores from critically striking the fruit so be strategic with your swiping. However, beware of the bombs! Hitting one of them will end your run. Fruit Ninja, the classic fruit destroying swiping adventure is here!",
@@ -3760,6 +3920,7 @@ export function getJson() {
         }, {
             "gameId": 170,
             "Name": "KiwiClicker",
+            "Urlpc": "https://www.gugoplay.com/gcenter/urlpc/KiwiClicker/",
             "Url": "https://www.gugoplay.com/gcenter/url/KiwiClicker/",
             "iconUrl": "https://www.gugoplay.com/g_icoimg/KiwiClicker/180x180.jpg",
             "desc": "Kiwi Clicker is an idle clicker game where you manage a kiwi bird producing startup. Take your business from nothing to a bustling kiwi empire! Simply click or tap the big kiwi on your screen to add a new kiwi to the production cycle. Your kiwis will be bagged and sold in bulk. Use the bagging button on the left to package and sell kiwis to generate \"koins\". You can spend coins on upgrades to increase your kiwi production speed and efficiency.",
@@ -4022,6 +4183,7 @@ export function clickClassificationLog(portal, type) {
         console.log(e);
     }
 }
+
 export function showClassificationLog(portal, type) {
     const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/${portal}/GameMain/Main/category`;
     return JSON.stringify({
