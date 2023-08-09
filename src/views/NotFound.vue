@@ -27,12 +27,12 @@
             <p class="msg-text">Sorry, the page you requested does not exist on this site</p>
           </div>
           <div class="adv">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2075998924432436"
-                 :data-ad-slot="slot"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+<!--            <ins class="adsbygoogle"-->
+<!--                 style="display:block"-->
+<!--                 data-ad-client="ca-pub-2075998924432436"-->
+<!--                 :data-ad-slot="slot"-->
+<!--                 data-ad-format="auto"-->
+<!--                 data-full-width-responsive="true"></ins>-->
           </div>
           <div class="popular-games">
             <h6 class="title">The Most Popular Games</h6>
@@ -71,7 +71,7 @@ export default {
     if (determinePcOrMove() == 1) {
       this.determinePcOrMove = 1
       setTimeout(()=>{
-        window.addAds()
+        // window.addAds()
       },1300)
     } else {
       this.determinePcOrMove = 2

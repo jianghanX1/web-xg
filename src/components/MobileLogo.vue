@@ -40,7 +40,7 @@ export default {
       this.UnfoldAndCollapse = !this.UnfoldAndCollapse
       // 点击搜索打点
       let portal = this.whereFrom == 1 ? 'gugoplay_mobile_home' : this.whereFrom == 2 ? 'gugoplay_mobile_detail' : 'gugoplay_mobile_tab'
-      clickSearchLog(portal)
+      // clickSearchLog(portal)
     },
   }
 }

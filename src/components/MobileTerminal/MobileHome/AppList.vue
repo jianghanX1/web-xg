@@ -5,13 +5,13 @@
       <div class="app-list eZzVdA" v-for="(item,index) in appGameList" :key="index">
         <div :class="homeAdv && index == 0 ? cTVRlj2 : cTVRlj">
           <div class="adv" v-if="index == 0" v-show="homeAdv" style="grid-area: adv">
-            <ins class="adsbygoogle"
-                 id="homeAdv"
-                 style="display:block;min-height: 314px"
-                 data-ad-client="ca-pub-2075998924432436"
-                 :data-ad-slot="slot"
-                 data-ad-format="true"
-                 data-full-width-responsive="true"></ins>
+<!--            <ins class="adsbygoogle"-->
+<!--                 id="homeAdv"-->
+<!--                 style="display:block;min-height: 314px"-->
+<!--                 data-ad-client="ca-pub-2075998924432436"-->
+<!--                 :data-ad-slot="slot"-->
+<!--                 data-ad-format="true"-->
+<!--                 data-full-width-responsive="true"></ins>-->
           </div>
           <a @click="detailsClick(items)" v-for="(items,indexs) in item" :key="indexs" :href="'/#/M/details/'+items.Name.replace(/\s+/g, '')+'?gameId='+items.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 cASSfo sc-963fcq-2 cOWZsC sc-al88rd-1 global-cq" :style="indexs == 0 || indexs == 6 ? {gridArea: 'bigIp' + indexs}: null">
             <img v-if="indexs == 0 || indexs == 6" v-lazy="items.iconUrl" alt="" width="204px" height="204px" class="eoBBYj">
@@ -24,13 +24,13 @@
     <div v-show="clientWidth > 550.9" class="sc-10l37ae-0 irIQZt">
       <div :class="homeAdv ? jMBaZr2 : jMBaZr">
         <div class="adv" v-show="homeAdv" style="grid-area: adv">
-          <ins class="adsbygoogle"
-               id="homeAdv"
-               style="display:block;min-height: 314px"
-               data-ad-client="ca-pub-2075998924432436"
-               :data-ad-slot="slot"
-               data-ad-format="true"
-               data-full-width-responsive="true"></ins>
+<!--          <ins class="adsbygoogle"-->
+<!--               id="homeAdv"-->
+<!--               style="display:block;min-height: 314px"-->
+<!--               data-ad-client="ca-pub-2075998924432436"-->
+<!--               :data-ad-slot="slot"-->
+<!--               data-ad-format="true"-->
+<!--               data-full-width-responsive="true"></ins>-->
         </div>
         <div style="display: contents">
           <ul class="sc-al88rd-0 brZJOk">
@@ -60,14 +60,14 @@
       <BottomList whereFrom="1"></BottomList>
       <div class="bottom-text">
         <div class="jXgCKW">
-          Hi! Welcome to GUGOPLAY.com!
+          Hi! Welcome to H5JOY.com!
           <br><br>
           You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
           <br><br>
           Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
-          You can play all our games on your mobile phone, tablet, pad without download or installation, just visit GUGOPLAY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          You can play all our games on your mobile phone, tablet, pad without download or installation, just visit H5JOY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
           <br><br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark GUGOPLAY.com and share it to your friends. Have fun!
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark H5JOY.com and share it to your friends. Have fun!
         </div>
       </div>
     </div>
@@ -108,12 +108,12 @@ export default {
     setTimeout(()=>{
       let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
       itemArr && Array.from(itemArr).map((item)=>{
-        Observer('gugoplay_mobile_home').observe(item)
+        // Observer('gugoplay_mobile_home').observe(item)
       })
     })
 
     setTimeout(()=>{
-      window.addAds()
+      // window.addAds()
       let innerHtml = document.getElementById('homeAdv') && document.getElementById('homeAdv').innerHTML
       if (innerHtml) {
         this.homeAdv = true
@@ -146,7 +146,7 @@ export default {
       this.smallImg = smallImg
     },
     detailsClick(item) {
-      clickGameLog('gugoplay_mobile_home', item)
+      // clickGameLog('gugoplay_mobile_home', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/M/details',

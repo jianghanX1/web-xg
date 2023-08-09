@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="Online Games on Gugo ——Let's play" id="homeId">
+  <div v-title data-title="Online Games on h5joy ——Let's play" id="homeId">
     <StartAndEnd>
       <div>
         <AppList :appGameList="appGameList"></AppList>
@@ -84,7 +84,7 @@ export default {
     } else {
 
       // 进入页面埋点
-      pageInitLog('gugoplay_mobile_home')
+      // pageInitLog('gugoplay_mobile_home')
 
       // let enterType = sessionStorage.getItem('enterType')
       // if (enterType) {
@@ -190,7 +190,7 @@ export default {
     // clearInterval(this.timerDate);
     // clearInterval(this.timerCountdown)
     // 离开页面埋点
-    pageOutLog('gugoplay_mobile_home')
+    // pageOutLog('gugoplay_mobile_home')
   }
 }
 </script>

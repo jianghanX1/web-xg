@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at gugoplay.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at h5joy.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
         <MobileLogo whereFrom="2"></MobileLogo>
@@ -17,13 +17,13 @@
               </div>
             </div>
             <div class="adv" v-show="detailAdv" style="grid-area: adv">
-              <ins class="adsbygoogle"
-                   id="detailAdv"
-                   style="display:block;min-height: 314px"
-                   data-ad-client="ca-pub-2075998924432436"
-                   :data-ad-slot="slot"
-                   data-ad-format="true"
-                   data-full-width-responsive="true"></ins>
+<!--              <ins class="adsbygoogle"-->
+<!--                   id="detailAdv"-->
+<!--                   style="display:block;min-height: 314px"-->
+<!--                   data-ad-client="ca-pub-2075998924432436"-->
+<!--                   :data-ad-slot="slot"-->
+<!--                   data-ad-format="true"-->
+<!--                   data-full-width-responsive="true"></ins>-->
             </div>
             <a :href="'/#/M/details/'+item.Name.replace(/\s+/g, '')+'?gameId='+item.gameId+($route.query.channel ? ('&channel='+$route.query.channel): '')" class="sc-wr3rvk-0 class-item" @click="detailsClick(item)" v-for="(item,index) in gameTypeList" :key="index">
               <img v-lazy="item.iconUrl" alt="">
@@ -48,7 +48,7 @@
                 <span class="sc-1v3c8lr-8 bbPKoC"><i class="el-icon-star-on"></i> {{gameScore}}</span>
               </div>
               <div class="sc-1v3c8lr-9 jXgCKW">
-                {{ description ? description : "Play best game on GUGOPLAY!" }}
+                {{ description ? description : "Play best game on H5JOY!" }}
               </div>
               <ul class="sc-g8xdfn-0 jOvOhG sc-1v3c8lr-4 durvAn">
                 <li v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</li>
@@ -163,18 +163,18 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
         itemArr && Array.from(itemArr).map((item)=>{
-          Observer('gugoplay_mobile_detail').observe(item)
+          // Observer('gugoplay_mobile_detail').observe(item)
         })
       })
       // 进入页面埋点
-      pageInitLog('gugoplay_mobile_detail')
+      // pageInitLog('gugoplay_mobile_detail')
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{
         this.smegmaType = false
       },800)
       setTimeout(()=>{
-        window.addAds()
+        // window.addAds()
         let innerHtml = document.getElementById('detailAdv') && document.getElementById('detailAdv').innerHTML
         if (innerHtml) {
           this.detailAdv = true
@@ -323,7 +323,7 @@ export default {
         this.exitFullscreen()
       }
       // 打点
-      clickGameLog('gugoplay_mobile_detail', item)
+      // clickGameLog('gugoplay_mobile_detail', item)
       recentGame(item)
       clearInterval(this.timer)
       clearInterval(this.timer2)
@@ -338,7 +338,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    pageOutLog('gugoplay_mobile_detail')
+    // pageOutLog('gugoplay_mobile_detail')
   },
   watch: {
     '$route'(val) {

@@ -5,89 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Online Games on Gugo ——Let's play</title>
+    <title>Online Games on h5joy ——Let's play</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="theme-color" content="#080403">
       <link rel="manifest" id="manifest" href="/manifest.json">
       <script src="channelList.js"></script>
-      <script>
-          // 获取渠道
-          function getUrlParams(key) {
-              let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-              let r = (window.location.hash || window.location.href).split('?')[1] && (window.location.hash || window.location.href).split('?')[1].match(reg);
-              if (r != null)
-                  return decodeURIComponent(r[2]);
-              return null;
-          }
-          // 区分设备
-          let channerlName = null
-          if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-              channerlName = getUrlParams('channel') + '-M'
-          } else {
-              channerlName = getUrlParams('channel') + '-P'
-          }
-          // 筛选渠道信息
-          var channelInfo = {}
-          channelList && channelList.map((item)=>{
-              if (item.channel_name == channerlName) {
-                  channelInfo = item
-              }
-          })
-          localStorage.setItem('channelInfo',JSON.stringify(channelInfo))
-          const { channel_ca_pub, channel_id } = channelInfo || {}
-          let pub = channel_ca_pub ? channel_ca_pub : "ca-pub-2075998924432436"
-          let src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pub}`
-          let script = document.createElement('script');
-          if (channel_id) {
-              script.setAttribute('data-ad-channel',channel_id)
-          } else {
-              script.setAttribute('data-ad-channel','9977812505')
-          }
-          script.src = src;
-          script.crossOrigin = "anonymous";
-          document.head.appendChild(script);
-      </script>
 
-<!--      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075998924432436"-->
-<!--              crossorigin="anonymous"></script>-->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2075998924432436"
+              crossorigin="anonymous"></script>
+
+<!--      <script>-->
+<!--          // 获取渠道-->
+<!--          function getUrlParams(key) {-->
+<!--              let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");-->
+<!--              let r = (window.location.hash || window.location.href).split('?')[1] && (window.location.hash || window.location.href).split('?')[1].match(reg);-->
+<!--              if (r != null)-->
+<!--                  return decodeURIComponent(r[2]);-->
+<!--              return null;-->
+<!--          }-->
+<!--          // 区分设备-->
+<!--          let channerlName = null-->
+<!--          if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {-->
+<!--              channerlName = getUrlParams('channel') + '-M'-->
+<!--          } else {-->
+<!--              channerlName = getUrlParams('channel') + '-P'-->
+<!--          }-->
+<!--          // 筛选渠道信息-->
+<!--          var channelInfo = {}-->
+<!--          channelList && channelList.map((item)=>{-->
+<!--              if (item.channel_name == channerlName) {-->
+<!--                  channelInfo = item-->
+<!--              }-->
+<!--          })-->
+<!--          localStorage.setItem('channelInfo',JSON.stringify(channelInfo))-->
+<!--          const { channel_ca_pub, channel_id } = channelInfo || {}-->
+<!--          let pub = channel_ca_pub ? channel_ca_pub : "ca-pub-2075998924432436"-->
+<!--          let src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pub}`-->
+<!--          let script = document.createElement('script');-->
+<!--          if (channel_id) {-->
+<!--              script.setAttribute('data-ad-channel',channel_id)-->
+<!--          } else {-->
+<!--              script.setAttribute('data-ad-channel','9977812505')-->
+<!--          }-->
+<!--          script.src = src;-->
+<!--          script.crossOrigin = "anonymous";-->
+<!--          document.head.appendChild(script);-->
+<!--      </script>-->
 
 <!--      ga-->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD1D1PZJ9Y"></script>
-      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-      <script>
-          const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}
-          let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []
-          let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []
-          let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []
-          window.googletag = window.googletag || {cmd: []};
-          googletag.cmd.push(function () {
-              googletag.defineSlot(pcl[0] ? pcl[0] : '/162381451/afantai_gugo_details_pcl', pcl[1] && pcl[2] ? [Number(pcl[1]),Number(pcl[2])] : [160, 600], pcl[3] ? pcl[3] : 'div-gpt-ad-1688371803760-0').addService(googletag.pubads());
-              googletag.defineSlot(pcr[0] ? pcr[0] : '/162381451/afantai_gugo_details_pcr', pcr[1] && pcr[2] ? [Number(pcr[1]),Number(pcr[2])] : [300, 250], pcr[3] ? pcr[3] : 'div-gpt-ad-1688371871810-0').addService(googletag.pubads());
-              googletag.defineSlot(pcb[0] ? pcb[0] : '/162381451/afantai_gugo_details_pcb', pcb[1] && pcb[2] ? [Number(pcb[1]),Number(pcb[2])] : [728, 90], pcb[3] ? pcb[3] : 'div-gpt-ad-1688371917521-0').addService(googletag.pubads());
-              googletag.enableServices();
-          });
-          window.isDisplay = false
-      </script>
+<!--      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD1D1PZJ9Y"></script>-->
+<!--      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>-->
+<!--      <script>-->
+<!--          const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}-->
+<!--          let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []-->
+<!--          let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []-->
+<!--          let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []-->
+<!--          window.googletag = window.googletag || {cmd: []};-->
+<!--          googletag.cmd.push(function () {-->
+<!--              googletag.defineSlot(pcl[0] ? pcl[0] : '/162381451/afantai_gugo_details_pcl', pcl[1] && pcl[2] ? [Number(pcl[1]),Number(pcl[2])] : [160, 600], pcl[3] ? pcl[3] : 'div-gpt-ad-1688371803760-0').addService(googletag.pubads());-->
+<!--              googletag.defineSlot(pcr[0] ? pcr[0] : '/162381451/afantai_gugo_details_pcr', pcr[1] && pcr[2] ? [Number(pcr[1]),Number(pcr[2])] : [300, 250], pcr[3] ? pcr[3] : 'div-gpt-ad-1688371871810-0').addService(googletag.pubads());-->
+<!--              googletag.defineSlot(pcb[0] ? pcb[0] : '/162381451/afantai_gugo_details_pcb', pcb[1] && pcb[2] ? [Number(pcb[1]),Number(pcb[2])] : [728, 90], pcb[3] ? pcb[3] : 'div-gpt-ad-1688371917521-0').addService(googletag.pubads());-->
+<!--              googletag.enableServices();-->
+<!--          });-->
+<!--          window.isDisplay = false-->
+<!--      </script>-->
   </head>
   <body>
-  <script src="//cdn.wtshare.com/sd/2.0.2/beyla.umd.js"></script>
+<!--  <script src="//cdn.wtshare.com/sd/2.0.2/beyla.umd.js"></script>-->
   <div id="app"></div>
 <!--    ga-->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date()); gtag('config', 'G-YD1D1PZJ9Y');
-    </script>
-    <script>
-        window['addAds'] = function () {
-            let childList = document.getElementsByClassName('adv')
-            console.log(childList);
-            for (let i = 0; i < childList.length; i++) {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            }
-        }
-    </script>
+<!--    <script>-->
+<!--        window.dataLayer = window.dataLayer || [];-->
+<!--        function gtag(){dataLayer.push(arguments);}-->
+<!--        gtag('js', new Date()); gtag('config', 'G-YD1D1PZJ9Y');-->
+<!--    </script>-->
+<!--    <script>-->
+<!--        window['addAds'] = function () {-->
+<!--            let childList = document.getElementsByClassName('adv')-->
+<!--            console.log(childList);-->
+<!--            for (let i = 0; i < childList.length; i++) {-->
+<!--                (adsbygoogle = window.adsbygoogle || []).push({});-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
     <!-- built files will be auto injected -->
   </body>
 <style>

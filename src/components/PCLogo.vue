@@ -54,7 +54,7 @@ export default {
       this.UnfoldAndCollapse = !this.UnfoldAndCollapse
       // 点击搜索打点
       let portal = this.whereFrom == 1 ? 'gugoplay_pc_home' : 'gugoplay_pc_detail'
-      clickSearchLog(portal)
+      // clickSearchLog(portal)
     },
   }
 }

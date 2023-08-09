@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="Online Games on Gugo ——Let's play">
+  <div class="big" v-title data-title="Online Games on h5joy ——Let's play">
     <div>
       <Content></Content>
     </div>
@@ -36,9 +36,9 @@ export default {
       },()=>{})
     } else {
       // 进入页面埋点
-      pageInitLog('gugoplay_pc_home')
+      // pageInitLog('gugoplay_pc_home')
       this.getJson()
-      document.title = 'Online Games on Gugo ——Let\'s play'
+      document.title = 'Online Games on h5joy ——Let\'s play'
     }
   },
   methods: {
@@ -52,7 +52,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    pageOutLog('gugoplay_pc_home')
+    // pageOutLog('gugoplay_pc_home')
   }
 }
 </script>

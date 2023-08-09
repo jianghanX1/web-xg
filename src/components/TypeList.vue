@@ -23,7 +23,7 @@ export default {
       let itemArr = [...document.getElementsByClassName("sc-963fcq-2")]
       let portal = this.whereFrom == 0 ? 'gugoplay_mobile_search' : this.whereFrom == 1 ? 'gugoplay_pc_search' : this.whereFrom == 2 ? 'gugoplay_pc_home' : this.whereFrom == 3 ? 'gugoplay_pc_detail' : 'gugoplay_pc_tab'
       itemArr && Array.from(itemArr).map((item)=>{
-        ClassificationObserver(portal).observe(item)
+        // ClassificationObserver(portal).observe(item)
       })
     })
   },
@@ -42,7 +42,7 @@ export default {
       },()=>{})
       // 点击类型打点
       let portal = this.whereFrom == 0 ? 'gugoplay_mobile_search' : this.whereFrom == 1 ? 'gugoplay_pc_search' : this.whereFrom == 2 ? 'gugoplay_pc_home' : this.whereFrom == 3 ? 'gugoplay_pc_detail' : 'gugoplay_pc_tab'
-      clickClassificationLog(portal,type)
+      // clickClassificationLog(portal,type)
     }
   }
 }

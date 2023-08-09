@@ -27,7 +27,7 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-01")]
         itemArr && Array.from(itemArr).map((item)=>{
-          Observer('gugoplay_mobile_tab').observe(item)
+          // Observer('gugoplay_mobile_tab').observe(item)
         })
       })
     }
@@ -36,7 +36,7 @@ export default {
     detailsClick(item) {
       if (this.fromWhere == 1) {
         // 打点
-        clickGameLog('gugoplay_mobile_tab', item)
+        // clickGameLog('gugoplay_mobile_tab', item)
       }
       recentGame(item)
       // this.$router.push({
