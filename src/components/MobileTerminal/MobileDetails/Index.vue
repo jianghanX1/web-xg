@@ -142,7 +142,7 @@ export default {
   created() {
     let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
     const { m_dtl_slot } = channelInfo || {}
-    this.slot = m_dtl_slot ? m_dtl_slot : '6935332335'
+    this.slot = m_dtl_slot ? m_dtl_slot : '2225263223'
   },
   mounted() {
     const { query, params } = this.$route

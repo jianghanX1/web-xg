@@ -65,7 +65,7 @@ export default {
   created() {
     let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
     const { m_404_slot } = channelInfo || {}
-    this.slot = m_404_slot ? m_404_slot : '8403530511'
+    this.slot = m_404_slot ? m_404_slot : '3478118221'
   },
   mounted() {
     if (determinePcOrMove() == 1) {

@@ -101,7 +101,7 @@ export default {
   created() {
     let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
     const { m_home_slot } = channelInfo || {}
-    this.slot = m_home_slot ? m_home_slot : '9017774039'
+    this.slot = m_home_slot ? m_home_slot : '6164508239'
   },
   mounted() {
     // 获取需要曝光的item

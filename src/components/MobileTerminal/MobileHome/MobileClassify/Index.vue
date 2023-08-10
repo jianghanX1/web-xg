@@ -1,5 +1,5 @@
 <template>
-  <div id="mobile_classify" v-title data-title="Online Games on h5joy ——Let's play">
+  <div id="mobile_classify" v-title data-title="Online Games on H5joy ——Let's play">
     <div class="content">
       <MobileLogo whereFrom="3"></MobileLogo>
       <div v-if="clientWidth < 550.9">

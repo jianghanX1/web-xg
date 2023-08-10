@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="Online Games on h5joy ——Let's play">
+  <div class="big" v-title data-title="Online Games on H5joy ——Let's play">
     <div>
       <Content></Content>
     </div>
@@ -38,7 +38,7 @@ export default {
       // 进入页面埋点
       pageInitLog('pc_home')
       this.getJson()
-      document.title = 'Online Games on h5joy ——Let\'s play'
+      document.title = 'Online Games on H5joy ——Let\'s play'
     }
   },
   methods: {

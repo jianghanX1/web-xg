@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="Online Games on h5joy ——Let's play" id="homeId">
+  <div v-title data-title="Online Games on H5joy ——Let's play" id="homeId">
     <StartAndEnd>
       <div>
         <AppList :appGameList="appGameList"></AppList>

@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="Online Games on h5joy ——Let's play">
+  <div v-title data-title="Online Games on H5joy ——Let's play">
     <div class="irIQZt">
       <div class="sc-1bi8huj-0 iRQTOz">
         <div style="display: contents">
