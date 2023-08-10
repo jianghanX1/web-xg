@@ -92,11 +92,11 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
         itemArr && Array.from(itemArr).map((item)=>{
-          // Observer('gugoplay_pc_tab').observe(item)
+          Observer('pc_tab').observe(item)
         })
       })
       // 进入页面埋点
-      // pageInitLog('gugoplay_pc_tab')
+      pageInitLog('pc_tab')
       this.getGameList()
     }
   },
@@ -114,7 +114,7 @@ export default {
     searchClick() {
       this.UnfoldAndCollapse = !this.UnfoldAndCollapse
       // 点击搜索打点
-      // clickSearchLog('gugoplay_pc_tab')
+      clickSearchLog('pc_tab')
     },
     // 获取游戏列表
     getGameList() {
@@ -137,7 +137,7 @@ export default {
     },
     // 切换游戏
     switchGame (item) {
-      // clickGameLog('gugoplay_pc_tab', item)
+      clickGameLog('pc_tab', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/P/details',
@@ -149,7 +149,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    // pageOutLog('gugoplay_pc_tab')
+    pageOutLog('pc_tab')
   },
   watch: {
     '$route'(val) {

@@ -108,7 +108,7 @@ export default {
     setTimeout(()=>{
       let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
       itemArr && Array.from(itemArr).map((item)=>{
-        // Observer('gugoplay_pc_home').observe(item)
+        Observer('pc_home').observe(item)
       })
     })
   },
@@ -132,7 +132,7 @@ export default {
     },
     // 点击跳转详情
     iconClick(item) {
-      // clickGameLog('gugoplay_pc_home', item)
+      clickGameLog('pc_home', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/P/details',

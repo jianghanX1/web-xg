@@ -134,12 +134,12 @@ export default {
 
       this.exposure()
       // 进入页面埋点
-      // pageInitLog('gugoplay_mobile_search')
+      pageInitLog('mobile_search')
     } else {
       this.determinePcOrMove = 2
       this.exposure()
       // 进入页面埋点
-      // pageInitLog('gugoplay_pc_search')
+      pageInitLog('pc_search')
     }
     this.navSlide()
     this.getAllJson()
@@ -153,7 +153,7 @@ export default {
         setTimeout(()=>{
           let itemArr = [...document.getElementsByClassName("sc-wr3rvk-02")]
           itemArr && Array.from(itemArr).map((item)=>{
-            // Observer('gugoplay_mobile_search').observe(item)
+            Observer('mobile_search').observe(item)
           })
         })
       } else {
@@ -161,7 +161,7 @@ export default {
         setTimeout(()=>{
           let itemArr = [...document.getElementsByClassName("sc-wr3rvk-02")]
           itemArr && Array.from(itemArr).map((item)=>{
-            // Observer('gugoplay_pc_search').observe(item)
+            Observer('pc_search').observe(item)
           })
         })
       }
@@ -252,11 +252,11 @@ export default {
     // 切换游戏
     switchGame (item) {
       if (this.determinePcOrMove == 1) {
-        // clickGameLog('gugoplay_mobile_search', item)
-        // pageOutLog('gugoplay_mobile_search')
+        clickGameLog('mobile_search', item)
+        pageOutLog('mobile_search')
       } else {
-        // clickGameLog('gugoplay_pc_search', item)
-        // pageOutLog('gugoplay_pc_search')
+        clickGameLog('pc_search', item)
+        pageOutLog('pc_search')
       }
       recentGame(item)
       this.collapse()
@@ -271,9 +271,9 @@ export default {
   beforeDestroy() {
     // 离开页面埋点
     if (this.determinePcOrMove == 1) {
-      // pageOutLog('gugoplay_mobile_search')
+      pageOutLog('mobile_search')
     } else {
-      // pageOutLog('gugoplay_pc_search')
+      pageOutLog('pc_search')
     }
   },
 }

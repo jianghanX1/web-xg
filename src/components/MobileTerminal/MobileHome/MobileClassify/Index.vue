@@ -93,11 +93,11 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
         itemArr && Array.from(itemArr).map((item)=>{
-          // Observer('gugoplay_mobile_tab').observe(item)
+          Observer('mobile_tab').observe(item)
         })
       })
       // 进入页面埋点
-      // pageInitLog('gugoplay_mobile_tab')
+      pageInitLog('mobile_tab')
       window.onresize = () => {
         this.clientWidth = document.body.clientWidth
         this.getGameList()
@@ -137,13 +137,13 @@ export default {
     // 切换游戏
     switchGame (item) {
       // 打点
-      // clickGameLog('gugoplay_mobile_tab', item)
+      clickGameLog('mobile_tab', item)
       recentGame(item)
     },
   },
   beforeDestroy() {
     // 离开页面埋点
-    // pageOutLog('gugoplay_mobile_tab')
+    pageOutLog('mobile_tab')
   },
   watch: {
     '$route'(val) {

@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.bottomHide);
+    // console.log(this.bottomHide);
   },
   methods: {
     game() {

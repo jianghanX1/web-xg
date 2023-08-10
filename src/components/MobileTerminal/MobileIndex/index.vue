@@ -84,7 +84,7 @@ export default {
     } else {
 
       // 进入页面埋点
-      // pageInitLog('gugoplay_mobile_home')
+      pageInitLog('mobile_home')
 
       // let enterType = sessionStorage.getItem('enterType')
       // if (enterType) {
@@ -190,7 +190,7 @@ export default {
     // clearInterval(this.timerDate);
     // clearInterval(this.timerCountdown)
     // 离开页面埋点
-    // pageOutLog('gugoplay_mobile_home')
+    pageOutLog('mobile_home')
   }
 }
 </script>

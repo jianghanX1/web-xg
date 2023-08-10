@@ -4059,7 +4059,7 @@ try {
 let startTime = null
 
 export function pageInitLog(portal) {
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain` : `/${portal}/GameMain`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain` : `/h5joy_${portal}/GameMain`;
     startTime = new Date().getTime();
     try {
         beylaInstance.report({
@@ -4077,7 +4077,7 @@ export function pageOutLog(portal) {
         let endTime = new Date().getTime();
         let stayTime = endTime - startTime;
         beylaInstance.report({
-            pveCur: getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain` : `/${portal}/GameMain`,
+            pveCur: getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain` : `/h5joy_${portal}/GameMain`,
             eventName: "out_page",
             extras: JSON.stringify({
                 time: stayTime,
@@ -4091,7 +4091,7 @@ export function pageOutLog(portal) {
 // 点击游戏icon埋点
 export function clickGameLog(portal, item) {
     const {gameId, Name} = item || {};
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/game` : `/${portal}/GameMain/Main/game`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain/Main/game` : `/h5joy_${portal}/GameMain/Main/game`;
     try {
         beylaInstance.report({
             pveCur: pveCur,
@@ -4109,7 +4109,7 @@ export function clickGameLog(portal, item) {
 
 export function showGameLog(portal, item) {
     const {gameId, Name} = item || {};
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/game` : `/${portal}/GameMain/Main/game`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain/Main/game` : `/h5joy_${portal}/GameMain/Main/game`;
     return JSON.stringify({
         isOutside: true,
         params: {
@@ -4158,7 +4158,7 @@ export function Observer(portal) {
 
 // 点击搜索埋点
 export function clickSearchLog(portal) {
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/search` : `/${portal}/GameMain/Main/search`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain/Main/search` : `/h5joy_${portal}/GameMain/Main/search`;
     try {
         beylaInstance.report({
             pveCur: pveCur,
@@ -4171,7 +4171,7 @@ export function clickSearchLog(portal) {
 
 // 点击搜索埋点
 export function clickClassificationLog(portal, type) {
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/${portal}/GameMain/Main/category`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/h5joy_${portal}/GameMain/Main/category`;
     try {
         beylaInstance.report({
             pveCur: pveCur,
@@ -4186,7 +4186,7 @@ export function clickClassificationLog(portal, type) {
 }
 
 export function showClassificationLog(portal, type) {
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/${portal}/GameMain/Main/category`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain/Main/category` : `/h5joy_${portal}/GameMain/Main/category`;
     return JSON.stringify({
         isOutside: true,
         params: {
@@ -4233,7 +4233,7 @@ export function ClassificationObserver(portal) {
 
 // 点击浏览器安装埋点
 export function clickInstallLog(portal) {
-    const pveCur = getUrlParams('channel') ? `/${portal}_${getUrlParams('channel')}/GameMain/Main/downloadClient` : `/${portal}/GameMain/Main/downloadClient`;
+    const pveCur = getUrlParams('channel') ? `/h5joy_${portal}_${getUrlParams('channel')}/GameMain/Main/downloadClient` : `/h5joy_${portal}/GameMain/Main/downloadClient`;
     try {
         beylaInstance.report({
             pveCur: pveCur,
@@ -4246,7 +4246,7 @@ export function clickInstallLog(portal) {
 
 // 从桌面快捷方式进入
 export function followShortcutsLog(portal) {
-    const pveCur = `/${portal}_client/GameMain/Main/clickClient`;
+    const pveCur = `/h5joy_${portal}_client/GameMain/Main/clickClient`;
     try {
         beylaInstance.report({
             pveCur: pveCur,

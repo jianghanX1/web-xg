@@ -360,11 +360,11 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
         itemArr && Array.from(itemArr).map((item)=>{
-          // Observer('gugoplay_pc_detail').observe(item)
+          Observer('pc_detail').observe(item)
         })
       })
       // 进入页面埋点
-      // pageInitLog('gugoplay_pc_detail')
+      pageInitLog('pc_detail')
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{
@@ -386,26 +386,26 @@ export default {
       // 加载广告
 
       // console.log(window.isDisplay);
-      // if (window.isDisplay) {
-      //   googletag.cmd.push(function() { googletag.pubads().refresh(); });
-      // }
-      //
-      // let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
-      // const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}
-      // let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []
-      // let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []
-      // let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []
-      // let leftAdv = document.createElement("script")
-      // leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcl[3] ? pcl[3] : 'div-gpt-ad-1688371803760-0');};});"
-      // this.$refs.leftAdv.append(leftAdv)
-      //
-      // let rightAdv = document.createElement("script")
-      // rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcr[3] ? pcr[3] : 'div-gpt-ad-1688371871810-0');};});"
-      // this.$refs.rightAdv.append(rightAdv)
-      //
-      // let bottomAdv = document.createElement("script")
-      // bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcb[3] ? pcb[3] : 'div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
-      // this.$refs.bottomAdv.append(bottomAdv)
+      if (window.isDisplay) {
+        googletag.cmd.push(function() { googletag.pubads().refresh(); });
+      }
+
+      let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
+      const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}
+      let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []
+      let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []
+      let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []
+      let leftAdv = document.createElement("script")
+      leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcl[3] ? pcl[3] : 'div-gpt-ad-1691638547245-0');};});"
+      this.$refs.leftAdv.append(leftAdv)
+
+      let rightAdv = document.createElement("script")
+      rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcr[3] ? pcr[3] : 'div-gpt-ad-1691638600135-0');};});"
+      this.$refs.rightAdv.append(rightAdv)
+
+      let bottomAdv = document.createElement("script")
+      bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcb[3] ? pcb[3] : 'div-gpt-ad-1691638631193-0'); window.isDisplay = true};});"
+      this.$refs.bottomAdv.append(bottomAdv)
     }
   },
   methods: {
@@ -496,9 +496,9 @@ export default {
     // 切换游戏
     switchGame (item) {
       // 刷新广告
-      // googletag.cmd.push(function() { googletag.pubads().refresh(); });
+      googletag.cmd.push(function() { googletag.pubads().refresh(); });
       // 打点
-      // clickGameLog('gugoplay_pc_detail', item)
+      clickGameLog('pc_detail', item)
       recentGame(item)
       this.full = null
       this.isBlock = false
@@ -644,7 +644,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    // pageOutLog('gugoplay_pc_detail')
+    pageOutLog('pc_detail')
   },
   watch: {
     '$route'(val) {

@@ -36,7 +36,7 @@ export default {
       },()=>{})
     } else {
       // 进入页面埋点
-      // pageInitLog('gugoplay_pc_home')
+      pageInitLog('pc_home')
       this.getJson()
       document.title = 'Online Games on h5joy ——Let\'s play'
     }
@@ -52,7 +52,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    // pageOutLog('gugoplay_pc_home')
+    pageOutLog('pc_home')
   }
 }
 </script>
