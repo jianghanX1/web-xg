@@ -42,7 +42,11 @@
           if (channel_id) {
               script.setAttribute('data-ad-channel',channel_id)
           } else {
-              script.setAttribute('data-ad-channel','9977812505')
+              if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+                  script.setAttribute('data-ad-channel','3727635905')
+              } else {
+                  script.setAttribute('data-ad-channel','9977812505')
+              }
           }
           script.src = src;
           script.crossOrigin = "anonymous";
