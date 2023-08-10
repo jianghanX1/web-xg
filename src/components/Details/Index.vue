@@ -103,7 +103,7 @@
         <div class="gqnFJQ pAock">
           <div class="bioerJ">
             <div class="eDhvMX" style="height: 90px;width: 728px;overflow: hidden">
-              <div id='div-gpt-ad-1688371917521-0' ref="bottomAdv"></div>
+              <div id='div-gpt-ad-1691638631193-0' ref="bottomAdv"></div>
             </div>
             <div class="keJcxs"></div>
           </div>
@@ -111,7 +111,7 @@
         <div class="gqnFJQ jxmECU">
           <div class="iFmTCx">
             <div class="eDhvMX" style="height: 250px; width: 300px; overflow: hidden;">
-              <div id='div-gpt-ad-1688371871810-0' ref="rightAdv"></div>
+              <div id='div-gpt-ad-1691638600135-0' ref="rightAdv"></div>
             </div>
             <div class="iZJgLq">advertisement</div>
           </div>
@@ -119,7 +119,7 @@
         <div class="gqnFJQ SpDdJ">
           <div class="iFmTCx">
             <div style="width: 160px;height: 600px;overflow: hidden" class="eDhvMX">
-              <div id='div-gpt-ad-1688371803760-0' ref="leftAdv"></div>
+              <div id='div-gpt-ad-1691638547245-0' ref="leftAdv"></div>
             </div>
             <div class="iZJgLq">
               advertisement

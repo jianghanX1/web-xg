@@ -77,7 +77,8 @@ export function setMeta(key, des) {
 // 全部数据
 export function getJson() {
     return (
-        [{
+        [
+            {
             "gameId": 4,
             "Name": "Monkey Mart",
             "Urlpc": "https://www.h5joy.com/gcenter/urlpc/MonkeyMart/",
