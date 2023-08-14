@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'DREAMLIVE'
+    document.title = 'H5GGG'
   }
 }
 </script>

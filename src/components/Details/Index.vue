@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at dreamlive.pro'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at h5ggg.com'">
     <Navigation></Navigation>
     <div class="details">
       <div class="main-center">

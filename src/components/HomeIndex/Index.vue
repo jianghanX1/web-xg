@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="DREAMLIVE" id="homeId">
+  <div class="big" v-title data-title="H5GGG" id="homeId">
     <Navigation></Navigation>
     <div>
       <div class="top-text">

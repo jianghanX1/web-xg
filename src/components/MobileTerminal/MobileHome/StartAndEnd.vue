@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null" @click="game">
-      <a :href="'/#/M/homeIndex'">DREAMLIVE</a>
+      <a :href="'/#/M/homeIndex'">H5GGG</a>
       <div class="left" @click.stop="positionMenuClick"><i class="el-icon-menu"></i></div>
       <div class="right"></div>
       <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">

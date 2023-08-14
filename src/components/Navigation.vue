@@ -2,7 +2,7 @@
     <div>
       <div class="bj">
         <div class="bj_left">
-          <div class="title" @click="vigooGamesClick"><i class="el-icon-menu" @click.stop="positionMenuClick"></i> DREAMLIVE</div>
+          <div class="title" @click="vigooGamesClick"><i class="el-icon-menu" @click.stop="positionMenuClick"></i> H5GGG</div>
           <div class="nav-list">
             <div @click="newGamesClick(item.type)" v-for="(item,index) in gameTypeList" :key="index">{{ item.type }}</div>
           </div>

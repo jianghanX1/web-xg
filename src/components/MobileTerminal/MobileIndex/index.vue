@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="DREAMLIVE" id="homeId">
+  <div v-title data-title="H5GGG" id="homeId">
     <StartAndEnd>
       <div class="top-text">
         <h1>Play Free Online Games On Mobile & Tablet</h1>
