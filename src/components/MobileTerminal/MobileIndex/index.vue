@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="TIKH5" id="homeId">
+  <div v-title data-title="HAGOKI" id="homeId">
     <StartAndEnd>
       <div class="top-text">
         <h1>Play Free Online Games On Mobile & Tablet</h1>
@@ -10,8 +10,13 @@
         <BottomList></BottomList>
         <div style="padding: 10px">
           <div class="bottom-text">
-            Hi! Welcome to tikh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit tikh5.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
-            So, what are you waiting for? If you feel happy when playing our games, remember to bookmark tikh5.com and share it to your friends. Have fun!
+            Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at hagoki.com !
+            <br>
+            Let us introduce you something you always wanted to try. Games html5 for any taste are so different and entertaining that you will never forget about this gaming experience.
+            <br>
+            New strategy games and fancy arcade no download - whatever you will find online. If you want to leave the stress and to feel a free source of energy, then you should definitely try one of new html5 online games.
+            <br>
+            You are always free to switch to another game or to play differently. It depends on your taste and manners in online games.
           </div>
         </div>
       </div>
@@ -259,7 +264,7 @@ export default {
   font-size: 14px;
   line-height: 35px;
   border-radius: 10px;
-  background-color: #2e6d95;
+  background-color: #4367cc;
   position: relative;
 }
 #homeId{

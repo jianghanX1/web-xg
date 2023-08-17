@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'TIKH5'
+    document.title = 'HAGOKI'
   }
 }
 </script>

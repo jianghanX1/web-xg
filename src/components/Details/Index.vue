@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at tikh5.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at hagoki.com'">
     <Navigation></Navigation>
     <div class="details">
       <div class="main-center">
@@ -701,7 +701,7 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background: #2639ae;
+          background: #e95354;
           border-radius: 8px;
           height: 56px;
           width: 500px;
