@@ -701,7 +701,7 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background: #2639ae;
+          background: #f27463;
           border-radius: 8px;
           height: 56px;
           width: 500px;
