@@ -8,17 +8,8 @@
       <Content></Content>
       <div style="padding: 30px 60px">
         <div class="bottom-text">
-          TIKH5 CORPORATION is founded in 2022, based in 100 N HOWARD ST STE R， SPOKANE，WA
-          <br>
-          we are a very young and fast growing company. Core team members are coming from  global famous companies such  as  google,  facebook, minigame, who have very rich working experience in overseas digital and mobile advertising experience.
-          <br>
-          We specialize in game developing, meanwhile we enable our partners to promote games on google, facebook,Snapchat and Twitter etc.
-          <br>
-          We offer our clients with one-stop services : Open account, accounts operate guidance, account optimization,data analysis and report output.
-          <br>
-          Years of experience in channel cooperation and quality control, effect-oriented, select high-quality channels for hundreds of advertisers
-<!--          <br>-->
-<!--          Contact：<span style="font-weight: 600;text-decoration: underline;">sadsa45dsf@gmail.com</span>-->
+          Hi! Welcome to tikh5.com! You can enjoy the best free online games which are playable on mobile, tablets and PC every day. Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often. You can play all our games on your mobile phone, tablet, pad without download or installation, just visit tikh5.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark tikh5.com and share it to your friends. Have fun!
         </div>
       </div>
     </div>
