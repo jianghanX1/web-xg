@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'H5GGG'
+    document.title = 'TIKH5'
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at h5ggg.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at tikh5.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
       <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
@@ -62,8 +62,9 @@ import goBack from '@/assets/goBack.png';
 import topping from '@/assets/topping.png';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
-import {shuffle, determinePcOrMove, setMeta, getJson, recentGame, getGameTypeList} from "@/utils/utils";
+import {shuffle, determinePcOrMove, setMeta, recentGame, getGameTypeList} from "@/utils/utils";
 import { show_newAfg_preroll } from '../../../../webh5sdk';
+import { getJson } from '/public/gameList'
 export default {
   name: "mobileDetailsIndex",
   components: {
@@ -309,7 +310,7 @@ export default {
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #267AB0;
+        background-color: #2639ae;
         max-width: 100%;
         transition: width .5s linear;
         z-index: 1;

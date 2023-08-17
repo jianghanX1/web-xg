@@ -1,5 +1,5 @@
 <template>
-  <div id="mobile_classify" v-title data-title="H5GGG">
+  <div id="mobile_classify" v-title data-title="TIKH5">
     <StartAndEnd>
       <div>
         <ClassList :gameTypeList="gameTypeList" :topList="topList" :bottomList="bottomList" from="1"></ClassList>
@@ -15,7 +15,8 @@ import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
 import BottomText from "@/components/MobileTerminal/MobileHome/BottomText";
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
-import {determinePcOrMove, getJson, shuffle} from '@/utils/utils.js'
+import {determinePcOrMove, shuffle} from '@/utils/utils.js'
+import { getJson } from '/public/gameList'
 export default {
   name: "mobileClassifyIndex",
   components: {

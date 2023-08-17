@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import { getJson, recentGame, shuffle } from '@/utils/utils.js'
+import { recentGame, shuffle } from '@/utils/utils.js'
+import { getJson } from '/public/gameList'
 export default {
   name: "contentIndex",
   data() {

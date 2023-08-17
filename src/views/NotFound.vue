@@ -54,7 +54,8 @@ import Navigation from '../components/Navigation';
 import BottomNav from '../components/BottomNav';
 import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
-import {determinePcOrMove, recentGame, getJson} from "@/utils/utils";
+import {determinePcOrMove, recentGame} from "@/utils/utils";
+import { getJson } from '/public/gameList'
 export default {
   name: "NotFound",
   components: {

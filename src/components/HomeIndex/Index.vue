@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="H5GGG" id="homeId">
+  <div class="big" v-title data-title="TIKH5" id="homeId">
     <Navigation></Navigation>
     <div>
       <div class="top-text">
@@ -8,7 +8,7 @@
       <Content></Content>
       <div style="padding: 30px 60px">
         <div class="bottom-text">
-          DREAM LIVE CORPORATION is founded in 2022, based in 100 N HOWARD ST STE R， SPOKANE，WA
+          TIKH5 CORPORATION is founded in 2022, based in 100 N HOWARD ST STE R， SPOKANE，WA
           <br>
           we are a very young and fast growing company. Core team members are coming from  global famous companies such  as  google,  facebook, minigame, who have very rich working experience in overseas digital and mobile advertising experience.
           <br>
@@ -17,8 +17,8 @@
           We offer our clients with one-stop services : Open account, accounts operate guidance, account optimization,data analysis and report output.
           <br>
           Years of experience in channel cooperation and quality control, effect-oriented, select high-quality channels for hundreds of advertisers
-          <br>
-          Contact：<span style="font-weight: 600;text-decoration: underline;">sadsa45dsf@gmail.com</span>
+<!--          <br>-->
+<!--          Contact：<span style="font-weight: 600;text-decoration: underline;">sadsa45dsf@gmail.com</span>-->
         </div>
       </div>
     </div>
@@ -36,7 +36,8 @@
 import Navigation from '@/components/Navigation';
 import Content from '@/components/HomeIndex/Content';
 import BottomNav from '@/components/BottomNav';
-import { determinePcOrMove, getJson, recentGame } from '@/utils/utils.js'
+import { determinePcOrMove, recentGame } from '@/utils/utils.js'
+import { getJson } from '/public/gameList'
 export default {
   name: "HomeIndex",
   components: {

@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="H5GGG" id="homeId">
+  <div v-title data-title="TIKH5" id="homeId">
     <StartAndEnd>
       <div class="top-text">
         <h1>Play Free Online Games On Mobile & Tablet</h1>
@@ -10,7 +10,7 @@
         <BottomList></BottomList>
         <div style="padding: 10px">
           <div class="bottom-text">
-            DREAM LIVE CORPORATION is founded in 2022, based in 100 N HOWARD ST STE R， SPOKANE，WA
+            TIKH5 CORPORATION is founded in 2022, based in 100 N HOWARD ST STE R， SPOKANE，WA
             <br>
             we are a very young and fast growing company. Core team members are coming from  global famous companies such  as  google,  facebook, minigame, who have very rich working experience in overseas digital and mobile advertising experience.
             <br>
@@ -19,8 +19,8 @@
             We offer our clients with one-stop services : Open account, accounts operate guidance, account optimization,data analysis and report output.
             <br>
             Years of experience in channel cooperation and quality control, effect-oriented, select high-quality channels for hundreds of advertisers
-            <br>
-            Contact：<span style="font-weight: 600;text-decoration: underline;">sadsa45dsf@gmail.com</span>
+<!--            <br>-->
+<!--            Contact：<span style="font-weight: 600;text-decoration: underline;">sadsa45dsf@gmail.com</span>-->
           </div>
         </div>
       </div>
@@ -56,11 +56,12 @@ import racing from '@/assets/08racing.jpg';
 import parkour from '@/assets/09parkour.jpg';
 import sand from '@/assets/093d.jpg';
 
-import { determinePcOrMove, getJson } from '@/utils/utils.js'
+import { determinePcOrMove } from '@/utils/utils.js'
 import bgImg from '@/assets/advertisement/bg.jpg';
 import btnBg from '@/assets/advertisement/btn_anniu.png';
 import wz from '@/assets/advertisement/wz.png';
 import bg2 from '@/assets/advertisement/bg2.png';
+import { getJson } from '/public/gameList'
 export default {
   name: "mobileIndex",
   data() {

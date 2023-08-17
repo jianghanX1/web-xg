@@ -1,14 +1,14 @@
 <template>
   <div class="bottom-box">
     <div class="bj">
-      <div class="title">H5GGG</div>
-      <div class="small-title">Play online games on h5ggg</div>
+      <div class="title">TIKH5</div>
+      <div class="small-title">Play online games on TIKH5</div>
       <div class="text">
-        h5ggg.com is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all h5ggg GAMES are free ! Everyone can play the lasted games and the best games for free!
+        tikh5.com is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all TIKH5 GAMES are free ! Everyone can play the lasted games and the best games for free!
       </div>
       <div class="small-title">Game selection</div>
       <div class="text">
-        h5ggg devotes itself to provide games for all ages. For example, you can find fierce types of games such as shooting and driving. Also, there are casual brain-burning games like puzzle and decryption games. Not only that, MMORPGs, strategy, or games that require long hours of operation also can be your options. Besides, we provide a series of unique online games for children. Parents, please trust us, that our website is very faith worthy, 100% safe, and child-friendly.
+        TIKH5 devotes itself to provide games for all ages. For example, you can find fierce types of games such as shooting and driving. Also, there are casual brain-burning games like puzzle and decryption games. Not only that, MMORPGs, strategy, or games that require long hours of operation also can be your options. Besides, we provide a series of unique online games for children. Parents, please trust us, that our website is very faith worthy, 100% safe, and child-friendly.
       </div>
     </div>
   </div>

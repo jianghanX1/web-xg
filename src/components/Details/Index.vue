@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at h5ggg.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at tikh5.com'">
     <Navigation></Navigation>
     <div class="details">
       <div class="main-center">
@@ -95,7 +95,8 @@
 <script>
 import Navigation from '../Navigation';
 import BottomNav from '../BottomNav';
-import {determinePcOrMove, shuffle, setMeta, getJson, recentGame} from '@/utils/utils.js'
+import {determinePcOrMove, shuffle, setMeta, recentGame} from '@/utils/utils.js'
+import { getJson } from '/public/gameList'
 export default {
   name: "detailsIndex",
   components: {
@@ -700,7 +701,7 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background: linear-gradient(to bottom, #48a0c9 0%, #29638b 100%);
+          background: #2639ae;
           border-radius: 8px;
           height: 56px;
           width: 500px;
