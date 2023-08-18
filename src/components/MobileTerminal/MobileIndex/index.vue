@@ -1,5 +1,5 @@
 <template>
-  <div v-title data-title="HAGOKI" id="homeId">
+  <div v-title data-title="GOLUDU" id="homeId">
     <StartAndEnd>
       <div class="top-text">
         <h1>Play Free Online Games On Mobile & Tablet</h1>
@@ -10,7 +10,7 @@
         <BottomList></BottomList>
         <div style="padding: 10px">
           <div class="bottom-text">
-            Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at hagoki.com !
+            Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at goludu.com !
             <br>
             Let us introduce you something you always wanted to try. Games html5 for any taste are so different and entertaining that you will never forget about this gaming experience.
             <br>

@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at hagoki.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at goludu.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
       <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
@@ -310,7 +310,7 @@ export default {
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #e95354;
+        background-color: #e52c5c;
         max-width: 100%;
         transition: width .5s linear;
         z-index: 1;

@@ -39,7 +39,7 @@ export default {
   //right: 0;
   margin-top: 1rem;
   height: 1.75rem;
-  background-color: #1fb8ff;
+  background-color: #4367cc;
   text-align: center;
   color: #fff;
   font-size: .5625rem;
