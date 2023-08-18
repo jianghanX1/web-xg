@@ -8,13 +8,7 @@
       <Content></Content>
       <div style="padding: 30px 60px">
         <div class="bottom-text">
-          Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at goludu.com !
-          <br>
-          Let us introduce you something you always wanted to try. Games html5 for any taste are so different and entertaining that you will never forget about this gaming experience.
-          <br>
-          New strategy games and fancy arcade no download - whatever you will find online. If you want to leave the stress and to feel a free source of energy, then you should definitely try one of new html5 online games.
-          <br>
-          You are always free to switch to another game or to play differently. It depends on your taste and manners in online games.
+          goludu.com is the definitive source for free games to be played in your mobile or stationary browser. With HTML5 you no longer have to chose between games you can only play either on your PC or on your mobile phone or tablet. Our games are cross-platform, which means you can play on any device you like, wherever you are and whenever you want. We feature only the best games available on the market, 100 percent free and tested by our dedicated content team.
         </div>
       </div>
     </div>
