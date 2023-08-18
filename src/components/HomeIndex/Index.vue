@@ -8,13 +8,7 @@
       <Content></Content>
       <div style="padding: 30px 60px">
         <div class="bottom-text">
-          Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at hahamini.com !
-          <br>
-          Let us introduce you something you always wanted to try. Games html5 for any taste are so different and entertaining that you will never forget about this gaming experience.
-          <br>
-          New strategy games and fancy arcade no download - whatever you will find online. If you want to leave the stress and to feel a free source of energy, then you should definitely try one of new html5 online games.
-          <br>
-          You are always free to switch to another game or to play differently. It depends on your taste and manners in online games.
+          Welcome to hahamini.com, where you can find all the latest free online games! Choose from thousands of popular games directly in your browser and enjoy the fun! You can enjoy the most-played games in your browser, no downloads required! Join our community! Single player or multiplayer? That's your choice!
         </div>
       </div>
     </div>
