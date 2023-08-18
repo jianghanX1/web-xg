@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-bar" :style="bottomHide == false ? 'position: relative' : null" @click="game">
-      <a :href="'/#/M/homeIndex'">GOLUDU</a>
+      <a :href="'/#/M/homeIndex'">HAHAMINI</a>
       <div class="left" @click.stop="positionMenuClick"><i class="el-icon-menu"></i></div>
       <div class="right"></div>
       <div class="position" :style="positionMenu ? 'display: block' : 'display: none'" @mouseleave="mouseleave">
@@ -82,7 +82,7 @@ export default {
   top: 0;
   left: 0;
   box-shadow: 0 0.125rem 0.1875rem 0 rgba(0,16,63,.4);
-  background: #4367cc;
+  background: #024ee8;
   z-index: 5;
   font-size: 1.125rem;
   text-align: center;
@@ -113,7 +113,7 @@ export default {
     position: absolute;
     top: 2.8125rem;
     left: 0;
-    background: #4367cc;
+    background: #024ee8;
     min-width: 185px;
     z-index: 99;
     //text-align: left;
@@ -125,8 +125,8 @@ export default {
       line-height: 32px;
       font-size: 14px;
       overflow: hidden;
-      border-bottom: #4367cc 1px solid;
-      background: #4367cc;
+      border-bottom: #024ee8 1px solid;
+      background: #024ee8;
       padding: 3px 0;
       color: #fff;
       box-sizing: border-box;
@@ -140,7 +140,7 @@ export default {
 .end{
   margin-top: 1rem;
   height: 1.75rem;
-  background-color: #4367cc;
+  background-color: #024ee8;
   text-align: center;
   color: #fff;
   font-size: .5625rem;

@@ -1,5 +1,5 @@
 <template>
-  <div class="big" v-title data-title="GOLUDU" id="homeId">
+  <div class="big" v-title data-title="HAHAMINI" id="homeId">
     <Navigation></Navigation>
     <div>
       <div class="top-text">
@@ -8,7 +8,7 @@
       <Content></Content>
       <div style="padding: 30px 60px">
         <div class="bottom-text">
-          Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at goludu.com !
+          Have you ever heard about new generation gaming?Html5 games online are exactly designed for this purpose. You should get to know these fantastic gaming opportunities we propose you at hahamini.com !
           <br>
           Let us introduce you something you always wanted to try. Games html5 for any taste are so different and entertaining that you will never forget about this gaming experience.
           <br>
@@ -179,7 +179,7 @@ export default {
     font-size: 14px;
     line-height: 35px;
     border-radius: 10px;
-    background-color: #4367cc;
+    background-color: #024ee8;
     position: relative;
   }
 }

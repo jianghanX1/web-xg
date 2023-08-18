@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at goludu.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at hahamini.com'">
     <Navigation></Navigation>
     <div class="details">
       <div class="main-center">
@@ -701,11 +701,11 @@ export default {
         div{
           cursor: pointer;
           margin: 24px auto 0;
-          background: #e52c5c;
+          background: #ffe43f;
           border-radius: 8px;
           height: 56px;
           width: 500px;
-          color: #fff;
+          color: #924100;
           font-size: 22px;
           text-align: center;
           display: block;

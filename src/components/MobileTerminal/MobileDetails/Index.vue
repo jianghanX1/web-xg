@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at goludu.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at hahamini.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
       <div class="details-top-box" :style="playValue1 ? {display: 'none'} : {display: 'block'}">
@@ -310,7 +310,7 @@ export default {
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #e52c5c;
+        background-color: #ffe43f;
         max-width: 100%;
         transition: width .5s linear;
         z-index: 1;
@@ -323,12 +323,12 @@ export default {
       top: 50%;
       transform: translate(-50%, -50%);
       left: 50%;
-      color: #fff;
+      color: #924100;
       z-index: 2;
     }
     .app-play:after{
       content: "";
-      border-color: transparent transparent transparent #fff;
+      border-color: transparent transparent transparent #924100;
       border-style: solid;
       border-width: 0.58125rem 1.04rem;
       width: 0;
@@ -359,7 +359,7 @@ export default {
     margin: 0.7rem auto 0;
     width: 18.75rem;
     border-radius: 0.3125rem;
-    background-color: #4367cc;
+    background-color: #024ee8;
     max-height: 9.375rem;
     overflow: auto;
     padding: 0 0.625rem;

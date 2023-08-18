@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    document.title = 'GOLUDU'
+    document.title = 'HAHAMINI'
   }
 }
 </script>

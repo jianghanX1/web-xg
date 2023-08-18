@@ -1,9 +1,9 @@
 <template>
   <div class="bottom-text">
     <div class="b-desc">
-      <p class="bd-title">GOLUDU</p>
+      <p class="bd-title">HAHAMINI</p>
       <div class="bd-block">
-        <p class="bd-block-title">Play online games on GOLUDU</p>
+        <p class="bd-block-title">Play online games on HAHAMINI</p>
         <p class="bd-block-text"> is one of the best free sites for online games. All games are in real-time, which means you can run these interesting games directly in your browser without downloading, logging, or paying. Above all, all GAMES are free ! Everyone can play the lasted games and the best games for free!</p>
       </div>
       <div class="bd-block">
@@ -28,7 +28,7 @@ export default {
     margin: 0 auto;
     padding-top: 1.625rem;
     padding-bottom: 0.8125rem;
-    background-color: #4367cc;
+    background-color: #024ee8;
     border-radius: 0.1875rem;
     .bd-title{
       font-size: 1rem;
