@@ -7,12 +7,11 @@ import axios from 'axios'
 import '@/assets/font/theFont.css'
 import { Button, Select, Input, Message, Form, FormItem } from 'element-ui'
 
-console.info(process.env.NODE_ENV,"=====");
-console.log(window.location.origin,"=====");
 // 域名
-let origin = process.env.NODE_ENV === 'production' ? window.location.origin : 'https://www.gugoplay.com'
-
-Vue.prototype.$origin = origin
+let originCopyWriting = process.env.NODE_ENV === 'production' ? window.location.origin.split('.')[1] : 'gugoplay'
+let $headToUpperCase = originCopyWriting.slice(0,1).toUpperCase() +originCopyWriting.slice(1).toLowerCase()
+Vue.prototype.$originCopyWriting = originCopyWriting
+Vue.prototype.$headToUpperCase = $headToUpperCase
 Vue.prototype.$axios = axios
 Vue.prototype.$message = Message
 Vue.config.productionTip = false
@@ -66,9 +65,9 @@ window.addEventListener('appinstalled',()=>{
     page = 'home'
   }
   if (determinePcOrMove() == 2) {
-    clickInstallLog(`gugoplay_pc_${page}`)
+    clickInstallLog(`pc_${page}`)
   } else {
-    clickInstallLog(`gugoplay_mobile_${page}`)
+    clickInstallLog(`mobile_${page}`)
   }
   window.deferredPrompt = null;
 })
@@ -76,9 +75,9 @@ window.addEventListener('appinstalled',()=>{
 // 判断是通过网页启动还是通过主屏幕图标启动
 if(window.location.href.match('pwa=client')){
   if (determinePcOrMove() == 2) {
-    followShortcutsLog('gugoplay_pc_home')
+    followShortcutsLog('pc_home')
   } else {
-    followShortcutsLog('gugoplay_mobile_home')
+    followShortcutsLog('mobile_home')
   }
 }
 
@@ -149,6 +148,33 @@ if (b.hash === '#/') {
     }
   }
 }
+
+// 动态修改pwa
+let myDynamicManifest = {
+  "short_name": `${originCopyWriting}.com`,
+  "name": `${originCopyWriting}.com`,
+  "icons": [
+    {
+      "src": "https://www.gugoplay.com/g_icoimg/MonkeyMart/180x180.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://www.gugoplay.com/g_icoimg/MonkeyMart/180x180.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": `${window.location.origin}?pwa=client`,
+  "display": "standalone",
+  "background_color": "#0054ff",
+  "theme_color": "#080403"
+}
+const stringManifest = JSON.stringify(myDynamicManifest);
+const blob = new Blob([stringManifest], {type: 'application/json'});
+const manifestURL = URL.createObjectURL(blob);
+document.querySelector('#manifest').setAttribute('href', manifestURL)
+
 
 Vue.use(Button)
 Vue.use(Select)

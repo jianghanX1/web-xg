@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at gugoplay.com'">
+  <div v-title :data-title="gameName + ' - ' + 'Play' + ' ' + gameName + ' Online at ' + this.$originCopyWriting + '.com'">
     <div class="mobile-details" :style="playValue ? {display: 'none'} : {display: 'block'}" id="mobile-details">
       <StartAndEnd :bottomHide="false">
         <MobileLogo whereFrom="2"></MobileLogo>
@@ -48,7 +48,7 @@
                 <span class="sc-1v3c8lr-8 bbPKoC"><i class="el-icon-star-on"></i> {{gameScore}}</span>
               </div>
               <div class="sc-1v3c8lr-9 jXgCKW">
-                {{ description ? description : "Play best game on GUGOPLAY!" }}
+                {{ description ? description : `Play best game on ${this.$originCopyWriting.toUpperCase()}!` }}
               </div>
               <ul class="sc-g8xdfn-0 jOvOhG sc-1v3c8lr-4 durvAn">
                 <li v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</li>
@@ -163,11 +163,11 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
         itemArr && Array.from(itemArr).map((item)=>{
-          Observer('gugoplay_mobile_detail').observe(item)
+          Observer('mobile_detail').observe(item)
         })
       })
       // 进入页面埋点
-      pageInitLog('gugoplay_mobile_detail')
+      pageInitLog('mobile_detail')
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{
@@ -323,7 +323,7 @@ export default {
         this.exitFullscreen()
       }
       // 打点
-      clickGameLog('gugoplay_mobile_detail', item)
+      clickGameLog('mobile_detail', item)
       recentGame(item)
       clearInterval(this.timer)
       clearInterval(this.timer2)
@@ -338,7 +338,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    pageOutLog('gugoplay_mobile_detail')
+    pageOutLog('mobile_detail')
   },
   watch: {
     '$route'(val) {

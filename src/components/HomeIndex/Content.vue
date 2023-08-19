@@ -59,16 +59,16 @@
       <TypeList whereFrom="2"></TypeList>
       <div class="bottom-text">
         <div class="jXgCKW">
-          Hi! Welcome to GUGOPLAY.com!
+          Hi! Welcome to {{this.$originCopyWriting && this.$originCopyWriting.toUpperCase()}}.com!
           <br><br>
           You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
           <br><br>
           Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon
           games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
           You can play all our games on your mobile phone, tablet, pad without download or installation, just visit
-          GUGOPLAY.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          {{ this.$originCopyWriting && this.$originCopyWriting.toUpperCase() }}.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
           <br><br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark GUGOPLAY.com and
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark {{ this.$originCopyWriting && this.$originCopyWriting.toUpperCase() }}.com and
           share it to your friends. Have fun!
         </div>
       </div>
@@ -109,7 +109,7 @@ export default {
     setTimeout(()=>{
       let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
       itemArr && Array.from(itemArr).map((item)=>{
-        Observer('gugoplay_pc_home').observe(item)
+        Observer('pc_home').observe(item)
       })
     })
   },
@@ -133,7 +133,7 @@ export default {
     },
     // 点击跳转详情
     iconClick(item) {
-      clickGameLog('gugoplay_pc_home', item)
+      clickGameLog('pc_home', item)
       recentGame(item)
       // this.$router.push({
       //   path: '/P/details',

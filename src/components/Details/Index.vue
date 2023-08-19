@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at gugoplay.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at ' + this.$originCopyWriting + '.com'">
     <PCLogo offsetName="2" whereFrom="2"></PCLogo>
     <div class="details">
       <div class="gpagqS">
@@ -240,7 +240,7 @@
           <span class="sc-1v3c8lr-8 bbPKoC"><i class="el-icon-star-on"></i> {{gameScore}}</span>
         </div>
         <div class="sc-1v3c8lr-9 jXgCKW">
-          {{ gameInfo.desc ? gameInfo.desc : "Play best game on GUGOPLAY!" }}
+          {{ gameInfo.desc ? gameInfo.desc : `Play best game on ${this.$originCopyWriting.toUpperCase()}!` }}
         </div>
         <ul class="sc-g8xdfn-0 jOvOhG sc-1v3c8lr-4 durvAn">
           <li v-for="(item,index) in typeList" :key="index" @click="classClick(item.type)">{{item.type}}</li>
@@ -360,11 +360,11 @@ export default {
       setTimeout(()=>{
         let itemArr = [...document.getElementsByClassName("sc-wr3rvk-0")]
         itemArr && Array.from(itemArr).map((item)=>{
-          Observer('gugoplay_pc_detail').observe(item)
+          Observer('pc_detail').observe(item)
         })
       })
       // 进入页面埋点
-      pageInitLog('gugoplay_pc_detail')
+      pageInitLog('pc_detail')
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{
@@ -498,7 +498,7 @@ export default {
       // 刷新广告
       googletag.cmd.push(function() { googletag.pubads().refresh(); });
       // 打点
-      clickGameLog('gugoplay_pc_detail', item)
+      clickGameLog('pc_detail', item)
       recentGame(item)
       this.full = null
       this.isBlock = false
@@ -644,7 +644,7 @@ export default {
   },
   beforeDestroy() {
     // 离开页面埋点
-    pageOutLog('gugoplay_pc_detail')
+    pageOutLog('pc_detail')
   },
   watch: {
     '$route'(val) {

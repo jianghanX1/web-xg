@@ -21,7 +21,7 @@ export default {
     // 获取需要曝光的item
     setTimeout(()=>{
       let itemArr = [...document.getElementsByClassName("bl-963fcq-1")]
-      let portal = this.whereFrom == 1 ? 'gugoplay_mobile_home' : this.whereFrom == 2 ? 'gugoplay_mobile_detail' : 'gugoplay_mobile_tab'
+      let portal = this.whereFrom == 1 ? 'mobile_home' : this.whereFrom == 2 ? 'mobile_detail' : 'mobile_tab'
       itemArr && Array.from(itemArr).map((item)=>{
         ClassificationObserver(portal).observe(item)
       })
@@ -38,7 +38,7 @@ export default {
         }
       },()=>{})
       // 点击类型打点
-      let portal = this.whereFrom == 1 ? 'gugoplay_mobile_home' : this.whereFrom == 2 ? 'gugoplay_mobile_detail' : 'gugoplay_mobile_tab'
+      let portal = this.whereFrom == 1 ? 'mobile_home' : this.whereFrom == 2 ? 'mobile_detail' : 'mobile_tab'
       clickClassificationLog(portal,gameType)
     }
   }
