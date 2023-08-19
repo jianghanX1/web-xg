@@ -888,14 +888,17 @@ export default {
     background-color: #ffffff;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
     transform: translate(0,var(--mobileNavDragY,24px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /deep/ .el-icon-arrow-left{
       font-size: 2rem;
       color: #ffffff;
       line-height: 2.1875rem;
     }
     img{
-      width: 100%;
-      height: 100%;
+      width: 60px;
+      height: 39px;
     }
   }
   .tap-game{
@@ -987,14 +990,17 @@ export default {
     width: 70px;
     height: 45px;
     transform: translate(0,var(--mobileNavDragY,24px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /deep/ .el-icon-arrow-left{
       font-size: 1rem;
       color: #ffffff;
       line-height: 1rem;
     }
     img{
-      width: 100%;
-      height: 100%;
+      width: 60px;
+      height: 39px;
     }
   }
   .tap-game{
