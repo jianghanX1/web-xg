@@ -4,9 +4,10 @@
       <div class="sc-1bi8huj-0 iRQTOz">
         <div style="display: contents">
           <nav class="sc-15orno7-0 dDVcIC">
-            <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
-              <img :src="logo" alt="">
-            </div>
+            <a :href="'/#/P/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')" class="sc-11jy73d-3 bfQcDW">
+<!--              <img :src="logo" alt="">-->
+              {{ this.$originCopyWriting }}
+            </a>
             <div class="sc-jaa1t8-0 bwKNQa">
               <a :href="'/#/P/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
               <button class="sc-c36zwn-0 sc-jaa1t8-3 koyGQc fjlzah" @click="searchClick">
@@ -258,7 +259,8 @@ export default {
     width: 94px;
     height: 42px;
     margin: -2px auto 0px;
-    font-size: 0;
+    font: 700 20px "SHOWG", sans-serif;
+    line-height: 42px;
     img{
       width: 100%;
       height: 100%;

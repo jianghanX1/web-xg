@@ -2,7 +2,8 @@
   <div style="display: contents">
     <nav :class="offsetName == 2 ? dDVcIC1 : dDVcIC">
       <div class="sc-11jy73d-3 bfQcDW" @click="goHome">
-        <img :src="logo" alt="">
+        <!--              <img :src="logo" alt="">-->
+        {{ this.$originCopyWriting }}
       </div>
       <div class="sc-jaa1t8-0 bwKNQa">
         <a :href="'/#/P/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
@@ -77,6 +78,8 @@ export default {
     width: 94px !important;
     height: 42px !important;
     margin: -2px auto 0px !important;
+    font: 700 20px "SHOWG", sans-serif!important;
+    line-height: 42px!important;
   }
 
   .bwKNQa {
@@ -174,6 +177,8 @@ export default {
     width: 80px;
     height: 30px;
     margin: 15px auto 11px;
+    font: 700 14px "SHOWG", sans-serif;
+    line-height: 30px;
     img {
       width: 100%;
       height: 100%;

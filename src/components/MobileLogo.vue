@@ -2,7 +2,9 @@
   <div>
     <div class="logo">
       <div class="sc-11jy73d-3 bfQcDW">
-        <a :href="'/#/M/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')"><img :src="logo" alt=""></a>
+        <a :href="'/#/M/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')">
+          {{ this.$originCopyWriting }}
+        </a>
       </div>
       <div class="sc-jaa1t8-0 bwKNQa">
         <a :href="'/#/M/homeIndex'+($route.query.channel ? ('?channel='+$route.query.channel): '')" class="sc-jaa1t8-1 GKasG"><img :src="home" alt=""></a>
@@ -47,6 +49,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+a{
+  text-decoration: none;
+  color: #000000;
+}
 @media (min-width: 551px) and (max-width: 660.9px) {
   .logo {
     --offset: -268px !important;
@@ -79,10 +85,11 @@ export default {
   transform: translate(var(--offset),0);
   --offset: -157px;
   .bfQcDW{
-    width: 72px;
+    width: 80px;
     height: 28px;
     margin: 15px auto 11px;
-    font-size: 0;
+    font: 700 13px "SHOWG", sans-serif;
+    line-height: 28px;
     img{
       width: 100%;
       height: 100%;

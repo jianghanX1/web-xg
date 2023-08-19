@@ -8,7 +8,7 @@ import '@/assets/font/theFont.css'
 import { Button, Select, Input, Message, Form, FormItem } from 'element-ui'
 
 // 域名
-let originCopyWriting = process.env.NODE_ENV === 'production' ? window.location.origin.split('.')[1] : 'gugoplay'
+let originCopyWriting = process.env.NODE_ENV === 'production' ? window.location.origin.split('.')[1] : 'gugoplays'
 let $headToUpperCase = originCopyWriting.slice(0,1).toUpperCase() +originCopyWriting.slice(1).toLowerCase()
 Vue.prototype.$originCopyWriting = originCopyWriting
 Vue.prototype.$headToUpperCase = $headToUpperCase
@@ -155,12 +155,12 @@ let myDynamicManifest = {
   "name": `${originCopyWriting}.com`,
   "icons": [
     {
-      "src": "https://www.gugoplay.com/g_icoimg/MonkeyMart/180x180.jpg",
+      "src": `${window.location.origin}/pwa/pwa.png`,
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://www.gugoplay.com/g_icoimg/MonkeyMart/180x180.jpg",
+      "src": `${window.location.origin}/pwa/pwa.png`,
       "sizes": "512x512",
       "type": "image/png"
     }

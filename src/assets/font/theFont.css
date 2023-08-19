@@ -6,3 +6,7 @@
     font-family: 'Proxima Nova';
     src: url("./proxima-nova-regular-latin.woff2");
 }
+@font-face {
+    font-family: 'SHOWG';
+    src: url("./SHOWG.TTF");
+}

@@ -885,6 +885,8 @@ export default {
     width: 70px;
     height: 45px;
     text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
     transform: translate(0,var(--mobileNavDragY,24px));
     /deep/ .el-icon-arrow-left{
       font-size: 2rem;
