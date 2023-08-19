@@ -7,13 +7,20 @@ import axios from 'axios'
 import '@/assets/font/theFont.css'
 import { Button, Select, Input, Message, Form, FormItem } from 'element-ui'
 
+console.info(process.env.NODE_ENV,"=====");
+console.log(window.location.origin,"=====");
+// 域名
+let origin = process.env.NODE_ENV === 'production' ? window.location.origin : 'https://www.gugoplay.com'
+
+Vue.prototype.$origin = origin
 Vue.prototype.$axios = axios
 Vue.prototype.$message = Message
 Vue.config.productionTip = false
 
 // 引入插件
 import VueLazyload from 'vue-lazyload'
-import {clickInstallLog, determinePcOrMove, followShortcutsLog, getJson, getUrlParams} from "@/utils/utils";
+import {clickInstallLog, determinePcOrMove, followShortcutsLog, getUrlParams} from "@/utils/utils";
+import { getJson } from "/public/gameList";
 // 注册插件
 Vue.use(VueLazyload,{
   loading:'' // 懒加载默认图片

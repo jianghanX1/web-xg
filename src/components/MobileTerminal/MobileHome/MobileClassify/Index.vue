@@ -52,13 +52,13 @@ import ClassList from "@/components/MobileTerminal/MobileHome/ClassList";
 import {
   clickGameLog,
   determinePcOrMove,
-  getJson,
   Observer,
   pageInitLog,
   pageOutLog,
   recentGame,
   shuffle
 } from '@/utils/utils.js'
+import { getJson } from "/public/gameList";
 export default {
   name: "mobileClassifyIndex",
   components: {

@@ -259,12 +259,12 @@ import {
   determinePcOrMove,
   shuffle,
   setMeta,
-  getJson,
   recentGame,
   getGameTypeList,
   pageInitLog,
   pageOutLog, clickGameLog, Observer
 } from '@/utils/utils.js';
+import { getJson } from "/public/gameList";
 import amplify from '@/assets/amplify.png';
 import reduce from '@/assets/reduce.png';
 import logo from '@/assets/logo.png';

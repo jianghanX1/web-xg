@@ -78,7 +78,8 @@
 
 <script>
 import TypeList from '@/components/TypeList.vue';
-import {clickGameLog, getJson, recentGame, Observer} from '@/utils/utils.js';
+import {clickGameLog, recentGame, Observer} from '@/utils/utils.js';
+import { getJson } from "/public/gameList";
 import logo from '@/assets/logo.png';
 import home from '@/assets/home.png';
 import souSuo from '@/assets/sousuo.png';

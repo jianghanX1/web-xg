@@ -77,7 +77,8 @@
 <script>
 import MobileLogo from '@/components/MobileLogo.vue';
 import BottomList from "@/components/MobileTerminal/MobileHome/BottomList";
-import {clickGameLog, getJson, Observer, recentGame} from '@/utils/utils.js';
+import {clickGameLog, Observer, recentGame} from '@/utils/utils.js';
+import { getJson } from "/public/gameList";
 export default {
   name: "AppList",
   props: ['appGameList'],

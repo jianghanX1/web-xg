@@ -98,12 +98,12 @@ import {
   shuffle,
   determinePcOrMove,
   setMeta,
-  getJson,
   recentGame,
   getGameTypeList,
   pageOutLog,
   clickGameLog, pageInitLog, Observer
 } from "@/utils/utils";
+import { getJson } from "/public/gameList";
 import { show_newAfg_preroll } from '../../../../webh5sdk';
 export default {
   name: "mobileDetailsIndex",

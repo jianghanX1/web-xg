@@ -10,7 +10,8 @@
 <script>
 import Content from '@/components/HomeIndex/Content';
 import BottomNav from '@/components/BottomNav';
-import {determinePcOrMove, getJson, pageInitLog, pageOutLog} from '@/utils/utils.js'
+import {determinePcOrMove, pageInitLog, pageOutLog} from '@/utils/utils.js'
+import { getJson } from "/public/gameList";
 export default {
   name: "HomeIndex",
   components: {

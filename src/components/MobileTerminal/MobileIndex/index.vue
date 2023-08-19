@@ -24,7 +24,8 @@ import StartAndEnd from "@/components/MobileTerminal/MobileHome/StartAndEnd";
 // import TopBox from "@/components/MobileTerminal/MobileHome/TopBox";
 import AppList from "@/components/MobileTerminal/MobileHome/AppList";
 
-import {determinePcOrMove, getJson, pageInitLog, pageOutLog} from '@/utils/utils.js'
+import {determinePcOrMove, pageInitLog, pageOutLog} from '@/utils/utils.js'
+import { getJson } from "/public/gameList";
 import bgImg from '@/assets/advertisement/bg.jpg';
 import btnBg from '@/assets/advertisement/btn_anniu.png';
 import wz from '@/assets/advertisement/wz.png';

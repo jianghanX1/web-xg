@@ -96,13 +96,13 @@ import guanBi from '@/assets/guanbi.png';
 import TypeList from '@/components/TypeList.vue'
 import {
   getGameTypeList,
-  getJson,
   recentGame,
   determinePcOrMove,
   pageInitLog,
   clickGameLog,
   pageOutLog, Observer
 } from '@/utils/utils'
+import { getJson } from "/public/gameList";
 export default {
   name: "SearchFor",
   props: ['UnfoldAndCollapse'],

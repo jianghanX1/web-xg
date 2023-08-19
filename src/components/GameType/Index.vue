@@ -47,13 +47,13 @@ import SearchFor from '@/components/SearchFor.vue';
 import {
   clickGameLog, clickSearchLog,
   determinePcOrMove,
-  getJson,
   Observer,
   pageInitLog,
   pageOutLog,
   recentGame,
   shuffle
 } from '@/utils/utils.js'
+import { getJson } from "/public/gameList";
 import logo from '@/assets/logo.png'
 import home from '@/assets/home.png'
 import souSuo from '@/assets/sousuo.png'
