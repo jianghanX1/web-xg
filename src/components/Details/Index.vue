@@ -102,24 +102,42 @@
         </div>
         <div class="gqnFJQ pAock">
           <div class="bioerJ">
-            <div class="eDhvMX" style="height: 90px;width: 728px;overflow: hidden">
-              <div id='div-gpt-ad-1688371917521-0' ref="bottomAdv"></div>
+            <div class="eDhvMX adv" style="height: 90px;width: 728px;overflow: hidden">
+<!--              <div id='div-gpt-ad-1688371917521-0' ref="bottomAdv"></div>-->
+              <ins class="adsbygoogle"
+                   style="display:block;width: 728px;height: 90px"
+                   data-ad-client="ca-pub-2075998924432436"
+                   data-ad-slot="3221163007"
+                   data-ad-format="true"
+                   data-full-width-responsive="true"></ins>
             </div>
             <div class="keJcxs"></div>
           </div>
         </div>
         <div class="gqnFJQ jxmECU">
           <div class="iFmTCx">
-            <div class="eDhvMX" style="height: 250px; width: 300px; overflow: hidden;">
-              <div id='div-gpt-ad-1688371871810-0' ref="rightAdv"></div>
+            <div class="eDhvMX adv" style="height: 250px; width: 300px; overflow: hidden;">
+<!--              <div id='div-gpt-ad-1688371871810-0' ref="rightAdv"></div>-->
+              <ins class="adsbygoogle"
+                   style="display:block;width: 300px;height: 250px"
+                   data-ad-client="ca-pub-2075998924432436"
+                   data-ad-slot="5625617455"
+                   data-ad-format="true"
+                   data-full-width-responsive="true"></ins>
             </div>
             <div class="iZJgLq">advertisement</div>
           </div>
         </div>
         <div class="gqnFJQ SpDdJ">
           <div class="iFmTCx">
-            <div style="width: 160px;height: 600px;overflow: hidden" class="eDhvMX">
-              <div id='div-gpt-ad-1688371803760-0' ref="leftAdv"></div>
+            <div style="width: 160px;height: 600px;overflow: hidden" class="eDhvMX adv">
+<!--              <div id='div-gpt-ad-1688371803760-0' ref="leftAdv"></div>-->
+              <ins class="adsbygoogle"
+                   style="display:block;width: 160px;height: 600px"
+                   data-ad-client="ca-pub-2075998924432436"
+                   data-ad-slot="3458619115"
+                   data-ad-format="true"
+                   data-full-width-responsive="true"></ins>
             </div>
             <div class="iZJgLq">
               advertisement
@@ -368,6 +386,7 @@ export default {
       // 蒙层状态
       this.smegmaType = true
       setTimeout(()=>{
+        window.addAds()
         this.smegmaType = false
       },800)
 
@@ -385,27 +404,27 @@ export default {
 
       // 加载广告
 
-      console.log(window.isDisplay);
-      if (window.isDisplay) {
-        googletag.cmd.push(function() { googletag.pubads().refresh(); });
-      }
-
-      let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
-      const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}
-      let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []
-      let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []
-      let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []
-      let leftAdv = document.createElement("script")
-      leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcl[3] ? pcl[3] : 'div-gpt-ad-1688371803760-0');};});"
-      this.$refs.leftAdv.append(leftAdv)
-
-      let rightAdv = document.createElement("script")
-      rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcr[3] ? pcr[3] : 'div-gpt-ad-1688371871810-0');};});"
-      this.$refs.rightAdv.append(rightAdv)
-
-      let bottomAdv = document.createElement("script")
-      bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcb[3] ? pcb[3] : 'div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
-      this.$refs.bottomAdv.append(bottomAdv)
+      // console.log(window.isDisplay);
+      // if (window.isDisplay) {
+      //   googletag.cmd.push(function() { googletag.pubads().refresh(); });
+      // }
+      //
+      // let channelInfo = localStorage.getItem('channelInfo') && JSON.parse(localStorage.getItem('channelInfo'))
+      // const { p_dtl_gpt_left, p_dtl_gpt_right, p_dtl_gpt_bottom } = channelInfo || {}
+      // let pcl = p_dtl_gpt_left && p_dtl_gpt_left.split(",") || []
+      // let pcr = p_dtl_gpt_right && p_dtl_gpt_right.split(",") || []
+      // let pcb = p_dtl_gpt_bottom && p_dtl_gpt_bottom.split(",") || []
+      // let leftAdv = document.createElement("script")
+      // leftAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcl[3] ? pcl[3] : 'div-gpt-ad-1688371803760-0');};});"
+      // this.$refs.leftAdv.append(leftAdv)
+      //
+      // let rightAdv = document.createElement("script")
+      // rightAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcr[3] ? pcr[3] : 'div-gpt-ad-1688371871810-0');};});"
+      // this.$refs.rightAdv.append(rightAdv)
+      //
+      // let bottomAdv = document.createElement("script")
+      // bottomAdv.innerHTML = "googletag.cmd.push(function() { if(!window.isDisplay){googletag.display(pcb[3] ? pcb[3] : 'div-gpt-ad-1688371917521-0'); window.isDisplay = true};});"
+      // this.$refs.bottomAdv.append(bottomAdv)
     }
   },
   methods: {
@@ -496,7 +515,7 @@ export default {
     // 切换游戏
     switchGame (item) {
       // 刷新广告
-      googletag.cmd.push(function() { googletag.pubads().refresh(); });
+      // googletag.cmd.push(function() { googletag.pubads().refresh(); });
       // 打点
       clickGameLog('gugoplay_pc_detail', item)
       recentGame(item)
