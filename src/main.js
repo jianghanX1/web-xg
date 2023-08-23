@@ -9,9 +9,11 @@ import { Button, Select, Input, Message, Form, FormItem } from 'element-ui'
 
 // 域名
 let originCopyWriting = process.env.NODE_ENV === 'production' ? window.location.origin.split('.')[1] : 'gugoplays'
-let $headToUpperCase = originCopyWriting.slice(0,1).toUpperCase() +originCopyWriting.slice(1).toLowerCase()
+let headToUpperCase = originCopyWriting.slice(0,1).toUpperCase() +originCopyWriting.slice(1).toLowerCase()
+let suffix = process.env.NODE_ENV === 'production' ? window.location.origin.split('.')[2] : 'com'
 Vue.prototype.$originCopyWriting = originCopyWriting
-Vue.prototype.$headToUpperCase = $headToUpperCase
+Vue.prototype.$headToUpperCase = headToUpperCase
+Vue.prototype.$suffix = suffix
 Vue.prototype.$axios = axios
 Vue.prototype.$message = Message
 Vue.config.productionTip = false
@@ -151,16 +153,16 @@ if (b.hash === '#/') {
 
 // 动态修改pwa
 let myDynamicManifest = {
-  "short_name": `${originCopyWriting}.com`,
-  "name": `${originCopyWriting}.com`,
+  "short_name": `${originCopyWriting}.${suffix}`,
+  "name": `${originCopyWriting}.${suffix}`,
   "icons": [
     {
-      "src": `${window.location.origin}/pwa/pwa.png`,
+      "src": `${window.location.origin}/img/pwa.png`,
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": `${window.location.origin}/pwa/pwa.png`,
+      "src": `${window.location.origin}/img/pwa.png`,
       "sizes": "512x512",
       "type": "image/png"
     }

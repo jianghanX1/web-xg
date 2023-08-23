@@ -2,7 +2,7 @@
   <div class="privacy_box">
     <br/>
     <a href="index.html">
-      <h3 class="menber">{{ this.$originCopyWriting }}.com </h3>
+      <h3 class="menber">{{ this.$originCopyWriting }}.{{ this.$suffix }} </h3>
     </a>
     <br/>
     <div class="intro-text">
@@ -40,7 +40,7 @@
     <br/>
     <div>PRIVACY POLICY</div>
     <br/>
-    <p>Copyright {{this.$originCopyWriting}}.com. All rights reserved.</p>
+    <p>Copyright {{this.$originCopyWriting}}.{{ this.$suffix }}. All rights reserved.</p>
   </div>
 </template>
 

@@ -59,16 +59,16 @@
       <TypeList whereFrom="2"></TypeList>
       <div class="bottom-text">
         <div class="jXgCKW">
-          Hi! Welcome to {{this.$originCopyWriting && this.$originCopyWriting.toUpperCase()}}.com!
+          Hi! Welcome to {{this.$originCopyWriting && this.$originCopyWriting.toUpperCase()}}.{{ this.$suffix }}!
           <br><br>
           You can enjoy the best free online games which are playable on mobile, tablets and PC every day.
           <br><br>
           Our editors choose the most addicing games developed by our partners, such as car games, 3d games, cartoon
           games, skill games, arcade game, sport games, racing games and many other kinds of fashion games often.
           You can play all our games on your mobile phone, tablet, pad without download or installation, just visit
-          {{ this.$originCopyWriting && this.$originCopyWriting.toUpperCase() }}.com in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
+          {{ this.$originCopyWriting && this.$originCopyWriting.toUpperCase() }}.{{ this.$suffix }} in your browser such as safari, chrome, firefox, etc, and then enjoy playing the games.
           <br><br>
-          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark {{ this.$originCopyWriting && this.$originCopyWriting.toUpperCase() }}.com and
+          So, what are you waiting for? If you feel happy when playing our games, remember to bookmark {{ this.$originCopyWriting && this.$originCopyWriting.toUpperCase() }}.{{ this.$suffix }} and
           share it to your friends. Have fun!
         </div>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at ' + this.$originCopyWriting + '.com'">
+  <div v-title :data-title="gameInfo.Name + ' - ' + 'Play' + ' ' + gameInfo.Name + ' Online at ' + this.$originCopyWriting + '.' + this.$suffix">
     <PCLogo offsetName="2" whereFrom="2"></PCLogo>
     <div class="details">
       <div class="gpagqS">
